@@ -74,7 +74,7 @@ let g:syntastic_check_on_wq = 0
 
 " CoC
 let g:coc_global_extensions = ['coc-omnisharp', 'coc-tsserver', 'coc-angular', 'coc-json']
-source $HOME/vimfiles/config/coc-user-config.vim
+source $HOME/.config/nvim/coc/coc-user-config.vim
 
 " Taglist
 nnoremap <C-t> :TlistOpen<CR>
