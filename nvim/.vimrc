@@ -46,6 +46,7 @@ Plug 'townk/vim-autoclose'
 Plug 'unblevable/quick-scope'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'tpope/vim-commentary'
+Plug 'kburdett/vim-nuuid'
 " Language processing
 Plug 'vim-syntastic/syntastic'
 Plug 'neovim/nvim-lspconfig'
@@ -140,7 +141,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-" Keybinds
+" --- Keybinds ---
 let mapleader = ' '
 
 " Omnisharp mappings
@@ -155,8 +156,9 @@ nnoremap <leader>oss :OmniSharpStatus<CR>
 au VimEnter * NERDTree
 let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants','\.asmdef$']
 let g:NERDTreeWinPos='right'
-nnoremap <C-a> :NERDTreeMirror<CR>:NERDTreeToggle <CR>
-nnoremap <CR> :NERDTreeMirror<CR>:NERDTreeFocus <CR>
+nnoremap <C-a> :NERDTreeToggle<CR>:normal =<CR>
+nnoremap <CR> :NERDTreeFocus<CR>
+nnoremap <A-m> :NERDTreeMirror<CR>
 nnoremap <A-{> :let Tlist_Use_Right_Window=1<CR>:let g:NERDTreeWinPos="left"<CR>:NERDTree<CR>:TlistClose<CR>:TlistOpen<CR>
 nnoremap <A-}> :let Tlist_Use_Right_Window=0<CR>:let g:NERDTreeWinPos="right"<CR>:NERDTree<CR>:TlistClose<CR>:TlistOpen<CR>
 
@@ -195,6 +197,8 @@ nnoremap <A-t> :tabnew<CR>
 nnoremap <A-q> :tabclose<CR>
 nnoremap <A-p> :tabp<CR>
 nnoremap <A-n> :tabn<CR>
+nnoremap <A--> :-tabm<CR>
+nnoremap <A-=> :+tabm<CR>
 nnoremap <A-1> :tabr<CR>
 nnoremap <A-9> :tabl<CR>
 
@@ -214,13 +218,15 @@ nnoremap <A-e> :OpenSession<CR>
 " Tab width
 nnoremap <F2> :set tabstop=2<CR>:set softtabstop=2<CR>:set shiftwidth=2<CR>
 " Sort lines
-nnoremap <F2> :sort<CR>
+xnoremap <F2> :sort<CR>
 " Edit vimrc
 nnoremap <F3> :e ~/.config/nvim/.vimrc<CR>
 " Tab width
 nnoremap <F4> :set tabstop=4<CR>:set softtabstop=4<CR>:set shiftwidth=4<CR>
 " Reload vimrc
 nnoremap <F5> :source $MYVIMRC<CR> :source ~/.config/nvim/.vimrc<CR>
+" Semicolon shortcut
+inoremap <F5> <ESC>A;<ESC>
 " Open terminal
 nnoremap <F8> :terminal<CR>
 " Open terminal split
@@ -278,7 +284,7 @@ nnoremap <A-Up> :lfirst<CR>
 nnoremap <A-Down> :llast<CR>
 nnoremap <A-Right> :lnext<CR>
 
-"Text  manipulation
+" Text  manipulation
 " Commenting line(s)
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
