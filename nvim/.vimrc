@@ -37,14 +37,6 @@ set statusline+=%=
 set statusline+=%0*\ %{get(b:,'coc_current_function','')}\ \|\ %t
 set laststatus=3
 
-" Colors
-set background=dark
-colorscheme srcery
-if has('nvim') || has('termguicolors')
-set termguicolors
-endif
-hi clear CursorLine
-
 " Terminal
 augroup neovim_terminal
   " Disable line numbers for terminal buffers
@@ -60,3 +52,11 @@ source $HOME/.config/nvim/config/plugins.vim
 source $HOME/.config/nvim/config/keybinds.vim
 " Commands
 source $HOME/.config/nvim/config/commands.vim
+
+" Colors
+set background=dark
+colorscheme srcery
+if has('nvim') || has('termguicolors')
+set termguicolors
+endif
+hi clear CursorLine
