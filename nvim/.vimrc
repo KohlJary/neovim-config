@@ -141,6 +141,14 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+" Terminal
+augroup neovim_terminal
+  " Disable line numbers for terminal buffers
+  autocmd TermOpen * setlocal nonumber norelativenumber
+  " Start in insert mode on opening terminal
+  autocmd TermOpen * startinsert
+augroup END
+
 " --- Keybinds ---
 let mapleader = ' '
 
