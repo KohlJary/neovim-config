@@ -1,7 +1,11 @@
 " --- Plugins ---
 
 " Load vim-plug plugins
-call plug#begin('~/.config/nvim/plugged')
+if (g:detected_os == 'WINDOWS')
+  call plug#begin('~/AppData/Local/nvim/plugged')
+elseif(g:detected_os == 'LINUX')
+  call plug#begin('~/.config/nvim/plugged')
+endif
 " Theming/Colors
 Plug 'lifepillar/vim-solarized8'
 Plug 'sheerun/vim-wombat-scheme'
@@ -56,7 +60,11 @@ let g:syntastic_check_on_wq = 0
 
 " CoC
 let g:coc_global_extensions = ['coc-omnisharp', 'coc-tsserver', 'coc-angular', 'coc-json']
-source $HOME/.config/nvim/config/coc-user-config.vim
+if (g:detected_os == 'WINDOWS')
+  source $HOME/AppData/Local/nvim/config/coc-user-config.vim
+elseif(g:detected_os == 'LINUX')
+  source ~/.config/nvim/config/coc-user-config.vim
+endif
 
 " Taglist
 nnoremap <C-t> :TlistOpen<CR>

@@ -48,12 +48,17 @@ nnoremap <C-b> :Bdelete menu<CR>
 " Prev/next buffer
 nnoremap <C-p> :bp<CR>
 nnoremap <C-n> :bn<CR>
+" Open current buffer in new tab
+nnoremap <C-y> :tabnew<CR>:edit # <CR>
 
 " Tab operations
+" New/close tabs
 nnoremap <A-t> :tabnew<CR>
 nnoremap <A-q> :tabclose<CR>
+" Previous/next tab
 nnoremap <A-p> :tabp<CR>
 nnoremap <A-n> :tabn<CR>
+" Move tabs
 nnoremap <A--> :-tabm<CR>
 nnoremap <A-=> :+tabm<CR>
 nnoremap <A-1> :tabr<CR>
@@ -77,11 +82,15 @@ nnoremap <F2> :set tabstop=2<CR>:set softtabstop=2<CR>:set shiftwidth=2<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
 " Edit vimrc
-nnoremap <F3> :e ~/.config/nvim/.vimrc<CR>
+if (g:detected_os == 'WINDOWS')
+  nnoremap <F3> :e $HOME/AppData/Local/nvim/.vimrc<CR>
+elseif (g:detected_os == 'LINUX')
+  nnoremap <F3> :e ~/.config/nvim/.vimrc<CR>
+endif
 " Tab width
 nnoremap <F4> :set tabstop=4<CR>:set softtabstop=4<CR>:set shiftwidth=4<CR>
 " Reload vimrc
-nnoremap <F5> :source $MYVIMRC<CR> :source ~/.config/nvim/.vimrc<CR>
+nnoremap <F5> :source $MYVIMRC<CR>
 " Semicolon shortcut
 inoremap <F5> <ESC>A;<ESC>
 " Open terminal
@@ -89,7 +98,7 @@ nnoremap <F8> :terminal<CR>
 " Open terminal split
 nnoremap <F9> :split<CR> :terminal<CR>
 " Plugin install
-nnoremap <F12> :source $MYVIMRC<CR> :source ~/.config/nvim/.vimrc<CR> :PlugInstall<CR>
+nnoremap <F12> :source $MYVIMRC<CR> :PlugInstall<CR>
 
 " Toggle relative numbering
 nnoremap <C-w>r :set rnu!<CR>
@@ -104,6 +113,7 @@ nnoremap <A-;> @:<CR>
 
 " Terminal bindings
 " Escape terminal
+tnoremap <ESC><ESC> <C-\><C-n>
 tnoremap <F12> <C-\><C-n>
 " Restart process
 tnoremap <F5> <C-c><Up><CR>
