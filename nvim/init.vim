@@ -33,7 +33,7 @@ if(vim.fn.has('win32') or vim.fn.has('win64') or vim.fn.has('win16'))
 then
   local omnisharp_bin = "C:/Users/kohlbern.jary/AppData/Local/omnisharp-vim/omnisharp-roslyn/OmniSharp.exe"
 else
-  local omnisharp_bin = "/user/lib/omnisharp-roslyn/OmniSharp"
+  local omnisharp_bin = "/usr/lib/omnisharp-roslyn/OmniSharp"
 end
 require'lspconfig'.omnisharp.setup{
     cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
