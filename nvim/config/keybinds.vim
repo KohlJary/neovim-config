@@ -78,18 +78,16 @@ vnoremap <A-o> zf
 nnoremap <F2> :Bdelete menu<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
-" Edit vimrc
-nnoremap <F3> :tabnew<CR>:e $VIMDIR/.vimrc<CR>
-" Detect filetype
-nnoremap <F4> :filetype detect<CR>
+" Save session
+nnoremap <F3> :SaveSession
+" Open session
+nnoremap <F4> :OpenSession<CR>
 " Reload vimrc
 nnoremap <F5> :source $MYVIMRC<CR>
 " Semicolon shortcut
 inoremap <F5> <ESC>A;<ESC>
-" Save session
-nnoremap <F6> :SaveSession
-" Open session
-nnoremap <F7> :OpenSession<CR>
+" Detect filetype
+nnoremap <F10> :filetype detect<CR>
 " Plugin install
 nnoremap <F12> :PlugInstall<CR>
 
