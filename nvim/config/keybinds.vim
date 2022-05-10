@@ -86,6 +86,8 @@ nnoremap <F4> :OpenSession<CR>
 nnoremap <F5> :source $MYVIMRC<CR>
 " Semicolon shortcut
 inoremap <F5> <ESC>A;<ESC>
+" Reload CoC
+nnoremap <F6> :CocRestart<CR>
 " Detect filetype
 nnoremap <F10> :filetype detect<CR>
 " Plugin install
