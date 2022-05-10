@@ -18,7 +18,7 @@ endif
 let &packpath = &runtimepath
 
 " Load config
-if (g:detected_os =~# 'WINDOWS')
+if (g:detected_os == 'WINDOWS')
   source $HOME/AppData/Local/nvim/plug.vim
   source $HOME/AppData/Local/nvim/.vimrc
 elseif (g:detected_os == 'LINUX')
@@ -28,14 +28,15 @@ endif
 
 " LSP setup
 lua << EOF
+local is_linux = vim.loop.os_uname().sysname == "Linux"
 local pid = vim.fn.getpid()
-if(vim.fn.has('win32') or vim.fn.has('win64') or vim.fn.has('win16'))
+local omnisharp_bin = "C:/Users/kohlbern.jary/AppData/Local/omnisharp-vim/omnisharp-roslyn/OmniSharp.exe"
+if(is_linux)
 then
-  local omnisharp_bin = "C:/Users/kohlbern.jary/AppData/Local/omnisharp-vim/omnisharp-roslyn/OmniSharp.exe"
-else
-  local omnisharp_bin = "/usr/lib/omnisharp-roslyn/OmniSharp"
+  omnisharp_bin = "/usr/lib/omnisharp-roslyn/OmniSharp"
 end
 require'lspconfig'.omnisharp.setup{
-    cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
+  cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
 }
+require'lspconfig'.angularls.setup{}
 EOF
