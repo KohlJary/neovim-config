@@ -17,7 +17,7 @@ if (g:detected_os == 'WINDOWS')
 elseif (g:detected_os == 'LINUX')
   let $VIMDIR = $HOME.'/.config/nvim'
   let $OMNIBIN = '/usr/lib/omnisharp-roslyn/OmniSharp'
-  let $NPMDIR = $HOME.''
+  let $NPMDIR = '/usr/lib'
 endif
 set runtimepath^=$VIMDIR runtimepath+=$VIMDIR/after
 let &packpath = &runtimepath
