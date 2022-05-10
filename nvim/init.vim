@@ -52,4 +52,8 @@ end
 -- Telescope setup
 require('nvim-treesitter').setup{}
 require('telescope').setup{}
+-- Toggleterm setup
+require('toggleterm').setup{
+  open_mapping = [[`]]
+}
 EOF
