@@ -11,12 +11,11 @@ let g:detected_os = DetectEnv()
 " Runtime path setup
 set runtimepath=$VIMRUNTIME
 if (g:detected_os == 'WINDOWS')
-  set runtimepath^=$HOME/AppData/Local/nvim runtimepath+=$HOME/AppData/Local/nvim/after
   let $VIMDIR = $HOME.'/AppData/Local/nvim'
 elseif (g:detected_os == 'LINUX')
-  set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/after
   let $VIMDIR = $HOME.'/.config/nvim'
 endif
+set runtimepath^=$VIMDIR runtimepath+=$VIMDIR/after
 let &packpath = &runtimepath
 
 " Load config
