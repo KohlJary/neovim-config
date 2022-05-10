@@ -13,6 +13,7 @@ nnoremap <leader>oss :OmniSharpStatus<CR>
 au VimEnter * NERDTree
 let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants','\.asmdef$']
 let g:NERDTreeWinPos='right'
+let g:NERDTreeHighlightCursorLine=1
 nnoremap <C-a> :NERDTreeToggle<CR>:normal =<CR>
 nnoremap <CR> :NERDTreeFocus<CR>
 nnoremap <A-m> :NERDTreeMirror<CR>

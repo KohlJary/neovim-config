@@ -24,6 +24,9 @@ Plug 'kshenoy/vim-signature'
 Plug 'Valloric/ListToggle'
 " File management
 Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}
+Plug 'nvim-telescope/telescope.nvim'
 " Text Manipulation
 Plug 'townk/vim-autoclose'
 Plug 'unblevable/quick-scope'
@@ -106,3 +109,9 @@ augroup AirlineCustom
   autocmd VimEnter * call AirlineInit()
 augroup END
 " End Airline
+
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>"

@@ -35,7 +35,7 @@ set statusline+=%#PmenuSel#
 set statusline+=%{%SyntasticStatuslineFlag()%}%#airline_tabmod_unsel#%m%*
 set statusline+=%=
 set statusline+=%0*\ %{get(b:,'coc_current_function','')}\ \|\ %t
-set laststatus=3
+set laststatus=2
 
 " Terminal
 augroup neovim_terminal
@@ -70,4 +70,3 @@ colorscheme srcery
 if has('nvim') || has('termguicolors')
 set termguicolors
 endif
-hi clear CursorLine

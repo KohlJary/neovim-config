@@ -26,10 +26,10 @@ elseif (g:detected_os == 'LINUX')
   source ~/.config/nvim/.vimrc
 endif
 
-" LSP setup
 lua << EOF
 local is_linux = vim.loop.os_uname().sysname == "Linux"
 local pid = vim.fn.getpid()
+-- LSP setup
 local omnisharp_bin = "C:/Users/kohlbern.jary/AppData/Local/omnisharp-vim/omnisharp-roslyn/OmniSharp.exe"
 if(is_linux)
 then
@@ -39,4 +39,7 @@ require'lspconfig'.omnisharp.setup{
   cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
 }
 require'lspconfig'.angularls.setup{}
+-- Telescope setup
+require('nvim-treesitter').setup{}
+require('telescope').setup{}
 EOF
