@@ -61,6 +61,14 @@ if has('nvim') || has('termguicolors')
   set termguicolors
 endif
 
+" View commands
+set viewdir=$VIMDIR/views
+augroup ViewCommands
+  autocmd!
+  autocmd BufWinLeave *.* mkview!
+  autocmd BufWinEnter *.* silent! loadview
+augroup END
+
 " Filetype detection
 augroup FileTypeDetection
   autocmd!
