@@ -7,6 +7,7 @@ set history=1000
 set ruler
 set cursorline
 set number
+set signcolumn=yes
 set showcmd
 set foldmethod=manual
 set cmdheight=3
@@ -68,5 +69,15 @@ endif
 set background=dark
 colorscheme srcery
 if has('nvim') || has('termguicolors')
-set termguicolors
+  set termguicolors
 endif
+
+" Filetype detection
+augroup FileTypeDetection
+  autocmd!
+  " Ensure filetype detection on opening buffer
+  autocmd BufReadPre * filetype detect 
+  " Tabwidth by filetype
+  autocmd FileType csharp setlocal ts=4 sts=4 sw=4
+augroup END
+

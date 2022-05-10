@@ -55,11 +55,6 @@ nnoremap <C-p> :bp<CR>
 nnoremap <C-n> :bn<CR>
 " Open current buffer in new tab
 nnoremap <C-y> :tabnew<CR>:edit # <CR>
-" Ensure filetype detection on opening buffer
-augroup FileTypeDetection
-  autocmd!
-  autocmd BufReadPre * filetype detect 
-augroup END
 
 " Tab operations
 " New/close tabs
