@@ -13,9 +13,11 @@ set runtimepath=$VIMRUNTIME
 if (g:detected_os == 'WINDOWS')
   let $VIMDIR = $HOME.'/AppData/Local/nvim'
   let $OMNIBIN = $HOME.'/AppData/Local/omnisharp-vim/omnisharp-roslyn/OmniSharp.exe'
+  let $NPMDIR = $HOME.'/AppData/Roaming/npm/node_modules'
 elseif (g:detected_os == 'LINUX')
   let $VIMDIR = $HOME.'/.config/nvim'
   let $OMNIBIN = '/usr/lib/omnisharp-roslyn/OmniSharp'
+  let $NPMDIR = $HOME.''
 endif
 set runtimepath^=$VIMDIR runtimepath+=$VIMDIR/after
 let &packpath = &runtimepath
@@ -29,9 +31,8 @@ local is_linux = vim.loop.os_uname().sysname == "Linux"
 local is_win = vim.loop.os_uname().sysname == "Windows_NT"
 local pid = vim.fn.getpid()
 -- LSP setup
-local ng_lib_path = vim.env.HOME .. "/AppData/Roaming/npm/node_modules/"
-local ng_cmd_path = vim.env.HOME .. "/AppData/Roaming/npm/node_modules/@angular/language-server"
-local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", ng_lib_path, "--ngProbeLocations", ng_lib_path }
+local ng_cmd_path = vim.env.NPMDIR .. "/@angular/language-server"
+local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
 require'lspconfig'.omnisharp.setup{
   cmd = { vim.env.OMNIBIN, "--languageserver" , "--hostPID", tostring(pid) };
 }
