@@ -25,6 +25,7 @@ Plug 'Valloric/ListToggle'
 " File management
 Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do':'make'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
 " Text Manipulation
@@ -62,16 +63,20 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " CoC
-let g:coc_global_extensions = ['coc-omnisharp', 'coc-tsserver', 'coc-angular', 'coc-json']
+let g:coc_global_extensions = ['coc-omnisharp', 'coc-tsserver', 'coc-angular', 'coc-json', 'coc-sql']
 if (g:detected_os == 'WINDOWS')
   source $HOME/AppData/Local/nvim/config/coc-user-config.vim
 elseif(g:detected_os == 'LINUX')
   source ~/.config/nvim/config/coc-user-config.vim
 endif
 
+" NERDTree
+au VimEnter * NERDTree
+let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants','\.asmdef$']
+let g:NERDTreeWinPos='right'
+let g:NERDTreeHighlightCursorLine=1
+
 " Taglist
-nnoremap <C-t> :TlistOpen<CR>
-nnoremap <C-s> :TlistToggle<CR>
 let g:Tlist_Show_One_File=1
 command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*');
 let g:gutentags_generate_on_new=1
@@ -109,9 +114,3 @@ augroup AirlineCustom
   autocmd VimEnter * call AirlineInit()
 augroup END
 " End Airline
-
-" Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>"
