@@ -40,6 +40,8 @@ set laststatus=2
 
 " Terminal
 augroup neovim_terminal
+  " Set filetype for terminal buffers for detection
+  autocmd TermOpen * silent! set filetype=terminal
   " Disable line numbers for terminal buffers
   autocmd TermOpen * setlocal nonumber norelativenumber
   " Start in insert mode on opening terminal
