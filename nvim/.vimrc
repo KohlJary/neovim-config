@@ -47,23 +47,12 @@ augroup neovim_terminal
 augroup END
 
 " --- Source Files ---
-" Windows
-if (g:detected_os == 'WINDOWS')
-  " Plugins
-  source $HOME/AppData/Local/nvim/config/plugins.vim
-  " Keybinds
-  source $HOME/AppData/Local/nvim/config/keybinds.vim
-  " Commands
-  source $HOME/AppData/Local/nvim/config/commands.vim
-" Linux
-elseif(g:detected_os == 'LINUX')
-  " Plugins
-  source ~/.config/nvim/config/plugins.vim
-  " Keybinds
-  source ~/.config/nvim/config/keybinds.vim
-  " Commands
-  source ~/.config/nvim/config/commands.vim
-endif
+" Plugins
+source $VIMDIR/config/plugins.vim
+" Keybinds
+source $VIMDIR/config/keybinds.vim
+" Commands
+source $VIMDIR/config/commands.vim
 
 " Colors
 set background=dark
