@@ -78,6 +78,6 @@ augroup FileTypeDetection
   " Ensure filetype detection on opening buffer
   autocmd BufReadPre * filetype detect 
   " Tabwidth by filetype
-  autocmd FileType csharp setlocal ts=4 sts=4 sw=4
+  autocmd FileType cs setlocal ts=4 sts=4 sw=4
 augroup END
 
