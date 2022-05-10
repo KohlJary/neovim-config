@@ -72,9 +72,6 @@ nnoremap <A-9> :tabl<CR>
 " Fold operations
 nnoremap <A-o> za
 vnoremap <A-o> zf
-set viewdir=~/.vim/views
-autocmd BufWinLeave *.* mkview!
-autocmd BufWinEnter *.* silent loadview
 
 " Function keys
 " Buffer delete menu
