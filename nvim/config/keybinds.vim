@@ -79,11 +79,7 @@ nnoremap <F2> :Bdelete menu<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
 " Edit vimrc
-if (g:detected_os == 'WINDOWS')
-  nnoremap <F3> :tabnew<CR>:e $HOME/AppData/Local/nvim/.vimrc<CR>
-elseif (g:detected_os == 'LINUX')
-  nnoremap <F3> :tabnew<CR>:e ~/.config/nvim/.vimrc<CR>
-endif
+nnoremap <F3> :tabnew<CR>:e $VIMDIR/.vimrc<CR>
 " Detect filetype
 nnoremap <F4> :filetype detect<CR>
 " Reload vimrc
