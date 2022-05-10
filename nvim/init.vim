@@ -54,6 +54,7 @@ require('nvim-treesitter').setup{}
 require('telescope').setup{}
 -- Toggleterm setup
 require('toggleterm').setup{
-  open_mapping = [[`]]
+  open_mapping = [[<A-`>]],
+  direction = horizontal
 }
 EOF

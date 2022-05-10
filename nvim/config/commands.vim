@@ -12,3 +12,6 @@ command EditInit :tabnew|e $VIMDIR/init.vim
 command EditKeys :tabnew|e $VIMDIR/config/keybinds.vim
 command EditPlugs :tabnew|e $VIMDIR/config/plugins.vim
 command EditCmds :tabnew|e $VIMDIR/config/commands.vim
+
+" Toggleterm commands
+command Gitui :10ToggleTerm cmd="gitui" dir=git_dir direction=float
