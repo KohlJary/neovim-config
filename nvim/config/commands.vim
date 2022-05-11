@@ -14,8 +14,8 @@ command EditPlugs :tabnew|e $VIMDIR/config/plugins.vim
 command EditCmds :tabnew|e $VIMDIR/config/commands.vim
 
 " vim-fugitive shortcuts
-command -nargs=1 Gc :G commit \-m <args><CR>
-command -nargs=1 Gcp :Gc <args><CR>
+command Gc :G commit<CR>
+command Gp :G push<CR>
 
 " Toggleterm commands
 command Gitui :10ToggleTerm cmd="gitui" dir=git_dir direction=float
