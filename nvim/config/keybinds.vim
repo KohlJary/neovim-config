@@ -133,6 +133,8 @@ nnoremap p[ vi[p
 nnoremap p{ vi{p
 nnoremap p( vi(p
 nnoremap p< vi<p
+" Quick paste
+nnoremap pp p
 
 " Quick cursor movement/deletion in insert mode
 inoremap <C-h> <backspace>

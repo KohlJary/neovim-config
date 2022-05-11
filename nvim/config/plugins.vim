@@ -11,6 +11,8 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 " Buffers
 Plug 'Asheq/close-buffers.vim'
+" Terminal
+Plug 'akinsho/toggleterm.nvim'
 " UI
 Plug 'scrooloose/nerdtree'
 Plug 'preservim/tagbar'
