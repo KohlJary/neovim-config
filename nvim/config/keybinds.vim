@@ -92,6 +92,8 @@ nnoremap <F6> :CocRestart<CR>
 nnoremap <F10> :filetype detect<CR>
 " Plugin install
 nnoremap <F12> :PlugInstall<CR>
+" F13 test
+nnoremap <F13> :echo "F13 works!"<CR>
 
 " Toggle relative numbering
 nnoremap <C-w>r :set rnu!<CR>
@@ -122,6 +124,15 @@ xnoremap ' xi''<ESC>P
 xnoremap ( xi()<ESC>P
 xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
+
+" Paste in region
+nnoremap pw viwp
+nnoremap p' vi'p
+nnoremap p" vi"p
+nnoremap p[ vi[p
+nnoremap p{ vi{p
+nnoremap p( vi(p
+nnoremap p< vi<p
 
 " Quick cursor movement/deletion in insert mode
 inoremap <C-h> <backspace>
