@@ -103,7 +103,7 @@ function! AirlineInit()
   let g:airline#extensions#syntastic#stl_format_warn='%W{[?]%fw|%w}'
   let g:airline#extensions#syntastic#stl_format_err='%E{[!]%fe|%e}'
   "Layout
-  let g:airline_section_c = airline#section#create_left(['%t','readonly','coc_current_function'])
+  let g:airline_section_c = airline#section#create_left(["Tab: %{tabpagenr()}/%{tabpagenr('$')}",'%t','readonly','coc_current_function'])
   let g:airline_section_gutter = airline#section#create(['%='])
   let g:airline_section_x = airline#section#create_right(['omnisharp'])
   let g:airline_section_error = airline#section#create(['syntastic-err'])
