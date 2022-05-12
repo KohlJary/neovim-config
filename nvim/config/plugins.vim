@@ -87,7 +87,9 @@ let g:gutentags_ctags_extra_args=['--tag-relative=yes','--fields=+ailmnS']
 " Weird bug
 call airline#extensions#tabline#buffers#invalidate()
 let g:airline_statusline_ontop=1
-let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#coc#enabled=1
+let g:airline#extensions#coc#show_coc_status=1
+let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#formatter='unique_tail'
 let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline_powerline_fonts=1
@@ -103,9 +105,10 @@ function! AirlineInit()
   let g:airline#extensions#syntastic#stl_format_warn='%W{[?]%fw|%w}'
   let g:airline#extensions#syntastic#stl_format_err='%E{[!]%fe|%e}'
   "Layout
-  let g:airline_section_c = airline#section#create_left(["Tab: %{tabpagenr()}/%{tabpagenr('$')}",'%t','readonly','coc_current_function'])
+  let g:airline_section_b = airline#section#create_left(['hunks', 'branch',])
+  let g:airline_section_c = airline#section#create_left(["Tab: %{tabpagenr()}/%{tabpagenr('$')}",'coc_current_function'])
   let g:airline_section_gutter = airline#section#create(['%='])
-  let g:airline_section_x = airline#section#create_right(['omnisharp'])
+  let g:airline_section_x = airline#section#create_right(['coc_current_function',' | ','omnisharp'])
   let g:airline_section_error = airline#section#create(['syntastic-err'])
   let g:airline_section_warning = airline#section#create(['syntastic-warn'])
 endfunction
