@@ -14,8 +14,8 @@ command EditPlugs :tabnew|e $VIMDIR/config/plugins.vim
 command EditCmds :tabnew|e $VIMDIR/config/commands.vim
 
 " vim-fugitive shortcuts
-command Gc :G commit<CR>
-command Gp :G push<CR>
+command Gc :G commit
+command Gp :G push
 
 " Toggleterm commands
 command Gitui :lua _gitui_toggle()
