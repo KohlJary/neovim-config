@@ -73,6 +73,7 @@ let g:NERDTreeHighlightCursorLine=1
 " Taglist
 let g:Tlist_Show_One_File=1
 command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*');
+let g:gutentags_define_advanced_commands=1
 let g:gutentags_generate_on_new=1
 let g:gutentags_generate_on_missing=1
 let g:gutentags_generate_on_write=1
