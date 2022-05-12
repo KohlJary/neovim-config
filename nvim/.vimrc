@@ -80,3 +80,10 @@ augroup FileTypeDetection
   autocmd FileType cs setlocal ts=4 sts=4 sw=4
 augroup END
 
+" --- OS Specific Tweaks
+if (g:detected_os == 'WINDOWS')
+  " Use Windows Terminal BG Transparency
+  let g:srcery_bg_passthrough=1
+  " Use Powershell for terminal buffers
+  set shell=powershell.exe
+endif
