@@ -57,4 +57,5 @@ require('toggleterm').setup{
   open_mapping = [[<A-`>]],
   direction = horizontal
 }
+require('toggletermcmd')
 EOF

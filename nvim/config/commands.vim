@@ -18,4 +18,5 @@ command Gc :G commit<CR>
 command Gp :G push<CR>
 
 " Toggleterm commands
-command Gitui :10ToggleTerm cmd="gitui" dir=git_dir direction=float
+command Gitui :lua _gitui_toggle()
+command Twui :lua _twui_toggle()

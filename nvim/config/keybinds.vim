@@ -99,26 +99,31 @@ tnoremap <F13> <C-\><C-n>:Gitui<CR>
 nnoremap <F13> :Gitui<CR>
 tnoremap <S-F1> <C-\><C-n>:Gitui<CR>
 nnoremap <S-F1> :Gitui<CR>
+" Taskwarrior tui
+tnoremap <F14> <C-\><C-n>:Twui<CR>
+nnoremap <F14> :Twui<CR>
+tnoremap <S-F2> <C-\><C-n>:Twui<CR>
+nnoremap <S-F2> :Twui<CR>
 " Find files in cwd
-tnoremap <F14> <C-\><C-n>:Telescope<CR>
-nnoremap <F14> :Telescope find_files<CR>
-tnoremap <S-F2> <C-\><C-n>:Telescope<CR>
-nnoremap <S-F2> :Telescope find_files<CR>
-" Search for string under cursor in cwd
 tnoremap <F15> <C-\><C-n>:Telescope<CR>
-nnoremap <F15> :Telescope grep_string<CR>
+nnoremap <F15> :Telescope find_files<CR>
 tnoremap <S-F3> <C-\><C-n>:Telescope<CR>
-nnoremap <S-F3> :Telescope grep_string<CR>
-" Search buffers
+nnoremap <S-F3> :Telescope find_files<CR>
+" Search for string under cursor in cwd
 tnoremap <F16> <C-\><C-n>:Telescope<CR>
-nnoremap <F16> :Telescope buffers<CR>
+nnoremap <F16> :Telescope grep_string<CR>
 tnoremap <S-F4> <C-\><C-n>:Telescope<CR>
-nnoremap <S-F4> :Telescope buffers<CR>
-" Search help tags
+nnoremap <S-F4> :Telescope grep_string<CR>
+" Search buffers
 tnoremap <F17> <C-\><C-n>:Telescope<CR>
-nnoremap <F17> :Telescope help_tags<CR>
+nnoremap <F17> :Telescope buffers<CR>
 tnoremap <S-F5> <C-\><C-n>:Telescope<CR>
-nnoremap <S-F5> :Telescope help_tags<CR>
+nnoremap <S-F5> :Telescope buffers<CR>
+" Search help tags
+tnoremap <F18> <C-\><C-n>:Telescope<CR>
+nnoremap <F18> :Telescope help_tags<CR>
+tnoremap <S-F6> <C-\><C-n>:Telescope<CR>
+nnoremap <S-F6> :Telescope help_tags<CR>
 
 " Toggle relative numbering
 nnoremap <C-w>r :set rnu!<CR>
