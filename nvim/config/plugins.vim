@@ -70,7 +70,7 @@ let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants'
 let g:NERDTreeWinPos='right'
 let g:NERDTreeHighlightCursorLine=1
 augroup NERDTree
-  autocmd FileType nerdtree setlocal cursorline
+  autocmd FileType nerdtree setlocal cursorline signcolumn=no
 augroup END
 
 " Taglist
