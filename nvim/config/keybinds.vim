@@ -163,6 +163,8 @@ nnoremap p[ vi[p
 nnoremap p{ vi{p
 nnoremap p( vi(p
 nnoremap p< vi<p
+" Paste line
+nnoremap pl Vp
 " Quick paste
 nnoremap pp p
 
