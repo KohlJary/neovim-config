@@ -69,10 +69,13 @@ au VimEnter * NERDTree
 let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants','\.asmdef$']
 let g:NERDTreeWinPos='right'
 let g:NERDTreeHighlightCursorLine=1
+augroup NERDTree
+  autocmd FileType nerdtree setlocal cursorline
+augroup END
 
 " Taglist
 let g:Tlist_Show_One_File=1
-command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*');
+command GutentagsClearCache :call system('rm ' . g:gutentags_cache_dir . '/*')
 let g:gutentags_define_advanced_commands=1
 let g:gutentags_generate_on_new=1
 let g:gutentags_generate_on_missing=1
@@ -81,12 +84,14 @@ let g:gutentags_generate_on_empty_buffer=0
 let g:gutentags_ctags_extra_args=['--tag-relative=yes','--fields=+ailmnS']
 
 " Airline
-let g:airline_statusline_ontop=0
+" Weird bug
+call airline#extensions#tabline#buffers#invalidate()
+let g:airline_statusline_ontop=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline_powerline_fonts=1
-let g:airline_theme='wombat'
+let g:airline_theme='srcery'
 let g:airline_solarized_bg='dark'
 function! AirlineInit()
   let g:airline_symbols.linenr=' ☰ '
@@ -104,8 +109,12 @@ function! AirlineInit()
   let g:airline_section_error = airline#section#create(['syntastic-err'])
   let g:airline_section_warning = airline#section#create(['syntastic-warn'])
 endfunction
+function! s:update_highlights()
+  hi CursorLine ctermfg=Yellow guifg=Yellow
+endfunction
 augroup AirlineCustom
   autocmd!
   autocmd VimEnter * call AirlineInit()
+  autocmd User AirlineAfterTheme call s:update_highlights()
 augroup END
 " End Airline

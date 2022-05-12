@@ -5,12 +5,12 @@ set backspace=indent,eol,start
 set clipboard+=unnamedplus
 set history=1000
 set ruler
-set cursorline
+set nocursorline
 set number
 set signcolumn=yes
 set showcmd
 set foldmethod=manual
-set cmdheight=3
+set cmdheight=2
 set scrolloff=3
 set incsearch
 set hlsearch
@@ -34,6 +34,8 @@ set showtabline=2
 set statusline=
 set statusline+=%#PmenuSel#
 set statusline+=%{%SyntasticStatuslineFlag()%}%#airline_tabmod_unsel#%m%*
+set statusline+=\ %l:%c
+set statusline+=\ %p%%
 set statusline+=%=
 set statusline+=%0*\ %{get(b:,'coc_current_function','')}\ \|\ %t
 set laststatus=2
@@ -51,10 +53,10 @@ augroup END
 " --- Source Files ---
 " Plugins
 source $VIMDIR/config/plugins.vim
-" Keybinds
-source $VIMDIR/config/keybinds.vim
 " Commands
 source $VIMDIR/config/commands.vim
+" Keybinds
+source $VIMDIR/config/keybinds.vim
 
 " Colors
 set background=dark
@@ -62,6 +64,9 @@ colorscheme srcery
 if has('nvim') || has('termguicolors')
   set termguicolors
 endif
+let g:srcery_bg_passthrough=0
+hi CursorLine ctermfg=Yellow guifg=Yellow
+" hi Cursor ctermbg=Magenta ctermfg=Cyan guibg=Magenta guifg=Cyan
 
 " View commands
 set viewdir=$VIMDIR/views
@@ -87,3 +92,7 @@ if (g:detected_os == 'WINDOWS')
   " Use Powershell for terminal buffers
   set shell=powershell.exe
 endif
+
+" Reload the colorscheme
+color srcery
+hi CursorLine ctermfg=Yellow guifg=Yellow

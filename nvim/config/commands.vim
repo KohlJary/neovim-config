@@ -20,3 +20,17 @@ command Gp :G push
 " Toggleterm commands
 command Gitui :lua _gitui_toggle()
 command Twui :lua _twui_toggle()
+
+" UI Togglers
+command SrceryBGToggle :call SrceryBGToggleFunc()
+
+" --- Custom Functions ---
+" Toggle BG transparency
+function! SrceryBGToggleFunc()
+  if g:srcery_bg_passthrough
+    let g:srcery_bg_passthrough = 0
+  else
+    let g:srcery_bg_passthrough = 1
+  endif
+  colorscheme srcery
+endfunction

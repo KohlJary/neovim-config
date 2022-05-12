@@ -20,6 +20,9 @@ nnoremap <A-}> :let Tlist_Use_Right_Window=0<CR>:let g:NERDTreeWinPos="right"<CR
 nnoremap <C-t> :TlistOpen<CR>
 nnoremap <C-s> :TlistToggle<CR>
 
+" Coc
+nnoremap <C-e> :CocOutline<CR>
+
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -89,9 +92,11 @@ inoremap <F5> <ESC>A;<ESC>
 " Reload CoC
 nnoremap <F6> :CocRestart<CR>
 " Lsp Info
-nnoremap <F7> :LspInfo<CR>
-" Detect filetype
-nnoremap <F10> :filetype detect<CR>
+nnoremap <silent> <F7> :LspInfo<CR>
+" Toggle bg passthrough
+nnoremap <silent> <F8> :SrceryBGToggle<CR>
+" Toggle cursorline for buffer
+nnoremap <silent> <F9> :setlocal cursorline!<CR>
 " Plugin install
 nnoremap <F12> :PlugInstall<CR>
 " Gitui
