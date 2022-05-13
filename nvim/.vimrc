@@ -29,17 +29,6 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-" Status Line
-set showtabline=2
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%{%SyntasticStatuslineFlag()%}%#airline_tabmod_unsel#%m%*
-set statusline+=\ %l:%c
-set statusline+=\ %p%%
-set statusline+=%=
-set statusline+=%0*\ %{get(b:,'coc_current_function','')}\ \|\ %t
-set laststatus=2
-
 " Terminal
 augroup neovim_terminal
   " Set filetype for terminal buffers for detection
@@ -57,6 +46,17 @@ source $VIMDIR/config/plugins.vim
 source $VIMDIR/config/commands.vim
 " Keybinds
 source $VIMDIR/config/keybinds.vim
+
+" Status Line
+set showtabline=2
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{%SyntasticStatuslineFlag()%}%#airline_tabmod_unsel#%m%*
+set statusline+=\ %l:%c
+set statusline+=\ %p%%
+set statusline+=%=
+set statusline+=%0*\ %{get(b:,'vista_nearest_method_or_function','')}\ \|\ %t
+set laststatus=2
 
 " Colors
 set background=dark

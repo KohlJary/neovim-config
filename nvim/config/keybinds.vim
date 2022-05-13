@@ -16,12 +16,9 @@ nnoremap <A-m> :NERDTreeMirror<CR>
 nnoremap <A-{> :let Tlist_Use_Right_Window=1<CR>:let g:NERDTreeWinPos="left"<CR>:NERDTree<CR>:TlistClose<CR>:TlistOpen<CR>
 nnoremap <A-}> :let Tlist_Use_Right_Window=0<CR>:let g:NERDTreeWinPos="right"<CR>:NERDTree<CR>:TlistClose<CR>:TlistOpen<CR>
 
-" Taglist
-nnoremap <C-t> :TlistOpen<CR>
-nnoremap <C-s> :TlistToggle<CR>
-
-" Coc
-nnoremap <C-e> :CocOutline<CR>
+" Vista
+nnoremap <silent> <C-t> :Vista<CR>
+nnoremap <silent> <C-s> :Vista!!<CR>
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>

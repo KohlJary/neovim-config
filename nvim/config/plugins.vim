@@ -15,6 +15,7 @@ Plug 'Asheq/close-buffers.vim'
 Plug 'akinsho/toggleterm.nvim'
 " UI
 Plug 'scrooloose/nerdtree'
+Plug 'liuchengxu/vista.vim'
 Plug 'preservim/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -64,6 +65,16 @@ let g:syntastic_check_on_wq = 0
 let g:coc_global_extensions = ['coc-omnisharp', 'coc-tsserver', 'coc-angular', 'coc-json', 'coc-sql']
 source $VIMDIR/config/coc-user-config.vim
 
+" Vista
+let g:vista_default_executive = 'coc'
+let g:vista_sidebar_position="vertical topleft"
+function! VistaNearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+augroup VistaAutocommands
+  autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+augroup END
+
 " NERDTree
 au VimEnter * NERDTree
 let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants','\.asmdef$']
@@ -72,6 +83,17 @@ let g:NERDTreeHighlightCursorLine=1
 augroup NERDTree
   autocmd FileType nerdtree setlocal cursorline signcolumn=no
 augroup END
+
+" Toggle UI positioning
+function! ToggleUIPositioning()
+  if(g:NERDTreeWinPos=="left")
+    let g:NERDTreeWinPos="right"
+    let g:vista_sidebar_position="vertical topleft"
+  else
+    let g:NERDTreeWinPos="left"
+    let g:vista_sidebar_position="vertical botright"
+  endif
+endfunction
 
 " Taglist
 let g:Tlist_Show_One_File=1
@@ -106,9 +128,9 @@ function! AirlineInit()
   let g:airline#extensions#syntastic#stl_format_err='%E{[!]%fe|%e}'
   "Layout
   let g:airline_section_b = airline#section#create_left(['hunks', 'branch',])
-  let g:airline_section_c = airline#section#create_left(["Tab: %{tabpagenr()}/%{tabpagenr('$')}",'coc_current_function'])
+  let g:airline_section_c = airline#section#create_left(["Tab: %{tabpagenr()}/%{tabpagenr('$')}"])
   let g:airline_section_gutter = airline#section#create(['%='])
-  let g:airline_section_x = airline#section#create_right(['coc_current_function',' | ','omnisharp'])
+  let g:airline_section_x = airline#section#create_right(['%{VistaNearestMethodOrFunction()}','','omnisharp'])
   let g:airline_section_error = airline#section#create(['syntastic-err'])
   let g:airline_section_warning = airline#section#create(['syntastic-warn'])
 endfunction
