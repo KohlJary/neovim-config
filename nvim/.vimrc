@@ -96,3 +96,4 @@ endif
 " Reload the colorscheme
 color srcery
 hi CursorLine ctermfg=Yellow guifg=Yellow
+hi StatusLine ctermfg=Yellow guifg=Yellow
