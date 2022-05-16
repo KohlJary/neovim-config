@@ -15,6 +15,7 @@ command EditCmds :tabnew|e $VIMDIR/config/commands.vim
 
 " vim-fugitive shortcuts
 command Gc :G commit
+command -nargs=1 Gcm :G commit -m <args>
 command Gp :G push
 
 " Toggleterm commands
