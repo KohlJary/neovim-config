@@ -1,4 +1,3 @@
-" --- Keybinds ---
 let mapleader = ' '
 
 " Omnisharp mappings
@@ -154,7 +153,7 @@ xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
 
 " Yank all file text
-nnoremap ya ggVGy<C-o>
+nnoremap ya jggVGy<C-o>k
 
 " Paste in region
 nnoremap pw viwp
