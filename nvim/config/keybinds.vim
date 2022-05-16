@@ -203,6 +203,9 @@ xnoremap <C-c> :Commentary<CR>
 " Swap lines
 nnoremap <A-k> <Up>ddp<Up>
 nnoremap <A-j> ddp
+" Swap character
+nnoremap <A-h> hdlph
+nnoremap <A-l> dlp
 " Remap substitute command
 nnoremap R s
 " Swap case
