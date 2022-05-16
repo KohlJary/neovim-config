@@ -178,7 +178,7 @@ nnoremap p{ vi{p
 nnoremap p( vi(p
 nnoremap p< vi<p
 " Paste overwriting all
-nnoremap pa jggVGp<C-o>k
+nnoremap pa ggVGp<C-o>
 " Paste overwriting line
 nnoremap pl Vp
 " Quick paste
