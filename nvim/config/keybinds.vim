@@ -157,6 +157,9 @@ xnoremap ( xi()<ESC>P
 xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
 
+" Yank all file text
+nnoremap ya ggVGy<C-o>
+
 " Paste in region
 nnoremap pw viwp
 nnoremap p' vi'p
