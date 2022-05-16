@@ -104,12 +104,16 @@ nnoremap <silent> <F9> :setlocal cursorline!<CR>
 nnoremap <F12> :PlugInstall<CR>
 " Git write shortcut
 nnoremap <S-F1> :Gw<CR>
+nnoremap <F25> :Gw<CR>
 " Commit shortcut
 nnoremap <S-F2> :Gcm ""<Left>
+nnoremap <F26> :Gcm ""<Left>
 " Pull shortcut
 nnoremap <S-F3> :G pull<CR>
+nnoremap <F27> :G pull<CR>
 " Push shortcut
 nnoremap <S-F4> :Gp<CR>
+nnoremap <F28> :Gp<CR>
 " Gitui
 tnoremap <F13> <C-\><C-n>:Gitui<CR>
 nnoremap <F13> :Gitui<CR>
