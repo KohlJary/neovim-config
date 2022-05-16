@@ -117,6 +117,7 @@ let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline_powerline_fonts=1
 let g:airline_theme='srcery'
 let g:airline_solarized_bg='dark'
+let g:datetime = strftime("%I:%M:%S %p, %a %b %d, %Y")
 function! AirlineInit()
   let g:airline_symbols.linenr=' ☰ '
   let g:airline_symbols.maxlinenr=''
@@ -129,10 +130,15 @@ function! AirlineInit()
   "Layout
   let g:airline_section_b = airline#section#create_left(['hunks', 'branch',])
   let g:airline_section_c = airline#section#create_left(["Tab: %{tabpagenr()}/%{tabpagenr('$')}"])
-  let g:airline_section_gutter = airline#section#create(['%='])
+  let g:airline_section_gutter = airline#section#create(['%=','%{g:datetime}','%='])
   let g:airline_section_x = airline#section#create_right(['%{VistaNearestMethodOrFunction()}','','omnisharp'])
   let g:airline_section_error = airline#section#create(['syntastic-err'])
   let g:airline_section_warning = airline#section#create(['syntastic-warn'])
+endfunction
+" Datetime timer
+let datetime_timer = timer_start(60000, 'UpdateDatetime',{'repeat': -1})
+function! UpdateDatetime(timer)
+  let g:datetime = strftime("%I:%M %p, %a %b %d, %Y")
 endfunction
 function! s:update_highlights()
   hi CursorLine ctermfg=Yellow guifg=Yellow
