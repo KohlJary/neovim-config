@@ -153,6 +153,9 @@ nnoremap <leader>ts :split<CR> :terminal<CR>
 nnoremap <leader>tv :vsplit<CR> :terminal<CR>
 " Escape terminal
 tnoremap <ESC><ESC> <C-\><C-n>
+" Close terminal buffer
+tnoremap <F28> <C-\><C-n> :bp\|bd! #<CR>:q<CR>
+tnoremap <C-F4> <C-\><C-n> :bp\|bd! #<CR>:q<CR>
 " Restart process
 tnoremap <F5> <C-c><Up><CR>
 
