@@ -103,7 +103,7 @@ nnoremap <S-F2> :Gcm ""<Left>
 " Pull shortcut
 nnoremap <S-F3> :G pull<CR>
 " Push shortcut
-nnoremap <S-F4> :Gp
+nnoremap <S-F4> :Gp<CR>
 " Gitui
 tnoremap <F13> <C-\><C-n>:Gitui<CR>
 nnoremap <F13> :Gitui<CR>
