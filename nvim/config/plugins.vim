@@ -117,7 +117,7 @@ let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline_powerline_fonts=1
 let g:airline_theme='srcery'
 let g:airline_solarized_bg='dark'
-let g:datetime = strftime("%I:%M:%S %p, %a %b %d, %Y")
+let g:datetime = strftime("%I:%M %p, %a %b %d, %Y")
 function! AirlineInit()
   let g:airline_symbols.linenr=' ☰ '
   let g:airline_symbols.maxlinenr=''
