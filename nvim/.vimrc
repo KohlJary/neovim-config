@@ -64,9 +64,6 @@ colorscheme srcery
 if has('nvim') || has('termguicolors')
   set termguicolors
 endif
-let g:srcery_bg_passthrough=0
-hi CursorLine ctermfg=Yellow guifg=Yellow
-" hi Cursor ctermbg=Magenta ctermfg=Cyan guibg=Magenta guifg=Cyan
 
 " View commands
 set viewdir=$VIMDIR/views
@@ -87,8 +84,6 @@ augroup END
 
 " --- OS Specific Tweaks
 if (g:detected_os == 'WINDOWS')
-  " Use Windows Terminal BG Transparency
-  let g:srcery_bg_passthrough=1
   " Use Powershell for terminal buffers
   set shell=powershell.exe
 endif

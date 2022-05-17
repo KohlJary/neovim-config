@@ -52,8 +52,6 @@ nnoremap <C-q> :bp\|bd! #<CR>
 " Prev/next buffer
 nnoremap <C-p> :bp<CR>
 nnoremap <C-n> :bn<CR>
-" Open current buffer in new tab
-nnoremap <C-y> :tabnew<CR>:edit # <CR>
 
 " Tab operations
 " New/close tabs
@@ -89,7 +87,8 @@ nnoremap <F3> :SaveSession
 " Open session
 nnoremap <F4> :OpenSession<CR>
 " Reload vimrc
-nnoremap <F5> :source $MYVIMRC<CR>
+nnoremap <M-F5> :source $MYVIMRC<CR>
+nnoremap <F53> :source $MYVIMRC<CR>
 " Semicolon shortcut
 inoremap <F5> <ESC>A;<ESC>
 " Reload CoC
@@ -102,8 +101,11 @@ nnoremap <silent> <F8> :SrceryBGToggle<CR>
 nnoremap <silent> <F9> :setlocal cursorline!<CR>
 " Toggle relative line numbering for buffer
 nnoremap <silent> <F10> :setlocal rnu!<CR>
+" Open current buffer in new tab
+nnoremap <F11> :tabnew<CR>:edit # <CR>
 " Plugin install
-nnoremap <F12> :PlugInstall<CR>
+nnoremap <M-F12> :PlugInstall<CR>
+nnoremap <F72> :PlugInstall<CR>
 " Git write shortcut
 nnoremap <C-F1> :Gw<CR>
 nnoremap <F25> :Gw<CR>
