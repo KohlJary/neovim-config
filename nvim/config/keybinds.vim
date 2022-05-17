@@ -49,7 +49,7 @@ nnoremap <A-v> <C-w>s
 " Buffer operations
 " Close buffer
 nnoremap <C-q> :bp\|bd! #<CR>
-nnoremap <C-Q> :q<CR>
+nnoremap <leader>q :q<CR>
 " Prev/next buffer
 nnoremap <C-p> :bp<CR>
 nnoremap <C-n> :bn<CR>
@@ -90,13 +90,15 @@ xnoremap <F2> :sort<CR>
 nnoremap <M-F2> :SaveSession
 nnoremap <F50> :SaveSession
 " Open terminal split
-nnoremap <F3> :split<CR> :terminal<CR>
-nnoremap <F27> :split<CR> :terminal<CR>
-" Open session
-nnoremap <M-F3> :OpenSession<CR>
-nnoremap <F51> :OpenSession<CR>
+nnoremap <F3> :split\|terminal<CR>
+" Delete session
+nnoremap <M-F3> :DeleteSession<CR>
+nnoremap <F51> :DeleteSession<CR>
 " Open terminal vertical split
-nnoremap <F4> :vsplit<CR> :terminal<CR>
+nnoremap <F4> :vsplit\|terminal<CR>
+" Open session
+nnoremap <M-F4> :OpenSession<CR>
+nnoremap <F52> :OpenSession<CR>
 " Reload vimrc
 nnoremap <M-F5> :source $MYVIMRC<CR>
 nnoremap <F53> :source $MYVIMRC<CR>
@@ -168,18 +170,14 @@ nnoremap <leader>ts :split<CR> :terminal<CR>
 nnoremap <leader>tv :vsplit<CR> :terminal<CR>
 " Escape terminal
 tnoremap <ESC><ESC> <C-\><C-n>
-" Close terminal buffer
-tnoremap <F25> <C-\><C-n> :bp\|bd! #<CR>:q<CR>
-tnoremap <C-F1> <C-\><C-n> :bp\|bd! #<CR>:q<CR>
 " Split terminal buffer
-tnoremap <F27> <C-\><C-n> :split<CR> :terminal<CR>
-tnoremap <C-F3> <C-\><C-n> :split<CR> :terminal<CR>
+tnoremap <F27> <C-\><C-n> :split\|terminal<CR>
+tnoremap <C-F3> <C-\><C-n> :split\|terminal<CR>
 " Split terminal buffer vertically
-tnoremap <F28> <C-\><C-n> :vsplit<CR> :terminal<CR>
-tnoremap <C-F4> <C-\><C-n> :vsplit<CR> :terminal<CR>
+tnoremap <F28> <C-\><C-n> :vsplit\|terminal<CR>
+tnoremap <C-F4> <C-\><C-n> :vsplit\|terminal<CR>
 " Restart process
-tnoremap <F29> <C-c><Up><CR>
-tnoremap <C-F5> <C-c><Up><CR>
+tnoremap <F5> <C-c><Up><CR>
 
 " Wrap quotes
 xnoremap " xi""<ESC>P
