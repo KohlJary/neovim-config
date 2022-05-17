@@ -100,6 +100,8 @@ nnoremap <silent> <F7> :LspInfo<CR>
 nnoremap <silent> <F8> :SrceryBGToggle<CR>
 " Toggle cursorline for buffer
 nnoremap <silent> <F9> :setlocal cursorline!<CR>
+" Toggle relative line numbering for buffer
+nnoremap <silent> <F10> :setlocal rnu!<CR>
 " Plugin install
 nnoremap <F12> :PlugInstall<CR>
 " Git write shortcut
