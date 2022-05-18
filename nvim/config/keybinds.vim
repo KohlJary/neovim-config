@@ -27,10 +27,10 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Split operations
 " Movement
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
 " Resizing
 nnoremap <Left> <C-w><
 nnoremap <Right> <C-w>>

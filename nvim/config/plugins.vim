@@ -76,13 +76,39 @@ augroup VistaAutocommands
 augroup END
 
 " NERDTree
-au VimEnter * NERDTree
+au VimEnter * NERDTree | wincmd p
 let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants','\.asmdef$']
 let g:NERDTreeWinPos='right'
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeMinimalMenu=1
 let g:NERDTreeHighlightCursorLine=1
+let g:NERDTreeQuitOnOpen=1
+
 augroup NERDTree
   autocmd FileType nerdtree setlocal cursorline signcolumn=no
 augroup END
+
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+function! NERDTreeSyncFocus()
+  call SyncTree()
+  NERDTreeFocus
+endfunction
+
+" Highlight currently open buffer in NERDTree
+" autocmd BufEnter * call SyncTree()
 
 " Toggle UI positioning
 function! ToggleUIPositioning()
@@ -139,9 +165,6 @@ endfunction
 let datetime_timer = timer_start(60000, 'UpdateDatetime',{'repeat': -1})
 function! UpdateDatetime(timer)
   let g:datetime = strftime("%I:%M %p, %a %b %d, %Y")
-endfunction
-function! s:update_highlights()
-  hi CursorLine ctermfg=Yellow guifg=Yellow
 endfunction
 augroup AirlineCustom
   autocmd!

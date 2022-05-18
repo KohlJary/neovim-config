@@ -38,14 +38,18 @@ function! SrceryBGToggleFunc()
 endfunction
 
 function! ColorTweaks()
-  hi MatchParen ctermfg=Cyan guifg=Cyan
+  " NERDTree Colors
   hi NERDTreeFile ctermfg=Magenta guifg=Magenta
+  " Vista Colors
   hi VistaTag ctermfg=Magenta guifg=Magenta
   hi VistaColon ctermfg=Red guifg=Red
   hi VistaLineNr ctermfg=Cyan guifg=Cyan
   hi default link VistaIcon SrceryGreen
-  hi CursorLine ctermfg=Yellow guifg=Yellow
+  " Status Line/TUI Colors
+  " hi CursorLine ctermfg=Yellow guifg=Yellow
   hi VertSplit ctermfg=Cyan guifg=Cyan
   hi StatusLine cterm=NONE ctermfg=Magenta gui=NONE guifg=Magenta
   hi StatusLineNC cterm=NONE ctermfg=Cyan gui=NONE guifg=Cyan
-endfunction!
+  " Text Colors
+  hi MatchParen ctermfg=Cyan guifg=Cyan
+endfunction
