@@ -34,4 +34,18 @@ function! SrceryBGToggleFunc()
     let g:srcery_bg_passthrough = 1
   endif
   colorscheme srcery
+  call ColorTweaks()
 endfunction
+
+function! ColorTweaks()
+  hi MatchParen ctermfg=Cyan guifg=Cyan
+  hi NERDTreeFile ctermfg=Magenta guifg=Magenta
+  hi VistaTag ctermfg=Magenta guifg=Magenta
+  hi VistaColon ctermfg=Red guifg=Red
+  hi VistaLineNr ctermfg=Cyan guifg=Cyan
+  hi default link VistaIcon SrceryGreen
+  hi CursorLine ctermfg=Yellow guifg=Yellow
+  hi VertSplit ctermfg=Cyan guifg=Cyan
+  hi StatusLine cterm=NONE ctermfg=Magenta gui=NONE guifg=Magenta
+  hi StatusLineNC cterm=NONE ctermfg=Cyan gui=NONE guifg=Cyan
+endfunction!

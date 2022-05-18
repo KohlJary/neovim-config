@@ -50,12 +50,11 @@ source $VIMDIR/config/keybinds.vim
 " Status Line
 set showtabline=2
 set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%{%SyntasticStatuslineFlag()%}%#airline_tabmod_unsel#%m%*
+set statusline+=%m%#PmenuSel#%{%SyntasticStatuslineFlag()%}%*
 set statusline+=\ %l:%c
 set statusline+=\ %p%%
 set statusline+=%=
-set statusline+=%0*\ %{get(b:,'vista_nearest_method_or_function','')}\ \|\ %t
+set statusline+=%0*\ %{get(b:,'vista_nearest_method_or_function','')}\ \ %t
 set laststatus=2
 
 " Colors
@@ -90,5 +89,4 @@ endif
 
 " Reload the colorscheme
 color srcery
-hi CursorLine ctermfg=Yellow guifg=Yellow
-hi StatusLine ctermfg=Yellow guifg=Yellow
+call ColorTweaks()

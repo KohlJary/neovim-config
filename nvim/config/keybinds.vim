@@ -9,7 +9,7 @@ nnoremap <A-R> :OmniSharpRestartServer<CR>
 nnoremap <leader>oss :OmniSharpStatus<CR>
 
 " NERDTree
-nnoremap <C-a> :NERDTreeToggle<CR>:normal =<CR>
+nnoremap <C-a> :NERDTreeToggle<CR>:normal<CR>
 nnoremap <CR> :NERDTreeFocus<CR>
 nnoremap <A-m> :NERDTreeMirror<CR>
 nnoremap <A-{> :let Tlist_Use_Right_Window=1<CR>:let g:NERDTreeWinPos="left"<CR>:NERDTree<CR>:TlistClose<CR>:TlistOpen<CR>
