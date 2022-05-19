@@ -33,6 +33,7 @@ Plug 'unblevable/quick-scope'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'kburdett/vim-nuuid'
+Plug 'Chiel92/vim-autoformat'
 " Language processing
 Plug 'vim-syntastic/syntastic'
 Plug 'neovim/nvim-lspconfig'
@@ -89,7 +90,7 @@ augroup NERDTree
 augroup END
 
 " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
+function! IsNERDTreeOpen()
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 
@@ -169,6 +170,5 @@ endfunction
 augroup AirlineCustom
   autocmd!
   autocmd VimEnter * call AirlineInit()
-  autocmd User AirlineAfterTheme call s:update_highlights()
 augroup END
 " End Airline
