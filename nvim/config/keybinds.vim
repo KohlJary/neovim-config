@@ -101,13 +101,15 @@ nnoremap <F4> :vsplit\|terminal<CR>
 " Open session
 nnoremap <M-F4> :OpenSession<CR>
 nnoremap <F52> :OpenSession<CR>
+" Coc Quickfix
+nnoremap <F5> :<C-u>CocAction Quickfix<CR>
 " Reload vimrc
 nnoremap <M-F5> :source $MYVIMRC<CR>
 nnoremap <F53> :source $MYVIMRC<CR>
 " Semicolon shortcut
 inoremap <F5> <ESC>A;<ESC>
 " Reload CoC
-nnoremap <F6> :CocRestart<CR>
+nnoremap <silent> <F6> :CocRestart<CR>
 " Lsp Info
 nnoremap <silent> <F7> :LspInfo<CR>
 " Toggle bg passthrough

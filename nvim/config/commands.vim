@@ -50,6 +50,8 @@ function! ColorTweaks()
   hi VertSplit ctermfg=Cyan guifg=Cyan
   hi StatusLine cterm=NONE ctermfg=Magenta gui=NONE guifg=Magenta
   hi StatusLineNC cterm=NONE ctermfg=Cyan gui=NONE guifg=Cyan
+  hi LineNr ctermfg=Cyan guifg=Cyan
+  hi CursorLineNr ctermfg=Magenta guifg=Magenta
   " Text Colors
   hi MatchParen ctermfg=Cyan guifg=Cyan
 endfunction

@@ -5,7 +5,8 @@ set backspace=indent,eol,start
 set clipboard+=unnamedplus
 set history=1000
 set ruler
-set nocursorline
+set cursorline
+set cursorlineopt=number
 set number
 set signcolumn=yes
 set showcmd

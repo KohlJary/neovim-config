@@ -29,6 +29,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
 " Text Manipulation
 Plug 'townk/vim-autoclose'
+Plug 'tpope/vim-abolish'
 Plug 'unblevable/quick-scope'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'tpope/vim-commentary'
