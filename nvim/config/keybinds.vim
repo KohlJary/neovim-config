@@ -46,8 +46,8 @@ nnoremap = <C-w>=
 " Rotate splits
 nnoremap <A-r> <C-w>r
 " New splits
-nnoremap <A-i> :new \| BufExplorer<CR>
-nnoremap <A-v> :vnew \| BufExplorer<CR>
+nnoremap <A-i> :vnew \| BufExplorer<CR>
+nnoremap <A-v> :new \| BufExplorer<CR>
 
 " Buffer operations
 " Close buffer
@@ -93,7 +93,7 @@ nnoremap <F49> :Gw<CR>
 nnoremap <C-F1> :SaveSession<CR>
 nnoremap <F25> :SaveSession<CR>
 " Buffer delete menu
-nnoremap <F2> :Bdelete menu<CR>
+nnoremap <F2> :Bdelete! menu<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
 " Git commit shortcut
