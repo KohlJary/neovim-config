@@ -98,17 +98,17 @@ nnoremap <F2> :Bdelete menu<CR>
 xnoremap <F2> :sort<CR>
 " Git commit shortcut
 nnoremap <M-F2> :Gcm ""<Left>
-nnoremap <F26> :Gcm ""<Left>
+nnoremap <F50> :Gcm ""<Left>
 " Save session as
 nnoremap <C-F2> :SaveSession
-nnoremap <F50> :SaveSession
+nnoremap <F26> :SaveSession
 " Open terminal split
 nnoremap <F3> :split\|terminal<CR>
 " Git pull shortcut
-nnoremap <C-F3> :G pull<CR>
+nnoremap <M-F3> :G pull<CR>
 nnoremap <F51> :G pull<CR>
 " Delete session
-nnoremap <M-F3> :DeleteSession<CR>
+nnoremap <C-F3> :DeleteSession<CR>
 nnoremap <F27> :DeleteSession<CR>
 " Open terminal vertical split
 nnoremap <F4> :vsplit\|terminal<CR>
