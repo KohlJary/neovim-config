@@ -25,6 +25,9 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" Bufexplorer
+nnoremap <C-g> <cmd>BufExplorerHorizontalSplit<cr>
+
 " Split operations
 " Movement
 nnoremap <silent> <C-h> <C-w>h
@@ -43,8 +46,8 @@ nnoremap = <C-w>=
 " Rotate splits
 nnoremap <A-r> <C-w>r
 " New splits
-nnoremap <A-i> <C-w>v
-nnoremap <A-v> <C-w>s
+nnoremap <A-i> :new \| BufExplorer<CR>
+nnoremap <A-v> :vnew \| BufExplorer<CR>
 
 " Buffer operations
 " Close buffer
@@ -81,35 +84,46 @@ vnoremap <A-o> zf
 " Function keys
 " Autoformat
 nnoremap <F1> :Autoformat<CR>
+" Insert escape character
+inoremap <F1> <C-v>
+" Git write shortcut
+nnoremap <M-F1> :Gw<CR>
+nnoremap <F49> :Gw<CR>
 " Save session
-nnoremap <M-F1> :SaveSession<CR>
-nnoremap <F49> :SaveSession<CR>
+nnoremap <C-F1> :SaveSession<CR>
+nnoremap <F25> :SaveSession<CR>
 " Buffer delete menu
 nnoremap <F2> :Bdelete menu<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
+" Git commit shortcut
+nnoremap <M-F2> :Gcm ""<Left>
+nnoremap <F26> :Gcm ""<Left>
 " Save session as
-nnoremap <M-F2> :SaveSession
+nnoremap <C-F2> :SaveSession
 nnoremap <F50> :SaveSession
 " Open terminal split
 nnoremap <F3> :split\|terminal<CR>
+" Git pull shortcut
+nnoremap <C-F3> :G pull<CR>
+nnoremap <F51> :G pull<CR>
 " Delete session
 nnoremap <M-F3> :DeleteSession<CR>
-nnoremap <F51> :DeleteSession<CR>
+nnoremap <F27> :DeleteSession<CR>
 " Open terminal vertical split
 nnoremap <F4> :vsplit\|terminal<CR>
+" Git push shortcut
+nnoremap <M-F4> :Gp<CR>
+nnoremap <F52> :Gp<CR>
 " Open session
-nnoremap <M-F4> :OpenSession<CR>
-nnoremap <F52> :OpenSession<CR>
-" Coc Quickfix
-nnoremap <F5> :<C-u>CocAction Quickfix<CR>
+nnoremap <C-F4> :OpenSession<CR>
+nnoremap <F28> :OpenSession<CR>
 " Reload vimrc
-nnoremap <M-F5> :source $MYVIMRC<CR>
-nnoremap <F53> :source $MYVIMRC<CR>
+nnoremap <F5> :source $MYVIMRC<CR>
 " Semicolon shortcut
 inoremap <F5> <ESC>A;<ESC>
 " Reload CoC
-nnoremap <silent> <F6> :CocRestart<CR>
+nnoremap <silent> <F6> :LspRestart<CR>:CocRestart<CR>
 " Lsp Info
 nnoremap <silent> <F7> :LspInfo<CR>
 " Toggle bg passthrough
@@ -118,41 +132,45 @@ nnoremap <silent> <F8> :SrceryBGToggle<CR>
 nnoremap <silent> <F9> :setlocal cursorline!<CR>
 " Toggle relative line numbering for buffer
 nnoremap <silent> <F10> :setlocal rnu!<CR>
-" Open current buffer in new tab
-nnoremap <F11> :tabnew<CR>:edit # <CR>
+" Bufexplorer
+nnoremap <F11> :BufExplorerHorizontalSplit<CR>
+" Coc Quickfix
+nnoremap <F12> :<C-u>CocAction<CR>
+" Bufexplorer
+nnoremap <C-F12> :BufExplorer<CR>
 " Plugin install
 nnoremap <M-F12> :PlugInstall<CR>
 nnoremap <F72> :PlugInstall<CR>
-" Git write shortcut
-nnoremap <C-F1> :Gw<CR>
-nnoremap <F25> :Gw<CR>
-" Commit shortcut
-nnoremap <C-F2> :Gcm ""<Left>
-nnoremap <F26> :Gcm ""<Left>
-" Pull shortcut
-nnoremap <C-F3> :G pull<CR>
-nnoremap <F27> :G pull<CR>
-" Push shortcut
-nnoremap <C-F4> :Gp<CR>
-nnoremap <F28> :Gp<CR>
 " Gitui
 tnoremap <F13> <C-\><C-n>:Gitui<CR>
+tnoremap <M-C-F1> <C-\><C-n>:Gitui<CR>
 nnoremap <F13> :Gitui<CR>
+nnoremap <M-C-F1> :Gitui<CR>
 " Taskwarrior tui
 tnoremap <F14> <C-\><C-n>:Twui<CR>
+tnoremap <M-C-F2> <C-\><C-n>:Twui<CR>
 nnoremap <F14> :Twui<CR>
+nnoremap <M-C-F2> :Twui<CR>
 " Find files in cwd
 tnoremap <F15> <C-\><C-n>:Telescope<CR>
+tnoremap <M-C-F3> <C-\><C-n>:Telescope<CR>
 nnoremap <F15> :Telescope find_files<CR>
+nnoremap <M-C-F3> :Telescope find_files<CR>
 " Search for string under cursor in cwd
 tnoremap <F16> <C-\><C-n>:Telescope<CR>
+tnoremap <M-C-F4> <C-\><C-n>:Telescope<CR>
 nnoremap <F16> :Telescope grep_string<CR>
+nnoremap <M-C-F4> :Telescope grep_string<CR>
 " Search buffers
 tnoremap <F17> <C-\><C-n>:Telescope<CR>
+tnoremap <M-C-F5> <C-\><C-n>:Telescope<CR>
 nnoremap <F17> :Telescope buffers<CR>
+nnoremap <M-C-F5> :Telescope buffers<CR>
 " Search help tags
 tnoremap <F18> <C-\><C-n>:Telescope<CR>
+tnoremap <M-C-F6> <C-\><C-n>:Telescope<CR>
 nnoremap <F18> :Telescope help_tags<CR>
+nnoremap <M-C-F6> :Telescope help_tags<CR>
 
 " Toggle relative numbering
 nnoremap <C-w>r :set rnu!<CR>

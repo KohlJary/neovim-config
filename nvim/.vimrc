@@ -52,10 +52,11 @@ source $VIMDIR/config/keybinds.vim
 set showtabline=2
 set statusline=
 set statusline+=%m%#PmenuSel#%{%SyntasticStatuslineFlag()%}%*
-set statusline+=\ %l:%c
+set statusline+=\ b:%n\ %l:%c
 set statusline+=\ %p%%
 set statusline+=%=
-set statusline+=%0*\ %{get(b:,'vista_nearest_method_or_function','')}\ \ %t
+set statusline+=%0*\ %{get(b:,'vista_nearest_method_or_function','')}\ 
+set statusline+=\ %t
 set laststatus=2
 
 " Colors

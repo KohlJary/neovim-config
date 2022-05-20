@@ -11,6 +11,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 " Buffers
 Plug 'Asheq/close-buffers.vim'
+Plug 'jlanzarotta/bufexplorer'
 " Terminal
 Plug 'akinsho/toggleterm.nvim'
 " UI
@@ -22,6 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kshenoy/vim-signature'
 Plug 'Valloric/ListToggle'
 " File management
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do':'make'}
@@ -53,6 +55,12 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'yegappan/taglist'
 Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
+
+" --- Autoinstall Missing Plugins ---
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall | q
+  \| endif
 
 " --- Plugin Configuration ---
 

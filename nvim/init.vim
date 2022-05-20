@@ -14,6 +14,8 @@ if (g:detected_os == 'WINDOWS')
   let $VIMDIR = $HOME.'/AppData/Local/nvim'
   let $OMNIBIN = $HOME.'/AppData/Local/omnisharp-vim/omnisharp-roslyn/OmniSharp.exe'
   let $NPMDIR = $HOME.'/AppData/Roaming/npm/node_modules'
+  let $CHOCDIR = 'C:/ProgramData/chocolatey/bin'
+  set runtimepath^=$CHOCDIR+=$CHOCDIR/after
 elseif (g:detected_os == 'LINUX')
   let $VIMDIR = $HOME.'/.config/nvim'
   let $OMNIBIN = '/usr/lib/omnisharp-roslyn/OmniSharp'
