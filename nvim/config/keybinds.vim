@@ -256,6 +256,8 @@ nnoremap <A-Right> :lnext<CR>
 " Commenting line(s)
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
+" Change word
+nnoremap <A-w> ciw
 " Swap lines
 nnoremap <A-k> <Up>ddp<Up>
 nnoremap <A-j> ddp
