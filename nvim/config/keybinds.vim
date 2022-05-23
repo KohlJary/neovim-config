@@ -44,7 +44,7 @@ nnoremap + <C-w>_
 nnoremap \\ <C-w>\|
 nnoremap = <C-w>=
 " Rotate splits
-nnoremap <A-r> <C-w>r
+nnoremap <M-C-R> <C-w>r
 " New splits
 nnoremap <A-i> :vnew \| BufExplorer<CR>
 nnoremap <A-v> :new \| BufExplorer<CR>
@@ -82,46 +82,49 @@ nnoremap <A-o> za
 vnoremap <A-o> zf
 
 " Function keys
-" Autoformat
-nnoremap <F1> :Autoformat<CR>
+" Save session
+nnoremap <F1> :SaveSession
 " Insert escape character
 inoremap <F1> <C-v>
-" Git write shortcut
-nnoremap <M-F1> :Gw<CR>
-nnoremap <F49> :Gw<CR>
-" Save session
-nnoremap <C-F1> :SaveSession<CR>
-nnoremap <F25> :SaveSession<CR>
 " Buffer delete menu
-nnoremap <F2> :Bdelete! menu<CR>
+nnoremap <M-F1> :Bdelete! menu<CR>
+nnoremap <F49> :Bdelete! menu<CR>
+" Git write
+nnoremap <C-F1> :Gw<CR>
+nnoremap <F25> :Gw<CR>
+" Open session
+nnoremap <F2> :OpenSession<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
-" Git commit shortcut
-nnoremap <M-F2> :Gcm ""<Left>
-nnoremap <F50> :Gcm ""<Left>
-" Save session as
-nnoremap <C-F2> :SaveSession
-nnoremap <F26> :SaveSession
-" Open terminal split
-nnoremap <F3> :split\|terminal<CR>
+" Autoformat
+nnoremap <M-F2> :Autoformat<CR>
+nnoremap <F50> :Autoformat<CR>
+" Git commit
+nnoremap <C-F2> :Gcm ""<Left>
+nnoremap <F26> :Gcm ""<Left>
+" Delete session
+nnoremap <F3> :DeleteSession<CR>
 " Git pull shortcut
 nnoremap <M-F3> :G pull<CR>
 nnoremap <F51> :G pull<CR>
-" Delete session
-nnoremap <C-F3> :DeleteSession<CR>
-nnoremap <F27> :DeleteSession<CR>
-" Open terminal vertical split
-nnoremap <F4> :vsplit\|terminal<CR>
+" Git pull shortcut
+nnoremap <C-F3> :G pull<CR>
+nnoremap <F27> :G pull<CR>
+" Open session
+nnoremap <F4> :OpenSession<CR>
 " Git push shortcut
 nnoremap <M-F4> :Gp<CR>
 nnoremap <F52> :Gp<CR>
-" Open session
-nnoremap <C-F4> :OpenSession<CR>
-nnoremap <F28> :OpenSession<CR>
+" Git push
+nnoremap <C-F4> :Gp<CR>
+nnoremap <F28> :Gp<CR>
 " Reload vimrc
 nnoremap <F5> :source $MYVIMRC<CR>
 " Semicolon shortcut
 inoremap <F5> <ESC>A;<ESC>
+" Git diff split
+nnoremap <C-F5> :Gdiffsplit<CR>
+nnoremap <F29> :Gdiffsplit<CR>
 " Reload CoC
 nnoremap <silent> <F6> :LspRestart<CR>:CocRestart<CR>
 " Lsp Info
@@ -132,8 +135,6 @@ nnoremap <silent> <F8> :SrceryBGToggle<CR>
 nnoremap <silent> <F9> :setlocal cursorline!<CR>
 " Toggle relative line numbering for buffer
 nnoremap <silent> <F10> :setlocal rnu!<CR>
-" Bufexplorer
-nnoremap <F11> :BufExplorerHorizontalSplit<CR>
 " Coc Quickfix
 nnoremap <F12> :<C-u>CocAction<CR>
 " Bufexplorer
@@ -178,26 +179,24 @@ nnoremap <C-w>r :set rnu!<CR>
 nnoremap <C-x> :LToggle<CR>
 " Quickfix list toggle
 nnoremap <C-z> :QToggle<CR>
-" Git diff quickbind
-nnoremap <C-d> :Gdiffsplit<CR>
 " Run last command
 nnoremap <A-;> @:<CR>
 
 " Terminal bindings
 " Open terminal
-nnoremap <leader>tt :terminal<CR>
+nnoremap <M-C-T> :terminal<CR>
 " Open terminal split
-nnoremap <leader>ts :split<CR> :terminal<CR>
+nnoremap <M-C-V> :split<CR> :terminal<CR>
 " Open terminal vsplit
-nnoremap <leader>tv :vsplit<CR> :terminal<CR>
+nnoremap <M-C-S> :vsplit<CR> :terminal<CR>
 " Escape terminal
 tnoremap <ESC><ESC> <C-\><C-n>
+" Close terminal buffer
+tnoremap <M-C-Q> <C-\><C-n> :bd!<CR>
 " Split terminal buffer
-tnoremap <F27> <C-\><C-n> :split\|terminal<CR>
-tnoremap <C-F3> <C-\><C-n> :split\|terminal<CR>
+tnoremap <M-C-V> <C-\><C-n> :split\|terminal<CR>
 " Split terminal buffer vertically
-tnoremap <F28> <C-\><C-n> :vsplit\|terminal<CR>
-tnoremap <C-F4> <C-\><C-n> :vsplit\|terminal<CR>
+tnoremap <M-C-S> <C-\><C-n> :vsplit\|terminal<CR>
 " Restart process
 tnoremap <F5> <C-c><Up><CR>
 
@@ -258,12 +257,17 @@ nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
 " Change word
 nnoremap <A-w> ciw
-" Swap lines
-nnoremap <A-k> <Up>ddp<Up>
-nnoremap <A-j> ddp
 " Swap character
 nnoremap <A-h> hdlph
 nnoremap <A-l> dlp
+" Swap lines
+nnoremap <M-C-K> <Up>ddp<Up>
+nnoremap <M-C-J> ddp
+" Change indentation
+nnoremap <M-C-H> <<
+xnoremap <M-C-H> <
+nnoremap <M-C-L> >>
+xnoremap <M-C-L> >
 " Remap substitute command
 nnoremap R s
 " Swap case

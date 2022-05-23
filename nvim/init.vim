@@ -45,23 +45,23 @@ cmd = { vim.env.OMNIBIN, "--languageserver" , "--hostPID", tostring(pid) };
 if(is_win)
   then
   require'lspconfig'.angularls.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = cmd,
-  on_new_config = function(new_config,new_root_dir)
-  new_config.cmd = cmd
-  end
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = cmd,
+    on_new_config = function(new_config,new_root_dir)
+      new_config.cmd = cmd
+    end
   }
 else
   require'lspconfig'.angularls.setup{}
-  end
-  -- Telescope setup
-  require('nvim-treesitter').setup{}
-  require('telescope').setup{}
-  -- Toggleterm setup
-  require('toggleterm').setup{
+end
+-- Telescope setup
+require('nvim-treesitter').setup{}
+require('telescope').setup{}
+-- Toggleterm setup
+require('toggleterm').setup{
   open_mapping = [[<A-`>]],
   direction = horizontal
-  }
+}
 require('toggletermcmd')
 EOF
