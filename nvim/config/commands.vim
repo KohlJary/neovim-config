@@ -7,6 +7,8 @@ command -nargs=1 Ngi :normal oexport interface <args> {<CR>}<esc>k$o
 command Serial :normal ^i[SerializeField] <esc>$
 command -nargs=1 TabWidth :set tabstop=<args>|set softtabstop=<args>|set shiftwidth=<args>
 
+" Open config session
+command EditConfig :OpenSession _config
 command EditVimrc :tabnew|e $VIMDIR/.vimrc
 command EditInit :tabnew|e $VIMDIR/init.vim
 command EditKeys :tabnew|e $VIMDIR/config/keybinds.vim
@@ -19,6 +21,7 @@ command -nargs=1 Gcm :G commit -m <args>
 command Gp :G push
 
 " Toggleterm commands
+command Lazygit :lua _lazygit_toggle()
 command Gitui :lua _gitui_toggle()
 command Twui :lua _twui_toggle()
 
@@ -37,6 +40,7 @@ function! SrceryBGToggleFunc()
   call ColorTweaks()
 endfunction
 
+" Apply colorscheme tweaks
 function! ColorTweaks()
   " NERDTree Colors
   hi NERDTreeFile ctermfg=Magenta guifg=Magenta
@@ -46,7 +50,6 @@ function! ColorTweaks()
   hi VistaLineNr ctermfg=Cyan guifg=Cyan
   hi default link VistaIcon SrceryGreen
   " Status Line/TUI Colors
-  " hi CursorLine ctermfg=Yellow guifg=Yellow
   hi VertSplit ctermfg=Cyan guifg=Cyan
   hi StatusLine cterm=NONE ctermfg=Magenta gui=NONE guifg=Magenta
   hi StatusLineNC cterm=NONE ctermfg=Cyan gui=NONE guifg=Cyan
@@ -54,4 +57,15 @@ function! ColorTweaks()
   hi CursorLineNr ctermfg=Magenta guifg=Magenta
   " Text Colors
   hi MatchParen ctermfg=Cyan guifg=Cyan
+endfunction
+
+" Toggle UI positioning
+function! ToggleUIPositioning()
+  if(g:NERDTreeWinPos=="left")
+    let g:NERDTreeWinPos="right"
+    let g:vista_sidebar_position="vertical topleft"
+  else
+    let g:NERDTreeWinPos="left"
+    let g:vista_sidebar_position="vertical botright"
+  endif
 endfunction

@@ -120,16 +120,11 @@ endfunction
 " Highlight currently open buffer in NERDTree
 " autocmd BufEnter * call SyncTree()
 
-" Toggle UI positioning
-function! ToggleUIPositioning()
-  if(g:NERDTreeWinPos=="left")
-    let g:NERDTreeWinPos="right"
-    let g:vista_sidebar_position="vertical topleft"
-  else
-    let g:NERDTreeWinPos="left"
-    let g:vista_sidebar_position="vertical botright"
-  endif
-endfunction
+" vim-session
+" Periodic autosaving if session is open (minutes)
+let g:session_autosave_periodic=5
+" Prompt to load last session on open
+let g:session_default_to_last=1
 
 " Taglist
 let g:Tlist_Show_One_File=1

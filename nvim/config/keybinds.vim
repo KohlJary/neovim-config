@@ -44,7 +44,7 @@ nnoremap + <C-w>_
 nnoremap \\ <C-w>\|
 nnoremap = <C-w>=
 " Rotate splits
-nnoremap <M-C-R> <C-w>r
+nnoremap <A-r> <C-w>r
 " New splits
 nnoremap <A-i> :vnew \| BufExplorer<CR>
 nnoremap <A-v> :new \| BufExplorer<CR>
@@ -82,42 +82,42 @@ nnoremap <A-o> za
 vnoremap <A-o> zf
 
 " Function keys
-" Save session
+" Buffer delete menu
 nnoremap <F1> :SaveSession
 " Insert escape character
 inoremap <F1> <C-v>
-" Buffer delete menu
-nnoremap <M-F1> :Bdelete! menu<CR>
-nnoremap <F49> :Bdelete! menu<CR>
-" Git write
+" Git write shortcut
 nnoremap <C-F1> :Gw<CR>
 nnoremap <F25> :Gw<CR>
-" Open session
+" Save tab session
+nnoremap <M-F1> :SaveTabSession
+nnoremap <F49> :SaveTabSession
+" Save session
 nnoremap <F2> :OpenSession<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
-" Autoformat
-nnoremap <M-F2> :Autoformat<CR>
-nnoremap <F50> :Autoformat<CR>
-" Git commit
+" Git commit shortcut
 nnoremap <C-F2> :Gcm ""<Left>
 nnoremap <F26> :Gcm ""<Left>
+" Open tab session
+nnoremap <M-F2> :OpenTabSession<CR>
+nnoremap <F50> :OpenTabSession<CR>
 " Delete session
 nnoremap <F3> :DeleteSession<CR>
 " Git pull shortcut
-nnoremap <M-F3> :G pull<CR>
-nnoremap <F51> :G pull<CR>
-" Git pull shortcut
 nnoremap <C-F3> :G pull<CR>
 nnoremap <F27> :G pull<CR>
-" Open session
-nnoremap <F4> :OpenSession<CR>
+" Append tab session
+nnoremap <M-F3> :AppendTabSession<CR>
+nnoremap <F51> :AppendTabSession<CR>
+" Open terminal vertical split
+nnoremap <F4> :Bdelete! menu<CR>
 " Git push shortcut
-nnoremap <M-F4> :Gp<CR>
-nnoremap <F52> :Gp<CR>
-" Git push
 nnoremap <C-F4> :Gp<CR>
 nnoremap <F28> :Gp<CR>
+" Autoformat
+nnoremap <M-F4> :Autoformat<CR>
+nnoremap <F52> :Autoformt<CR>
 " Reload vimrc
 nnoremap <F5> :source $MYVIMRC<CR>
 " Semicolon shortcut
@@ -135,6 +135,8 @@ nnoremap <silent> <F8> :SrceryBGToggle<CR>
 nnoremap <silent> <F9> :setlocal cursorline!<CR>
 " Toggle relative line numbering for buffer
 nnoremap <silent> <F10> :setlocal rnu!<CR>
+" Buffer delete menu
+nnoremap <F11> :Bdelete! menu<CR>
 " Coc Quickfix
 nnoremap <F12> :<C-u>CocAction<CR>
 " Bufexplorer
@@ -173,29 +175,30 @@ tnoremap <M-C-F6> <C-\><C-n>:Telescope<CR>
 nnoremap <F18> :Telescope help_tags<CR>
 nnoremap <M-C-F6> :Telescope help_tags<CR>
 
-" Toggle relative numbering
-nnoremap <C-w>r :set rnu!<CR>
 " Location list toggle
 nnoremap <C-x> :LToggle<CR>
 " Quickfix list toggle
 nnoremap <C-z> :QToggle<CR>
+
 " Run last command
 nnoremap <A-;> @:<CR>
+" Run last macro
+nnoremap <M-.> @@
 
 " Terminal bindings
 " Open terminal
 nnoremap <M-C-T> :terminal<CR>
 " Open terminal split
-nnoremap <M-C-V> :split<CR> :terminal<CR>
+nnoremap <M-C-V> :split\|:terminal<CR>
 " Open terminal vsplit
-nnoremap <M-C-S> :vsplit<CR> :terminal<CR>
+nnoremap <M-C-S> :vsplit\|:terminal<CR>
 " Escape terminal
 tnoremap <ESC><ESC> <C-\><C-n>
-" Close terminal buffer
-tnoremap <M-C-Q> <C-\><C-n> :bd!<CR>
-" Split terminal buffer
-tnoremap <M-C-V> <C-\><C-n> :split\|terminal<CR>
+" Close terminal
+tnoremap <M-C-Q> <C-\><C-n> :bp\|bd! #<CR>
 " Split terminal buffer vertically
+tnoremap <M-C-V> <C-\><C-n> :split\|terminal<CR>
+" Split terminal buffer
 tnoremap <M-C-S> <C-\><C-n> :vsplit\|terminal<CR>
 " Restart process
 tnoremap <F5> <C-c><Up><CR>
@@ -235,8 +238,6 @@ inoremap <C-b> <ESC>bi
 inoremap <C-e> <ESC>ea
 inoremap <C-o> <ESC>o
 inoremap <C-p> <ESC>pa
-" Ctrl Backspace behavior
-inoremap <A-BS> <C-W>
 
 " File Traversal
 " Page up/down
@@ -255,32 +256,30 @@ nnoremap <A-Right> :lnext<CR>
 " Commenting line(s)
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
-" Change word
-nnoremap <A-w> ciw
 " Swap character
 nnoremap <A-h> hdlph
 nnoremap <A-l> dlp
+" Increment/decrement numbers
+nnoremap <A-k> <C-a>
+nnoremap <A-j> <C-x>
 " Swap lines
 nnoremap <M-C-K> <Up>ddp<Up>
 nnoremap <M-C-J> ddp
 " Change indentation
 nnoremap <M-C-H> <<
-xnoremap <M-C-H> <
+vnoremap <M-C-H> <
 nnoremap <M-C-L> >>
-xnoremap <M-C-L> >
+vnoremap <M-C-L> >
 " Remap substitute command
 nnoremap R s
 " Swap case
 nnoremap <A-u> ~h
 xnoremap <A-u> ~
-" Increment/decrement numbers
-nnoremap <A-a> <C-a>
-nnoremap <A-s> <C-x>
 " Break line at cursor
 nnoremap \| i<CR><esc>
 " Select all text
-nnoremap <leader>sa ggVG
+nnoremap va ggVG
 " Format file text
 nnoremap <leader>= mfgg=G`f
 " Clear search highlighting
-nnoremap \ :let @/=""<CR>
+nnoremap <M-BS> :let @/=""<CR>

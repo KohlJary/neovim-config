@@ -1,26 +1,41 @@
 set nocompatible
 
 " --- General Settings ---
+" Character encoding
+set encoding=utf8
+" Sane backspace behavior
 set backspace=indent,eol,start
+" Use system clipboard
 set clipboard+=unnamedplus
+" Big history energy
 set history=1000
+" Line/sign number display
 set ruler
-set cursorline
-set cursorlineopt=number
 set number
 set signcolumn=yes
+" Highlight the current line number
+set cursorline
+set cursorlineopt=number
+" No line wrapping because it's the devil
+set nowrap
+" Command output display
 set showcmd
-set foldmethod=manual
 set cmdheight=2
+" Line offset to scroll through the file
 set scrolloff=3
+" Fold method, consider switching to syntax
+set foldmethod=manual
+" Search stuff?
 set incsearch
 set hlsearch
-set nowrap
-set encoding=utf8
+" I actually don't know what this does
 set wildmenu
+" Mouse support, look into options
 set mouse=a
+" Split direction
 set splitbelow
 set splitright
+" Syntax highlighting
 syntax on
 
 " Indenting
@@ -30,12 +45,20 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+" Sessions
+" Don't save hidden and unloaded buffers
+set sessionoptions-=buffers
+" Don't save help windows
+set sessionoptions-=help
+
 " Terminal
 augroup neovim_terminal
   " Set filetype for terminal buffers for detection
   autocmd TermOpen * silent! set filetype=terminal
   " Disable line numbers for terminal buffers
   autocmd TermOpen * setlocal nonumber norelativenumber
+  " Make sure line numbers are disabled for terminal buffers
+  autocmd BufEnter * if &ft ==# 'terminal' | setlocal nonumber norelativenumber | endif
   " Start in insert mode on opening terminal
   autocmd TermOpen * startinsert
 augroup END
