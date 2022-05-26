@@ -18,12 +18,9 @@ if (g:detected_os == 'WINDOWS')
   set runtimepath^=$CHOCDIR+=$CHOCDIR/after
 elseif (g:detected_os == 'LINUX')
   let $VIMDIR = $HOME.'/.config/nvim'
-  let $OMNIBIN = '/usr/lib/omnisharp-roslyn/OmniSharp'
+  let $OMNIBIN = "/usr/lib/omnisharp-roslyn/OmniSharp"
   let $NPMDIR = '/usr/lib'
   let g:python3_host_prog="/usr/bin/python3"
-  let g:formatterpath = ['/home/jaryk/astyle/build/gcc/bin/']
-  let g:formatdef_my_cs = '"astyle --mode=cs --style=allman -oONs4xC120xL"'
-  let g:formatters_cs = ['my_cs']
 endif
 set runtimepath^=$VIMDIR runtimepath+=$VIMDIR/after
 let &packpath = &runtimepath
@@ -40,7 +37,7 @@ local pid = vim.fn.getpid()
 local ng_cmd_path = vim.env.NPMDIR .. "/@angular/language-server"
 local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
 require'lspconfig'.omnisharp.setup{
-cmd = { vim.env.OMNIBIN, "--languageserver" , "--hostPID", tostring(pid) };
+  cmd = { vim.env.OMNIBIN, "--languageserver" , "--hostPID", tostring(pid) };
 }
 if(is_win)
   then
@@ -54,6 +51,7 @@ if(is_win)
   }
 else
   require'lspconfig'.angularls.setup{}
+  require('lsp')
 end
 -- Telescope setup
 require('nvim-treesitter').setup{}

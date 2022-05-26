@@ -36,7 +36,6 @@ Plug 'unblevable/quick-scope'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'kburdett/vim-nuuid'
-Plug 'Chiel92/vim-autoformat'
 " Language processing
 Plug 'vim-syntastic/syntastic'
 Plug 'neovim/nvim-lspconfig'
@@ -123,8 +122,6 @@ endfunction
 " vim-session
 " Periodic autosaving if session is open (minutes)
 let g:session_autosave_periodic=5
-" Prompt to load last session on open
-let g:session_default_to_last=1
 
 " Taglist
 let g:Tlist_Show_One_File=1

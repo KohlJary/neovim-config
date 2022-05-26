@@ -89,9 +89,9 @@ inoremap <F1> <C-v>
 " Git write shortcut
 nnoremap <C-F1> :Gw<CR>
 nnoremap <F25> :Gw<CR>
-" Save tab session
-nnoremap <M-F1> :SaveTabSession
-nnoremap <F49> :SaveTabSession
+" Format file
+nnoremap <silent> <M-F1> :OmniSharpCodeFormat<CR>:Format<CR>
+nnoremap <silent> <F49> :OmniSharpCodeFormat<CR>:Format<CR>
 " Save session
 nnoremap <F2> :OpenSession<CR>
 " Sort lines
@@ -99,25 +99,25 @@ xnoremap <F2> :sort<CR>
 " Git commit shortcut
 nnoremap <C-F2> :Gcm ""<Left>
 nnoremap <F26> :Gcm ""<Left>
-" Open tab session
-nnoremap <M-F2> :OpenTabSession<CR>
-nnoremap <F50> :OpenTabSession<CR>
+" Fold buffer
+nnoremap <M-F2> :Fold<CR>
+nnoremap <F50> :Fold<CR>
 " Delete session
 nnoremap <F3> :DeleteSession<CR>
 " Git pull shortcut
 nnoremap <C-F3> :G pull<CR>
 nnoremap <F27> :G pull<CR>
-" Append tab session
-nnoremap <M-F3> :AppendTabSession<CR>
-nnoremap <F51> :AppendTabSession<CR>
+" Organize imports
+nnoremap <M-F3> :OR<CR>
+nnoremap <F51> :OR<CR>
 " Open terminal vertical split
 nnoremap <F4> :Bdelete! menu<CR>
 " Git push shortcut
 nnoremap <C-F4> :Gp<CR>
 nnoremap <F28> :Gp<CR>
-" Autoformat
-nnoremap <M-F4> :Autoformat<CR>
-nnoremap <F52> :Autoformt<CR>
+" Coc format
+nnoremap <M-F4> :Format<CR>
+nnoremap <F52> :Format<CR>
 " Reload vimrc
 nnoremap <F5> :source $MYVIMRC<CR>
 " Semicolon shortcut
@@ -144,11 +144,11 @@ nnoremap <C-F12> :BufExplorer<CR>
 " Plugin install
 nnoremap <M-F12> :PlugInstall<CR>
 nnoremap <F72> :PlugInstall<CR>
-" Gitui
-tnoremap <F13> <C-\><C-n>:Gitui<CR>
-tnoremap <M-C-F1> <C-\><C-n>:Gitui<CR>
-nnoremap <F13> :Gitui<CR>
-nnoremap <M-C-F1> :Gitui<CR>
+" Lazygit
+tnoremap <F13> <C-\><C-n>:Lazygit<CR>
+tnoremap <M-C-F1> <C-\><C-n>:Lazygit<CR>
+nnoremap <F13> :Lazygit<CR>
+nnoremap <M-C-F1> :Lazygit<CR>
 " Taskwarrior tui
 tnoremap <F14> <C-\><C-n>:Twui<CR>
 tnoremap <M-C-F2> <C-\><C-n>:Twui<CR>
