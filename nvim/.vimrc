@@ -35,6 +35,8 @@ set mouse=a
 " Split direction
 set splitbelow
 set splitright
+" ???
+set hidden
 " Syntax highlighting
 syntax on
 
