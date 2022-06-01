@@ -1,4 +1,4 @@
-let mapleader = ' '
+let mapleader = ';'
 
 " Omnisharp mappings
 nnoremap <A-[> :OmniSharpNavigateUp<CR>
@@ -9,15 +9,11 @@ nnoremap <A-R> :OmniSharpRestartServer<CR>
 nnoremap <leader>oss :OmniSharpStatus<CR>
 
 " NERDTree
-nnoremap <C-a> :NERDTreeToggle<CR>
-nnoremap <CR> :NERDTreeFocus<CR>
-nnoremap <A-m> :NERDTreeMirror<CR>
-nnoremap <A-{> :let Tlist_Use_Right_Window=1<CR>:let g:NERDTreeWinPos="left"<CR>:NERDTree<CR>:TlistClose<CR>:TlistOpen<CR>
-nnoremap <A-}> :let Tlist_Use_Right_Window=0<CR>:let g:NERDTreeWinPos="right"<CR>:NERDTree<CR>:TlistClose<CR>:TlistOpen<CR>
+nnoremap <space> :NERDTreeToggle<CR>
+nnoremap <leader><space> :NERDTreeFocus<CR>
 
 " Vista
-nnoremap <silent> <C-t> :Vista<CR>
-nnoremap <silent> <C-s> :Vista!!<CR>
+nnoremap <silent> <leader>v :Vista!!<CR>
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -26,7 +22,8 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Bufexplorer
-nnoremap <C-g> <cmd>BufExplorerHorizontalSplit<cr>
+nnoremap <leader>g <cmd>BufExplorerHorizontalSplit<cr>
+nnoremap <leader>b <cmd>ToggleBufExplorer<cr>
 
 " Split operations
 " Movement
@@ -34,6 +31,11 @@ nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
+" Terminal split movement
+tnoremap <silent> <C-h> <C-\><C-n><C-w>h
+tnoremap <silent> <C-j> <C-\><C-n><C-w>j
+tnoremap <silent> <C-k> <C-\><C-n><C-w>k
+tnoremap <silent> <C-l> <C-\><C-n><C-w>l
 " Resizing
 nnoremap <Left> <C-w><
 nnoremap <Right> <C-w>>
@@ -48,41 +50,40 @@ nnoremap <A-r> <C-w>r
 " New splits
 nnoremap <A-i> :vnew \| BufExplorer<CR>
 nnoremap <A-v> :new \| BufExplorer<CR>
-
-" Buffer operations
+" Next/prev buffer
+nnoremap <leader>n :bn<CR>
+nnoremap <leader>p :bp<CR>
 " Close buffer
 nnoremap <C-q> :bp\|bd! #<CR>
-nnoremap <leader>q :q<CR>
-" Prev/next buffer
-nnoremap <C-p> :bp<CR>
-nnoremap <C-n> :bn<CR>
 
 " Tab operations
 " New/close tabs
-nnoremap <A-t> :tabnew<CR>
+nnoremap <C-t> :tabnew<CR>
 nnoremap <A-q> :tabclose<CR>
 " Previous/next tab
-nnoremap <A-p> :tabp<CR>
-nnoremap <A-n> :tabn<CR>
+nnoremap <C-p> :tabp<CR>
+tnoremap <C-p> <C-/><C-n><cmd>tabp<CR>
+nnoremap <C-n> :tabn<CR>
+tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
 " Move tabs
 nnoremap <A--> :-tabm<CR>
 nnoremap <A-=> :+tabm<CR>
-nnoremap <A-1> :tabr<CR>
-nnoremap <A-2> 2gt
-nnoremap <A-3> 3gt
-nnoremap <A-4> 4gt
-nnoremap <A-5> 5gt
-nnoremap <A-6> 6gt
-nnoremap <A-7> 7gt
-nnoremap <A-8> 8gt
-nnoremap <A-9> :tabl<CR>
+" nnoremap <A-1> :tabr<CR>
+" nnoremap <A-2> 2gt
+" nnoremap <A-3> 3gt
+" nnoremap <A-4> 4gt
+" nnoremap <A-5> 5gt
+" nnoremap <A-6> 6gt
+" nnoremap <A-7> 7gt
+" nnoremap <A-8> 8gt
+" nnoremap <A-9> :tabl<CR>
 
 " Fold operations
 nnoremap <A-o> za
 vnoremap <A-o> zf
 
 " Function keys
-" Buffer delete menu
+" Save session
 nnoremap <F1> :SaveSession
 " Insert escape character
 inoremap <F1> <C-v>
@@ -92,7 +93,7 @@ nnoremap <F25> :Gw<CR>
 " Format file
 nnoremap <silent> <M-F1> :OmniSharpCodeFormat<CR>:Format<CR>
 nnoremap <silent> <F49> :OmniSharpCodeFormat<CR>:Format<CR>
-" Save session
+" Open session
 nnoremap <F2> :OpenSession<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
@@ -110,7 +111,7 @@ nnoremap <F27> :G pull<CR>
 " Organize imports
 nnoremap <M-F3> :OR<CR>
 nnoremap <F51> :OR<CR>
-" Open terminal vertical split
+" Buffer delete menu
 nnoremap <F4> :Bdelete! menu<CR>
 " Git push shortcut
 nnoremap <C-F4> :Gp<CR>
@@ -135,8 +136,8 @@ nnoremap <silent> <F8> :SrceryBGToggle<CR>
 nnoremap <silent> <F9> :setlocal cursorline!<CR>
 " Toggle relative line numbering for buffer
 nnoremap <silent> <F10> :setlocal rnu!<CR>
-" Buffer delete menu
-nnoremap <F11> :Bdelete! menu<CR>
+" Switch UI positioning
+nnoremap <F11> :ToggleUIPositioning<CR>
 " Coc Quickfix
 nnoremap <F12> :<C-u>CocAction<CR>
 " Bufexplorer
@@ -176,9 +177,9 @@ nnoremap <F18> :Telescope help_tags<CR>
 nnoremap <M-C-F6> :Telescope help_tags<CR>
 
 " Location list toggle
-nnoremap <C-x> :LToggle<CR>
+nnoremap <leader>l :LToggle<CR>
 " Quickfix list toggle
-nnoremap <C-z> :QToggle<CR>
+nnoremap <leader>q :QToggle<CR>
 
 " Run last command
 nnoremap <A-;> @:<CR>
@@ -195,7 +196,8 @@ nnoremap <M-C-S> :vsplit\|:terminal<CR>
 " Escape terminal
 tnoremap <ESC><ESC> <C-\><C-n>
 " Close terminal
-tnoremap <M-C-Q> <C-\><C-n> :bp\|bd! #<CR>
+tnoremap <C-x> <C-\><C-n><C-w>q
+tnoremap <M-C-Q> <C-\><C-n><C-w>q
 " Split terminal buffer vertically
 tnoremap <M-C-V> <C-\><C-n> :split\|terminal<CR>
 " Split terminal buffer
@@ -241,30 +243,30 @@ inoremap <C-p> <ESC>pa
 
 " File Traversal
 " Page up/down
-nnoremap <S-Up> <C-u>
-nnoremap <S-Down> <C-d>
+nnoremap <C-Up> <C-u>
+nnoremap <C-Down> <C-d>
 " Line start/end
-nnoremap <S-Left> ^
-nnoremap <S-Right> $
+nnoremap <C-Left> ^
+nnoremap <C-Right> $
 " Location navigation
-nnoremap <A-Left> :lprev<CR>
-nnoremap <A-Up> :lfirst<CR>
-nnoremap <A-Down> :llast<CR>
-nnoremap <A-Right> :lnext<CR>
+nnoremap <M-Left> :lprev<CR>
+nnoremap <M-Up> :lfirst<CR>
+nnoremap <M-Down> :llast<CR>
+nnoremap <M-Right> :lnext<CR>
 
 " Text  manipulation
 " Commenting line(s)
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
 " Swap character
-nnoremap <A-h> hdlph
-nnoremap <A-l> dlp
-" Increment/decrement numbers
-nnoremap <A-k> <C-a>
-nnoremap <A-j> <C-x>
+nnoremap <S-Left> hdlph
+nnoremap <S-Right> dlp
 " Swap lines
-nnoremap <M-C-K> <Up>ddp<Up>
-nnoremap <M-C-J> ddp
+nnoremap <S-Up> <Up>ddp<Up>
+nnoremap <S-Down> ddp
+" Increment/decrement numbers
+nnoremap <M-C-K> <C-a>
+nnoremap <M-C-J> <C-x>
 " Change indentation
 nnoremap <M-C-H> <<
 vnoremap <M-C-H> <

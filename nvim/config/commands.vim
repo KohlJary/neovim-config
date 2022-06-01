@@ -27,6 +27,7 @@ command Twui :lua _twui_toggle()
 
 " UI Togglers
 command SrceryBGToggle :call SrceryBGToggleFunc()
+command ToggleUIPositioning :call ToggleUIPositioning()
 
 " --- Custom Functions ---
 " Toggle BG transparency

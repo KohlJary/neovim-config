@@ -60,7 +60,9 @@ augroup neovim_terminal
   " Disable line numbers for terminal buffers
   autocmd TermOpen * setlocal nonumber norelativenumber
   " Make sure line numbers are disabled for terminal buffers
-  autocmd BufEnter * if &ft ==# 'terminal' | setlocal nonumber norelativenumber | endif
+  autocmd BufEnter * if &buftype ==# 'terminal' | setlocal nonumber norelativenumber | endif
+  " Enter terminal buffer on focus
+  autocmd BufEnter * if &buftype ==# 'terminal' | :startinsert | endif
   " Start in insert mode on opening terminal
   autocmd TermOpen * startinsert
 augroup END
