@@ -1,4 +1,4 @@
-let mapleader = ';'
+let mapleader = "\<Del>"
 
 " Omnisharp mappings
 nnoremap <A-[> :OmniSharpNavigateUp<CR>
@@ -10,7 +10,7 @@ nnoremap <leader>oss :OmniSharpStatus<CR>
 
 " NERDTree
 nnoremap <space> :NERDTreeToggle<CR>
-nnoremap <leader><space> :NERDTreeFocus<CR>
+nnoremap <CR> :NERDTreeFocus<CR>
 
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>
@@ -188,16 +188,15 @@ nnoremap <M-.> @@
 
 " Terminal bindings
 " Open terminal
-nnoremap <M-C-T> :terminal<CR>
+nnoremap <leader>t :terminal<CR>
 " Open terminal split
 nnoremap <M-C-V> :split\|:terminal<CR>
 " Open terminal vsplit
 nnoremap <M-C-S> :vsplit\|:terminal<CR>
 " Escape terminal
-tnoremap <ESC><ESC> <C-\><C-n>
+tnoremap <leader><ESC> <C-\><C-n>
 " Close terminal
-tnoremap <C-x> <C-\><C-n><C-w>q
-tnoremap <M-C-Q> <C-\><C-n><C-w>q
+tnoremap <leader>x <C-\><C-n><C-w>q
 " Split terminal buffer vertically
 tnoremap <M-C-V> <C-\><C-n> :split\|terminal<CR>
 " Split terminal buffer
@@ -268,10 +267,10 @@ nnoremap <S-Down> ddp
 nnoremap <M-C-K> <C-a>
 nnoremap <M-C-J> <C-x>
 " Change indentation
-nnoremap <M-C-H> <<
-vnoremap <M-C-H> <
-nnoremap <M-C-L> >>
-vnoremap <M-C-L> >
+nnoremap <leader>, <<
+vnoremap <leader>, <
+nnoremap <leader>. >>
+vnoremap <leader>. >
 " Remap substitute command
 nnoremap R s
 " Swap case
@@ -284,4 +283,4 @@ nnoremap va ggVG
 " Format file text
 nnoremap <leader>= mfgg=G`f
 " Clear search highlighting
-nnoremap <M-BS> :let @/=""<CR>
+nnoremap <leader>/ :let @/=""<CR>
