@@ -1,4 +1,7 @@
+" Bind delete as leader
 let mapleader = "\<Del>"
+" Bind backslash as alternate leader key
+nmap \ <Del>
 
 " Omnisharp mappings
 nnoremap <A-[> :OmniSharpNavigateUp<CR>
@@ -22,8 +25,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Bufexplorer
-nnoremap <leader>g <cmd>BufExplorerHorizontalSplit<cr>
-nnoremap <leader>b <cmd>ToggleBufExplorer<cr>
+nnoremap <C-g> <cmd>ToggleBufExplorer<cr>
 
 " Split operations
 " Movement
@@ -43,7 +45,7 @@ nnoremap <Up> <C-w>+
 nnoremap <Down> <C-w>-
 " Maximize/reset size
 nnoremap + <C-w>_
-nnoremap \\ <C-w>\|
+nnoremap - <C-w>\|
 nnoremap = <C-w>=
 " Rotate splits
 nnoremap <A-r> <C-w>r
@@ -57,12 +59,16 @@ nnoremap <leader>p :bp<CR>
 nnoremap <C-q> :bp\|bd! #<CR>
 
 " Tab operations
-" New/close tabs
+" New tab
 nnoremap <C-t> :tabnew<CR>
-nnoremap <A-q> :tabclose<CR>
-" Previous/next tab
+" Open current buffer in new tab
+nnoremap <C-r> :tabnew\|e #<CR>
+" Close tab
+nnoremap <C-y> :tabclose<CR>
+" Previous tab
 nnoremap <C-p> :tabp<CR>
 tnoremap <C-p> <C-/><C-n><cmd>tabp<CR>
+" Next tab
 nnoremap <C-n> :tabn<CR>
 tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
 " Move tabs
@@ -79,7 +85,7 @@ nnoremap <A-=> :+tabm<CR>
 " nnoremap <A-9> :tabl<CR>
 
 " Fold operations
-nnoremap <A-o> za
+nnoremap <A-o> zA
 vnoremap <A-o> zf
 
 " Function keys
@@ -182,7 +188,7 @@ nnoremap <leader>l :LToggle<CR>
 nnoremap <leader>q :QToggle<CR>
 
 " Run last command
-nnoremap <A-;> @:<CR>
+nnoremap <M-;> @:<CR>
 " Run last macro
 nnoremap <M-.> @@
 
@@ -194,7 +200,7 @@ nnoremap <M-C-V> :split\|:terminal<CR>
 " Open terminal vsplit
 nnoremap <M-C-S> :vsplit\|:terminal<CR>
 " Escape terminal
-tnoremap <leader><ESC> <C-\><C-n>
+tnoremap <leader><leader> <C-\><C-n>
 " Close terminal
 tnoremap <leader>x <C-\><C-n><C-w>q
 " Split terminal buffer vertically
@@ -271,8 +277,8 @@ nnoremap <leader>, <<
 vnoremap <leader>, <
 nnoremap <leader>. >>
 vnoremap <leader>. >
-" Remap substitute command
-nnoremap R s
+" Remap redo
+nnoremap R <C-r>
 " Swap case
 nnoremap <A-u> ~h
 xnoremap <A-u> ~
@@ -284,3 +290,5 @@ nnoremap va ggVG
 nnoremap <leader>= mfgg=G`f
 " Clear search highlighting
 nnoremap <leader>/ :let @/=""<CR>
+" Remap <C-g>
+nnoremap <C-i> <C-g>
