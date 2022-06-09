@@ -85,8 +85,9 @@ nnoremap <A-=> :+tabm<CR>
 " nnoremap <A-9> :tabl<CR>
 
 " Fold operations
-nnoremap <A-o> zA
-vnoremap <A-o> zf
+nnoremap <C-f> za
+nnoremap <C-S-f> zA
+vnoremap <C-f> zf
 
 " Function keys
 " Save session
