@@ -72,21 +72,21 @@ tnoremap <C-p> <C-/><C-n><cmd>tabp<CR>
 nnoremap <C-n> :tabn<CR>
 tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
 " Move tabs
-nnoremap <A--> :-tabm<CR>
-nnoremap <A-=> :+tabm<CR>
-" nnoremap <A-1> :tabr<CR>
-" nnoremap <A-2> 2gt
-" nnoremap <A-3> 3gt
-" nnoremap <A-4> 4gt
-" nnoremap <A-5> 5gt
-" nnoremap <A-6> 6gt
-" nnoremap <A-7> 7gt
-" nnoremap <A-8> 8gt
-" nnoremap <A-9> :tabl<CR>
+nnoremap <M--> :-tabm<CR>
+nnoremap <M-=> :+tabm<CR>
+nnoremap <M-1> :tabr<CR>
+nnoremap <M-2> 2gt
+nnoremap <M-3> 3gt
+nnoremap <M-4> 4gt
+nnoremap <M-5> 5gt
+nnoremap <M-6> 6gt
+nnoremap <M-7> 7gt
+nnoremap <M-8> 8gt
+nnoremap <M-9> :tabl<CR>
 
 " Fold operations
-nnoremap <A-o> zA
-vnoremap <A-o> zf
+nnoremap <M-o> zA
+vnoremap <M-o> zf
 
 " Function keys
 " Save session
