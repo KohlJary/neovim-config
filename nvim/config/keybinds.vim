@@ -48,7 +48,7 @@ nnoremap + <C-w>_
 nnoremap - <C-w>\|
 nnoremap = <C-w>=
 " Rotate splits
-nnoremap <A-r> <C-w>r
+nnoremap <leader>r <C-w>r
 " New splits
 nnoremap <A-i> :vnew \| BufExplorer<CR>
 nnoremap <A-v> :new \| BufExplorer<CR>
@@ -85,9 +85,8 @@ nnoremap <A-=> :+tabm<CR>
 " nnoremap <A-9> :tabl<CR>
 
 " Fold operations
-nnoremap <C-f> za
-nnoremap <C-S-f> zA
-vnoremap <C-f> zf
+nnoremap <A-o> zA
+vnoremap <A-o> zf
 
 " Function keys
 " Save session
@@ -196,6 +195,8 @@ nnoremap <M-.> @@
 " Terminal bindings
 " Open terminal
 nnoremap <leader>t :terminal<CR>
+" Reopen terminal in current buffer
+tnoremap <C-r> <C-\><C-n>:terminal<CR>
 " Open terminal split
 nnoremap <M-C-V> :split\|:terminal<CR>
 " Open terminal vsplit
@@ -219,7 +220,7 @@ xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
 
 " Yank all file text
-nnoremap ya jggVGy<C-o>k
+nnoremap ya mQggyG`Q:delm Q<CR>
 
 " Paste in region
 nnoremap pw viwp
@@ -244,6 +245,7 @@ inoremap <C-l> <delete>
 inoremap <C-w> <ESC>wa
 inoremap <C-b> <ESC>bi
 inoremap <C-e> <ESC>ea
+inoremap <C-u> <ESC>O
 inoremap <C-o> <ESC>o
 inoremap <C-p> <ESC>pa
 
@@ -292,4 +294,4 @@ nnoremap <leader>= mfgg=G`f
 " Clear search highlighting
 nnoremap <leader>/ :let @/=""<CR>
 " Remap <C-g>
-nnoremap <C-i> <C-g>
+nnoremap <leader>i <C-g>
