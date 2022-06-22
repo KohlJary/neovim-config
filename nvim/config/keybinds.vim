@@ -64,7 +64,7 @@ nnoremap <C-t> :tabnew<CR>
 " Open current buffer in new tab
 nnoremap <C-r> :tabnew\|e #<CR>
 " Close tab
-nnoremap <C-y> :tabclose<CR>
+nnoremap <C-e> :tabclose<CR>
 " Previous tab
 nnoremap <C-p> :tabp<CR>
 tnoremap <C-p> <C-/><C-n><cmd>tabp<CR>
