@@ -30,19 +30,22 @@ nnoremap <C-g> <cmd>ToggleBufExplorer<cr>
 " Split operations
 " Movement
 nnoremap <silent> <C-h> <C-w>h
-nnoremap <silent> <C-j> <C-w>j
-nnoremap <silent> <C-k> <C-w>k
-nnoremap <silent> <C-l> <C-w>l
-" Terminal split movement
 tnoremap <silent> <C-h> <C-\><C-n><C-w>h
+nnoremap <silent> <C-j> <C-w>j
 tnoremap <silent> <C-j> <C-\><C-n><C-w>j
+nnoremap <silent> <C-k> <C-w>k
 tnoremap <silent> <C-k> <C-\><C-n><C-w>k
+nnoremap <silent> <C-l> <C-w>l
 tnoremap <silent> <C-l> <C-\><C-n><C-w>l
 " Resizing
 nnoremap <Left> <C-w><
+tnoremap <C-Left> <C-\><C-n><C-w><i
 nnoremap <Right> <C-w>>
+tnoremap <C-Right> <C-\><C-n><C-w>>i
 nnoremap <Up> <C-w>+
+tnoremap <C-Up> <C-\><C-n><C-w>+i
 nnoremap <Down> <C-w>-
+tnoremap <C-Down> <C-\><C-n><C-w>-i
 " Maximize/reset size
 nnoremap + <C-w>_
 nnoremap - <C-w>\|
