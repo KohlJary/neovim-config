@@ -64,6 +64,7 @@ nnoremap <C-q> :bp\|bd! #<CR>
 " Tab operations
 " New tab
 nnoremap <C-t> :tabnew<CR>
+tnoremap <C-t> <C-/><C-n><cmd>tabnew<CR>
 " Open current buffer in new tab
 nnoremap <C-r> :tabnew\|e #<CR>
 " Close tab
@@ -197,21 +198,17 @@ nnoremap <M-.> @@
 
 " Terminal bindings
 " Open terminal
-nnoremap <M-C-t> :terminal<CR>
-" Open terminal split
-nnoremap <M-C-V> :split\|:terminal<CR>
-" Open terminal vsplit
-nnoremap <M-C-S> :vsplit\|:terminal<CR>
+nnoremap <M-t> :terminal<CR>
 " Escape terminal
 tnoremap <leader><leader> <C-\><C-n>
 " Reopen terminal in current buffer
-tnoremap <C-r> <C-\><C-n>:terminal<CR>
+tnoremap <M-r> <C-\><C-n>:terminal<CR>
 " Close terminal
-tnoremap <leader>x <C-\><C-n><C-w>q
+tnoremap <M-q> <C-\><C-n><C-w>q
 " Split terminal buffer vertically
-tnoremap <M-C-V> <C-\><C-n> :split\|terminal<CR>
+tnoremap <M-v> <C-\><C-n> :split\|terminal<CR>
 " Split terminal buffer
-tnoremap <M-C-S> <C-\><C-n> :vsplit\|terminal<CR>
+tnoremap <M-i> <C-\><C-n> :vsplit\|terminal<CR>
 " Restart process
 tnoremap <F5> <C-c><Up><CR>
 
