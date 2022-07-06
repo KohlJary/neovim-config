@@ -53,8 +53,8 @@ nnoremap = <C-w>=
 " Rotate splits
 nnoremap <leader>r <C-w>r
 " New splits
-nnoremap <A-i> :vnew \| BufExplorer<CR>
-nnoremap <A-v> :new \| BufExplorer<CR>
+nnoremap <A-i> :vnew<CR>
+nnoremap <A-v> :new<CR>
 " Next/prev buffer
 nnoremap <leader>n :bn<CR>
 nnoremap <leader>p :bp<CR>
@@ -197,15 +197,15 @@ nnoremap <M-.> @@
 
 " Terminal bindings
 " Open terminal
-nnoremap <leader>t :terminal<CR>
-" Reopen terminal in current buffer
-tnoremap <C-r> <C-\><C-n>:terminal<CR>
+nnoremap <M-C-t> :terminal<CR>
 " Open terminal split
 nnoremap <M-C-V> :split\|:terminal<CR>
 " Open terminal vsplit
 nnoremap <M-C-S> :vsplit\|:terminal<CR>
 " Escape terminal
 tnoremap <leader><leader> <C-\><C-n>
+" Reopen terminal in current buffer
+tnoremap <C-r> <C-\><C-n>:terminal<CR>
 " Close terminal
 tnoremap <leader>x <C-\><C-n><C-w>q
 " Split terminal buffer vertically
