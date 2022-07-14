@@ -4,16 +4,18 @@ let mapleader = "\<Del>"
 nmap \ <Del>
 
 " Omnisharp mappings
-nnoremap <A-[> :OmniSharpNavigateUp<CR>
-nnoremap <A-]> :OmniSharpNavigateDown<CR>
-nnoremap <A-f> :OmniSharpFindUsages<CR>
-nnoremap <A-g> :OmniSharpGotoDefinition split<CR>
-nnoremap <A-R> :OmniSharpRestartServer<CR>
+nnoremap <M-[> :OmniSharpNavigateUp<CR>
+nnoremap <M-]> :OmniSharpNavigateDown<CR>
+nnoremap <M-f> :OmniSharpFindUsages<CR>
+nnoremap <M-g> :OmniSharpGotoDefinition split<CR>
+nnoremap <M-R> :OmniSharpRestartServer<CR>
 nnoremap <leader>oss :OmniSharpStatus<CR>
 
 " NERDTree
-nnoremap <space> :NERDTreeToggle<CR>
-nnoremap <CR> :NERDTreeFocus<CR>
+nnoremap <silent> <M-n> :NERDTreeToggle<CR>
+tnoremap <silent> <M-n> <C-\><C-n><cmd>NERDTreeToggle<CR>
+nnoremap <silent> <space> :NERDTreeFocus<CR>
+tnoremap <silent> <M-space> <C-\><C-n><cmd>NERDTreeFocus<CR>
 
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>
@@ -52,12 +54,15 @@ nnoremap - <C-w>\|
 nnoremap = <C-w>=
 " Rotate splits
 nnoremap <leader>r <C-w>r
+" Clone splits
+nnoremap <M-S-i> :vsp<CR>
+nnoremap <M-S-v> :sp<CR>
 " New splits
-nnoremap <A-i> :vnew<CR>
-nnoremap <A-v> :new<CR>
+nnoremap <M-i> :vnew<CR>
+nnoremap <M-v> :new<CR>
 " Next/prev buffer
-nnoremap <leader>n :bn<CR>
-nnoremap <leader>p :bp<CR>
+" nnoremap <leader>n :bn<CR>
+" nnoremap <leader>p :bp<CR>
 " Close buffer
 nnoremap <C-q> :bp\|bd! #<CR>
 
@@ -66,9 +71,9 @@ nnoremap <C-q> :bp\|bd! #<CR>
 nnoremap <C-t> :tabnew<CR>
 tnoremap <C-t> <C-/><C-n><cmd>tabnew<CR>
 " Open current buffer in new tab
-nnoremap <C-r> :tabnew\|e #<CR>
+nnoremap <silent> <C-e> :tabnew\|e #<CR>
 " Close tab
-nnoremap <C-e> :tabclose<CR>
+nnoremap <C-w> :tabclose<CR>
 " Previous tab
 nnoremap <C-p> :tabp<CR>
 tnoremap <C-p> <C-/><C-n><cmd>tabp<CR>
@@ -89,8 +94,8 @@ nnoremap <M-8> 8gt
 nnoremap <M-9> :tabl<CR>
 
 " Fold operations
-nnoremap <M-o> zA
-vnoremap <M-o> zf
+nnoremap <C-f> zA
+vnoremap <C-f> zf
 
 " Function keys
 " Save session
@@ -206,9 +211,9 @@ tnoremap <M-r> <C-\><C-n>:terminal<CR>
 " Close terminal
 tnoremap <M-q> <C-\><C-n><C-w>q
 " Split terminal buffer vertically
-tnoremap <M-v> <C-\><C-n> :split\|terminal<CR>
+tnoremap <M-v> <C-\><C-n><cmd>split\|terminal<CR>
 " Split terminal buffer
-tnoremap <M-i> <C-\><C-n> :vsplit\|terminal<CR>
+tnoremap <M-i> <C-\><C-n><cmd>vsplit\|terminal<CR>
 " Restart process
 tnoremap <F5> <C-c><Up><CR>
 
@@ -280,8 +285,6 @@ nnoremap <leader>, <<
 vnoremap <leader>, <
 nnoremap <leader>. >>
 vnoremap <leader>. >
-" Remap redo
-nnoremap R <C-r>
 " Swap case
 nnoremap <A-u> ~h
 xnoremap <A-u> ~
@@ -294,4 +297,6 @@ nnoremap <leader>= mfgg=G`f
 " Clear search highlighting
 nnoremap <leader>/ :let @/=""<CR>
 " Remap <C-g>
-nnoremap <leader>i <C-g>
+nnoremap <M-d> <C-g>
+" Remap <C-w>
+nnoremap <leader>w <C-w>
