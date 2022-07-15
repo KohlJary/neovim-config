@@ -39,6 +39,8 @@ set splitright
 set hidden
 " Syntax highlighting
 syntax on
+" Ensure cwd matches terminal cwd
+set autochdir
 
 " Indenting
 filetype plugin indent on
