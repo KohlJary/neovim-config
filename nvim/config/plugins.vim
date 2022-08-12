@@ -96,6 +96,7 @@ let g:NERDTreeHighlightCursorLine=1
 let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeShowHidden=1
+let g:NERDTreeCustomOpenArgs={'file': {'reuse': 'currenttab', 'where': 'p'}, 'dir': {}}
 
 augroup NERDTree
   autocmd FileType nerdtree setlocal cursorline signcolumn=no

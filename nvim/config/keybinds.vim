@@ -12,10 +12,12 @@ nnoremap <M-R> :OmniSharpRestartServer<CR>
 nnoremap <leader>oss :OmniSharpStatus<CR>
 
 " NERDTree
-nnoremap <silent> <M-n> :NERDTreeToggle<CR>
-tnoremap <silent> <M-n> <C-\><C-n><cmd>NERDTreeToggle<CR>
+nnoremap <silent> <M-n> :NERDTreeFind<CR>
+tnoremap <silent> <M-n> <C-\><C-n><cmd>NERDTreeFind<CR>
+nnoremap <silent> <leader><space> :NERDTreeToggle<CR>
+tnoremap <silent> <leader><space> <C-\><C-n><cmd>NERDTreeToggle<CR>
 nnoremap <silent> <space> :NERDTreeFocus<CR>
-tnoremap <silent> <M-space> <C-\><C-n><cmd>NERDTreeFocus<CR>
+tnoremap <silent> <leader><space> <C-\><C-n><cmd>NERDTreeFocus<CR>
 
 " NvimTree
 " nnoremap <silent> <M-n> :NvimTreeToggle<CR>
