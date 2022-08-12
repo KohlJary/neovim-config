@@ -52,6 +52,7 @@ tnoremap <C-Down> <C-\><C-n><C-w>-i
 nnoremap + <C-w>_
 nnoremap - <C-w>\|
 nnoremap = <C-w>=
+tnoremap <leader>= <C-\><C-n><C-w>=i
 " Rotate splits
 nnoremap <leader>r <C-w>r
 " Clone splits
@@ -223,6 +224,28 @@ xnoremap ' xi''<ESC>P
 xnoremap ( xi()<ESC>P
 xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
+
+" In next/last parentheses
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F(vi(<cr>
+" In next/last bracket
+onoremap in[ :<c-u>normal! f[vi[<cr>
+onoremap il[ :<c-u>normal! F[vi[<cr>
+" In next/last brace
+onoremap in{ :<c-u>normal! f{vi{<cr>
+onoremap il{ :<c-u>normal! F{vi{<cr>
+" In next/last angle bracket
+onoremap in< :<c-u>normal! f<vi<<cr>
+onoremap il< :<c-u>normal! F<vi<<cr>
+" In next/last single quote
+onoremap in' :<c-u>normal! f'vi'<cr>
+onoremap il' :<c-u>normal! F'vi'<cr>
+" In next/last double quote
+onoremap in" :<c-u>normal! f"vi"<cr>
+onoremap il" :<c-u>normal! F"vi"<cr>
+" In next/last backtick
+onoremap in` :<c-u>normal! f`vi`<cr>
+onoremap il` :<c-u>normal! F`vi`<cr>
 
 " Yank all file text
 nnoremap ya mQggyG`Q:delm Q<CR>

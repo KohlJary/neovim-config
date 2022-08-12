@@ -51,8 +51,8 @@ Plug 'beyondmarc/hlsl.vim'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 " Tags
-Plug 'yegappan/taglist'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'yegappan/taglist'
+" Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 " --- Autoinstall Missing Plugins ---
@@ -91,7 +91,9 @@ let g:NERDTreeWinPos='right'
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMinimalMenu=1
 let g:NERDTreeHighlightCursorLine=1
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=0
+let g:NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeShowHidden=1
 
 augroup NERDTree
   autocmd FileType nerdtree setlocal cursorline signcolumn=no
@@ -121,17 +123,17 @@ endfunction
 
 " vim-session
 " Periodic autosaving if session is open (minutes)
-let g:session_autosave_periodic=5
+"let g:session_autosave_periodic=5
 
 " Taglist
-let g:Tlist_Show_One_File=1
-command GutentagsClearCache :call system('rm ' . g:gutentags_cache_dir . '/*')
-let g:gutentags_define_advanced_commands=1
-let g:gutentags_generate_on_new=1
-let g:gutentags_generate_on_missing=1
-let g:gutentags_generate_on_write=1
-let g:gutentags_generate_on_empty_buffer=0
-let g:gutentags_ctags_extra_args=['--tag-relative=yes','--fields=+ailmnS']
+" let g:Tlist_Show_One_File=1
+" command GutentagsClearCache :call system('rm ' . g:gutentags_cache_dir . '/*')
+" let g:gutentags_define_advanced_commands=1
+" let g:gutentags_generate_on_new=1
+" let g:gutentags_generate_on_missing=1
+" let g:gutentags_generate_on_write=1
+" let g:gutentags_generate_on_empty_buffer=0
+" let g:gutentags_ctags_extra_args=['--tag-relative=yes','--fields=+ailmnS']
 
 " Airline
 " Weird bug
