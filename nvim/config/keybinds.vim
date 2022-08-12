@@ -17,6 +17,12 @@ tnoremap <silent> <M-n> <C-\><C-n><cmd>NERDTreeToggle<CR>
 nnoremap <silent> <space> :NERDTreeFocus<CR>
 tnoremap <silent> <M-space> <C-\><C-n><cmd>NERDTreeFocus<CR>
 
+" NvimTree
+" nnoremap <silent> <M-n> :NvimTreeToggle<CR>
+" tnoremap <silent> <M-n> <C-\><C-n><cmd>NvimTreeToggle<CR>
+" nnoremap <silent> <space> :NvimTreeFocus<CR>
+" tnoremap <silent> <M-space> <C-\><C-n><cmd>NvimTreeFocus<CR>
+
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>
 
@@ -291,6 +297,8 @@ nnoremap <M-Down> :llast<CR>
 nnoremap <M-Right> :lnext<CR>
 
 " Text  manipulation
+" Redo
+nnoremap <S-u> <C-r>
 " Commenting line(s)
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>

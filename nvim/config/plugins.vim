@@ -16,6 +16,8 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'akinsho/toggleterm.nvim'
 " UI
 Plug 'scrooloose/nerdtree'
+Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'kyazdani42/nvim-tree.lua'
 Plug 'liuchengxu/vista.vim'
 Plug 'preservim/tagbar'
 Plug 'vim-airline/vim-airline'
@@ -85,7 +87,7 @@ augroup VistaAutocommands
 augroup END
 
 " NERDTree
-au VimEnter * NERDTree | wincmd p
+" au VimEnter * NERDTree | wincmd p
 let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants','\.asmdef$']
 let g:NERDTreeWinPos='right'
 let g:NERDTreeMinimalUI=1
