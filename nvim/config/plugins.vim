@@ -48,8 +48,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " C#
 Plug 'OmniSharp/omnisharp-vim'
-"HLSL
+" HLSL
 Plug 'beyondmarc/hlsl.vim'
+" JSON
+Plug 'tpope/vim-jdaddy'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 " Tags

@@ -70,3 +70,18 @@ function! ToggleUIPositioning()
     let g:vista_sidebar_position="vertical botright"
   endif
 endfunction
+
+function! FormatJson()
+python << EOF
+import vim
+import json
+try:
+    buf = vim.current.buffer
+    json_content = '\n'.join(buf[:])
+    content = json.loads(json_content)
+    sorted_content = json.dumps(content, indent=4, sort_keys=True)
+    buf[:] = sorted_content.split('\n')
+except Exception, e:
+    print e
+EOF
+endfunction

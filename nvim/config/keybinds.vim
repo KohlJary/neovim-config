@@ -14,8 +14,8 @@ nnoremap <leader>oss :OmniSharpStatus<CR>
 " NERDTree
 nnoremap <silent> <M-n> :NERDTreeFind<CR>
 tnoremap <silent> <M-n> <C-\><C-n><cmd>NERDTreeFind<CR>
-nnoremap <silent> <leader><space> :NERDTreeToggle<CR>
-tnoremap <silent> <leader><space> <C-\><C-n><cmd>NERDTreeToggle<CR>
+nnoremap <silent> <CR> :NERDTreeToggle<CR>
+tnoremap <silent> <leader><CR> <C-\><C-n><cmd>NERDTreeToggle<CR>
 nnoremap <silent> <space> :NERDTreeFocus<CR>
 tnoremap <silent> <leader><space> <C-\><C-n><cmd>NERDTreeFocus<CR>
 
@@ -36,6 +36,12 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Bufexplorer
 nnoremap <C-g> <cmd>ToggleBufExplorer<cr>
+
+" Lightspeed
+nnoremap <C-s> <plug>Lightspeed_s<cr>
+xnoremap <C-s> <plug>Lightspeed_s<cr>
+nnoremap <C-S-S> <plug>Lightspeed_S<cr>
+xnoremap <C-S-S> <plug>Lightspeed_S<cr>
 
 " Split operations
 " Movement
@@ -256,7 +262,7 @@ onoremap in` :<c-u>normal! f`vi`<cr>
 onoremap il` :<c-u>normal! F`vi`<cr>
 
 " Yank all file text
-nnoremap ya mQggyG`Q:delm Q<CR>
+nnoremap ya mQggyG`Q:delm Q<CR><cmd>echo "Yank All"<cr>
 
 " Paste in region
 nnoremap pw viwp
@@ -274,10 +280,15 @@ nnoremap pl Vp
 nnoremap pp p
 
 " Quick cursor movement/deletion in insert mode
-inoremap <C-h> <backspace>
-inoremap <C-j> <ESC>A
-inoremap <C-k> <ESC>I
-inoremap <C-l> <delete>
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+" Quick end line of code with semicolon
+inoremap <C-f> <ESC>A;<ESC>
+" Delete/backspace on home row
+inoremap <C-s> <Backspace>
+inoremap <C-d> <Delete>
 inoremap <C-w> <ESC>wa
 inoremap <C-b> <ESC>bi
 inoremap <C-e> <ESC>ea
