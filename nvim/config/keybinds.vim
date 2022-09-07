@@ -66,6 +66,8 @@ tnoremap <C-Down> <C-\><C-n><C-w>-i
 nnoremap + <C-w>_
 nnoremap - <C-w>\|
 nnoremap = <C-w>=
+nnoremap =- :set ead=ver ea noea<CR> " set windows equal vertically (^W, =, =)
+nnoremap =\ :set ead=hor ea noea<CR> " set windows equal horizontally (^W, =, -)
 tnoremap <leader>= <C-\><C-n><C-w>=i
 " Rotate splits
 nnoremap <leader>r <C-w>r
