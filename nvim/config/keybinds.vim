@@ -286,8 +286,14 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-" Quick end line of code with semicolon
-inoremap <C-f> <ESC>A;<ESC>
+inoremap <C-a> <Home>
+inoremap <C-g> <End>
+" End LOC with semicolon
+inoremap <C-f> <ESC>A;
+" End LOC with comma
+inoremap <C-v> <ESC>A,
+" Inline comment at EOL
+inoremap <C-c> <End><Space>//<Space>
 " Delete/backspace on home row
 inoremap <C-s> <Backspace>
 inoremap <C-d> <Delete>
@@ -346,3 +352,5 @@ nnoremap <leader>/ :let @/=""<CR>
 nnoremap <M-d> <C-g>
 " Remap <C-w>
 nnoremap <leader>w <C-w>
+" Remap =
+nnoremap <leader>= =
