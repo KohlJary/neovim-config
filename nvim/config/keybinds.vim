@@ -291,13 +291,16 @@ inoremap <C-g> <End>
 " End LOC with semicolon
 inoremap <C-f> <ESC>A;
 " End LOC with comma
-inoremap <C-v> <ESC>A,
+inoremap <C-m> <ESC>A,
 " Inline comment at EOL
 inoremap <C-c> <End><Space>//<Space>
 " Delete/backspace on home row
 inoremap <C-s> <Backspace>
 inoremap <C-d> <Delete>
-inoremap <C-w> <ESC>wa
+" Ctrl backspace/delete behavior
+inoremap <M-BS>  <C-w>
+inoremap <M-Del> <C-o>de
+" inoremap <C-w> <ESC>wa
 inoremap <C-b> <ESC>bi
 inoremap <C-e> <ESC>ea
 inoremap <C-u> <ESC>O
