@@ -12,12 +12,12 @@ nnoremap <M-R> :OmniSharpRestartServer<CR>
 nnoremap <leader>oss :OmniSharpStatus<CR>
 
 " NERDTree
-nnoremap <silent> <M-n> :NERDTreeFind<CR>
-tnoremap <silent> <M-n> <C-\><C-n><cmd>NERDTreeFind<CR>
-nnoremap <silent> <CR> :NERDTreeToggle<CR>
-tnoremap <silent> <leader><CR> <C-\><C-n><cmd>NERDTreeToggle<CR>
-nnoremap <silent> <space> :NERDTreeFocus<CR>
-tnoremap <silent> <leader><space> <C-\><C-n><cmd>NERDTreeFocus<CR>
+nnoremap <silent> <BS> :NERDTreeFocus<CR>
+tnoremap <silent> <leader><BS> <C-\><C-n><cmd>NERDTreeFocus<CR>
+nnoremap <silent> <M-BS> :NERDTreeFind<CR>
+tnoremap <silent> <leader><M-BS> <C-\><C-n><cmd>NERDTreeFind<CR>
+nnoremap <silent> <Del> :NERDTreeToggle<CR>
+tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeToggle<CR>
 
 " NvimTree
 " nnoremap <silent> <M-n> :NvimTreeToggle<CR>
@@ -33,9 +33,10 @@ nnoremap sf <cmd>Telescope find_files<cr>
 nnoremap sg <cmd>Telescope live_grep<cr>
 nnoremap sb <cmd>Telescope buffers<cr>
 nnoremap sh <cmd>Telescope help_tags<cr>
+nnoremap ss <cmd>Telescope grep_string<cr>
 
 " Bufexplorer
-nnoremap <C-g> <cmd>ToggleBufExplorer<cr>
+nnoremap <Space> <cmd>ToggleBufExplorer<cr>
 
 " Lightspeed
 nnoremap <C-s> <plug>Lightspeed_s<cr>
@@ -293,8 +294,6 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-inoremap <C-a> <Home>
-inoremap <C-g> <End>
 " End LOC with semicolon
 inoremap <C-f> <ESC>A;
 " End LOC with comma
@@ -356,9 +355,7 @@ nnoremap <leader>= mfgg=G`f
 " Clear search highlighting
 nnoremap <leader>/ :let @/=""<CR>
 
-" Remap <C-g>
-nnoremap <M-d> <C-g>
 " Remap <C-w>
-nnoremap <leader>w <C-w>
+nnoremap <M-w> <C-w>
 " Remap =
 nnoremap <leader>= =

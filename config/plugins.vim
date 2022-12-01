@@ -2,60 +2,8 @@
 
 " Load vim-plug plugins
 call plug#begin($VIMDIR.'/plugged')
-" Theming/Colors
-Plug 'lifepillar/vim-solarized8'
-Plug 'sheerun/vim-wombat-scheme'
-Plug 'srcery-colors/srcery-vim'
-" Session
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-" Buffers
-Plug 'Asheq/close-buffers.vim'
-Plug 'jlanzarotta/bufexplorer'
-" Terminal
-Plug 'akinsho/toggleterm.nvim', {'tag': '*'}
-" UI
-Plug 'scrooloose/nerdtree'
-Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'kyazdani42/nvim-tree.lua'
-" Plug 'liuchengxu/vista.vim'
-Plug 'preservim/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'kshenoy/vim-signature'
-" File management
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do':'make'}
-Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}
-Plug 'nvim-telescope/telescope.nvim'
-" Text Manipulation
-Plug 'townk/vim-autoclose'
-Plug 'tpope/vim-abolish'
-Plug 'unblevable/quick-scope'
-Plug 'ggandor/lightspeed.nvim'
-Plug 'tpope/vim-commentary'
-Plug 'kburdett/vim-nuuid'
-" Language processing
-Plug 'vim-syntastic/syntastic'
-Plug 'neovim/nvim-lspconfig'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" C#
-Plug 'OmniSharp/omnisharp-vim'
-" HLSL
-Plug 'beyondmarc/hlsl.vim'
-" JSON
-Plug 'tpope/vim-jdaddy'
-" Icons
-Plug 'ryanoasis/vim-devicons'
-" Tags
-" Plug 'yegappan/taglist'
-" Plug 'ludovicchabant/vim-gutentags'
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " --- Autoinstall Missing Plugins ---
@@ -141,13 +89,9 @@ endfunction
 
 " Airline
 " Weird bug
-" call airline#extensions#tabline#buffers#invalidate()
 let g:airline_statusline_ontop=1
 let g:airline#extensions#coc#enabled=1
 let g:airline#extensions#coc#show_coc_status=1
-let g:airline#extensions#tabline#enabled=0
-let g:airline#extensions#tabline#formatter='unique_tail'
-let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline_powerline_fonts=1
 let g:airline_theme='srcery'
 let g:airline_solarized_bg='dark'
@@ -165,7 +109,6 @@ function! AirlineInit()
   let g:airline_section_b = airline#section#create_left(['hunks', 'branch',])
   let g:airline_section_c = airline#section#create_left(["Tab: %{tabpagenr()}/%{tabpagenr('$')}"])
   let g:airline_section_gutter = airline#section#create(['%=','%{g:datetime}','%='])
-  " let g:airline_section_x = airline#section#create_right(['%{VistaNearestMethodOrFunction()}','','omnisharp'])
   let g:airline_section_x = airline#section#create_right(['omnisharp'])
   let g:airline_section_error = airline#section#create(['syntastic-err'])
   let g:airline_section_warning = airline#section#create(['syntastic-warn'])
