@@ -20,6 +20,7 @@ if (g:detected_os == 'WINDOWS')
   set runtimepath^=$CHOCDIR+=$CHOCDIR/after
 elseif (g:detected_os == 'LINUX')
   let $VIMDIR = $HOME.'/.config/nvim'
+  let $DATADIR = $HOME.'/.local/share/nvim/site'
   let $OMNIBIN = "/usr/lib/omnisharp-roslyn/OmniSharp"
   let $NPMDIR = '/usr/lib'
   let g:python3_host_prog="/usr/bin/python3"
