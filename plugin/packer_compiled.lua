@@ -95,6 +95,11 @@ _G.packer_plugins = {
     path = "/home/jaryk/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  ["fine-cmdline.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fine-cmdline.nvim",
+    url = "https://github.com/vonheikemen/fine-cmdline.nvim"
+  },
   fzf = {
     loaded = true,
     path = "/home/jaryk/.local/share/nvim/site/pack/packer/start/fzf",
@@ -120,15 +125,30 @@ _G.packer_plugins = {
     path = "/home/jaryk/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/scrooloose/nerdtree"
   },
+  ["nerdtree-dash"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree-dash",
+    url = "https://github.com/liuchengxu/nerdtree-dash"
+  },
   ["nerdtree-git-plugin"] = {
     loaded = true,
     path = "/home/jaryk/.local/share/nvim/site/pack/packer/start/nerdtree-git-plugin",
     url = "https://github.com/Xuyuanp/nerdtree-git-plugin"
   },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nui.nvim",
+    url = "https://github.com/muniftanjim/nui.nvim"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/jaryk/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -170,6 +190,11 @@ _G.packer_plugins = {
     path = "/home/jaryk/.local/share/nvim/site/pack/packer/start/tagbar",
     url = "https://github.com/preservim/tagbar"
   },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/jaryk/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -180,6 +205,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jaryk/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["typescript-vim"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\typescript-vim",
+    url = "https://github.com/leafgarland/typescript-vim"
   },
   ["vim-abolish"] = {
     loaded = true,
@@ -220,6 +250,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jaryk/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-graphql"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-graphql",
+    url = "https://github.com/jparise/vim-graphql"
   },
   ["vim-jdaddy"] = {
     loaded = true,

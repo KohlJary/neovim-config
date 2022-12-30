@@ -45,16 +45,11 @@ endfunction
 " Apply colorscheme tweaks
 function! ColorTweaks()
   " NERDTree Colors
-  hi NERDTreeFile ctermfg=Magenta guifg=Magenta
-  " Vista Colors
-  hi VistaTag ctermfg=Magenta guifg=Magenta
-  hi VistaColon ctermfg=Red guifg=Red
-  hi VistaLineNr ctermfg=Cyan guifg=Cyan
-  hi default link VistaIcon SrceryGreen
+  " hi NERDTreeFile ctermfg=Magenta guifg=Magenta
   " Status Line/TUI Colors
   hi VertSplit ctermfg=Cyan guifg=Cyan
-  hi StatusLine cterm=NONE ctermfg=Magenta gui=NONE guifg=Magenta
-  hi StatusLineNC cterm=NONE ctermfg=Cyan gui=NONE guifg=Cyan
+  hi StatusLine guifg=Magenta
+  hi StatusLineNC guifg=Cyan
   hi LineNr ctermfg=Cyan guifg=Cyan
   hi CursorLineNr ctermfg=Magenta guifg=Magenta
   " Text Colors

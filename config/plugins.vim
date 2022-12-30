@@ -24,6 +24,7 @@ let g:syntastic_check_on_wq = 0
 " CoC
 let g:coc_global_extensions = ['coc-omnisharp', 'coc-tsserver', 'coc-angular', 'coc-json', 'coc-sql', 'coc-vimlsp']
 source $VIMDIR/config/coc-user-config.vim
+let g:AutoClosePreserveDotReg = 0
 
 " Vista
 " let g:vista_default_executive = 'coc'
@@ -69,6 +70,10 @@ function! NERDTreeSyncFocus()
   call SyncTree()
   NERDTreeFocus
 endfunction
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Highlight currently open buffer in NERDTree
 " autocmd BufEnter * call SyncTree()

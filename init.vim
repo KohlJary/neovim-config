@@ -39,34 +39,41 @@ local is_linux = vim.loop.os_uname().sysname == "Linux"
 local is_win = vim.loop.os_uname().sysname == "Windows_NT"
 local pid = vim.fn.getpid()
 -- LSP setup
--- require('lsp')
+ require('lsp')
 local ng_cmd_path = vim.env.NPMDIR .. "/@angular/language-server"
 local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
---require'lspconfig'.omnisharp.setup{
-  --cmd = { vim.env.OMNIBIN, "--languageserver" , "--hostPID", tostring(pid) };
---}
+require'lspconfig'.omnisharp.setup{
+  cmd = { vim.env.OMNIBIN, "--languageserver" , "--hostPID", tostring(pid) };
+}
 if(is_win)
   then
-  --require'lspconfig'.angularls.setup{
-    --on_attach = on_attach,
-    --capabilities = capabilities,
-    --cmd = cmd,
-    --on_new_config = function(new_config,new_root_dir)
-      --new_config.cmd = cmd
-    --end
-  --}
+  require'lspconfig'.angularls.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = cmd,
+    on_new_config = function(new_config,new_root_dir)
+      new_config.cmd = cmd
+    end
+  }
   vim.cmd("let &shell = has('win32') ? 'powershell' : 'pwsh'")
   vim.cmd("let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'")
   vim.cmd("let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'")
   vim.cmd("let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'")
   vim.cmd("set shellquote= shellxquote=")
 else
-  --require'lspconfig'.angularls.setup{}
-  -- require('lsp')
+  require'lspconfig'.angularls.setup{}
+   require('lsp')
 end
 -- Telescope setup
--- require('nvim-treesitter').setup{}
--- require('telescope').setup{}
+require('nvim-treesitter').setup{}
+require('telescope').setup{
+  extensions = {
+    file_browser = {
+      theme = "ivy"
+    }
+  }
+}
+require('telescope').load_extension "file_browser"
 -- Toggleterm setup
   require('toggleterm').setup{
     open_mapping = [[<C-y>]],

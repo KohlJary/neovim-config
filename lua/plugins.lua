@@ -100,19 +100,37 @@ return require('packer').startup(function(use)
   end
   }
   -- UI
+  -- NERDTree
   use 'scrooloose/nerdtree'
   use 'kyazdani42/nvim-web-devicons'
-  -- use 'kyazdani42/nvim-tree.lua'
-  -- use 'liuchengxu/vista.vim'
+  use 'ryanoasis/vim-devicons'
+  use 'liuchengxu/nerdtree-dash'
+  -- Status Line
   use 'preservim/tagbar'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
   use 'kshenoy/vim-signature'
-  -- -- File management
+  -- Misc
+  use 'muniftanjim/nui.nvim'
+  use 'vonheikemen/fine-cmdline.nvim'
+  -- File management
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-file-browser.nvim'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+  -- Windows intial installation of Treesitter
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   run = function()
+  --     local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+  --     ts_update()
+  --   end,
+  -- }
   -- Text Manipulation
   use 'townk/vim-autoclose'
   use 'tpope/vim-abolish'
@@ -134,6 +152,8 @@ return require('packer').startup(function(use)
   use 'beyondmarc/hlsl.vim'
   -- JSON
   use 'tpope/vim-jdaddy'
-  -- Icons
-  use 'ryanoasis/vim-devicons'
+  -- GraphQL
+  use 'jparise/vim-graphql'
+  -- Typescript
+  use 'leafgarland/typescript-vim'
 end)

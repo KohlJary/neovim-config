@@ -34,9 +34,24 @@ nnoremap sg <cmd>Telescope live_grep<cr>
 nnoremap sb <cmd>Telescope buffers<cr>
 nnoremap sh <cmd>Telescope help_tags<cr>
 nnoremap ss <cmd>Telescope grep_string<cr>
+" List LSP references for word under cursor
+nnoremap sr <cmd>Telescope lsp_references<cr>
+" Goto definition of word under cursor if only one, otherwise list in Telescope
+nnoremap sd <cmd>Telescope lsp_definitions<cr>
+" Goto implementation of word under cursor if only one, otherwise list in Telescope
+nnoremap si <cmd>Telescope lsp_implementations<cr>
+" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
+nnoremap st <cmd>Telescope lsp_type_definitions<cr>
+
+" FineCmdline
+nnoremap <Space> <cmd>FineCmdline<cr>
 
 " Bufexplorer
-nnoremap <Space> <cmd>ToggleBufExplorer<cr>
+nnoremap gb <cmd>ToggleBufExplorer<cr>
+
+" Lazygit
+nnoremap <silent> gv :Lazygit<CR>
+tnoremap <silent> gv <C-\><C-n>:Lazygit<CR>
 
 " Lightspeed
 nnoremap <C-s> <plug>Lightspeed_s<cr>
@@ -179,7 +194,7 @@ nnoremap <silent> <F11> :SrceryBGToggle<CR>
 " Toggle relative line numbering for buffer
 "nnoremap <silent> <F10> :setlocal rnu!<CR>
 " Coc Quickfix
-nnoremap <F12> :<C-u>CocAction<CR>
+nnoremap <F12> <Plug>(coc-codeaction)<CR>
 " Bufexplorer
 nnoremap <C-F12> :BufExplorer<CR>
 " Plugin install
@@ -344,8 +359,8 @@ vnoremap <leader>, <
 nnoremap <leader>. >>
 vnoremap <leader>. >
 " Swap case
-nnoremap <A-u> ~h
-xnoremap <A-u> ~
+nnoremap S ~h
+xnoremap S ~
 " Break line at cursor
 nnoremap \| i<CR><esc>
 " Select all text
