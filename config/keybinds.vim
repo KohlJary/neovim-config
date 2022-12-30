@@ -1,7 +1,5 @@
 " Bind delete as leader
-let mapleader = "\<F5>"
-" Bind backslash as alternate leader key
-nmap \ <Del>
+let mapleader = "\<Del>"
 
 " Omnisharp mappings
 nnoremap <M-[> :OmniSharpNavigateUp<CR>
@@ -52,6 +50,10 @@ nnoremap gb <cmd>ToggleBufExplorer<cr>
 " Lazygit
 nnoremap <silent> gv :Lazygit<CR>
 tnoremap <silent> gv <C-\><C-n>:Lazygit<CR>
+
+" Taskwarrior
+nnoremap <silent> gt :Twui<CR>
+tnoremap <silent> gt <C-\><C-n>:Twui<CR>
 
 " Lightspeed
 nnoremap <C-s> <plug>Lightspeed_s<cr>
@@ -141,8 +143,8 @@ nnoremap <F25> :Gw<CR>
 " Format file
 nnoremap <silent> <M-F1> :OmniSharpCodeFormat<CR>:Format<CR>
 nnoremap <silent> <F49> :OmniSharpCodeFormat<CR>:Format<CR>
-" Open session
-nnoremap <F2> :OpenSession<CR>
+" Coc format
+nnoremap <F2> :Format<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
 " Git commit shortcut
@@ -174,15 +176,12 @@ inoremap <F5> <ESC>A;<ESC>
 " Git diff split
 nnoremap <C-F5> :Gdiffsplit<CR>
 nnoremap <F29> :Gdiffsplit<CR>
-" Toggle NERDTree
-nnoremap <silent> <F6> :Twui<CR>
-tnoremap <silent> <F6> <C-\><C-n>:Twui<CR>
-" Focus NERDTree
-nnoremap <silent> <F7> :Lazygit<CR>
-tnoremap <silent> <F7> <C-\><C-n>:Lazygit<CR>
-" Focus NERDTree
-" nnoremap <silent> <F8> :Serv<CR>
-" tnoremap <silent> <F8> <C-\><C-n>Serv<CR>
+" Load Session
+nnoremap <F6> :SessionLoad<CR>
+" Save Session
+nnoremap <F7> :SessionSave<CR>
+" Delete Session
+nnoremap <F8> :SessionDelete<CR>
 " Reload CoC
 nnoremap <silent> <F9> :LspRestart<CR>:CocRestart<CR>
 " Lsp Info
