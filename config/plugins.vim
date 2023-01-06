@@ -26,16 +26,6 @@ let g:coc_global_extensions = ['coc-omnisharp', 'coc-tsserver', 'coc-angular', '
 source $VIMDIR/config/coc-user-config.vim
 let g:AutoClosePreserveDotReg = 0
 
-" Vista
-" let g:vista_default_executive = 'coc'
-" let g:vista_sidebar_position="vertical topleft"
-" function! VistaNearestMethodOrFunction() abort
-"   return get(b:, 'vista_nearest_method_or_function', '')
-" endfunction
-" augroup VistaAutocommands
-"   autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-" augroup END
-
 " NERDTree
 " au VimEnter * NERDTree | wincmd p
 let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants','\.asmdef$']
@@ -74,23 +64,6 @@ endfunction
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-
-" Highlight currently open buffer in NERDTree
-" autocmd BufEnter * call SyncTree()
-
-" vim-session
-" Periodic autosaving if session is open (minutes)
-"let g:session_autosave_periodic=5
-
-" Taglist
-" let g:Tlist_Show_One_File=1
-" command GutentagsClearCache :call system('rm ' . g:gutentags_cache_dir . '/*')
-" let g:gutentags_define_advanced_commands=1
-" let g:gutentags_generate_on_new=1
-" let g:gutentags_generate_on_missing=1
-" let g:gutentags_generate_on_write=1
-" let g:gutentags_generate_on_empty_buffer=0
-" let g:gutentags_ctags_extra_args=['--tag-relative=yes','--fields=+ailmnS']
 
 " Airline
 " Weird bug

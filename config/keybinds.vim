@@ -17,12 +17,6 @@ tnoremap <silent> <leader><M-BS> <C-\><C-n><cmd>NERDTreeFind<CR>
 nnoremap <silent> <Del> :NERDTreeToggle<CR>
 tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeToggle<CR>
 
-" NvimTree
-" nnoremap <silent> <M-n> :NvimTreeToggle<CR>
-" tnoremap <silent> <M-n> <C-\><C-n><cmd>NvimTreeToggle<CR>
-" nnoremap <silent> <space> :NvimTreeFocus<CR>
-" tnoremap <silent> <M-space> <C-\><C-n><cmd>NvimTreeFocus<CR>
-
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>
 
@@ -60,6 +54,33 @@ nnoremap <C-s> <plug>Lightspeed_s<cr>
 xnoremap <C-s> <plug>Lightspeed_s<cr>
 nnoremap <C-S-S> <plug>Lightspeed_S<cr>
 xnoremap <C-S-S> <plug>Lightspeed_S<cr>
+
+" Toggleterm
+" Toggle by tab number
+tnoremap <M-1> <cmd>1ToggleTerm<CR>
+nnoremap <M-1> <cmd>1ToggleTerm<CR>
+tnoremap <M-2> <cmd>2ToggleTerm<CR>
+nnoremap <M-2> <cmd>2ToggleTerm<CR>
+tnoremap <M-3> <cmd>3ToggleTerm<CR>
+nnoremap <M-3> <cmd>3ToggleTerm<CR>
+tnoremap <M-4> <cmd>4ToggleTerm<CR>
+nnoremap <M-4> <cmd>4ToggleTerm<CR>
+tnoremap <M-5> <cmd>5ToggleTerm<CR>
+nnoremap <M-5> <cmd>5ToggleTerm<CR>
+tnoremap <M-6> <cmd>6ToggleTerm<CR>
+nnoremap <M-6> <cmd>6ToggleTerm<CR>
+tnoremap <M-7> <cmd>7ToggleTerm<CR>
+nnoremap <M-7> <cmd>7ToggleTerm<CR>
+tnoremap <M-8> <cmd>8ToggleTerm<CR>
+nnoremap <M-8> <cmd>8ToggleTerm<CR>
+tnoremap <M-9> <cmd>9ToggleTerm<CR>
+nnoremap <M-9> <cmd>9ToggleTerm<CR>
+" Toggle terminal for current tab
+nnoremap <C-y> <cmd>ToggleTermTab<CR>
+tnoremap <C-y> <cmd>ToggleTermTab<CR>
+" Toggle all
+nnoremap <M-y> <cmd>ToggleTermToggleAll<CR>
+tnoremap <M-y> <cmd>ToggleTermToggleAll<CR>
 
 " Split operations
 " Movement
@@ -116,17 +137,17 @@ tnoremap <C-p> <C-/><C-n><cmd>tabp<CR>
 nnoremap <C-n> :tabn<CR>
 tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
 " Move tabs
-nnoremap <M--> :-tabm<CR>
-nnoremap <M-=> :+tabm<CR>
-nnoremap <M-1> :tabr<CR>
-nnoremap <M-2> 2gt
-nnoremap <M-3> 3gt
-nnoremap <M-4> 4gt
-nnoremap <M-5> 5gt
-nnoremap <M-6> 6gt
-nnoremap <M-7> 7gt
-nnoremap <M-8> 8gt
-nnoremap <M-9> :tabl<CR>
+" nnoremap <M--> :-tabm<CR>
+" nnoremap <M-=> :+tabm<CR>
+" nnoremap <M-1> :tabr<CR>
+" nnoremap <M-2> 2gt
+" nnoremap <M-3> 3gt
+" nnoremap <M-4> 4gt
+" nnoremap <M-5> 5gt
+" nnoremap <M-6> 6gt
+" nnoremap <M-7> 7gt
+" nnoremap <M-8> 8gt
+" nnoremap <M-9> :tabl<CR>
 
 " Fold operations
 nnoremap <C-f> zA
@@ -188,47 +209,8 @@ nnoremap <silent> <F9> :LspRestart<CR>:CocRestart<CR>
 nnoremap <silent> <F10> :LspInfo<CR>
 " Toggle bg passthrough
 nnoremap <silent> <F11> :SrceryBGToggle<CR>
-" Toggle cursorline for buffer
-"nnoremap <silent> <F9> :setlocal cursorline!<CR>
-" Toggle relative line numbering for buffer
-"nnoremap <silent> <F10> :setlocal rnu!<CR>
 " Coc Quickfix
 nnoremap <F12> <Plug>(coc-codeaction)<CR>
-" Bufexplorer
-nnoremap <C-F12> :BufExplorer<CR>
-" Plugin install
-nnoremap <M-F12> :PlugInstall<CR>
-nnoremap <F72> :PlugInstall<CR>
-" Lazygit
-tnoremap <F13> <C-\><C-n>:Lazygit<CR>
-tnoremap <M-C-F1> <C-\><C-n>:Lazygit<CR>
-nnoremap <F13> :Lazygit<CR>
-nnoremap <M-C-F1> :Lazygit<CR>
-" Taskwarrior tui
-tnoremap <F14> <C-\><C-n>:Serv<CR>
-tnoremap <M-C-F2> <C-\><C-n>:Serv<CR>
-nnoremap <F14> :Serv<CR>
-nnoremap <M-C-F2> :Serv<CR>
-" Find files in cwd
-tnoremap <F15> <C-\><C-n>:Telescope<CR>
-tnoremap <M-C-F3> <C-\><C-n>:Telescope<CR>
-nnoremap <F15> :Telescope find_files<CR>
-nnoremap <M-C-F3> :Telescope find_files<CR>
-" Search for string under cursor in cwd
-tnoremap <F16> <C-\><C-n>:Telescope<CR>
-tnoremap <M-C-F4> <C-\><C-n>:Telescope<CR>
-nnoremap <F16> :Telescope grep_string<CR>
-nnoremap <M-C-F4> :Telescope grep_string<CR>
-" Search buffers
-tnoremap <F17> <C-\><C-n>:Telescope<CR>
-tnoremap <M-C-F5> <C-\><C-n>:Telescope<CR>
-nnoremap <F17> :Telescope buffers<CR>
-nnoremap <M-C-F5> :Telescope buffers<CR>
-" Search help tags
-tnoremap <F18> <C-\><C-n>:Telescope<CR>
-tnoremap <M-C-F6> <C-\><C-n>:Telescope<CR>
-nnoremap <F18> :Telescope help_tags<CR>
-nnoremap <M-C-F6> :Telescope help_tags<CR>
 
 " Location list toggle
 nnoremap <leader>l :LToggle<CR>
@@ -241,14 +223,12 @@ nnoremap <M-;> @:<CR>
 nnoremap <M-.> @@
 
 " Terminal bindings
-" Open terminal
-nnoremap <M-t> :terminal<CR>
 " Escape terminal
-tnoremap <Esc><Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
+" Escape in terminal rebind
+tnoremap <leader><Esc> <Esc>
 " Reopen terminal in current buffer
 tnoremap <M-r> <C-\><C-n>:terminal<CR>
-" Close terminal
-tnoremap <M-q> <C-\><C-n><C-w>q
 " Split terminal buffer vertically
 tnoremap <M-v> <C-\><C-n><cmd>split\|terminal<CR>
 " Split terminal buffer
