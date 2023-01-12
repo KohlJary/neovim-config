@@ -131,6 +131,10 @@ return require('packer').startup(function(use)
   --     ts_update()
   --   end,
   -- }
+
+  -- Debugging
+  use 'puremourning/vimspector'
+
   -- Text Manipulation
   use 'townk/vim-autoclose'
   use 'tpope/vim-abolish'
@@ -138,6 +142,7 @@ return require('packer').startup(function(use)
   use 'ggandor/lightspeed.nvim'
   use 'tpope/vim-commentary'
   use 'kburdett/vim-nuuid'
+
   -- Language processing
   use 'vim-syntastic/syntastic'
   use 'neovim/nvim-lspconfig'

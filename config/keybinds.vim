@@ -1,6 +1,9 @@
 " Bind delete as leader
 let mapleader = "\<Del>"
 
+" Reload vimrc
+nnoremap sc :source $MYVIMRC<CR>
+
 " Omnisharp mappings
 nnoremap <M-[> :OmniSharpNavigateUp<CR>
 nnoremap <M-]> :OmniSharpNavigateDown<CR>
@@ -16,6 +19,19 @@ nnoremap <silent> <M-BS> :NERDTreeFind<CR>
 tnoremap <silent> <leader><M-BS> <C-\><C-n><cmd>NERDTreeFind<CR>
 nnoremap <silent> <Del> :NERDTreeToggle<CR>
 tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeToggle<CR>
+
+" Vimspector
+nnoremap <Space>dd :call vimspector#Launch()<CR>
+nnoremap <Space>de :call vimspector#Reset()<CR>
+nnoremap <Space>dc :call vimspector#Continue()<CR>
+
+nnoremap <Space>dt :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <Space>dT :call vimspector#ClearBreakpoints()<CR>
+
+nnoremap <Space>dk <Plug>VimspectorRestart
+nnoremap <Space>dh <Plug>VimspectorStepOut
+nnoremap <Space>dl <Plug>VimspectorStepInto
+nnoremap <Space>dj <Plug>VimspectorStepOver
 
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>
@@ -190,8 +206,6 @@ nnoremap <F28> :Gp<CR>
 " Coc format
 nnoremap <M-F4> :Format<CR>
 nnoremap <F52> :Format<CR>
-" Reload vimrc
-nnoremap <F5> :source $MYVIMRC<CR>
 " Semicolon shortcut
 inoremap <F5> <ESC>A;<ESC>
 " Git diff split
