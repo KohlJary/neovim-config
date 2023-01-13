@@ -101,3 +101,6 @@ augroup AirlineCustom
   autocmd VimEnter * call AirlineInit()
 augroup END
 " End Airline
+
+" Vimspector
+let g:vimspector_base_dir='C:\Users\kohlbern.jary\AppData\Local\nvim-data\site\pack\packer\start\vimspector'

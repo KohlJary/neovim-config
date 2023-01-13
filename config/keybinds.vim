@@ -1,5 +1,5 @@
-" Bind delete as leader
-let mapleader = "\<Del>"
+" Bind space as leader
+let mapleader = "\<space>"
 
 " Reload vimrc
 nnoremap sc :source $MYVIMRC<CR>
@@ -21,17 +21,17 @@ nnoremap <silent> <Del> :NERDTreeToggle<CR>
 tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeToggle<CR>
 
 " Vimspector
-nnoremap <Space>dd :call vimspector#Launch()<CR>
-nnoremap <Space>de :call vimspector#Reset()<CR>
-nnoremap <Space>dc :call vimspector#Continue()<CR>
+nnoremap <M-d> :call vimspector#Launch()<CR>
+nnoremap <M-e> :call vimspector#Reset()<CR>
+nnoremap <M-c> :call vimspector#Continue()<CR>
 
-nnoremap <Space>dt :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <Space>dT :call vimspector#ClearBreakpoints()<CR>
+nnoremap <M-t> :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <M-T> :call vimspector#ClearBreakpoints()<CR>
 
-nnoremap <Space>dk <Plug>VimspectorRestart
-nnoremap <Space>dh <Plug>VimspectorStepOut
-nnoremap <Space>dl <Plug>VimspectorStepInto
-nnoremap <Space>dj <Plug>VimspectorStepOver
+nnoremap <M-r> <Plug>VimspectorRestart
+nnoremap <M-n> <Plug>VimspectorStepOut
+nnoremap <M-b> <Plug>VimspectorStepInto
+nnoremap <M-v> <Plug>VimspectorStepOver
 
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>
@@ -52,7 +52,7 @@ nnoremap si <cmd>Telescope lsp_implementations<cr>
 nnoremap st <cmd>Telescope lsp_type_definitions<cr>
 
 " FineCmdline
-nnoremap <Space> <cmd>FineCmdline<cr>
+nnoremap <leader>; <cmd>FineCmdline<cr>
 
 " Bufexplorer
 nnoremap gb <cmd>ToggleBufExplorer<cr>
@@ -127,11 +127,11 @@ tnoremap <leader>= <C-\><C-n><C-w>=i
 " Rotate splits
 nnoremap <leader>r <C-w>r
 " Clone splits
-nnoremap <M-S-i> :vsp<CR>
-nnoremap <M-S-v> :sp<CR>
+nnoremap <M-S> :vsp<CR>
+nnoremap <M-I> :sp<CR>
 " New splits
-nnoremap <M-i> :vnew<CR>
-nnoremap <M-v> :new<CR>
+nnoremap <M-s> :vnew<CR>
+nnoremap <M-i> :new<CR>
 " Next/prev buffer
 " nnoremap <leader>n :bn<CR>
 " nnoremap <leader>p :bp<CR>
@@ -170,8 +170,8 @@ nnoremap <C-f> zA
 vnoremap <C-f> zf
 
 " Function keys
-" Save session
-nnoremap <F1> :SaveSession
+" Reload CoC
+nnoremap <silent> <F1> :LspRestart<CR>:CocRestart<CR>
 " Insert escape character
 inoremap <F1> <C-v>
 " Git write shortcut
@@ -180,8 +180,8 @@ nnoremap <F25> :Gw<CR>
 " Format file
 nnoremap <silent> <M-F1> :OmniSharpCodeFormat<CR>:Format<CR>
 nnoremap <silent> <F49> :OmniSharpCodeFormat<CR>:Format<CR>
-" Coc format
-nnoremap <F2> :Format<CR>
+" Lsp Info
+nnoremap <silent> <F2> :LspInfo<CR>
 " Sort lines
 xnoremap <F2> :sort<CR>
 " Git commit shortcut
@@ -191,7 +191,7 @@ nnoremap <F26> :Gcm ""<Left>
 nnoremap <M-F2> :Fold<CR>
 nnoremap <F50> :Fold<CR>
 " Delete session
-nnoremap <F3> :DeleteSession<CR>
+nnoremap <F3> :SessionDelete<CR>
 " Git pull shortcut
 nnoremap <C-F3> :G pull<CR>
 nnoremap <F27> :G pull<CR>
@@ -211,18 +211,20 @@ inoremap <F5> <ESC>A;<ESC>
 " Git diff split
 nnoremap <C-F5> :Gdiffsplit<CR>
 nnoremap <F29> :Gdiffsplit<CR>
-" Load Session
-nnoremap <F6> :SessionLoad<CR>
-" Save Session
-nnoremap <F7> :SessionSave<CR>
-" Delete Session
-nnoremap <F8> :SessionDelete<CR>
-" Reload CoC
-nnoremap <silent> <F9> :LspRestart<CR>:CocRestart<CR>
-" Lsp Info
-nnoremap <silent> <F10> :LspInfo<CR>
-" Toggle bg passthrough
-nnoremap <silent> <F11> :SrceryBGToggle<CR>
+" Vimspector Start/Continue Debugging
+nnoremap <F5> <Plug>VimspectorContinue
+" Vimspector Stop Debugging
+nnoremap <F6> <Plug>VimspectorStop
+" Vimspector Step Out
+nnoremap <F7> <Plug>VimspectorStepOut
+" Vimspector Step Into
+nnoremap <F8> <Plug>VimspectorStepInto
+" Vimspector Step Over
+nnoremap <F9> <Plug>VimspectorStepOver
+" Vimspector Toggle Breakpoint
+nnoremap <F10> <Plug>VimspectorToggleBreakpoint
+" Vimspector Clear Breakpoints
+nnoremap <F11> :call vimspector#ClearBreakpoints()<CR>
 " Coc Quickfix
 nnoremap <F12> <Plug>(coc-codeaction)<CR>
 

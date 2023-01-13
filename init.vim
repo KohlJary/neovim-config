@@ -76,7 +76,6 @@ require('telescope').setup{
 require('telescope').load_extension "file_browser"
 -- Toggleterm setup
   require('toggleterm').setup{
-    open_mapping = [[<M-t>]],
     insert_mappings = false,
     terminal_mappings = true,
     direction = 'horizontal',

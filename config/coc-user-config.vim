@@ -104,7 +104,6 @@ nnoremap <leader>ce  :<C-u>CocList extensions<CR>
 
 " Symbol renaming.
 nnoremap <leader>cr <Plug>(coc-rename)
-nnoremap <M-r> <Plug>(coc-rename)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
