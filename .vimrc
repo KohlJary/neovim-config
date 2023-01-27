@@ -78,6 +78,9 @@ source $VIMDIR/config/plugins.vim
 source $VIMDIR/config/commands.vim
 " Keybinds
 source $VIMDIR/config/keybinds.vim
+" Abbreviations
+source $VIMDIR/config/abbreviations.vim
+
 
 " Status Line
 set showtabline=2

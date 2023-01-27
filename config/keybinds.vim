@@ -1,5 +1,5 @@
 " Bind space as leader
-let mapleader = "\<space>"
+let mapleader = "\<Space>"
 
 " Reload vimrc
 nnoremap sc :source $MYVIMRC<CR>
@@ -310,9 +310,8 @@ inoremap <C-f> <ESC>A;
 inoremap <C-m> <ESC>A,
 " Inline comment at EOL
 inoremap <C-c> <End><Space>//<Space>
-" Delete/backspace on home row
-inoremap <C-s> <Backspace>
-inoremap <C-d> <Delete>
+" Swap case of next character
+inoremap <C-s> <Esc>l~hi
 " Ctrl backspace/delete behavior
 inoremap <M-BS>  <C-w>
 inoremap <M-Del> <C-o>de
