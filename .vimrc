@@ -24,7 +24,7 @@ set cmdheight=2
 " Line offset to scroll through the file
 set scrolloff=3
 " Fold method, consider switching to syntax
-set foldmethod=manual
+set foldmethod=syntax
 " Search stuff?
 set incsearch
 set hlsearch

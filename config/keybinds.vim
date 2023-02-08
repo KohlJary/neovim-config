@@ -259,6 +259,9 @@ xnoremap ( xi()<ESC>P
 xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
 
+" Backspace to delete in visual modes
+xnoremap <Backspace> d
+
 " In next/last parentheses
 onoremap in( :<c-u>normal! f(vi(<cr>
 onoremap il( :<c-u>normal! F(vi(<cr>
@@ -321,6 +324,9 @@ inoremap <C-e> <ESC>ea
 inoremap <C-u> <ESC>O
 inoremap <C-o> <ESC>o
 inoremap <C-p> <ESC>pa
+" Select to beginning/end of line from insert mode
+inoremap <S-Home> <ESC>v^
+inoremap <S-End> <ESC>lv$
 
 " File Traversal
 " Page up/down
