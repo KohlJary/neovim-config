@@ -1,5 +1,13 @@
 {
   "npm.binPath": "C:/Users/kohlbern.jary/AppData/Roaming/npm",
 
-  "tslint.enable": true
+  "tslint.enable": true,
+
+  "languageserver": {
+      "csharp-ls": {
+        "command": "csharp-ls",
+        "filetypes": ["cs"],
+        "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+      }
+  }
 }

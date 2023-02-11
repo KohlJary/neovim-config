@@ -80,7 +80,48 @@ return require('packer').startup(function(use)
 
   -- You can alias plugin names
   -- use {'dracula/vim', as = 'dracula'}
-  use { "glepnir/dashboard-nvim", config = [[require('dashboard-nvim')]], }
+  use {
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        theme = 'hyper',
+        config = {
+          week_header = {
+           enable = true,
+          },
+          shortcut = {
+            { desc = ' Update', group = '@property', action = 'PackerUpdate', key = 'u' },
+            {
+              desc = ' Files',
+              group = 'Label',
+              action = 'Telescope find_files',
+              key = 'f',
+            },
+            {
+              desc = ' Open Last Session',
+              group = 'Label',
+              action = 'RestoreSession',
+              key = 'r',
+            },
+            {
+              desc = ' Apps',
+              group = 'DiagnosticHint',
+              action = 'Telescope app',
+              key = 'a',
+            },
+            {
+              desc = ' dotfiles',
+              group = 'Number',
+              action = 'Telescope dotfiles',
+              key = 'd',
+            },
+          },
+        },
+      }
+    end,
+    requires = {'nvim-tree/nvim-web-devicons'}
+  }
 
   -- Theming/Colors
   use 'lifepillar/vim-solarized8'
@@ -89,7 +130,25 @@ return require('packer').startup(function(use)
 
   -- Session
   use 'xolox/vim-misc'
-  use 'xolox/vim-session'
+
+  use {
+    'rmagatti/auto-session',
+    config = function()
+      require("auto-session").setup {
+        log_level = "info",
+        auto_save_enabled = true,
+        auto_session_create_enabled = true,
+        auto_session_use_git_branch = true
+      }
+    end
+  }
+  use {
+    'rmagatti/session-lens',
+    requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
+    config = function()
+      require('session-lens').setup({--[[your custom config--]]})
+    end
+  }
 
   -- Buffers
   use 'Asheq/close-buffers.vim'

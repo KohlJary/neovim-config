@@ -4,9 +4,6 @@ local dashboard = require("dashboard")
 
 dashboard.confirm_key = '<CR>'
 
-dashboard.session_directory = vim.fn.stdpath('data') .. "/sessions"
-dashboard.session_auto_save_on_exit = true
-
 dashboard.custom_header = {
   "                                                       ",
   "                                                       ",

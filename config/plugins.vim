@@ -14,6 +14,18 @@ autocmd VimEnter *
 
 " --- Plugin Configuration ---
 
+" vim-session
+let g:session_autoload='prompt'
+let g:session_default_to_last=1
+
+" vim-prosession
+let g:prosession_per_branch=0
+let g:prosession_on_startup=0
+let g:prosession_dir = '~/vimfiles/sessions/'
+
+" auto-session
+let g:auto_session_pre_save_cmds = ["tabdo NERDTreeClose"]
+
 " Syntastic
 let g:syntastic_stl_format = "%#airline_error#%E{[!]}%#airline_warning#%W{[?]}"
 let g:syntastic_cs_checkers = ['code_checker']
@@ -22,7 +34,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " CoC
-let g:coc_global_extensions = ['coc-omnisharp', 'coc-tsserver', 'coc-angular', 'coc-json', 'coc-sql', 'coc-vimlsp']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-angular', 'coc-json', 'coc-sql', 'coc-vimlsp']
 source $VIMDIR/config/coc-user-config.vim
 let g:AutoClosePreserveDotReg = 0
 

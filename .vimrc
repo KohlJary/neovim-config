@@ -51,6 +51,12 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
+" Folding
+augroup vimrc
+  autocmd BufReadPre * setlocal foldmethod=syntax
+  autocmd BufEnter * if &fdm == 'syntax' | setlocal foldmethod=manual | endif
+augroup END
+
 " Sessions
 " Don't save hidden and unloaded buffers
 set sessionoptions-=buffers
@@ -78,6 +84,8 @@ source $VIMDIR/config/plugins.vim
 source $VIMDIR/config/commands.vim
 " Keybinds
 source $VIMDIR/config/keybinds.vim
+" Abbreviations
+source $VIMDIR/config/abbreviations.vim
 
 " Status Line
 set showtabline=2
