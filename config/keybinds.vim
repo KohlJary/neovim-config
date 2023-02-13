@@ -2,7 +2,7 @@
 let mapleader = "\<Space>"
 
 " Reload vimrc
-nnoremap sc :source $MYVIMRC<CR>
+nnoremap <leader>c :source $MYVIMRC<CR>
 
 " Omnisharp mappings
 nnoremap <M-[> :OmniSharpNavigateUp<CR>
@@ -37,20 +37,19 @@ nnoremap <M-v> <Plug>VimspectorStepOver
 nnoremap <silent> <leader>v :Vista!!<CR>
 
 " Telescope
-nnoremap sf <cmd>Telescope find_files<cr>
-nnoremap sg <cmd>Telescope live_grep<cr>
-nnoremap sb <cmd>Telescope buffers<cr>
-nnoremap sh <cmd>Telescope help_tags<cr>
-nnoremap ss <cmd>Telescope grep_string<cr>
-nnoremap se <cmd>Telescope session-lens search_session<cr>
+nnoremap <leader>sf <cmd>Telescope find_files<cr>
+nnoremap <leader>sg <cmd>Telescope live_grep<cr>
+nnoremap <leader>sb <cmd>Telescope buffers<cr>
+nnoremap <leader>sh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ss <cmd>Telescope grep_string<cr>
 " List LSP references for word under cursor
-nnoremap sr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>sr <cmd>Telescope lsp_references<cr>
 " Goto definition of word under cursor if only one, otherwise list in Telescope
-nnoremap sd <cmd>Telescope lsp_definitions<cr>
+nnoremap <leader>sd <cmd>Telescope lsp_definitions<cr>
 " Goto implementation of word under cursor if only one, otherwise list in Telescope
-nnoremap si <cmd>Telescope lsp_implementations<cr>
+nnoremap <leader>si <cmd>Telescope lsp_implementations<cr>
 " Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
-nnoremap st <cmd>Telescope lsp_type_definitions<cr>
+nnoremap <leader>st <cmd>Telescope lsp_type_definitions<cr>
 
 " FineCmdline
 nnoremap <leader>; <cmd>FineCmdline<cr>
@@ -98,6 +97,12 @@ tnoremap <C-y> <cmd>ToggleTermTab<CR>
 " Toggle all
 nnoremap <M-y> <cmd>ToggleTermToggleAll<CR>
 tnoremap <M-y> <cmd>ToggleTermToggleAll<CR>
+" Send current line to ToggleTerm
+nnoremap <leader>t <cmd>ToggleTermSendCurrentLineToTab<CR>
+" Send current selected lines to ToggleTerm
+xnoremap <leader>T <cmd>ToggleTermSendVisualLinesToTab<CR>
+" Send current selection to ToggleTerm
+xnoremap <leader>t <cmd>ToggleTermSendVisualSelectionToTab<CR>
 
 " Split operations
 " Movement

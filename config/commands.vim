@@ -26,6 +26,9 @@ command Gitui :lua _gitui_toggle()
 command Twui :lua _twui_toggle()
 command Serv :lua _serv_toggle()
 command ToggleTermTab :execute tabpagenr().'ToggleTerm'
+command ToggleTermSendCurrentLineToTab :execute 'ToggleTermSendCurrentLine '.tabpagenr()
+command ToggleTermSendVisualLinesToTab :execute 'ToggleTermSendVisualLines '.tabpagenr()
+command ToggleTermSendVisualSelectionToTab :execute 'ToggleTermSendVisualSelection '.tabpagenr()
 
 " UI Togglers
 command SrceryBGToggle :call SrceryBGToggleFunc()

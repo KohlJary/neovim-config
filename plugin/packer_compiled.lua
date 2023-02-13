@@ -74,6 +74,12 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["auto-session"] = {
+    config = { "\27LJ\2\nù\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\22auto_save_enabled\2 auto_session_use_git_branch\2\14log_level\tinfo auto_session_create_enabled\2\nsetup\17auto-session\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-session",
+    url = "https://github.com/rmagatti/auto-session"
+  },
   bufexplorer = {
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufexplorer",
@@ -90,9 +96,11 @@ _G.packer_plugins = {
     url = "https://github.com/neoclide/coc.nvim"
   },
   ["dashboard-nvim"] = {
-    config = { "require('dashboard-nvim')" },
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dashboard-nvim",
+    config = { "\27LJ\2\n˙\3\0\0\6\0\14\0\0236\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\6\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\0045\5\v\0>\5\5\4=\4\f\3=\3\r\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\ngroup\vNumber\tdesc\17Ó¨© dotfiles\vaction\23Telescope dotfiles\bkey\6d\1\0\4\ngroup\19DiagnosticHint\tdesc\rÔÄï Apps\vaction\18Telescope app\bkey\6a\1\0\4\ngroup\nLabel\tdesc\26Óàï Open Last Session\vaction\19RestoreSession\bkey\6r\1\0\4\ngroup\nLabel\tdesc\14Óàï Files\vaction\25Telescope find_files\bkey\6f\1\0\4\ngroup\14@property\tdesc\15Ôû≤ Update\vaction\17PackerUpdate\bkey\6u\16week_header\1\0\0\1\0\1\venable\2\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
   ["fine-cmdline.nvim"] = {
@@ -174,6 +182,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\quick-scope",
     url = "https://github.com/unblevable/quick-scope"
+  },
+  ["session-lens"] = {
+    config = { "\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17session-lens\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\session-lens",
+    url = "https://github.com/rmagatti/session-lens"
   },
   ["srcery-vim"] = {
     loaded = true,
@@ -271,11 +285,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-nuuid",
     url = "https://github.com/kburdett/vim-nuuid"
   },
-  ["vim-session"] = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-session",
-    url = "https://github.com/xolox/vim-session"
-  },
   ["vim-signature"] = {
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-signature",
@@ -299,14 +308,25 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: session-lens
+time([[Config for session-lens]], true)
+try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17session-lens\frequire\0", "config", "session-lens")
+time([[Config for session-lens]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
--- Config for: dashboard-nvim
-time([[Config for dashboard-nvim]], true)
-require('dashboard-nvim')
-time([[Config for dashboard-nvim]], false)
+-- Config for: auto-session
+time([[Config for auto-session]], true)
+try_loadstring("\27LJ\2\nù\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\22auto_save_enabled\2 auto_session_use_git_branch\2\14log_level\tinfo auto_session_create_enabled\2\nsetup\17auto-session\frequire\0", "config", "auto-session")
+time([[Config for auto-session]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au VimEnter * ++once lua require("packer.load")({'dashboard-nvim'}, { event = "VimEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

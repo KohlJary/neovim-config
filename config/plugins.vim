@@ -24,7 +24,7 @@ let g:prosession_on_startup=0
 let g:prosession_dir = '~/vimfiles/sessions/'
 
 " auto-session
-let g:auto_session_pre_save_cmds = ["tabdo NERDTreeClose"]
+let g:auto_session_pre_save_cmds = ["tabdo NERDTreeClose", "ToggleTermToggleAll"]
 
 " Syntastic
 let g:syntastic_stl_format = "%#airline_error#%E{[!]}%#airline_warning#%W{[?]}"
