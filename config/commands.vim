@@ -68,6 +68,22 @@ function! ToggleUIPositioning()
   endif
 endfunction
 
+function! ToggleFoldRecursive()
+  let foldlevel = foldlevel(".")
+  if(foldlevel > 1)
+    let foldclosed = foldclosed(".")
+    if (foldclosed > -1)
+      normal zO
+    else
+      normal zc
+    endif
+  else
+    normal za
+  endif
+endfunction
+
+command ToggleFoldRecursive :call ToggleFoldRecursive()
+
 function! FormatJson()
 python << EOF
 import vim

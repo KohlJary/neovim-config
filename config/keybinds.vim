@@ -42,6 +42,7 @@ nnoremap sg <cmd>Telescope live_grep<cr>
 nnoremap sb <cmd>Telescope buffers<cr>
 nnoremap sh <cmd>Telescope help_tags<cr>
 nnoremap ss <cmd>Telescope grep_string<cr>
+nnoremap se <cmd>Telescope session-lens search_session<cr>
 " List LSP references for word under cursor
 nnoremap sr <cmd>Telescope lsp_references<cr>
 " Goto definition of word under cursor if only one, otherwise list in Telescope
@@ -301,6 +302,9 @@ nnoremap pa ggVGp<C-o>
 nnoremap pl Vp
 " Quick paste
 nnoremap pp p
+
+" Toggle folds with <CR>
+nnoremap <CR> :ToggleFoldRecursive<CR>
 
 " Quick cursor movement/deletion in insert mode
 inoremap <C-h> <Left>
