@@ -105,6 +105,12 @@ return require('packer').startup(function(use)
               key = 'r',
             },
             {
+              desc = ' Prosession',
+              group = 'Label',
+              action = 'Prosession',
+              key = 'p',
+            },
+            {
               desc = ' Apps',
               group = 'DiagnosticHint',
               action = 'Telescope app',

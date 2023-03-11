@@ -4,6 +4,8 @@
 call plug#begin($VIMDIR.'/plugged')
   Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'tpope/vim-obsession'
+  Plug 'KohlJary/vim-prosession'
 call plug#end()
 
 " --- Autoinstall Missing Plugins ---
@@ -16,15 +18,16 @@ autocmd VimEnter *
 
 " vim-session
 let g:session_autoload='prompt'
-let g:session_default_to_last=1
+let g:session_default_to_last=0
 
 " vim-prosession
-let g:prosession_per_branch=0
-let g:prosession_on_startup=0
+let g:prosession_per_branch=1
+let g:prosession_branch_cmd='git rev-parse --abbrev-ref HEAD'
+let g:prosession_on_startup=1
 let g:prosession_dir = '~/vimfiles/sessions/'
 
 " auto-session
-let g:auto_session_pre_save_cmds = ["tabdo NERDTreeClose", "ToggleTermToggleAll"]
+let g:auto_session_pre_save_cmds = ["tabdo NERDTreeClose"]
 
 " Syntastic
 let g:syntastic_stl_format = "%#airline_error#%E{[!]}%#airline_warning#%W{[?]}"
@@ -45,7 +48,7 @@ let g:NERDTreeWinPos='left'
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMinimalMenu=1
 let g:NERDTreeHighlightCursorLine=1
-let g:NERDTreeQuitOnOpen=0
+let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeCustomOpenArgs={'file': {'reuse': 'currenttab', 'where': 'p'}, 'dir': {}}
@@ -97,7 +100,7 @@ function! AirlineInit()
   let g:airline#extensions#syntastic#stl_format_err='%E{[!]%fe|%e}'
   "Layout
   let g:airline_section_b = airline#section#create_left(['hunks', 'branch',])
-  let g:airline_section_c = airline#section#create_left(["Tab: %{tabpagenr()}/%{tabpagenr('$')}"])
+  let g:airline_section_c = airline#section#create_left(["Tab: %{tabpagenr()}/%{tabpagenr('$')}", "%{ObsessionStatus()}"])
   let g:airline_section_gutter = airline#section#create(['%=','%{g:datetime}','%='])
   let g:airline_section_x = airline#section#create_right(['omnisharp'])
   let g:airline_section_error = airline#section#create(['syntastic-err'])

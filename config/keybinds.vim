@@ -55,7 +55,8 @@ nnoremap <leader>st <cmd>Telescope lsp_type_definitions<cr>
 nnoremap <leader>; <cmd>FineCmdline<cr>
 
 " Bufexplorer
-nnoremap gb <cmd>ToggleBufExplorer<cr>
+nnoremap gb <cmd>Git blame<cr>
+nnoremap gu <cmd>ToggleBufExplorer<cr>
 
 " Lazygit
 nnoremap <silent> gv :Lazygit<CR>
@@ -176,10 +177,10 @@ nnoremap <C-f> zA
 vnoremap <C-f> zf
 
 " Function keys
-" Reload CoC
-nnoremap <silent> <F1> :LspRestart<CR>:CocRestart<CR>
 " Insert escape character
 inoremap <F1> <C-v>
+" Coc Quickfix
+nnoremap <F1> <Plug>(coc-codeaction)<CR>
 " Git write shortcut
 nnoremap <C-F1> :Gw<CR>
 nnoremap <F25> :Gw<CR>
@@ -196,8 +197,8 @@ nnoremap <F26> :Gcm ""<Left>
 " Fold buffer
 nnoremap <M-F2> :Fold<CR>
 nnoremap <F50> :Fold<CR>
-" Delete session
-nnoremap <F3> :SessionDelete<CR>
+" Git blame
+nnoremap <F3> :Git blame<CR>
 " Git pull shortcut
 nnoremap <C-F3> :G pull<CR>
 nnoremap <F27> :G pull<CR>
@@ -231,8 +232,8 @@ nnoremap <F9> <Plug>VimspectorStepOver
 nnoremap <F10> <Plug>VimspectorToggleBreakpoint
 " Vimspector Clear Breakpoints
 nnoremap <F11> :call vimspector#ClearBreakpoints()<CR>
-" Coc Quickfix
-nnoremap <F12> <Plug>(coc-codeaction)<CR>
+" Reload CoC
+nnoremap <silent> <F12> :LspRestart<CR>:CocRestart<CR>
 
 " Location list toggle
 nnoremap <leader>l :LToggle<CR>

@@ -9,6 +9,8 @@ set backspace=indent,eol,start
 set clipboard+=unnamedplus
 " Big history energy
 set history=1000
+" Save marks
+set viminfo='1000,f1
 " Line/sign number display
 set ruler
 set number
@@ -62,6 +64,8 @@ augroup END
 set sessionoptions-=buffers
 " Don't save help windows
 set sessionoptions-=help
+" Don't save terminal buffers
+set sessionoptions-=buffers
 
 " Terminal
 augroup neovim_terminal
