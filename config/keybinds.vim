@@ -1,5 +1,5 @@
 " Bind space as leader
-let mapleader = "\<Space>"
+let mapleader = "\<Tab>"
 
 " Reload vimrc
 nnoremap <leader>c :source $MYVIMRC<CR>
@@ -213,8 +213,6 @@ nnoremap <F28> :Gp<CR>
 " Coc format
 nnoremap <M-F4> :Format<CR>
 nnoremap <F52> :Format<CR>
-" Semicolon shortcut
-inoremap <F5> <ESC>A;<ESC>
 " Git diff split
 nnoremap <C-F5> :Gdiffsplit<CR>
 nnoremap <F29> :Gdiffsplit<CR>
@@ -318,7 +316,7 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 " End LOC with semicolon
-inoremap <C-f> <ESC>A;
+inoremap <M-;> <ESC>A;
 " End LOC with comma
 inoremap <C-m> <ESC>A,
 " Inline comment at EOL
