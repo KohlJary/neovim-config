@@ -245,7 +245,7 @@ nnoremap <M-.> @@
 
 " Terminal bindings
 " Escape terminal
-tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc><Esc> <C-\><C-n>
 " Escape in terminal rebind
 tnoremap <leader><Esc> <Esc>
 " Reopen terminal in current buffer
