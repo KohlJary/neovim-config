@@ -57,10 +57,10 @@ tnoremap <silent> <leader><F24> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
 nnoremap <leader>; <cmd>FineCmdline<cr>
 
 " Lightspeed
-nnoremap <C-s> <plug>Lightspeed_s<cr>
-xnoremap <C-s> <plug>Lightspeed_s<cr>
-nnoremap <C-S-S> <plug>Lightspeed_S<cr>
-xnoremap <C-S-S> <plug>Lightspeed_S<cr>
+nnoremap s <plug>Lightspeed_s<cr>
+xnoremap s <plug>Lightspeed_s<cr>
+nnoremap <C-s> <plug>Lightspeed_S<cr>
+xnoremap <C-s> <plug>Lightspeed_S<cr>
 
 " Toggleterm
 " Toggle by tab number
@@ -167,6 +167,8 @@ nnoremap <F1> <Plug>(coc-codeaction)<CR>
 nnoremap <F2> <cmd>Format<CR>
 " Sort lines
 xnoremap <F2> <cmd>sort<CR>
+" Fold file
+nnoremap <F3> <cmd>Fold<CR>
 " Buffer delete menu
 nnoremap <F4> <cmd>Bdelete! menu<CR>
 " Coc Quickfix
