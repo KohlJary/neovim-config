@@ -126,6 +126,13 @@ augroup FileTypeDetection
   autocmd FileType cs setlocal ts=4 sts=4 sw=4
 augroup END
 
+" Automatic relative line numbering
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
 " --- OS Specific Tweaks
 if (g:detected_os == 'WINDOWS')
   " Use Powershell for terminal buffers

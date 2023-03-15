@@ -1,8 +1,33 @@
 " Bind space as leader
 let mapleader = "\<Tab>"
 
-" Reload vimrc
-nnoremap <leader>c :source $MYVIMRC<CR>
+" Map F-keys above 12 for Windows
+if (g:detected_os == 'WINDOWS')
+  nmap <M-C-F1> <F13>
+  nmap <M-C-F2> <F14>
+  nmap <M-C-F3> <F15>
+  nmap <M-C-F4> <F16>
+  nmap <M-C-F5> <F17>
+  nmap <M-C-F6> <F18>
+  nmap <M-C-F7> <F19>
+  nmap <M-C-F8> <F20>
+  nmap <M-C-F9> <F21>
+  nmap <M-C-F10> <F22>
+  nmap <M-C-F11> <F23>
+  nmap <M-C-F12> <F24>
+  tmap <M-C-F1> <F13>
+  tmap <M-C-F2> <F14>
+  tmap <M-C-F3> <F15>
+  tmap <M-C-F4> <F16>
+  tmap <M-C-F5> <F17>
+  tmap <M-C-F6> <F18>
+  tmap <M-C-F7> <F19>
+  tmap <M-C-F8> <F20>
+  tmap <M-C-F9> <F21>
+  tmap <M-C-F10> <F22>
+  tmap <M-C-F11> <F23>
+  tmap <M-C-F12> <F24>
+endif
 
 " Omnisharp mappings
 nnoremap <M-[> :OmniSharpNavigateUp<CR>
@@ -17,56 +42,19 @@ nnoremap <silent> <BS> :NERDTreeFocus<CR>
 tnoremap <silent> <leader><BS> <C-\><C-n><cmd>NERDTreeFocus<CR>
 nnoremap <silent> <Del> :NERDTreeFind<CR>
 tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeFind<CR>
-nnoremap <silent> <F13> :NERDTreeToggleVCS<CR>
-tnoremap <silent> <leader><F13> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
-nnoremap <silent> <M-C-F1> :NERDTreeToggleVCS<CR>
-tnoremap <silent> <leader><M-C-F1> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
+nnoremap <silent> <F24> :NERDTreeToggleVCS<CR>
+tnoremap <silent> <leader><F24> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
 
 " Vimspector
-nnoremap <M-d> :call vimspector#Launch()<CR>
-nnoremap <M-e> :call vimspector#Reset()<CR>
-nnoremap <M-c> :call vimspector#Continue()<CR>
+" nnoremap <M-d> :call vimspector#Launch()<CR>
+" nnoremap <M-e> :call vimspector#Reset()<CR>
+" nnoremap <M-c> :call vimspector#Continue()<CR>
 
-nnoremap <M-t> :call vimspector#ToggleBreakpoint()<CR>
-nnoremap <M-T> :call vimspector#ClearBreakpoints()<CR>
-
-nnoremap <M-r> <Plug>VimspectorRestart
-nnoremap <M-n> <Plug>VimspectorStepOut
-nnoremap <M-b> <Plug>VimspectorStepInto
-nnoremap <M-v> <Plug>VimspectorStepOver
-
-" Vista
-nnoremap <silent> <leader>v :Vista!!<CR>
-
-" Telescope
-nnoremap <leader>sf <cmd>Telescope find_files<cr>
-nnoremap <leader>sg <cmd>Telescope live_grep<cr>
-nnoremap <leader>sb <cmd>Telescope buffers<cr>
-nnoremap <leader>sh <cmd>Telescope help_tags<cr>
-nnoremap <leader>ss <cmd>Telescope grep_string<cr>
-" List LSP references for word under cursor
-nnoremap <leader>sr <cmd>Telescope lsp_references<cr>
-" Goto definition of word under cursor if only one, otherwise list in Telescope
-nnoremap <leader>sd <cmd>Telescope lsp_definitions<cr>
-" Goto implementation of word under cursor if only one, otherwise list in Telescope
-nnoremap <leader>si <cmd>Telescope lsp_implementations<cr>
-" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
-nnoremap <leader>st <cmd>Telescope lsp_type_definitions<cr>
+" nnoremap <M-t> :call vimspector#ToggleBreakpoint()<CR>
+" nnoremap <M-T> :call vimspector#ClearBreakpoints()<CR>
 
 " FineCmdline
 nnoremap <leader>; <cmd>FineCmdline<cr>
-
-" Bufexplorer
-nnoremap gb <cmd>Git blame<cr>
-nnoremap gu <cmd>ToggleBufExplorer<cr>
-
-" Lazygit
-nnoremap <silent> gv :Lazygit<CR>
-tnoremap <silent> gv <C-\><C-n>:Lazygit<CR>
-
-" Taskwarrior
-nnoremap <silent> gt :Twui<CR>
-tnoremap <silent> gt <C-\><C-n>:Twui<CR>
 
 " Lightspeed
 nnoremap <C-s> <plug>Lightspeed_s<cr>
@@ -94,12 +82,6 @@ tnoremap <M-8> <cmd>8ToggleTerm<CR>
 nnoremap <M-8> <cmd>8ToggleTerm<CR>
 tnoremap <M-9> <cmd>9ToggleTerm<CR>
 nnoremap <M-9> <cmd>9ToggleTerm<CR>
-" Toggle terminal for current tab
-nnoremap <C-y> <cmd>ToggleTermTab<CR>
-tnoremap <C-y> <cmd>ToggleTermTab<CR>
-" Toggle all
-nnoremap <M-y> <cmd>ToggleTermToggleAll<CR>
-tnoremap <M-y> <cmd>ToggleTermToggleAll<CR>
 " Send current line to ToggleTerm
 nnoremap <leader>t <cmd>ToggleTermSendCurrentLineToTab<CR>
 " Send current selected lines to ToggleTerm
@@ -179,63 +161,69 @@ nnoremap <C-f> zA
 vnoremap <C-f> zf
 
 " Function keys
-" Insert escape character
-inoremap <F1> <C-v>
 " Coc Quickfix
 nnoremap <F1> <Plug>(coc-codeaction)<CR>
-" Git write shortcut
-nnoremap <C-F1> <cmd>Gw<CR>
-nnoremap <F25> <cmd>Gw<CR>
 " Format file
-nnoremap <silent> <M-F1> <cmd>OmniSharpCodeFormat<CR><cmd>Format<CR>
-nnoremap <silent> <F49> <cmd>OmniSharpCodeFormat<CR><cmd>Format<CR>
-" Reload config
-nnoremap <F2> <cmd>source $MYVIMRC<CR>
+nnoremap <F2> <cmd>Format<CR>
 " Sort lines
 xnoremap <F2> <cmd>sort<CR>
-" Git commit shortcut
-nnoremap <C-F2> <cmd>Gcm ""<Left>
-nnoremap <F26> <cmd>Gcm ""<Left>
-" Fold buffer
-nnoremap <M-F2> <cmd>Fold<CR>
-nnoremap <F50> <cmd>Fold<CR>
-" Git blame
-nnoremap <F3> <cmd>LspRestart<CR><cmd>CocRestart<CR>
-" Git pull shortcut
-nnoremap <C-F3> <cmd>G pull<CR>
-nnoremap <F27> <cmd>G pull<CR>
-" Organize imports
-nnoremap <M-F3> <cmd>OR<CR>
-nnoremap <F51> <cmd>OR<CR>
 " Buffer delete menu
 nnoremap <F4> <cmd>Bdelete! menu<CR>
-" Git push shortcut
-nnoremap <C-F4> <cmd>Gp<CR>
-nnoremap <F28> <cmd>Gp<CR>
-" Coc format
-nnoremap <M-F4> <cmd>Format<CR>
-nnoremap <F52> <cmd>Format<CR>
 " Coc Quickfix
 nnoremap <F5> <Plug>(coc-codeaction)<CR>
-" Git blame
-nnoremap <C-F5> <cmd>Git blame<CR>
-nnoremap <F29> <cmd>Git blame<CR>
-" Vimspector Start/Continue Debugging
-nnoremap <F6> <Plug>VimspectorContinue
-" Vimspector Stop Debugging
-nnoremap <F7> <Plug>VimspectorStop
-" Vimspector Step Out
-nnoremap <F8> <Plug>VimspectorStepOut
-" Vimspector Step Into
-nnoremap <F9> <Plug>VimspectorStepInto
-" Vimspector Step Over
-nnoremap <F10> <Plug>VimspectorStepOver
-" Vimspector Toggle Breakpoint
-nnoremap <F12> <Plug>VimspectorToggleBreakpoint
-" Vimspector Clear Breakpoints
-nnoremap <C-F12> <cmd>call vimspector#ClearBreakpoints()<CR>
+" Restart process
+tnoremap <F5> <C-c><Up><CR>
+" Toggle terminal for current tab
+nnoremap <F7> <cmd>ToggleTermTab<CR>
+tnoremap <F7> <cmd>ToggleTermTab<CR>
+tnoremap <leader><F7> <F7>
+" Toggle all
+nnoremap <F8> <cmd>ToggleTermToggleAll<CR>
+tnoremap <F8> <cmd>ToggleTermToggleAll<CR>
+tnoremap <leader><F8> <F8>
+" Relative line number
+nnoremap <F9> <cmd>set rnu!<cr>
 " Reload CoC
-nnoremap <silent> <F11> <cmd>LspRestart<CR><cmd>CocRestart<CR>
+nnoremap <F10> <cmd>LspRestart<CR><cmd>CocRestart<CR>
+" Reload config
+nnoremap <F12> :source $MYVIMRC<CR>
+" Bufexplorer
+nnoremap <silent> <F13> <cmd>ToggleBufExplorer<cr>
+" Lazygit
+nnoremap <silent> <F14> :Lazygit<CR>
+tnoremap <silent> <F14> <C-\><C-n>:Lazygit<CR>
+" Taskwarrior
+nnoremap <silent> <F15> :Twui<CR>
+tnoremap <silent> <F15> <C-\><C-n>:Twui<CR>
+" Telescope
+nnoremap <F16> <cmd>Telescope<cr>
+nnoremap <F16>f <cmd>Telescope find_files<cr>
+nnoremap <F16>g <cmd>Telescope live_grep<cr>
+nnoremap <F16>b <cmd>Telescope buffers<cr>
+nnoremap <F16>h <cmd>Telescope help_tags<cr>
+nnoremap <F16>s <cmd>Telescope grep_string<cr>
+" List LSP references for word under cursor
+nnoremap <F16>r <cmd>Telescope lsp_references<cr>
+" Goto definition of word under cursor if only one, otherwise list in Telescope
+nnoremap <F16>d <cmd>Telescope lsp_definitions<cr>
+" Goto implementation of word under cursor if only one, otherwise list in Telescope
+nnoremap <F16>i <cmd>Telescope lsp_implementations<cr>
+" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
+nnoremap <F16>t <cmd>Telescope lsp_type_definitions<cr>
+" Vimspector Start/Continue Debugging
+nnoremap <F17> <Plug>VimspectorContinue
+" Vimspector Stop Debugging
+nnoremap <F18> <Plug>VimspectorStop
+" Vimspector Step Out
+nnoremap <F19> <Plug>VimspectorStepOut
+" Vimspector Step Into
+nnoremap <F20> <Plug>VimspectorStepInto
+" Vimspector Step Over
+nnoremap <F21> <Plug>VimspectorStepOver
+" Vimspector Toggle Breakpoint
+nnoremap <F22> <Plug>VimspectorToggleBreakpoint
+" Vimspector Clear Breakpoints
+nnoremap <F23> <cmd>call vimspector#ClearBreakpoints()<CR>
 
 " Location list toggle
 nnoremap <leader>l :LToggle<CR>
@@ -257,8 +245,6 @@ tnoremap <M-r> <C-\><C-n>:terminal<CR>
 tnoremap <M-s> <C-\><C-n><cmd>split\|terminal<CR>
 " Split terminal buffer
 tnoremap <M-i> <C-\><C-n><cmd>vsplit\|terminal<CR>
-" Restart process
-tnoremap <F5> <C-c><Up><CR>
 
 " Wrap quotes
 xnoremap " xi""<ESC>P
