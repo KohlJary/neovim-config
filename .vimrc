@@ -17,7 +17,7 @@ set number
 set signcolumn=yes
 " Highlight the current line number
 set cursorline
-set cursorlineopt=number
+set cursorlineopt=both
 " No line wrapping because it's the devil
 set nowrap
 " Command output display

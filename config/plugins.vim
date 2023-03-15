@@ -54,7 +54,7 @@ let g:NERDTreeShowHidden=1
 let g:NERDTreeCustomOpenArgs={'file': {'reuse': 'currenttab', 'where': 'p'}, 'dir': {}}
 
 augroup NERDTree
-  autocmd FileType nerdtree setlocal cursorline signcolumn=no
+  autocmd FileType nerdtree setlocal cursorline cursorlineopt=both signcolumn=no
 augroup END
 
 " Check if NERDTree is open or active
@@ -70,6 +70,8 @@ function! SyncTree()
     wincmd p
   endif
 endfunction
+
+autocmd BufRead * call SyncTree()
 
 function! NERDTreeSyncFocus()
   call SyncTree()

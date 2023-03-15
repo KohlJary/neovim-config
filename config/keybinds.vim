@@ -15,10 +15,12 @@ nnoremap <leader>oss :OmniSharpStatus<CR>
 " NERDTree
 nnoremap <silent> <BS> :NERDTreeFocus<CR>
 tnoremap <silent> <leader><BS> <C-\><C-n><cmd>NERDTreeFocus<CR>
-nnoremap <silent> <M-BS> :NERDTreeFind<CR>
-tnoremap <silent> <leader><M-BS> <C-\><C-n><cmd>NERDTreeFind<CR>
-nnoremap <silent> <Del> :NERDTreeToggle<CR>
-tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeToggle<CR>
+nnoremap <silent> <Del> :NERDTreeFind<CR>
+tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeFind<CR>
+nnoremap <silent> <F13> :NERDTreeToggleVCS<CR>
+tnoremap <silent> <leader><F13> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
+nnoremap <silent> <M-C-F1> :NERDTreeToggleVCS<CR>
+tnoremap <silent> <leader><M-C-F1> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
 
 " Vimspector
 nnoremap <M-d> :call vimspector#Launch()<CR>
@@ -182,56 +184,58 @@ inoremap <F1> <C-v>
 " Coc Quickfix
 nnoremap <F1> <Plug>(coc-codeaction)<CR>
 " Git write shortcut
-nnoremap <C-F1> :Gw<CR>
-nnoremap <F25> :Gw<CR>
+nnoremap <C-F1> <cmd>Gw<CR>
+nnoremap <F25> <cmd>Gw<CR>
 " Format file
-nnoremap <silent> <M-F1> :OmniSharpCodeFormat<CR>:Format<CR>
-nnoremap <silent> <F49> :OmniSharpCodeFormat<CR>:Format<CR>
-" Lsp Info
-nnoremap <silent> <F2> :LspInfo<CR>
+nnoremap <silent> <M-F1> <cmd>OmniSharpCodeFormat<CR><cmd>Format<CR>
+nnoremap <silent> <F49> <cmd>OmniSharpCodeFormat<CR><cmd>Format<CR>
+" Reload config
+nnoremap <F2> <cmd>source $MYVIMRC<CR>
 " Sort lines
-xnoremap <F2> :sort<CR>
+xnoremap <F2> <cmd>sort<CR>
 " Git commit shortcut
-nnoremap <C-F2> :Gcm ""<Left>
-nnoremap <F26> :Gcm ""<Left>
+nnoremap <C-F2> <cmd>Gcm ""<Left>
+nnoremap <F26> <cmd>Gcm ""<Left>
 " Fold buffer
-nnoremap <M-F2> :Fold<CR>
-nnoremap <F50> :Fold<CR>
+nnoremap <M-F2> <cmd>Fold<CR>
+nnoremap <F50> <cmd>Fold<CR>
 " Git blame
-nnoremap <F3> :Git blame<CR>
+nnoremap <F3> <cmd>LspRestart<CR><cmd>CocRestart<CR>
 " Git pull shortcut
-nnoremap <C-F3> :G pull<CR>
-nnoremap <F27> :G pull<CR>
+nnoremap <C-F3> <cmd>G pull<CR>
+nnoremap <F27> <cmd>G pull<CR>
 " Organize imports
-nnoremap <M-F3> :OR<CR>
-nnoremap <F51> :OR<CR>
+nnoremap <M-F3> <cmd>OR<CR>
+nnoremap <F51> <cmd>OR<CR>
 " Buffer delete menu
-nnoremap <F4> :Bdelete! menu<CR>
+nnoremap <F4> <cmd>Bdelete! menu<CR>
 " Git push shortcut
-nnoremap <C-F4> :Gp<CR>
-nnoremap <F28> :Gp<CR>
+nnoremap <C-F4> <cmd>Gp<CR>
+nnoremap <F28> <cmd>Gp<CR>
 " Coc format
-nnoremap <M-F4> :Format<CR>
-nnoremap <F52> :Format<CR>
-" Git diff split
-nnoremap <C-F5> :Gdiffsplit<CR>
-nnoremap <F29> :Gdiffsplit<CR>
+nnoremap <M-F4> <cmd>Format<CR>
+nnoremap <F52> <cmd>Format<CR>
+" Coc Quickfix
+nnoremap <F5> <Plug>(coc-codeaction)<CR>
+" Git blame
+nnoremap <C-F5> <cmd>Git blame<CR>
+nnoremap <F29> <cmd>Git blame<CR>
 " Vimspector Start/Continue Debugging
-nnoremap <F5> <Plug>VimspectorContinue
+nnoremap <F6> <Plug>VimspectorContinue
 " Vimspector Stop Debugging
-nnoremap <F6> <Plug>VimspectorStop
+nnoremap <F7> <Plug>VimspectorStop
 " Vimspector Step Out
-nnoremap <F7> <Plug>VimspectorStepOut
+nnoremap <F8> <Plug>VimspectorStepOut
 " Vimspector Step Into
-nnoremap <F8> <Plug>VimspectorStepInto
+nnoremap <F9> <Plug>VimspectorStepInto
 " Vimspector Step Over
-nnoremap <F9> <Plug>VimspectorStepOver
+nnoremap <F10> <Plug>VimspectorStepOver
 " Vimspector Toggle Breakpoint
-nnoremap <F10> <Plug>VimspectorToggleBreakpoint
+nnoremap <F12> <Plug>VimspectorToggleBreakpoint
 " Vimspector Clear Breakpoints
-nnoremap <F11> :call vimspector#ClearBreakpoints()<CR>
+nnoremap <C-F12> <cmd>call vimspector#ClearBreakpoints()<CR>
 " Reload CoC
-nnoremap <silent> <F12> :LspRestart<CR>:CocRestart<CR>
+nnoremap <silent> <F11> <cmd>LspRestart<CR><cmd>CocRestart<CR>
 
 " Location list toggle
 nnoremap <leader>l :LToggle<CR>
@@ -246,12 +250,11 @@ nnoremap <M-.> @@
 " Terminal bindings
 " Escape terminal
 tnoremap <Esc><Esc> <C-\><C-n>
-" Escape in terminal rebind
-tnoremap <leader><Esc> <Esc>
+tnoremap <leader><Esc> <C-\><C-n>
 " Reopen terminal in current buffer
 tnoremap <M-r> <C-\><C-n>:terminal<CR>
 " Split terminal buffer vertically
-tnoremap <M-v> <C-\><C-n><cmd>split\|terminal<CR>
+tnoremap <M-s> <C-\><C-n><cmd>split\|terminal<CR>
 " Split terminal buffer
 tnoremap <M-i> <C-\><C-n><cmd>vsplit\|terminal<CR>
 " Restart process
@@ -264,30 +267,27 @@ xnoremap ( xi()<ESC>P
 xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
 
-" Backspace to delete in visual modes
-xnoremap <Backspace> d
-
 " In next/last parentheses
-onoremap in( :<c-u>normal! f(vi(<cr>
-onoremap il( :<c-u>normal! F(vi(<cr>
+onoremap i( :<c-u>normal! f(vi(<cr>
+onoremap I( :<c-u>normal! F(vi(<cr>
 " In next/last bracket
-onoremap in[ :<c-u>normal! f[vi[<cr>
-onoremap il[ :<c-u>normal! F[vi[<cr>
+onoremap i[ :<c-u>normal! f[vi[<cr>
+onoremap I[ :<c-u>normal! F[vi[<cr>
 " In next/last brace
-onoremap in{ :<c-u>normal! f{vi{<cr>
-onoremap il{ :<c-u>normal! F{vi{<cr>
+onoremap i{ :<c-u>normal! f{vi{<cr>
+onoremap I{ :<c-u>normal! F{vi{<cr>
 " In next/last angle bracket
-onoremap in< :<c-u>normal! f<vi<<cr>
-onoremap il< :<c-u>normal! F<vi<<cr>
+onoremap i< :<c-u>normal! f<vi<<cr>
+onoremap I< :<c-u>normal! F<vi<<cr>
 " In next/last single quote
-onoremap in' :<c-u>normal! f'vi'<cr>
-onoremap il' :<c-u>normal! F'vi'<cr>
+onoremap i' :<c-u>normal! f'vi'<cr>
+onoremap I' :<c-u>normal! F'vi'<cr>
 " In next/last double quote
-onoremap in" :<c-u>normal! f"vi"<cr>
-onoremap il" :<c-u>normal! F"vi"<cr>
+onoremap i" :<c-u>normal! f"vi"<cr>
+onoremap I" :<c-u>normal! F"vi"<cr>
 " In next/last backtick
-onoremap in` :<c-u>normal! f`vi`<cr>
-onoremap il` :<c-u>normal! F`vi`<cr>
+onoremap i` :<c-u>normal! f`vi`<cr>
+onoremap I` :<c-u>normal! F`vi`<cr>
 
 " Yank all file text
 nnoremap ya mQggyG`Q:delm Q<CR><cmd>echo "Yank All"<cr>
