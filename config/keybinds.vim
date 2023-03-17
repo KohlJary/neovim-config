@@ -1,5 +1,5 @@
-" Bind space as leader
-let mapleader = "\<Tab>"
+" Bind F24 (right outer thumb key on moonlander) as leader
+let mapleader = "\<F24>"
 
 " Map F-keys above 12 for Windows
 if (g:detected_os == 'WINDOWS')
@@ -42,8 +42,24 @@ nnoremap <silent> <BS> :NERDTreeFocus<CR>
 tnoremap <silent> <leader><BS> <C-\><C-n><cmd>NERDTreeFocus<CR>
 nnoremap <silent> <Del> :NERDTreeFind<CR>
 tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeFind<CR>
-nnoremap <silent> <F24> :NERDTreeToggleVCS<CR>
-tnoremap <silent> <leader><F24> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
+nnoremap <silent> <Space> :NERDTreeToggleVCS<CR>
+tnoremap <silent> <leader><Space> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
+
+" Telescope
+nnoremap <Tab> <cmd>Telescope<cr>
+nnoremap <Tab>f <cmd>Telescope find_files<cr>
+nnoremap <Tab>g <cmd>Telescope live_grep<cr>
+nnoremap <Tab>b <cmd>Telescope buffers<cr>
+nnoremap <Tab>h <cmd>Telescope help_tags<cr>
+nnoremap <Tab>s <cmd>Telescope grep_string<cr>
+" List LSP references for word under cursor
+nnoremap <Tab>r <cmd>Telescope lsp_references<cr>
+" Goto definition of word under cursor if only one, otherwise list in Telescope
+nnoremap <Tab>d <cmd>Telescope lsp_definitions<cr>
+" Goto implementation of word under cursor if only one, otherwise list in Telescope
+nnoremap <Tab>i <cmd>Telescope lsp_implementations<cr>
+" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
+nnoremap <Tab>t <cmd>Telescope lsp_type_definitions<cr>
 
 " Vimspector
 " nnoremap <M-d> :call vimspector#Launch()<CR>
@@ -59,8 +75,8 @@ nnoremap <leader>; <cmd>FineCmdline<cr>
 " Lightspeed
 nnoremap s <plug>Lightspeed_s<cr>
 xnoremap s <plug>Lightspeed_s<cr>
-nnoremap <C-s> <plug>Lightspeed_S<cr>
-xnoremap <C-s> <plug>Lightspeed_S<cr>
+nnoremap S <plug>Lightspeed_S<cr>
+xnoremap S <plug>Lightspeed_S<cr>
 
 " Toggleterm
 " Toggle by tab number
@@ -180,9 +196,11 @@ nnoremap <F7> <cmd>ToggleTermTab<CR>
 tnoremap <F7> <cmd>ToggleTermTab<CR>
 tnoremap <leader><F7> <F7>
 " Toggle all
-nnoremap <F8> <cmd>ToggleTermToggleAll<CR>
-tnoremap <F8> <cmd>ToggleTermToggleAll<CR>
-tnoremap <leader><F8> <F8>
+nnoremap <S-F7> <cmd>ToggleTermToggleAll<CR>
+tnoremap <S-F7> <cmd>ToggleTermToggleAll<CR>
+" Swap case
+nnoremap <F8> ~h
+xnoremap <F8> ~
 " Relative line number
 nnoremap <F9> <cmd>set rnu!<cr>
 " Reload CoC
@@ -197,21 +215,6 @@ tnoremap <silent> <F14> <C-\><C-n>:Lazygit<CR>
 " Taskwarrior
 nnoremap <silent> <F15> :Twui<CR>
 tnoremap <silent> <F15> <C-\><C-n>:Twui<CR>
-" Telescope
-nnoremap <F16> <cmd>Telescope<cr>
-nnoremap <F16>f <cmd>Telescope find_files<cr>
-nnoremap <F16>g <cmd>Telescope live_grep<cr>
-nnoremap <F16>b <cmd>Telescope buffers<cr>
-nnoremap <F16>h <cmd>Telescope help_tags<cr>
-nnoremap <F16>s <cmd>Telescope grep_string<cr>
-" List LSP references for word under cursor
-nnoremap <F16>r <cmd>Telescope lsp_references<cr>
-" Goto definition of word under cursor if only one, otherwise list in Telescope
-nnoremap <F16>d <cmd>Telescope lsp_definitions<cr>
-" Goto implementation of word under cursor if only one, otherwise list in Telescope
-nnoremap <F16>i <cmd>Telescope lsp_implementations<cr>
-" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
-nnoremap <F16>t <cmd>Telescope lsp_type_definitions<cr>
 " Vimspector Start/Continue Debugging
 nnoremap <F17> <Plug>VimspectorContinue
 " Vimspector Stop Debugging
@@ -354,9 +357,6 @@ nnoremap <leader>, <<
 vnoremap <leader>, <
 nnoremap <leader>. >>
 vnoremap <leader>. >
-" Swap case
-nnoremap S ~h
-xnoremap S ~
 " Break line at cursor
 nnoremap \| i<CR><esc>
 " Select all text
