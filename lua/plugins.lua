@@ -203,6 +203,7 @@ return require('packer').startup(function(use)
   -- Text Manipulation
   use 'townk/vim-autoclose'
   use 'tpope/vim-abolish'
+  use 'tpope/vim-surround'
   use 'unblevable/quick-scope'
   use 'ggandor/lightspeed.nvim'
   use 'tpope/vim-commentary'

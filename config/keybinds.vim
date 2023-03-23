@@ -45,22 +45,6 @@ tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeFind<CR>
 nnoremap <silent> <Space> :NERDTreeToggleVCS<CR>
 tnoremap <silent> <leader><Space> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
 
-" Telescope
-nnoremap <Tab> <cmd>Telescope<cr>
-nnoremap <Tab>f <cmd>Telescope find_files<cr>
-nnoremap <Tab>g <cmd>Telescope live_grep<cr>
-nnoremap <Tab>b <cmd>Telescope buffers<cr>
-nnoremap <Tab>h <cmd>Telescope help_tags<cr>
-nnoremap <Tab>s <cmd>Telescope grep_string<cr>
-" List LSP references for word under cursor
-nnoremap <Tab>r <cmd>Telescope lsp_references<cr>
-" Goto definition of word under cursor if only one, otherwise list in Telescope
-nnoremap <Tab>d <cmd>Telescope lsp_definitions<cr>
-" Goto implementation of word under cursor if only one, otherwise list in Telescope
-nnoremap <Tab>i <cmd>Telescope lsp_implementations<cr>
-" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
-nnoremap <Tab>t <cmd>Telescope lsp_type_definitions<cr>
-
 " Vimspector
 " nnoremap <M-d> :call vimspector#Launch()<CR>
 " nnoremap <M-e> :call vimspector#Reset()<CR>
@@ -215,6 +199,21 @@ tnoremap <silent> <F14> <C-\><C-n>:Lazygit<CR>
 " Taskwarrior
 nnoremap <silent> <F15> :Twui<CR>
 tnoremap <silent> <F15> <C-\><C-n>:Twui<CR>
+" Telescope
+nnoremap <F16> <cmd>Telescope<cr>
+nnoremap <F16>f <cmd>Telescope find_files<cr>
+nnoremap <F16>g <cmd>Telescope live_grep<cr>
+nnoremap <F16>b <cmd>Telescope buffers<cr>
+nnoremap <F16>h <cmd>Telescope help_tags<cr>
+nnoremap <F16>s <cmd>Telescope grep_string<cr>
+" List LSP references for word under cursor
+nnoremap <F16>r <cmd>Telescope lsp_references<cr>
+" Goto definition of word under cursor if only one, otherwise list in Telescope
+nnoremap <F16>d <cmd>Telescope lsp_definitions<cr>
+" Goto implementation of word under cursor if only one, otherwise list in Telescope
+nnoremap <F16>i <cmd>Telescope lsp_implementations<cr>
+" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
+nnoremap <F16>t <cmd>Telescope lsp_type_definitions<cr>
 " Vimspector Start/Continue Debugging
 nnoremap <F17> <Plug>VimspectorContinue
 " Vimspector Stop Debugging
