@@ -61,6 +61,7 @@ else
   require'lspconfig'.angularls.setup{}
    require('lsp')
 end
+require'lspconfig'.csharp_ls.setup{}
 -- Telescope setup
 require('nvim-treesitter').setup{}
 require'nvim-treesitter.configs'.setup{
@@ -69,7 +70,7 @@ require'nvim-treesitter.configs'.setup{
   auto_install = true,
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = true
+    additional_vim_regex_highlighting = false
   },
   incremental_selection = {
     enable = true
