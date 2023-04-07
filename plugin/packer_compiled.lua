@@ -75,7 +75,7 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["auto-session"] = {
-    config = { "\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\22auto_save_enabled\2 auto_session_use_git_branch\2\14log_level\tinfo auto_session_create_enabled\2\nsetup\17auto-session\frequire\0" },
+    config = { "\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\14log_level\tinfo auto_session_create_enabled\2\22auto_save_enabled\2 auto_session_use_git_branch\2\nsetup\17auto-session\frequire\0" },
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-session",
     url = "https://github.com/rmagatti/auto-session"
@@ -96,7 +96,7 @@ _G.packer_plugins = {
     url = "https://github.com/neoclide/coc.nvim"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n�\4\0\0\6\0\15\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\a\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\0045\5\v\0>\5\5\0045\5\f\0>\5\6\4=\4\r\3=\3\14\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\vaction\23Telescope dotfiles\bkey\6d\tdesc\17 dotfiles\ngroup\vNumber\1\0\4\vaction\18Telescope app\bkey\6a\tdesc\r Apps\ngroup\19DiagnosticHint\1\0\4\vaction\15Prosession\bkey\6p\tdesc\19 Prosession\ngroup\nLabel\1\0\4\vaction\19RestoreSession\bkey\6r\tdesc\26 Open Last Session\ngroup\nLabel\1\0\4\vaction\25Telescope find_files\bkey\6f\tdesc\14 Files\ngroup\nLabel\1\0\4\vaction\17PackerUpdate\bkey\6u\tdesc\15 Update\ngroup\14@property\16week_header\1\0\0\1\0\1\venable\2\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
+    config = { "\27LJ\2\n�\4\0\0\6\0\15\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\a\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\0045\5\v\0>\5\5\0045\5\f\0>\5\6\4=\4\r\3=\3\14\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\bkey\6d\ngroup\vNumber\tdesc\17 dotfiles\vaction\23Telescope dotfiles\1\0\4\bkey\6a\ngroup\19DiagnosticHint\tdesc\r Apps\vaction\18Telescope app\1\0\4\bkey\6p\ngroup\nLabel\tdesc\19 Prosession\vaction\15Prosession\1\0\4\bkey\6r\ngroup\nLabel\tdesc\26 Open Last Session\vaction\19RestoreSession\1\0\4\bkey\6f\ngroup\nLabel\tdesc\14 Files\vaction\25Telescope find_files\1\0\4\bkey\6u\ngroup\14@property\tdesc\15 Update\vaction\17PackerUpdate\16week_header\1\0\0\1\0\1\venable\2\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -313,14 +313,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: auto-session
+time([[Config for auto-session]], true)
+try_loadstring("\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\14log_level\tinfo auto_session_create_enabled\2\22auto_save_enabled\2 auto_session_use_git_branch\2\nsetup\17auto-session\frequire\0", "config", "auto-session")
+time([[Config for auto-session]], false)
 -- Config for: session-lens
 time([[Config for session-lens]], true)
 try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17session-lens\frequire\0", "config", "session-lens")
 time([[Config for session-lens]], false)
--- Config for: auto-session
-time([[Config for auto-session]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4\22auto_save_enabled\2 auto_session_use_git_branch\2\14log_level\tinfo auto_session_create_enabled\2\nsetup\17auto-session\frequire\0", "config", "auto-session")
-time([[Config for auto-session]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
