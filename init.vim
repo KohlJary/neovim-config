@@ -42,9 +42,6 @@ local pid = vim.fn.getpid()
  require('lsp')
 local ng_cmd_path = vim.env.NPMDIR .. "/@angular/language-server"
 local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
-require'lspconfig'.omnisharp.setup{
-  cmd = { vim.env.OMNIBIN, "--languageserver" , "--hostPID", tostring(pid) };
-}
 if(is_win)
   then
   require'lspconfig'.angularls.setup{

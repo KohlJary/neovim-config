@@ -189,6 +189,8 @@ xnoremap <F8> ~
 nnoremap <F9> <cmd>set rnu!<cr>
 " Reload CoC
 nnoremap <F10> <cmd>LspRestart<CR><cmd>CocRestart<CR>
+" LSP Status
+nnoremap <F11> <cmd>LspInfo<CR>
 " Reload config
 nnoremap <F12> :source $MYVIMRC<CR>
 " Bufexplorer
