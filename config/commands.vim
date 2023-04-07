@@ -48,13 +48,9 @@ endfunction
 
 " Apply colorscheme tweaks
 function! ColorTweaks()
-  " NERDTree Colors
-  " hi NERDTreeFile ctermfg=Magenta guifg=Magenta
   " Status Line/TUI Colors
   hi VertSplit ctermfg=Cyan guifg=Cyan
   hi StatusLine guifg=Magenta
-  hi StatusLineNC guifg=Cyan
-  hi LineNr ctermfg=Cyan guifg=Cyan
   hi CursorLineNr ctermfg=Magenta guifg=Magenta
   " Text Colors
   hi MatchParen ctermfg=Cyan guifg=Cyan

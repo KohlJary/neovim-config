@@ -31,7 +31,7 @@ let g:auto_session_pre_save_cmds = ["tabdo NERDTreeClose"]
 
 " Syntastic
 let g:syntastic_stl_format = "%#airline_error#%E{[!]}%#airline_warning#%W{[?]}"
-let g:syntastic_cs_checkers = ['code_checker']
+let g:syntastic_cs_checkers = ['code_checker','cs']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0

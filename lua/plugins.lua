@@ -218,7 +218,7 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter'
   use 'Xuyuanp/nerdtree-git-plugin'
   -- C#
-  -- use 'OmniSharp/omnisharp-vim'
+  use 'jlcrochet/vim-cs'
   -- HLSL
   use 'beyondmarc/hlsl.vim'
   -- JSON
