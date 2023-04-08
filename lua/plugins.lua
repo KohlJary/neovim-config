@@ -133,6 +133,7 @@ return require('packer').startup(function(use)
   use 'lifepillar/vim-solarized8'
   use 'sheerun/vim-wombat-scheme'
   use 'srcery-colors/srcery-vim'
+  use 'ellisonleao/gruvbox.nvim'
 
   -- Session
   use 'xolox/vim-misc'
@@ -218,7 +219,6 @@ return require('packer').startup(function(use)
   use 'airblade/vim-gitgutter'
   use 'Xuyuanp/nerdtree-git-plugin'
   -- C#
-  use 'jlcrochet/vim-cs'
   -- HLSL
   use 'beyondmarc/hlsl.vim'
   -- JSON

@@ -2,12 +2,16 @@
   "npm.binPath": "C:/Users/kohlbern.jary/AppData/Roaming/npm",
 
   "tslint.enable": true,
+  "semanticTokens.combinedModifiers": [
+    "deprecated"
+  ],
+  "colors.enable": true,
 
   "languageserver": {
       "csharp-ls": {
         "command": "csharp-ls",
         "filetypes": ["cs"],
-        "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+        "rootPatterns": ["*.sln", "*.csproj", ".vim/", ".git/", ".hg/"]
       }
   }
 }

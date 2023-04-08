@@ -141,4 +141,4 @@ endif
 
 " Reload the colorscheme
 color srcery
-call ColorTweaks()
+" call ColorTweaks()
