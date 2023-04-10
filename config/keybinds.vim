@@ -161,8 +161,10 @@ nnoremap <C-f> zA
 vnoremap <C-f> zf
 
 " Function keys
-" Coc Quickfix
-nnoremap <F1> <Plug>(coc-codeaction)<CR>
+" Flip current word as boolean
+nnoremap <F1> <cmd>call FlipBoolean()<CR>
+" Flip selected boolean variable
+xnoremap <F1> l<esc><cmd>FlipSelectedBoolean<CR>
 " Format file
 nnoremap <F2> <cmd>Format<CR>
 " Sort lines
