@@ -23,7 +23,7 @@ let g:session_default_to_last=0
 " vim-prosession
 let g:prosession_per_branch=1
 let g:prosession_branch_cmd='git rev-parse --abbrev-ref HEAD'
-let g:prosession_on_startup=1
+let g:prosession_on_startup=0
 let g:prosession_dir = '~/vimfiles/sessions/'
 
 " auto-session

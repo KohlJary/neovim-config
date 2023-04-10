@@ -121,7 +121,7 @@ augroup END
 augroup FileTypeDetection
   autocmd!
   " Ensure filetype detection on opening buffer
-  autocmd BufReadPre * filetype detect 
+  autocmd BufRead * filetype detect 
   " Tabwidth by filetype
   autocmd FileType cs setlocal ts=4 sts=4 sw=4
 augroup END

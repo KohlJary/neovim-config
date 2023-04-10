@@ -34,73 +34,7 @@ source $VIMDIR/.vimrc
 lua <<EOF
 require'plugins'
 require'toggletermcmd'
-
-local is_linux = vim.loop.os_uname().sysname == "Linux"
-local is_win = vim.loop.os_uname().sysname == "Windows_NT"
-local pid = vim.fn.getpid()
--- LSP setup
- require('lsp')
-local ng_cmd_path = vim.env.NPMDIR .. "/@angular/language-server"
-local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
-if(is_win)
-  then
-  require'lspconfig'.angularls.setup{
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = cmd,
-    on_new_config = function(new_config,new_root_dir)
-      new_config.cmd = cmd
-    end
-  }
-  vim.cmd("let &shell = has('win32') ? 'powershell' : 'pwsh'")
-  vim.cmd("let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'")
-  vim.cmd("let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'")
-  vim.cmd("let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'")
-  vim.cmd("set shellquote= shellxquote=")
-else
-  require'lspconfig'.angularls.setup{}
-   require('lsp')
-end
-require'lspconfig'.csharp_ls.setup{}
--- Telescope setup
-require('nvim-treesitter').setup{}
-require'nvim-treesitter.configs'.setup{
-  ensure_installed = { "c", "lua", "vim", "query", "c_sharp", "javascript", "typescript", "json" },
-  sync_install = false,
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false
-  },
-  incremental_selection = {
-    enable = true
-  },
-  indent = {
-    enable = true
-  }
-}
-require('telescope').setup{
-  extensions = {
-    file_browser = {
-      theme = "ivy"
-    }
-  }
-}
-require('telescope').load_extension "file_browser"
--- Toggleterm setup
-  require('toggleterm').setup{
-    insert_mappings = false,
-    terminal_mappings = true,
-    direction = 'horizontal',
-    size = 15,
-    shade_terminals = false,
-    -- function to run on opening the terminal
-    on_open = function(term)
-      vim.cmd("startinsert!")
-      vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<M-q>", "<cmd>close<CR>", {noremap = true, silent = true})
-    end,
-    -- function to run on closing the terminal
-    on_close = function(term)
-      vim.cmd("startinsert!")
-    end,
-  }
+require'lsp'
+require'treesitter'
+require'telescope_conf'
+require'toggleterm_conf'
