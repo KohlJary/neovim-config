@@ -116,7 +116,7 @@ nnoremap =- :set ead=ver ea noea<CR> " set windows equal vertically (^W, =, =)
 nnoremap =\ :set ead=hor ea noea<CR> " set windows equal horizontally (^W, =, -)
 tnoremap <leader>= <C-\><C-n><C-w>=i
 " Rotate splits
-nnoremap <leader>r <C-w>r
+nnoremap <leader>rr <C-w>r
 " Clone splits
 nnoremap <M-S> :vsp<CR>
 nnoremap <M-I> :sp<CR>
@@ -173,8 +173,8 @@ xnoremap <F2> <cmd>sort<CR>
 nnoremap <F3> <cmd>Fold<CR>
 " Buffer delete menu
 nnoremap <F4> <cmd>Bdelete! menu<CR>
-" Coc Quickfix
-nnoremap <F5> <Plug>(coc-codeaction)<CR>
+" Nvim LSP Code Action
+nnoremap <F5> <cmd>CodeActionMenu<CR>
 " Restart process
 tnoremap <F5> <C-c><Up><CR>
 " Toggle terminal for current tab
@@ -189,8 +189,8 @@ nnoremap <F8> ~h
 xnoremap <F8> ~
 " Relative line number
 nnoremap <F9> <cmd>set rnu!<cr>
-" Reload CoC
-nnoremap <F10> <cmd>LspRestart<CR><cmd>CocRestart<CR>
+" CoC Code Action
+nnoremap <F10> <Plug>(coc-codeaction)<CR>
 " LSP Status
 nnoremap <F11> <cmd>LspInfo<CR>
 " Reload config
@@ -232,11 +232,6 @@ nnoremap <F21> <Plug>VimspectorStepOver
 nnoremap <F22> <Plug>VimspectorToggleBreakpoint
 " Vimspector Clear Breakpoints
 nnoremap <F23> <cmd>call vimspector#ClearBreakpoints()<CR>
-
-" Location list toggle
-nnoremap <leader>l :LToggle<CR>
-" Quickfix list toggle
-nnoremap <leader>q :QToggle<CR>
 
 " Run last command
 nnoremap <M-;> @:<CR>

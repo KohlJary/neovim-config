@@ -38,7 +38,7 @@ let g:syntastic_check_on_wq = 0
 
 " CoC
 let g:coc_global_extensions = ['coc-tsserver', 'coc-angular', 'coc-json', 'coc-sql', 'coc-vimlsp']
-source $VIMDIR/config/coc-user-config.vim
+" source $VIMDIR/config/coc-user-config.vim
 let g:AutoClosePreserveDotReg = 0
 
 " NERDTree
