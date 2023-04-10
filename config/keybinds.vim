@@ -306,8 +306,6 @@ inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 " End LOC with semicolon
 inoremap <M-;> <ESC>A;
-" End LOC with comma
-inoremap <C-m> <ESC>A,
 " Inline comment at EOL
 inoremap <C-c> <End><Space>//<Space>
 " Swap case of next character

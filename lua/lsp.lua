@@ -1,5 +1,4 @@
-local pid = vim.fn.getpid()
-local omnisharp_bin = "/usr/lib/omnisharp-roslyn/OmniSharp"
+require'omnisharp'
 local is_linux = vim.loop.os_uname().sysname == "Linux"
 local is_win = vim.loop.os_uname().sysname == "Windows_NT"
 
@@ -25,7 +24,17 @@ if(is_win)
   vim.cmd("set shellquote= shellxquote=")
   require'lspconfig'.csharp_ls.setup{capabilities = capabilities}
 else
-  -- require'lspconfig'.angularls.setup{capabilities = capabilities}
+  require'lspconfig'.angularls.setup{capabilities = capabilities}
+  local pid = vim.fn.getpid()
+  local omnisharp_bin = "/usr/lib/omnisharp-roslyn/OmniSharp"
+  require'lspconfig'.omnisharp.setup{
+    handlers = {
+      ["textDoccument/definition"] = require('omnisharp_extended').handler,
+    },
+    cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
+    enable_roslyn_analyzers = true,
+    capabilities = capabilities
+  }
 end
 -- Set up nvim-cmp.
 local luasnip = require'luasnip'
@@ -169,7 +178,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<M-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<F24>wa', vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set('n', '<F24>wr', vim.lsp.buf.remove_workspace_folder, opts)
     vim.keymap.set('n', '<F24>wl', function()
