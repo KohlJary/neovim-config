@@ -5,13 +5,13 @@
   "semanticTokens.combinedModifiers": [
     "deprecated"
   ],
-  "colors.enable": true,
+  "colors.enable": false,
 
   "languageserver": {
       "csharp-ls": {
         "command": "csharp-ls",
         "filetypes": ["cs"],
-        "rootPatterns": ["*.sln", "*.csproj", ".vim/", ".git/", ".hg/"]
+        "rootPatterns": ["*.sln"]
       }
   }
 }
