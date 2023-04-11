@@ -1,10 +1,11 @@
-require'omnisharp'
 local is_linux = vim.loop.os_uname().sysname == "Linux"
 local is_win = vim.loop.os_uname().sysname == "Windows_NT"
 
 local ng_cmd_path = vim.env.NPMDIR .. "/@angular/language-server"
 local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
 local root_dir = require'lspconfig'.util.root_pattern("angular.json")
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 if(is_win)
   then
   require'lspconfig'.angularls.setup{
@@ -22,19 +23,8 @@ if(is_win)
   vim.cmd("let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'")
   vim.cmd("let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'")
   vim.cmd("set shellquote= shellxquote=")
-  require'lspconfig'.csharp_ls.setup{capabilities = capabilities}
 else
   require'lspconfig'.angularls.setup{capabilities = capabilities}
-  local pid = vim.fn.getpid()
-  local omnisharp_bin = "/usr/lib/omnisharp-roslyn/OmniSharp"
-  require'lspconfig'.omnisharp.setup{
-    handlers = {
-      ["textDoccument/definition"] = require('omnisharp_extended').handler,
-    },
-    cmd = { omnisharp_bin, "--languageserver", "--hostPID", tostring(pid) },
-    enable_roslyn_analyzers = true,
-    capabilities = capabilities
-  }
 end
 -- Set up nvim-cmp.
 local luasnip = require'luasnip'
@@ -67,7 +57,7 @@ cmp.setup({
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -131,12 +121,14 @@ cmp.setup.cmdline(':', {
 })
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 -- require('lspconfig')['angularls'].setup {
 --   cmd = cmd,
 --   capabilities = capabilities
 -- }
+require('lspconfig')['csharp_ls'].setup{
+  capabilities = capabilities
+}
 require('lspconfig')['tsserver'].setup {
   capabilities = capabilities
 }
@@ -189,5 +181,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<F24>f', function()
       vim.lsp.buf.format { async = true }
     end, opts)
+
   end,
 })

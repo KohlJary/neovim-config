@@ -5,6 +5,6 @@
   "semanticTokens.combinedModifiers": [
     "deprecated"
   ],
-  "colors.enable": false,
+  "colors.enable": false
 
 }

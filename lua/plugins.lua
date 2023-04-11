@@ -230,7 +230,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
-  use {'neoclide/coc.nvim', branch = 'release'}
+  -- use {'neoclide/coc.nvim', branch = 'release'}
   -- Git
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
