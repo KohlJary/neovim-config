@@ -202,7 +202,7 @@ return require('packer').startup(function(use)
   use 'puremourning/vimspector'
 
   -- Text Manipulation
-  use 'townk/vim-autoclose'
+  use 'jiangmiao/auto-pairs'
   use 'tpope/vim-abolish'
   use 'tpope/vim-surround'
   use 'unblevable/quick-scope'
@@ -226,8 +226,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   -- use {'neoclide/coc.nvim', branch = 'release'}
@@ -235,8 +233,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
   use 'Xuyuanp/nerdtree-git-plugin'
-  -- C#
-  use 'Hoffs/omnisharp-extended-lsp.nvim'
   -- HLSL
   use 'beyondmarc/hlsl.vim'
   -- JSON

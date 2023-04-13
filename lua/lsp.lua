@@ -126,24 +126,20 @@ cmp.setup.cmdline(':', {
 --   cmd = cmd,
 --   capabilities = capabilities
 -- }
-require('lspconfig')['csharp_ls'].setup{
-  capabilities = capabilities
+local servers = {
+  'csharp_ls',
+  'graphql',
+  'html',
+  'jsonls',
+  'lua_ls',
+  'tsserver',
+  'vimls'
 }
-require('lspconfig')['tsserver'].setup {
-  capabilities = capabilities
-}
-require('lspconfig')['lua_ls'].setup {
-  capabilities = capabilities
-}
-require('lspconfig')['vimls'].setup {
-  capabilities = capabilities
-}
-require('lspconfig')['jsonls'].setup {
-  capabilities = capabilities
-}
-require('lspconfig')['html'].setup {
-  capabilities = capabilities
-}
+for _, serverName in ipairs(servers) do
+  require('lspconfig')[serverName].setup{
+    capabilities = capabilities
+  }
+end
 
 require('nvim-lightbulb').setup({autocmd = {enabled = true}})
 
