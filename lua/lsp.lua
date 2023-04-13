@@ -6,10 +6,14 @@ local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMD
 local root_dir = require'lspconfig'.util.root_pattern("angular.json")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
+capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
+
 if(is_win)
   then
   require'lspconfig'.angularls.setup{
-    on_attach = on_attach,
+    on_attach = lsp_status.on_attach,
     capabilities = capabilities,
     cmd = cmd,
     -- root_dir = root_dir,
@@ -24,7 +28,7 @@ if(is_win)
   vim.cmd("let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'")
   vim.cmd("set shellquote= shellxquote=")
 else
-  require'lspconfig'.angularls.setup{capabilities = capabilities}
+  require'lspconfig'.angularls.setup{on_attach = lsp_status.on_attach,capabilities = capabilities}
 end
 -- Set up nvim-cmp.
 local luasnip = require'luasnip'
@@ -137,6 +141,7 @@ local servers = {
 }
 for _, serverName in ipairs(servers) do
   require('lspconfig')[serverName].setup{
+    on_attach = lsp_status.on_attach,
     capabilities = capabilities
   }
 end

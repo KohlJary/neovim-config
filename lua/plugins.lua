@@ -177,7 +177,7 @@ return require('packer').startup(function(use)
   use 'vim-airline/vim-airline-themes'
   use 'kshenoy/vim-signature'
   -- Misc
-  use 'muniftanjim/nui.nvim'
+  use 'MunifTanjim/nui.nvim'
   use 'vonheikemen/fine-cmdline.nvim'
   -- File management
   use 'junegunn/fzf'
@@ -221,6 +221,7 @@ return require('packer').startup(function(use)
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu'
   }
+  use 'nvim-lua/lsp-status.nvim'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -228,15 +229,12 @@ return require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
-  -- use {'neoclide/coc.nvim', branch = 'release'}
+  -- AI
+  use 'Bryley/neoai.nvim'
   -- Git
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
   use 'Xuyuanp/nerdtree-git-plugin'
-  -- HLSL
-  use 'beyondmarc/hlsl.vim'
-  -- JSON
-  use 'tpope/vim-jdaddy'
   -- GraphQL
   use 'jparise/vim-graphql'
   -- Typescript
