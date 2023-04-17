@@ -24,7 +24,7 @@ require('neoai').setup{
                 .. context
         end,
     },
-    open_api_key_env = "INSERT_KEY",
+    open_api_key_env = "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",
     shortcuts = {
         {
             key = "<leader>as",
