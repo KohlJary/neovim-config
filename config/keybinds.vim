@@ -143,18 +143,6 @@ tnoremap <C-p> <C-/><C-n><cmd>tabp<CR>
 " Next tab
 nnoremap <C-n> :tabn<CR>
 tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
-" Move tabs
-" nnoremap <M--> :-tabm<CR>
-" nnoremap <M-=> :+tabm<CR>
-" nnoremap <M-1> :tabr<CR>
-" nnoremap <M-2> 2gt
-" nnoremap <M-3> 3gt
-" nnoremap <M-4> 4gt
-" nnoremap <M-5> 5gt
-" nnoremap <M-6> 6gt
-" nnoremap <M-7> 7gt
-" nnoremap <M-8> 8gt
-" nnoremap <M-9> :tabl<CR>
 
 " Fold operations
 nnoremap <C-f> zA
@@ -218,20 +206,20 @@ nnoremap <F16>d <cmd>Telescope lsp_definitions<cr>
 nnoremap <F16>i <cmd>Telescope lsp_implementations<cr>
 " Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
 nnoremap <F16>t <cmd>Telescope lsp_type_definitions<cr>
-" Vimspector Start/Continue Debugging
-nnoremap <F17> <Plug>VimspectorContinue
-" Vimspector Stop Debugging
-nnoremap <F18> <Plug>VimspectorStop
-" Vimspector Step Out
-nnoremap <F19> <Plug>VimspectorStepOut
-" Vimspector Step Into
-nnoremap <F20> <Plug>VimspectorStepInto
-" Vimspector Step Over
-nnoremap <F21> <Plug>VimspectorStepOver
-" Vimspector Toggle Breakpoint
-nnoremap <F22> <Plug>VimspectorToggleBreakpoint
-" Vimspector Clear Breakpoints
-nnoremap <F23> <cmd>call vimspector#ClearBreakpoints()<CR>
+" nvim-dap Start/Continue Debugging
+nnoremap <F17> <cmd>lua require'dap'.continue()<cr>
+" nvim-dap Stop Debugging
+nnoremap <F18> <cmd>lua require'dap'.terminate()<cr>
+" nvim-dap Step Out
+nnoremap <F19> <cmd>lua require'dap'.step_out()<cr>
+" nvim-dap Step Into
+nnoremap <F20> <cmd>lua require'dap'.step_into()<cr>
+" nvim-dap Step Over
+nnoremap <F21> <cmd>lua require'dap'.step_over()<cr>
+" nvim-dap Toggle Breakpoint
+nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
+" nvim-dap Clear Breakpoints
+nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
 
 " Run last command
 nnoremap <M-;> @:<CR>
@@ -299,11 +287,6 @@ nnoremap pp p
 " Toggle folds with <CR>
 nnoremap <CR> :ToggleFoldRecursive<CR>
 
-" Quick cursor movement/deletion in insert mode
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
 " End LOC with semicolon
 inoremap <M-;> <ESC>A;
 " Inline comment at EOL
@@ -311,6 +294,7 @@ inoremap <C-c> <End><Space>//<Space>
 " Swap case of next character
 inoremap <C-s> <Esc>l~hi
 " Ctrl backspace/delete behavior
+inoremap <C-BS>  <C-w>
 inoremap <M-BS>  <C-w>
 inoremap <M-Del> <C-o>de
 " inoremap <C-w> <ESC>wa

@@ -199,7 +199,7 @@ return require('packer').startup(function(use)
   }
 
   -- Debugging
-  use 'puremourning/vimspector'
+  use {'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap'}}
 
   -- Text Manipulation
   use 'jiangmiao/auto-pairs'
