@@ -125,14 +125,13 @@ cmp.setup.cmdline(':', {
 })
 
 -- Set up lspconfig.
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
--- require('lspconfig')['angularls'].setup {
---   cmd = cmd,
---   capabilities = capabilities
--- }
+require('lspconfig')['csharp_ls'].setup{
+  on_attach = lsp_status.on_attach,
+  capabilities = capabilities,
+  root_dir = require'lspconfig'.util.root_pattern(".sln", ".csproj", ".git")
+}
 local servers = {
-  'csharp_ls',
-  'graphql',
+  -- 'csharp_ls',
   'html',
   'jsonls',
   'lua_ls',
