@@ -131,7 +131,7 @@ require('lspconfig')['csharp_ls'].setup{
   root_dir = require'lspconfig'.util.root_pattern(".sln", ".csproj", ".git")
 }
 local servers = {
-  -- 'csharp_ls',
+  'cssls',
   'html',
   'jsonls',
   'lua_ls',
