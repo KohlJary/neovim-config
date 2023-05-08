@@ -129,3 +129,6 @@ augroup END
 
 " Vimspector
 let g:vimspector_base_dir='C:\Users\kohlbern.jary\AppData\Local\nvim-data\site\pack\packer\start\vimspector'
+
+" Commentary
+autocmd FileType cs setlocal commentstring=//\ %s

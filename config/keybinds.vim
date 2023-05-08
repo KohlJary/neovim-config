@@ -1,5 +1,5 @@
 " Bind F24 (right outer thumb key on moonlander) as leader
-let mapleader = "\<F24>"
+let mapleader = "\<Space>"
 
 " Map F-keys above 12 for Windows
 if (g:detected_os == 'WINDOWS')
@@ -29,21 +29,19 @@ if (g:detected_os == 'WINDOWS')
   tmap <M-C-F12> <F24>
 endif
 
-" Omnisharp mappings
-nnoremap <M-[> :OmniSharpNavigateUp<CR>
-nnoremap <M-]> :OmniSharpNavigateDown<CR>
-nnoremap <M-f> :OmniSharpFindUsages<CR>
-nnoremap <M-g> :OmniSharpGotoDefinition split<CR>
-nnoremap <M-R> :OmniSharpRestartServer<CR>
-nnoremap <leader>oss :OmniSharpStatus<CR>
-
 " NERDTree
-nnoremap <silent> <BS> :NERDTreeFocus<CR>
-tnoremap <silent> <leader><BS> <C-\><C-n><cmd>NERDTreeFocus<CR>
-nnoremap <silent> <Del> :NERDTreeFind<CR>
-tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeFind<CR>
-nnoremap <silent> <Space> :NERDTreeToggleVCS<CR>
-tnoremap <silent> <leader><Space> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
+" nnoremap <silent> <BS> :NERDTreeFocus<CR>
+" tnoremap <silent> <leader><BS> <C-\><C-n><cmd>NERDTreeFocus<CR>
+" nnoremap <silent> <Del> :NERDTreeFind<CR>
+" tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeFind<CR>
+" nnoremap <silent> <Space> :NERDTreeToggleVCS<CR>
+" tnoremap <silent> <leader><Space> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
+nnoremap <silent> <BS> :Neotree float focus reveal<CR>
+tnoremap <silent> <leader><BS> <C-\><C-n><cmd>Neotree float focus reveal<CR>
+nnoremap <silent> <Del> :Neotree buffers float toggle<CR>
+tnoremap <silent> <leader><BS> <C-\><C-n><cmd>Neotree buffers float toggle<CR>
+" nnoremap <silent> <Space> :Neotree left toggle<CR>
+" tnoremap <silent> <leader><Space> <C-\><C-n><cmd>Neotree left toggle<CR>
 
 " Vimspector
 " nnoremap <M-d> :call vimspector#Launch()<CR>
@@ -83,11 +81,11 @@ nnoremap <M-8> <cmd>8ToggleTerm<CR>
 tnoremap <M-9> <cmd>9ToggleTerm<CR>
 nnoremap <M-9> <cmd>9ToggleTerm<CR>
 " Send current line to ToggleTerm
-nnoremap <leader>t <cmd>ToggleTermSendCurrentLineToTab<CR>
+" nnoremap <leader>t <cmd>ToggleTermSendCurrentLineToTab<CR>
 " Send current selected lines to ToggleTerm
-xnoremap <leader>T <cmd>ToggleTermSendVisualLinesToTab<CR>
+" xnoremap <leader>T <cmd>ToggleTermSendVisualLinesToTab<CR>
 " Send current selection to ToggleTerm
-xnoremap <leader>t <cmd>ToggleTermSendVisualSelectionToTab<CR>
+" xnoremap <leader>t <cmd>ToggleTermSendVisualSelectionToTab<CR>
 
 " Split operations
 " Movement
@@ -163,15 +161,9 @@ nnoremap <F3> <cmd>Fold<CR>
 nnoremap <F4> <cmd>Bdelete! menu<CR>
 " Nvim LSP Code Action
 nnoremap <F5> <cmd>CodeActionMenu<CR>
-" Restart process
-tnoremap <F5> <C-c><Up><CR>
-" Toggle terminal for current tab
-nnoremap <F7> <cmd>ToggleTermTab<CR>
-tnoremap <F7> <cmd>ToggleTermTab<CR>
-tnoremap <leader><F7> <F7>
 " Toggle all
-nnoremap <S-F7> <cmd>ToggleTermToggleAll<CR>
-tnoremap <S-F7> <cmd>ToggleTermToggleAll<CR>
+" nnoremap <S-F7> <cmd>ToggleTermToggleAll<CR>
+" tnoremap <S-F7> <cmd>ToggleTermToggleAll<CR>
 " Swap case
 nnoremap <F8> ~h
 xnoremap <F8> ~
@@ -183,8 +175,9 @@ nnoremap <F10> <Plug>(coc-codeaction)<CR>
 nnoremap <F11> <cmd>LspInfo<CR>
 " Reload config
 nnoremap <F12> :source $MYVIMRC<CR>
-" Bufexplorer
-nnoremap <silent> <F13> <cmd>ToggleBufExplorer<cr>
+" Toggle terminal for current tab
+nnoremap <F13> <cmd>ToggleTermTab<CR>
+tnoremap <F13> <cmd>ToggleTermTab<CR>
 " Lazygit
 nnoremap <silent> <F14> :Lazygit<CR>
 tnoremap <silent> <F14> <C-\><C-n>:Lazygit<CR>
@@ -220,6 +213,8 @@ nnoremap <F21> <cmd>lua require'dap'.step_over()<cr>
 nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
+" Toggle folds
+nnoremap <CR> :ToggleFoldRecursive<CR>
 
 " Run last command
 nnoremap <M-;> @:<CR>
@@ -284,8 +279,6 @@ nnoremap pl Vp
 " Quick paste
 nnoremap pp p
 
-" Toggle folds with <CR>
-nnoremap <CR> :ToggleFoldRecursive<CR>
 
 " End LOC with semicolon
 inoremap <M-;> <ESC>A;
