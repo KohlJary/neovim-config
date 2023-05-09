@@ -1,5 +1,5 @@
 " Bind F24 (right outer thumb key on moonlander) as leader
-let mapleader = "\<Space>"
+let mapleader = "\<CR>"
 
 " Map F-keys above 12 for Windows
 if (g:detected_os == 'WINDOWS')
@@ -214,7 +214,7 @@ nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
 " Toggle folds
-nnoremap <CR> :ToggleFoldRecursive<CR>
+nnoremap <Space> :ToggleFoldRecursive<CR>
 
 " Run last command
 nnoremap <M-;> @:<CR>
