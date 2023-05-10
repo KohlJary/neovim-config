@@ -113,12 +113,10 @@ endfunction
 
 " Resize split to file line count
 function! SizeSplitToLines()
-  let fileName = expand("%")
-  let curLineCount = len(readfile(fileName))
+  let curLineCount = line("$")
   let maxLines = &lines
   if(curLineCount <= &lines)
-    let winNum = winnr("$")
-    execute winNum . "resize " . curLineCount
+    execute "resize " . curLineCount
   else
     echo "Line count exceeds max terminal height"
   endif
