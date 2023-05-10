@@ -117,6 +117,10 @@ function! SizeSplitToLines()
   let maxLines = &lines
   if(curLineCount <= &lines)
     execute "resize " . curLineCount
+    let curLine = line(".")
+    " Jump to first line and back to fit whole file in buffer
+    normal 1zt
+    execute curLine
   else
     echo "Line count exceeds max terminal height"
   endif
@@ -138,4 +142,3 @@ except Exception, e:
     print e
 EOF
 endfunction
-
