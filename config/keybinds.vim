@@ -161,9 +161,9 @@ nnoremap <F3> <cmd>Fold<CR>
 nnoremap <F4> <cmd>Bdelete! menu<CR>
 " Nvim LSP Code Action
 nnoremap <F5> <cmd>CodeActionMenu<CR>
-" Toggle all
-" nnoremap <S-F7> <cmd>ToggleTermToggleAll<CR>
-" tnoremap <S-F7> <cmd>ToggleTermToggleAll<CR>
+" Resize split to line count
+nnoremap <F7> <cmd>SizeSplitToLines<CR>
+tnoremap <F7> <cmd>SizeSplitToLines<CR>
 " Swap case
 nnoremap <F8> ~h
 xnoremap <F8> ~

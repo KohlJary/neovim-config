@@ -111,6 +111,21 @@ function FlipBoolean()
   call append('.', curWord . ' = !' . curWord . ';')
 endfunction
 
+" Resize split to file line count
+function! SizeSplitToLines()
+  let fileName = expand("%")
+  let curLineCount = len(readfile(fileName))
+  let maxLines = &lines
+  if(curLineCount <= &lines)
+    let winNum = winnr("$")
+    execute winNum . "resize " . curLineCount
+  else
+    echo "Line count exceeds max terminal height"
+  endif
+endfunction
+
+command SizeSplitToLines :call SizeSplitToLines()
+
 function! FormatJson()
 python << EOF
 import vim
@@ -125,3 +140,4 @@ except Exception, e:
     print e
 EOF
 endfunction
+
