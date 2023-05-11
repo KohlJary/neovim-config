@@ -1,5 +1,5 @@
 " Bind F24 (right outer thumb key on moonlander) as leader
-let mapleader = "\<CR>"
+let mapleader = "\<F24>"
 
 " Map F-keys above 12 for Windows
 if (g:detected_os == 'WINDOWS')
@@ -30,26 +30,10 @@ if (g:detected_os == 'WINDOWS')
 endif
 
 " NERDTree
-" nnoremap <silent> <BS> :NERDTreeFocus<CR>
-" tnoremap <silent> <leader><BS> <C-\><C-n><cmd>NERDTreeFocus<CR>
-" nnoremap <silent> <Del> :NERDTreeFind<CR>
-" tnoremap <silent> <leader><Del> <C-\><C-n><cmd>NERDTreeFind<CR>
-" nnoremap <silent> <Space> :NERDTreeToggleVCS<CR>
-" tnoremap <silent> <leader><Space> <C-\><C-n><cmd>NERDTreeToggleVCS<CR>
 nnoremap <silent> <BS> :Neotree float focus reveal<CR>
 tnoremap <silent> <leader><BS> <C-\><C-n><cmd>Neotree float focus reveal<CR>
 nnoremap <silent> <Del> :Neotree buffers float toggle<CR>
-tnoremap <silent> <leader><BS> <C-\><C-n><cmd>Neotree buffers float toggle<CR>
-" nnoremap <silent> <Space> :Neotree left toggle<CR>
-" tnoremap <silent> <leader><Space> <C-\><C-n><cmd>Neotree left toggle<CR>
-
-" Vimspector
-" nnoremap <M-d> :call vimspector#Launch()<CR>
-" nnoremap <M-e> :call vimspector#Reset()<CR>
-" nnoremap <M-c> :call vimspector#Continue()<CR>
-
-" nnoremap <M-t> :call vimspector#ToggleBreakpoint()<CR>
-" nnoremap <M-T> :call vimspector#ClearBreakpoints()<CR>
+tnoremap <silent> <leader><Del> <C-\><C-n><cmd>Neotree buffers float toggle<CR>
 
 " FineCmdline
 nnoremap <leader>; <cmd>FineCmdline<cr>
@@ -80,6 +64,11 @@ tnoremap <M-8> <cmd>8ToggleTerm<CR>
 nnoremap <M-8> <cmd>8ToggleTerm<CR>
 tnoremap <M-9> <cmd>9ToggleTerm<CR>
 nnoremap <M-9> <cmd>9ToggleTerm<CR>
+" Toggle terminal for current tab
+nnoremap = <cmd>ToggleTermTab<CR>
+tnoremap <leader>= <cmd>ToggleTermTab<CR>
+nnoremap + <cmd>ToggleTermToggleAll<CR>
+tnoremap <leader>+ <cmd>ToggleTermToggleAll<CR>
 " Send current line to ToggleTerm
 " nnoremap <leader>t <cmd>ToggleTermSendCurrentLineToTab<CR>
 " Send current selected lines to ToggleTerm
@@ -107,12 +96,10 @@ tnoremap <C-Up> <C-\><C-n><C-w>+i
 nnoremap <Down> <C-w>-
 tnoremap <C-Down> <C-\><C-n><C-w>-i
 " Maximize/reset size
-nnoremap + <C-w>_
-nnoremap - <C-w>\|
-nnoremap = <C-w>=
-nnoremap =- :set ead=ver ea noea<CR> " set windows equal vertically (^W, =, =)
-nnoremap =\ :set ead=hor ea noea<CR> " set windows equal horizontally (^W, =, -)
-tnoremap <leader>= <C-\><C-n><C-w>=i
+nnoremap - <C-w>=
+nnoremap _ <cmd>SizeSplitToLines<CR>
+nnoremap <leader>- :set ead=ver ea noea<CR> " set windows equal vertically (^W, =, =)
+nnoremap <leader>_ :set ead=hor ea noea<CR> " set windows equal horizontally (^W, =, -)
 " Rotate splits
 nnoremap <leader>rr <C-w>r
 " Clone splits
@@ -121,9 +108,6 @@ nnoremap <M-I> :sp<CR>
 " New splits
 nnoremap <M-s> :vnew<CR>
 nnoremap <M-i> :new<CR>
-" Next/prev buffer
-" nnoremap <leader>n :bn<CR>
-" nnoremap <leader>p :bp<CR>
 " Close buffer
 nnoremap <C-q> :bp\|bd! #<CR>
 
@@ -145,6 +129,8 @@ tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
 " Fold operations
 nnoremap <C-f> zA
 vnoremap <C-f> zf
+" Toggle folds
+nnoremap <Space> :ToggleFoldRecursive<CR>
 
 " Function keys
 " Flip current word as boolean
@@ -161,9 +147,8 @@ nnoremap <F3> <cmd>Fold<CR>
 nnoremap <F4> <cmd>Bdelete! menu<CR>
 " Nvim LSP Code Action
 nnoremap <F5> <cmd>CodeActionMenu<CR>
-" Resize split to line count
-nnoremap <F7> <cmd>SizeSplitToLines<CR>
-tnoremap <F7> <cmd>SizeSplitToLines<CR>
+" Resize all splits to line count
+nnoremap <F7> <cmd>windo SizeSplitToLines<CR>
 " Swap case
 nnoremap <F8> ~h
 xnoremap <F8> ~
@@ -175,9 +160,6 @@ nnoremap <F10> <Plug>(coc-codeaction)<CR>
 nnoremap <F11> <cmd>LspInfo<CR>
 " Reload config
 nnoremap <F12> :source $MYVIMRC<CR>
-" Toggle terminal for current tab
-nnoremap <F13> <cmd>ToggleTermTab<CR>
-tnoremap <F13> <cmd>ToggleTermTab<CR>
 " Lazygit
 nnoremap <silent> <F14> :Lazygit<CR>
 tnoremap <silent> <F14> <C-\><C-n>:Lazygit<CR>
@@ -213,8 +195,6 @@ nnoremap <F21> <cmd>lua require'dap'.step_over()<cr>
 nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
-" Toggle folds
-nnoremap <Space> :ToggleFoldRecursive<CR>
 
 " Run last command
 nnoremap <M-;> @:<CR>
@@ -225,12 +205,6 @@ nnoremap <M-.> @@
 " Escape terminal
 tnoremap <Esc><Esc> <C-\><C-n>
 tnoremap <leader><Esc> <C-\><C-n>
-" Reopen terminal in current buffer
-tnoremap <M-r> <C-\><C-n>:terminal<CR>
-" Split terminal buffer vertically
-tnoremap <M-s> <C-\><C-n><cmd>split\|terminal<CR>
-" Split terminal buffer
-tnoremap <M-i> <C-\><C-n><cmd>vsplit\|terminal<CR>
 
 " Wrap quotes
 xnoremap " xi""<ESC>P

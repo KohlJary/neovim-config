@@ -116,7 +116,7 @@ function! SizeSplitToLines()
   let curLineCount = line("$")
   let maxLines = &lines
   if(curLineCount <= &lines)
-    execute "resize " . curLineCount
+    execute winnr("$") . "resize " . curLineCount
     let curLine = line(".")
     " Jump to first line and back to fit whole file in buffer
     normal 1zt
