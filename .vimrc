@@ -95,7 +95,7 @@ source $VIMDIR/config/abbreviations.vim
 set showtabline=2
 set statusline=
 set statusline+=%m%#PmenuSel#%{%SyntasticStatuslineFlag()%}%*
-set statusline+=\ b:%n\ %l:%c
+set statusline+=\ w:%{winnr()}\ b:%n\ %l:%c
 set statusline+=\ %p%%
 set statusline+=%=
 set statusline+=%0*\ %{get(b:,'vista_nearest_method_or_function','')}\ 
@@ -132,6 +132,12 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
+
+" Resize buffer to fit contents
+" augroup SizeSplitToLines
+"   autocmd!
+"   autocmd BufEnter * call SizeSplitToLines()
+" augroup END
 
 " --- OS Specific Tweaks
 if (g:detected_os == 'WINDOWS')

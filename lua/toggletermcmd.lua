@@ -23,6 +23,7 @@ if(is_win)
   twui = Terminal:new({ cmd = "wsl taskwarrior-tui", count = 7, dir=git_dir, hidden = true, direction="float" })
 end
 local serv = Terminal:new({ dir=git_dir, hidden = true, direction="vertical" })
+local float = Terminal:new({ dir=git_dir, hidden = true, direction="float" })
 
 function _lazygit_toggle()
   lazygit:toggle()
@@ -38,4 +39,8 @@ end
 
 function _serv_toggle()
   serv:toggle()
+end
+
+function _float_toggle()
+  float:toggle()
 end

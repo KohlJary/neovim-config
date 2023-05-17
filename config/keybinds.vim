@@ -133,10 +133,6 @@ vnoremap <C-f> zf
 nnoremap <Space> :ToggleFoldRecursive<CR>
 
 " Function keys
-" Flip current word as boolean
-nnoremap <F1> <cmd>call FlipBoolean()<CR>
-" Flip selected boolean variable
-xnoremap <F1> l<esc><cmd>FlipSelectedBoolean<CR>
 " Format file
 nnoremap <F2> <cmd>Format<CR>
 " Sort lines
@@ -147,6 +143,10 @@ nnoremap <F3> <cmd>Fold<CR>
 nnoremap <F4> <cmd>Bdelete! menu<CR>
 " Nvim LSP Code Action
 nnoremap <F5> <cmd>CodeActionMenu<CR>
+" Flip current word as boolean
+nnoremap <F6> <cmd>call FlipBoolean()<CR>
+" Flip selected boolean variable
+xnoremap <F6> l<esc><cmd>FlipSelectedBoolean<CR>
 " Resize all splits to line count
 nnoremap <F7> <cmd>windo SizeSplitToLines<CR>
 " Swap case
@@ -160,6 +160,9 @@ nnoremap <F10> <Plug>(coc-codeaction)<CR>
 nnoremap <F11> <cmd>LspInfo<CR>
 " Reload config
 nnoremap <F12> :source $MYVIMRC<CR>
+" Floating terminal
+nnoremap <silent> <F13> :FloatTerm<CR>
+tnoremap <silent> <F13> <C-\><C-n>:FloatTerm<CR>
 " Lazygit
 nnoremap <silent> <F14> :Lazygit<CR>
 tnoremap <silent> <F14> <C-\><C-n>:Lazygit<CR>
