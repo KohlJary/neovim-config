@@ -118,8 +118,9 @@ function! SizeSplitToLines()
   let maxLines = &lines
   if(curLineCount <= &lines)
     execute winnr("$") . "resize " . curLineCount
-    let curLine = line(".")
+    " execute "normal z" . curLineCount
     " Jump to first line and back to fit whole file in buffer
+    let curLine = line(".")
     normal 1zt
     execute curLine
   else

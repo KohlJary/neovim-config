@@ -143,6 +143,8 @@ nnoremap <F3> <cmd>Fold<CR>
 nnoremap <F4> <cmd>Bdelete! menu<CR>
 " Nvim LSP Code Action
 nnoremap <F5> <cmd>CodeActionMenu<CR>
+" End line with semicolon and move back to current position
+inoremap <F5> <esc>mmA;<esc>`mlmm
 " Flip current word as boolean
 nnoremap <F6> <cmd>call FlipBoolean()<CR>
 " Flip selected boolean variable
@@ -160,6 +162,8 @@ nnoremap <F10> <Plug>(coc-codeaction)<CR>
 nnoremap <F11> <cmd>LspInfo<CR>
 " Reload config
 nnoremap <F12> :source $MYVIMRC<CR>
+" End line with semicolon, create new line
+inoremap <F12> <End>;<esc>o
 " Floating terminal
 nnoremap <silent> <F13> :FloatTerm<CR>
 tnoremap <silent> <F13> <C-\><C-n>:FloatTerm<CR>
