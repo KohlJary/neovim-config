@@ -117,7 +117,8 @@ function! SizeSplitToLines()
   let curLineCount = line("$")
   let maxLines = &lines
   if(curLineCount <= &lines)
-    execute winnr("$") . "resize " . curLineCount
+    " execute winnr("$") . "resize " . curLineCount
+    execute "resize " . curLineCount
     " execute "normal z" . curLineCount
     " Jump to first line and back to fit whole file in buffer
     let curLine = line(".")
@@ -143,4 +144,20 @@ try:
 except Exception, e:
     print e
 EOF
+endfunction
+
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+function! ToggleLocationList()
+    if empty(filter(getwininfo(), 'v:val.loclist'))
+        lopen
+    else
+        lclose
+    endif
 endfunction

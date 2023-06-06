@@ -29,15 +29,6 @@ if (g:detected_os == 'WINDOWS')
   tmap <M-C-F12> <F24>
 endif
 
-" NERDTree
-nnoremap <silent> <BS> :Neotree float focus reveal<CR>
-tnoremap <silent> <leader><BS> <C-\><C-n><cmd>Neotree float focus reveal<CR>
-nnoremap <silent> <Del> :Neotree buffers float toggle<CR>
-tnoremap <silent> <leader><Del> <C-\><C-n><cmd>Neotree buffers float toggle<CR>
-
-" FineCmdline
-nnoremap <leader>; <cmd>FineCmdline<cr>
-
 " Lightspeed
 nnoremap s <plug>Lightspeed_s<cr>
 xnoremap s <plug>Lightspeed_s<cr>
@@ -69,12 +60,15 @@ nnoremap = <cmd>ToggleTermTab<CR>
 tnoremap <leader>= <cmd>ToggleTermTab<CR>
 nnoremap + <cmd>ToggleTermToggleAll<CR>
 tnoremap <leader>+ <cmd>ToggleTermToggleAll<CR>
-" Send current line to ToggleTerm
-" nnoremap <leader>t <cmd>ToggleTermSendCurrentLineToTab<CR>
-" Send current selected lines to ToggleTerm
-" xnoremap <leader>T <cmd>ToggleTermSendVisualLinesToTab<CR>
-" Send current selection to ToggleTerm
-" xnoremap <leader>t <cmd>ToggleTermSendVisualSelectionToTab<CR>
+
+" Floating terminal
+nnoremap <silent> <leader>t <cmd>FloatTerm<CR>
+tnoremap <silent> <leader>t <C-/><C-n><cmd>FloatTerm<CR>
+
+" Terminal bindings
+" Escape terminal
+tnoremap <Esc><Esc> <C-\><C-n>
+tnoremap <leader><Esc> <C-\><C-n>
 
 " Split operations
 " Movement
@@ -133,61 +127,65 @@ vnoremap <C-f> zf
 nnoremap <Space> :ToggleFoldRecursive<CR>
 
 " Function keys
-" Format file
-nnoremap <F2> <cmd>Format<CR>
+" Nvim LSP Code Action
+nnoremap <F1> <cmd>CodeActionMenu<CR>
+" Insert new UUID
+inoremap <F1> <Plug>Nuuid
+xnoremap <F1> <Plug>Nuuid
+" Toggle location list
+nnoremap <silent> <F2> :call ToggleLocationList()<cr>
 " Sort lines
-xnoremap <F2> <cmd>sort<CR>
-" Fold file
-nnoremap <F3> <cmd>Fold<CR>
+xnoremap <silent> <F2> <cmd>sort<CR>
+" Toggle quickfix
+nnoremap <F3> :call ToggleQuickFix()<CR>
 " Buffer delete menu
 nnoremap <F4> <cmd>Bdelete! menu<CR>
-" Nvim LSP Code Action
-nnoremap <F5> <cmd>CodeActionMenu<CR>
+" Run last command
+nnoremap <F5> @:<CR>
 " End line with semicolon and move back to current position
 inoremap <F5> <esc>mmA;<esc>`mlmm
 " Flip current word as boolean
 nnoremap <F6> <cmd>call FlipBoolean()<CR>
 " Flip selected boolean variable
 xnoremap <F6> l<esc><cmd>FlipSelectedBoolean<CR>
-" Resize all splits to line count
-nnoremap <F7> <cmd>windo SizeSplitToLines<CR>
 " Swap case
 nnoremap <F8> ~h
 xnoremap <F8> ~
-" Relative line number
-nnoremap <F9> <cmd>set rnu!<cr>
-" CoC Code Action
-nnoremap <F10> <Plug>(coc-codeaction)<CR>
+" Telescope
+nnoremap <F9> <cmd>Telescope<cr>
+nnoremap <F9>f <cmd>Telescope find_files<cr>
+nnoremap <F9>g <cmd>Telescope live_grep<cr>
+nnoremap <F9>b <cmd>Telescope buffers<cr>
+nnoremap <F9>h <cmd>Telescope help_tags<cr>
+nnoremap <F9>s <cmd>Telescope grep_string<cr>
+" List LSP references for word under cursor
+nnoremap <F9>r <cmd>Telescope lsp_references<cr>
+" Goto definition of word under cursor if only one, otherwise list in Telescope
+nnoremap <F9>d <cmd>Telescope lsp_definitions<cr>
+" Goto implementation of word under cursor if only one, otherwise list in Telescope
+nnoremap <F9>i <cmd>Telescope lsp_implementations<cr>
+" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
+nnoremap <F9>t <cmd>Telescope lsp_type_definitions<cr>
+" List LSP Document Symbols
+nnoremap <F9>y <cmd>Telescope lsp_document_symbols<cr>
+" LSP Restart
+nnoremap <F10> <cmd>LspRestart<CR>
 " LSP Status
 nnoremap <F11> <cmd>LspInfo<CR>
 " Reload config
 nnoremap <F12> :source $MYVIMRC<CR>
 " End line with semicolon, create new line
 inoremap <F12> <End>;<esc>o
-" Floating terminal
-nnoremap <silent> <F13> :FloatTerm<CR>
-tnoremap <silent> <F13> <C-\><C-n>:FloatTerm<CR>
+" Taskwarrior
+nnoremap <silent> <F13> :Twui<CR>
+tnoremap <silent> <F13> <C-/><C-n><cmd>Twui<CR>
 " Lazygit
 nnoremap <silent> <F14> :Lazygit<CR>
-tnoremap <silent> <F14> <C-\><C-n>:Lazygit<CR>
-" Taskwarrior
-nnoremap <silent> <F15> :Twui<CR>
-tnoremap <silent> <F15> <C-\><C-n>:Twui<CR>
-" Telescope
-nnoremap <F16> <cmd>Telescope<cr>
-nnoremap <F16>f <cmd>Telescope find_files<cr>
-nnoremap <F16>g <cmd>Telescope live_grep<cr>
-nnoremap <F16>b <cmd>Telescope buffers<cr>
-nnoremap <F16>h <cmd>Telescope help_tags<cr>
-nnoremap <F16>s <cmd>Telescope grep_string<cr>
-" List LSP references for word under cursor
-nnoremap <F16>r <cmd>Telescope lsp_references<cr>
-" Goto definition of word under cursor if only one, otherwise list in Telescope
-nnoremap <F16>d <cmd>Telescope lsp_definitions<cr>
-" Goto implementation of word under cursor if only one, otherwise list in Telescope
-nnoremap <F16>i <cmd>Telescope lsp_implementations<cr>
-" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
-nnoremap <F16>t <cmd>Telescope lsp_type_definitions<cr>
+tnoremap <silent> <F14> <C-/><C-n><cmd>Lazygit<CR>
+" Filetree toggle
+nnoremap <silent> <F15> :Neotree float focus reveal<CR>
+" Buffer tree toggle
+nnoremap <silent> <F16> :Neotree buffers float toggle<CR>
 " nvim-dap Start/Continue Debugging
 nnoremap <F17> <cmd>lua require'dap'.continue()<cr>
 " nvim-dap Stop Debugging
@@ -203,15 +201,10 @@ nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
 
-" Run last command
-nnoremap <M-;> @:<CR>
-" Run last macro
-nnoremap <M-.> @@
-
-" Terminal bindings
-" Escape terminal
-tnoremap <Esc><Esc> <C-\><C-n>
-tnoremap <leader><Esc> <C-\><C-n>
+" Relative line number
+nnoremap <leader>n <cmd>setlocal rnu!<cr>
+" Word Wrap
+nnoremap <leader>w <cmd>setlocal wrap!<cr>
 
 " Wrap quotes
 xnoremap " xi""<ESC>P

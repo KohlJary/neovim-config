@@ -178,7 +178,6 @@ return require('packer').startup(function(use)
   use 'kshenoy/vim-signature'
   -- Misc
   use 'MunifTanjim/nui.nvim'
-  use 'vonheikemen/fine-cmdline.nvim'
   -- File management
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
@@ -323,19 +322,18 @@ use {
             },
             ["<2-LeftMouse>"] = "open",
             ["<cr>"] = "open",
+            ["o"] = "open",
             ["<esc>"] = "revert_preview",
-            ["P"] = { "toggle_preview", config = { use_float = true } },
+            ["p"] = { "toggle_preview", config = { use_float = true } },
             ["l"] = "focus_preview",
-            -- ["S"] = "open_split",
-            -- ["s"] = "open_vsplit",
-            ["S"] = "split_with_window_picker",
-            ["s"] = "vsplit_with_window_picker",
+            ["S"] = "open_split",
+            ["s"] = "open_vsplit",
             ["t"] = "open_tabnew",
             -- ["<cr>"] = "open_drop",
             -- ["t"] = "open_tab_drop",
             ["w"] = "open_with_window_picker",
             --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
-            ["C"] = "close_node",
+            ["x"] = "close_node",
             -- ['C'] = 'close_all_subnodes',
             ["z"] = "close_all_nodes",
             --["Z"] = "expand_all_nodes",
@@ -351,9 +349,9 @@ use {
             ["d"] = "delete",
             ["r"] = "rename",
             ["y"] = "copy_to_clipboard",
-            ["x"] = "cut_to_clipboard",
-            ["p"] = "paste_from_clipboard",
-            ["c"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
+            ["X"] = "cut_to_clipboard",
+            ["P"] = "paste_from_clipboard",
+            ["X"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
             -- ["c"] = {
             --  "copy",
             --  config = {
@@ -408,18 +406,19 @@ use {
             mappings = {
               ["u"] = "navigate_up",
               ["<bs>"] = "close_window",
-              ["."] = "set_root",
+              ["<Del>"] = "close_window",
+              ["<F15>"] = "close_window",
               ["H"] = "toggle_hidden",
               ["/"] = "fuzzy_finder",
               ["D"] = "fuzzy_finder_directory",
-              ["#"] = "fuzzy_sorter", -- fuzzy sorting using the fzy algorithm
-              -- ["D"] = "fuzzy_sorter_directory",
+              ["#"] = "fuzzy_sorter",
+              ["c"] = "set_root",
               ["f"] = "filter_on_submit",
               ["<c-x>"] = "clear_filter",
               ["[g"] = "prev_git_modified",
               ["]g"] = "next_git_modified",
             },
-            fuzzy_finder_mappings = { -- define keymaps for filter popup window in fuzzy_finder_mode
+            fuzzy_finder_mappings = {
               ["<down>"] = "move_cursor_down",
               ["<C-n>"] = "move_cursor_down",
               ["<up>"] = "move_cursor_up",
@@ -439,8 +438,8 @@ use {
               ["bd"] = "buffer_delete",
               ["<bs>"] = "close_window",
               ["<Del>"] = "close_window",
+              ["<F16>"] = "close_window",
               ["u"] = "navigate_up",
-              ["."] = "set_root",
             }
           },
         },
