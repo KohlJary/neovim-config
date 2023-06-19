@@ -161,3 +161,13 @@ function! ToggleLocationList()
         lclose
     endif
 endfunction
+
+function! ToggleFoldMethod()
+  if &fdm == 'syntax'
+    setlocal foldmethod=manual
+    echom 'Fold Method: Manual'
+  else
+    setlocal foldmethod=syntax
+    echom 'Fold Method: Syntax'
+  endif
+endfunction

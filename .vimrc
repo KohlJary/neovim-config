@@ -54,10 +54,10 @@ set softtabstop=2
 set shiftwidth=2
 
 " Folding
-augroup vimrc
-  autocmd BufReadPre * setlocal foldmethod=syntax
-  autocmd BufEnter * if &fdm == 'syntax' | setlocal foldmethod=manual | endif
-augroup END
+" augroup vimrc
+"   autocmd BufReadPre * setlocal foldmethod=syntax
+"   autocmd BufEnter * if &fdm == 'syntax' | setlocal foldmethod=manual | endif
+" augroup END
 
 " Sessions
 " Don't save hidden and unloaded buffers
@@ -127,11 +127,11 @@ augroup FileTypeDetection
 augroup END
 
 " Automatic relative line numbering
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-augroup END
+" augroup numbertoggle
+"   autocmd!
+"   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+"   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+" augroup END
 
 " Resize buffer to fit contents
 " augroup SizeSplitToLines

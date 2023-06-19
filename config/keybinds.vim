@@ -4,6 +4,7 @@ let mapleader = "\<F24>"
 " Map F-keys above 12 for Windows
 if (g:detected_os == 'WINDOWS')
   nmap <M-C-F1> <F13>
+  nmap <M-C-S-F1> <S-F13>
   nmap <M-C-F2> <F14>
   nmap <M-C-F3> <F15>
   nmap <M-C-F4> <F16>
@@ -56,10 +57,10 @@ nnoremap <M-8> <cmd>8ToggleTerm<CR>
 tnoremap <M-9> <cmd>9ToggleTerm<CR>
 nnoremap <M-9> <cmd>9ToggleTerm<CR>
 " Toggle terminal for current tab
-nnoremap = <cmd>ToggleTermTab<CR>
-tnoremap <leader>= <cmd>ToggleTermTab<CR>
-nnoremap + <cmd>ToggleTermToggleAll<CR>
-tnoremap <leader>+ <cmd>ToggleTermToggleAll<CR>
+nnoremap <silent> <F13> <cmd>ToggleTermTab<CR>
+tnoremap <silent> <F13> <cmd>ToggleTermTab<CR>
+nnoremap <silent> <leader><F13> <cmd>ToggleTermToggleAll<CR>
+tnoremap <silent> <leader><F13> <cmd>ToggleTermToggleAll<CR>
 
 " Floating terminal
 nnoremap <silent> <leader>t <cmd>FloatTerm<CR>
@@ -148,6 +149,9 @@ inoremap <F5> <esc>mmA;<esc>`mlmm
 nnoremap <F6> <cmd>call FlipBoolean()<CR>
 " Flip selected boolean variable
 xnoremap <F6> l<esc><cmd>FlipSelectedBoolean<CR>
+" Taskwarrior
+nnoremap <silent> <F7> :Twui<CR>
+tnoremap <silent> <F7> <C-/><C-n><cmd>Twui<CR>
 " Swap case
 nnoremap <F8> ~h
 xnoremap <F8> ~
@@ -176,9 +180,6 @@ nnoremap <F11> <cmd>LspInfo<CR>
 nnoremap <F12> :source $MYVIMRC<CR>
 " End line with semicolon, create new line
 inoremap <F12> <End>;<esc>o
-" Taskwarrior
-nnoremap <silent> <F13> :Twui<CR>
-tnoremap <silent> <F13> <C-/><C-n><cmd>Twui<CR>
 " Lazygit
 nnoremap <silent> <F14> :Lazygit<CR>
 tnoremap <silent> <F14> <C-/><C-n><cmd>Lazygit<CR>
@@ -202,7 +203,8 @@ nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
 
 " Relative line number
-nnoremap <leader>n <cmd>setlocal rnu!<cr>
+nnoremap = <cmd>setlocal rnu!<cr>
+nnoremap + <cmd>call ToggleFoldMethod()<cr>
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
 

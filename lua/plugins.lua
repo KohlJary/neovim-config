@@ -506,14 +506,21 @@ use {
   use 'hrsh7th/nvim-cmp'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
+
   -- AI
   use 'Bryley/neoai.nvim'
+
   -- Git
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
   use 'Xuyuanp/nerdtree-git-plugin'
+
   -- GraphQL
   use 'jparise/vim-graphql'
+
   -- Typescript
   use 'leafgarland/typescript-vim'
+
+  -- HTML/XML
+  use 'alvan/vim-closetag'
 end)
