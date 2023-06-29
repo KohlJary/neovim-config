@@ -486,6 +486,7 @@ use {
   use 'ggandor/lightspeed.nvim'
   use 'tpope/vim-commentary'
   use 'kburdett/vim-nuuid'
+  use 'chrisbra/unicode.vim'
 
   -- Language processing
   use 'vim-syntastic/syntastic'

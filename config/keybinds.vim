@@ -155,6 +155,8 @@ tnoremap <silent> <F7> <C-/><C-n><cmd>Twui<CR>
 " Swap case
 nnoremap <F8> ~h
 xnoremap <F8> ~
+" Search for unicode character
+inoremap <F8> <esc>:UnicodeSearch! 
 " Telescope
 nnoremap <F9> <cmd>Telescope<cr>
 nnoremap <F9>f <cmd>Telescope find_files<cr>
