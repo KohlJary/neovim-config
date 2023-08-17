@@ -1,7 +1,7 @@
 local is_linux = vim.loop.os_uname().sysname == "Linux"
 local is_win = vim.loop.os_uname().sysname == "Windows_NT"
 
-local ng_cmd_path = vim.env.NPMDIR .. "/@angular/language-server"
+local ng_cmd_path = vim.env.NPMDIR .. "/node_modules/@angular/language-server/index.js"
 local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
 local root_dir = require'lspconfig'.util.root_pattern("angular.json")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

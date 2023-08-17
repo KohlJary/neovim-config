@@ -37,25 +37,6 @@ nnoremap S <plug>Lightspeed_S<cr>
 xnoremap S <plug>Lightspeed_S<cr>
 
 " Toggleterm
-" Toggle by tab number
-tnoremap <M-1> <cmd>1ToggleTerm<CR>
-nnoremap <M-1> <cmd>1ToggleTerm<CR>
-tnoremap <M-2> <cmd>2ToggleTerm<CR>
-nnoremap <M-2> <cmd>2ToggleTerm<CR>
-tnoremap <M-3> <cmd>3ToggleTerm<CR>
-nnoremap <M-3> <cmd>3ToggleTerm<CR>
-tnoremap <M-4> <cmd>4ToggleTerm<CR>
-nnoremap <M-4> <cmd>4ToggleTerm<CR>
-tnoremap <M-5> <cmd>5ToggleTerm<CR>
-nnoremap <M-5> <cmd>5ToggleTerm<CR>
-tnoremap <M-6> <cmd>6ToggleTerm<CR>
-nnoremap <M-6> <cmd>6ToggleTerm<CR>
-tnoremap <M-7> <cmd>7ToggleTerm<CR>
-nnoremap <M-7> <cmd>7ToggleTerm<CR>
-tnoremap <M-8> <cmd>8ToggleTerm<CR>
-nnoremap <M-8> <cmd>8ToggleTerm<CR>
-tnoremap <M-9> <cmd>9ToggleTerm<CR>
-nnoremap <M-9> <cmd>9ToggleTerm<CR>
 " Toggle terminal for current tab
 nnoremap <silent> <F13> <cmd>ToggleTermTab<CR>
 tnoremap <silent> <F13> <cmd>ToggleTermTab<CR>
@@ -133,28 +114,25 @@ nnoremap <F1> <cmd>CodeActionMenu<CR>
 " Insert new UUID
 inoremap <F1> <Plug>Nuuid
 xnoremap <F1> <Plug>Nuuid
-" Toggle location list
-nnoremap <silent> <F2> :call ToggleLocationList()<cr>
+" Goto definition of word under cursor if only one, otherwise list in Telescope
+nnoremap <F2> <cmd>Telescope lsp_definitions<cr>
 " Sort lines
 xnoremap <silent> <F2> <cmd>sort<CR>
-" Toggle quickfix
-nnoremap <F3> :call ToggleQuickFix()<CR>
+" List LSP references for word under cursor
+nnoremap <F3> <cmd>Telescope lsp_references<cr>
 " Buffer delete menu
 nnoremap <F4> <cmd>Bdelete! menu<CR>
 " Run last command
 nnoremap <F5> @:<CR>
 " End line with semicolon and move back to current position
 inoremap <F5> <esc>mmA;<esc>`mlmm
-" Flip current word as boolean
-nnoremap <F6> <cmd>call FlipBoolean()<CR>
-" Flip selected boolean variable
-xnoremap <F6> l<esc><cmd>FlipSelectedBoolean<CR>
+" Toggle relative line number
+nnoremap <F6> <cmd>setlocal rnu!<cr>
 " Taskwarrior
 nnoremap <silent> <F7> :Twui<CR>
 tnoremap <silent> <F7> <C-/><C-n><cmd>Twui<CR>
-" Swap case
-nnoremap <F8> ~h
-xnoremap <F8> ~
+" Toggle fold method
+nnoremap <F8> <cmd>call ToggleFoldMethod()<cr>
 " Search for unicode character
 inoremap <F8> <esc>:UnicodeSearch! 
 " Telescope
@@ -174,10 +152,10 @@ nnoremap <F9>i <cmd>Telescope lsp_implementations<cr>
 nnoremap <F9>t <cmd>Telescope lsp_type_definitions<cr>
 " List LSP Document Symbols
 nnoremap <F9>y <cmd>Telescope lsp_document_symbols<cr>
-" LSP Restart
-nnoremap <F10> <cmd>LspRestart<CR>
-" LSP Status
-nnoremap <F11> <cmd>LspInfo<CR>
+" Toggle location list
+nnoremap <silent> <F10> :call ToggleLocationList()<cr>
+" Toggle quickfix
+nnoremap <silent> <F11> :call ToggleQuickFix()<CR>
 " Reload config
 nnoremap <F12> :source $MYVIMRC<CR>
 " End line with semicolon, create new line
@@ -204,9 +182,10 @@ nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
 
-" Relative line number
-nnoremap = <cmd>setlocal rnu!<cr>
-nnoremap + <cmd>call ToggleFoldMethod()<cr>
+" Neotree
+nnoremap <silent> = :Neotree float toggle<cr>
+nnoremap <silent> + :Neotree buffers float toggle<cr>
+
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
 
@@ -214,7 +193,7 @@ nnoremap <leader>w <cmd>setlocal wrap!<cr>
 xnoremap " xi""<ESC>P
 xnoremap ' xi''<ESC>P
 xnoremap ( xi()<ESC>P
-xnoremap [ xi[]<ESC>P
+xnoremap [ xi[]h+<ESC>P
 xnoremap { xi{}<ESC>P
 
 " In next/last parentheses

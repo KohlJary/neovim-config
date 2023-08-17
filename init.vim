@@ -15,7 +15,7 @@ if (g:detected_os == 'WINDOWS')
   let $TEMPDIR = $HOME.'/AppData/Local/Temp/nvim'
   let $DATADIR = $HOME.'/AppData/Local/nvim-data/site'
   let $OMNIBIN = $HOME.'/AppData/Local/omnisharp-vim/omnisharp-roslyn/OmniSharp.exe'
-  let $NPMDIR = $HOME.'/AppData/Roaming/npm/node_modules'
+  let $NPMDIR = $HOME.'/AppData/Roaming/nvm/v14.21.3'
   let $CHOCDIR = 'C:/ProgramData/chocolatey/bin'
   set runtimepath^=$CHOCDIR+=$CHOCDIR/after
 elseif (g:detected_os == 'LINUX')
