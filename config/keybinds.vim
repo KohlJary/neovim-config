@@ -63,13 +63,13 @@ tnoremap <silent> <C-k> <Cmd>wincmd k<CR>
 nnoremap <silent> <C-l> <C-w>l
 tnoremap <silent> <C-l> <Cmd>wincmd l<CR>
 " Resizing
-nnoremap <Left> <C-w><
+nnoremap <C-Left> <C-w><
 tnoremap <C-Left> <C-\><C-n><C-w><i
-nnoremap <Right> <C-w>>
+nnoremap <C-Right> <C-w>>
 tnoremap <C-Right> <C-\><C-n><C-w>>i
-nnoremap <Up> <C-w>+
+nnoremap <C-Up> <C-w>+
 tnoremap <C-Up> <C-\><C-n><C-w>+i
-nnoremap <Down> <C-w>-
+nnoremap <C-Down> <C-w>-
 tnoremap <C-Down> <C-\><C-n><C-w>-i
 " Maximize/reset size
 nnoremap - <C-w>=
@@ -258,17 +258,9 @@ inoremap <S-Home> <ESC>v^
 inoremap <S-End> <ESC>lv$
 
 " File Traversal
-" Page up/down
-nnoremap <C-Up> <C-u>
-nnoremap <C-Down> <C-d>
-" Line start/end
-nnoremap <C-Left> ^
-nnoremap <C-Right> $
 " Location navigation
-nnoremap <M-Left> :lprev<CR>
-nnoremap <M-Up> :lfirst<CR>
-nnoremap <M-Down> :llast<CR>
-nnoremap <M-Right> :lnext<CR>
+nnoremap <Up> :lprev<CR>
+nnoremap <Down> :lnext<CR>
 
 " Text  manipulation
 " Redo
@@ -276,17 +268,11 @@ nnoremap <S-u> <C-r>
 " Commenting line(s)
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
-" Swap character
-nnoremap <S-Left> hdlph
-nnoremap <S-Right> dlp
-" Swap lines
-nnoremap <S-Up> <Up>ddp<Up>
-nnoremap <S-Down> ddp
 " Change indentation
-nnoremap <leader>, <<
-vnoremap <leader>, <
-nnoremap <leader>. >>
-vnoremap <leader>. >
+nnoremap <S-Tab> <<
+vnoremap <S-Tab> <
+nnoremap <Tab> >>
+vnoremap <Tab> >
 " Break line at cursor
 nnoremap \| i<CR><esc>
 " Select all text
@@ -300,3 +286,10 @@ nnoremap <leader>/ :let @/=""<CR>
 nnoremap <M-w> <C-w>
 " Remap =
 nnoremap <leader>= =
+
+" Swap character
+" nnoremap <S-Left> hdlph
+" nnoremap <S-Right> dlp
+" Swap lines
+" nnoremap <Up> <Up>ddp<Up>
+" nnoremap <Down> ddp
