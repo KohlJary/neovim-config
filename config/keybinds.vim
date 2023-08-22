@@ -1,5 +1,5 @@
 " Bind F24 (right outer thumb key on moonlander) as leader
-let mapleader = "\<F24>"
+let mapleader = "\<Enter>"
 
 " Map F-keys above 12 for Windows
 if (g:detected_os == 'WINDOWS')
@@ -36,17 +36,6 @@ xnoremap s <plug>Lightspeed_s<cr>
 nnoremap S <plug>Lightspeed_S<cr>
 xnoremap S <plug>Lightspeed_S<cr>
 
-" Toggleterm
-" Toggle terminal for current tab
-nnoremap <silent> <F13> <cmd>ToggleTermTab<CR>
-tnoremap <silent> <F13> <cmd>ToggleTermTab<CR>
-nnoremap <silent> <leader><F13> <cmd>ToggleTermToggleAll<CR>
-tnoremap <silent> <leader><F13> <cmd>ToggleTermToggleAll<CR>
-
-" Floating terminal
-nnoremap <silent> <leader>t <cmd>FloatTerm<CR>
-tnoremap <silent> <leader>t <C-/><C-n><cmd>FloatTerm<CR>
-
 " Terminal bindings
 " Escape terminal
 tnoremap <Esc><Esc> <C-\><C-n>
@@ -73,9 +62,7 @@ nnoremap <C-Down> <C-w>-
 tnoremap <C-Down> <C-\><C-n><C-w>-i
 " Maximize/reset size
 nnoremap - <C-w>=
-nnoremap _ <cmd>SizeSplitToLines<CR>
-nnoremap <leader>- :set ead=ver ea noea<CR> " set windows equal vertically (^W, =, =)
-nnoremap <leader>_ :set ead=hor ea noea<CR> " set windows equal horizontally (^W, =, -)
+nnoremap <leader>- <cmd>SizeSplitToLines<CR>
 " Rotate splits
 nnoremap <leader>rr <C-w>r
 " Clone splits
@@ -109,64 +96,56 @@ vnoremap <C-f> zf
 nnoremap <Space> :ToggleFoldRecursive<CR>
 
 " Function keys
-" Nvim LSP Code Action
-nnoremap <F1> <cmd>CodeActionMenu<CR>
+" Toggle terminal for current tab
+nnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
+tnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
 " Insert new UUID
 inoremap <F1> <Plug>Nuuid
 xnoremap <F1> <Plug>Nuuid
-" Goto definition of word under cursor if only one, otherwise list in Telescope
-nnoremap <F2> <cmd>Telescope lsp_definitions<cr>
+" Nvim LSP Code Action
+nnoremap <F2> <cmd>CodeActionMenu<CR>
+" Search for unicode character
+inoremap <F2> <esc>:UnicodeSearch! 
 " Sort lines
 xnoremap <silent> <F2> <cmd>sort<CR>
-" List LSP references for word under cursor
-nnoremap <F3> <cmd>Telescope lsp_references<cr>
-" Buffer delete menu
-nnoremap <F4> <cmd>Bdelete! menu<CR>
+" Toggle terminal for all tabs
+nnoremap <silent> <F3> <cmd>ToggleTermToggleAll<CR>
+tnoremap <silent> <F3> <cmd>ToggleTermToggleAll<CR>
+" Buffer delete
+nnoremap <F4> <cmd>Bdelete! menu<cr>
 " Run last command
 nnoremap <F5> @:<CR>
 " End line with semicolon and move back to current position
 inoremap <F5> <esc>mmA;<esc>`mlmm
-" Toggle relative line number
-nnoremap <F6> <cmd>setlocal rnu!<cr>
-" Taskwarrior
-nnoremap <silent> <F7> :Twui<CR>
-tnoremap <silent> <F7> <C-/><C-n><cmd>Twui<CR>
-" Toggle fold method
-nnoremap <F8> <cmd>call ToggleFoldMethod()<cr>
-" Search for unicode character
-inoremap <F8> <esc>:UnicodeSearch! 
-" Telescope
-nnoremap <F9> <cmd>Telescope<cr>
-nnoremap <F9>f <cmd>Telescope find_files<cr>
-nnoremap <F9>g <cmd>Telescope live_grep<cr>
-nnoremap <F9>b <cmd>Telescope buffers<cr>
-nnoremap <F9>h <cmd>Telescope help_tags<cr>
-nnoremap <F9>s <cmd>Telescope grep_string<cr>
+" Run last macro
+nnoremap <F6> @@
 " List LSP references for word under cursor
-nnoremap <F9>r <cmd>Telescope lsp_references<cr>
+nnoremap <F7> <cmd>Telescope lsp_references<cr>
 " Goto definition of word under cursor if only one, otherwise list in Telescope
-nnoremap <F9>d <cmd>Telescope lsp_definitions<cr>
-" Goto implementation of word under cursor if only one, otherwise list in Telescope
-nnoremap <F9>i <cmd>Telescope lsp_implementations<cr>
-" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
-nnoremap <F9>t <cmd>Telescope lsp_type_definitions<cr>
-" List LSP Document Symbols
-nnoremap <F9>y <cmd>Telescope lsp_document_symbols<cr>
-" Toggle location list
-nnoremap <silent> <F10> :call ToggleLocationList()<cr>
-" Toggle quickfix
-nnoremap <silent> <F11> :call ToggleQuickFix()<CR>
+nnoremap <F8> <cmd>Telescope lsp_definitions<cr>
+" " Goto implementation of word under cursor if only one, otherwise list in Telescope
+nnoremap <F9> <cmd>Telescope lsp_implementations<cr>
+" " List LSP references for word under cursor
+" nnoremap <F9>r <cmd>Telescope lsp_references<cr>
+" " Goto definition of word under cursor if only one, otherwise list in Telescope
+" nnoremap <F9>d <cmd>Telescope lsp_definitions<cr>
+" " Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
+" nnoremap <F9>t <cmd>Telescope lsp_type_definitions<cr>
+nnoremap <F10> :LspRestart<cr>
+nnoremap <S-F10> :LspInfo<cr>
+" Taskwarrior
+nnoremap <silent> <F11> :Twui<CR>
+tnoremap <silent> <F11> <C-/><C-n><cmd>Twui<CR>
 " Reload config
 nnoremap <F12> :source $MYVIMRC<CR>
 " End line with semicolon, create new line
 inoremap <F12> <End>;<esc>o
-" Lazygit
-nnoremap <silent> <F14> :Lazygit<CR>
-tnoremap <silent> <F14> <C-/><C-n><cmd>Lazygit<CR>
-" Filetree toggle
-nnoremap <silent> <F15> :Neotree float focus reveal<CR>
-" Buffer tree toggle
-nnoremap <silent> <F16> :Neotree buffers float toggle<CR>
+" Telescope
+nnoremap <silent> <F13> <cmd>Telescope<CR>
+" List LSP Document Symbols
+nnoremap <F14> <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <F15> <cmd>Telescope find_files<cr>
+nnoremap <F16> <cmd>Telescope live_grep<cr>
 " nvim-dap Start/Continue Debugging
 nnoremap <F17> <cmd>lua require'dap'.continue()<cr>
 " nvim-dap Stop Debugging
@@ -182,8 +161,10 @@ nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
 
-" Neotree
+" Neotree/Lazygit
 nnoremap <silent> = :Neotree float toggle<cr>
+nnoremap <silent> <M-=> :Lazygit<CR>
+tnoremap <silent> <M-=> <C-/><C-n><cmd>Lazygit<CR>
 nnoremap <silent> + :Neotree buffers float toggle<cr>
 
 " Word Wrap
@@ -237,8 +218,6 @@ nnoremap pl Vp
 nnoremap pp p
 
 
-" End LOC with semicolon
-inoremap <M-;> <ESC>A;
 " Inline comment at EOL
 inoremap <C-c> <End><Space>//<Space>
 " Swap case of next character
@@ -278,9 +257,17 @@ nnoremap \| i<CR><esc>
 " Select all text
 nnoremap va ggVG
 " Format file text
-nnoremap <leader>= mfgg=G`f
+nnoremap <leader>f mfgg=G`f
 " Clear search highlighting
 nnoremap <leader>/ :let @/=""<CR>
+" Toggle fold method
+nnoremap <leader>o <cmd>call ToggleFoldMethod()<cr>
+" Toggle relative line number
+nnoremap <leader>n <cmd>setlocal rnu!<cr>
+" Toggle location list
+nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
+" Toggle quickfix<S-F10>
+nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
 
 " Remap <C-w>
 nnoremap <M-w> <C-w>
