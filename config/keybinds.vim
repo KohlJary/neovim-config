@@ -6,28 +6,51 @@ if (g:detected_os == 'WINDOWS')
   nmap <M-C-F1> <F13>
   nmap <M-C-S-F1> <S-F13>
   nmap <M-C-F2> <F14>
+  nmap <M-C-S-F2> <S-F14>
   nmap <M-C-F3> <F15>
+  nmap <M-C-S-F2> <S-F15>
   nmap <M-C-F4> <F16>
+  nmap <M-C-S-F3> <S-F16>
   nmap <M-C-F5> <F17>
+  nmap <M-C-S-F5> <S-F17>
   nmap <M-C-F6> <F18>
+  nmap <M-C-S-F6> <S-F18>
   nmap <M-C-F7> <F19>
+  nmap <M-C-S-F7> <S-F19>
   nmap <M-C-F8> <F20>
+  nmap <M-C-S-F8> <S-F20>
   nmap <M-C-F9> <F21>
+  nmap <M-C-S-F9> <S-F21>
   nmap <M-C-F10> <F22>
+  nmap <M-C-S-F10> <S-F22>
   nmap <M-C-F11> <F23>
+  nmap <M-C-S-F11> <S-F23>
   nmap <M-C-F12> <F24>
+  nmap <M-C-S-F12> <S-F23>
   tmap <M-C-F1> <F13>
+  tmap <M-C-S-F1> <S-F13>
   tmap <M-C-F2> <F14>
+  tmap <M-C-S-F2> <S-F14>
   tmap <M-C-F3> <F15>
+  tmap <M-C-S-F2> <S-F15>
   tmap <M-C-F4> <F16>
+  tmap <M-C-S-F3> <S-F16>
   tmap <M-C-F5> <F17>
+  tmap <M-C-S-F5> <S-F17>
   tmap <M-C-F6> <F18>
+  tmap <M-C-S-F6> <S-F18>
   tmap <M-C-F7> <F19>
+  tmap <M-C-S-F7> <S-F19>
   tmap <M-C-F8> <F20>
+  tmap <M-C-S-F8> <S-F20>
   tmap <M-C-F9> <F21>
+  tmap <M-C-S-F9> <S-F21>
   tmap <M-C-F10> <F22>
+  tmap <M-C-S-F10> <S-F22>
   tmap <M-C-F11> <F23>
+  tmap <M-C-S-F11> <S-F23>
   tmap <M-C-F12> <F24>
+  tmap <M-C-S-F12> <S-F24>
 endif
 
 " Lightspeed
@@ -61,16 +84,16 @@ tnoremap <C-Up> <C-\><C-n><C-w>+i
 nnoremap <C-Down> <C-w>-
 tnoremap <C-Down> <C-\><C-n><C-w>-i
 " Maximize/reset size
-nnoremap - <C-w>=
-nnoremap <leader>- <cmd>SizeSplitToLines<CR>
+nnoremap _ <C-w>=
+nnoremap - <cmd>SizeSplitToLines<CR>
 " Rotate splits
 nnoremap <leader>rr <C-w>r
 " Clone splits
-nnoremap <M-S> :vsp<CR>
+nnoremap <M-i> :vsp<CR>
 nnoremap <M-I> :sp<CR>
 " New splits
 nnoremap <M-s> :vnew<CR>
-nnoremap <M-i> :new<CR>
+nnoremap <M-S> :new<CR>
 " Close buffer
 nnoremap <C-q> :bp\|bd! #<CR>
 
@@ -95,53 +118,46 @@ vnoremap <C-f> zf
 " Toggle folds
 nnoremap <Space> :ToggleFoldRecursive<CR>
 
-" Function keys
 " Toggle terminal for current tab
-nnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
-tnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
+nnoremap <silent> <leader>- <cmd>ToggleTermTab<CR>
+tnoremap <silent> <leader>- <cmd>ToggleTermTab<CR>
+" Toggle terminal for all tabs
+nnoremap <silent> <leader>_ <cmd>ToggleTermToggleAll<CR>
+tnoremap <silent> <leader>_ <cmd>ToggleTermToggleAll<CR>
+
+" Function keys
 " Insert new UUID
 inoremap <F1> <Plug>Nuuid
 xnoremap <F1> <Plug>Nuuid
 " Nvim LSP Code Action
-nnoremap <F2> <cmd>CodeActionMenu<CR>
+nnoremap <F1> <cmd>CodeActionMenu<CR>
 " Search for unicode character
 inoremap <F2> <esc>:UnicodeSearch! 
 " Sort lines
 xnoremap <silent> <F2> <cmd>sort<CR>
-" Toggle terminal for all tabs
-nnoremap <silent> <F3> <cmd>ToggleTermToggleAll<CR>
-tnoremap <silent> <F3> <cmd>ToggleTermToggleAll<CR>
 " Buffer delete
 nnoremap <F4> <cmd>Bdelete! menu<cr>
-" Run last command
-nnoremap <F5> @:<CR>
+" Telescope
+nnoremap <F5> <cmd>Telescope<cr>
 " End line with semicolon and move back to current position
 inoremap <F5> <esc>mmA;<esc>`mlmm
-" Run last macro
-nnoremap <F6> @@
-" List LSP references for word under cursor
-nnoremap <F7> <cmd>Telescope lsp_references<cr>
+" LSP actions
+nnoremap <F6> :LspRestart<cr>
+nnoremap <S-F6> :LspInfo<cr>
 " Goto definition of word under cursor if only one, otherwise list in Telescope
 nnoremap <F8> <cmd>Telescope lsp_definitions<cr>
-" " Goto implementation of word under cursor if only one, otherwise list in Telescope
+" Goto implementation of word under cursor if only one, otherwise list in Telescope
 nnoremap <F9> <cmd>Telescope lsp_implementations<cr>
-" " List LSP references for word under cursor
-" nnoremap <F9>r <cmd>Telescope lsp_references<cr>
-" " Goto definition of word under cursor if only one, otherwise list in Telescope
-" nnoremap <F9>d <cmd>Telescope lsp_definitions<cr>
-" " Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
-" nnoremap <F9>t <cmd>Telescope lsp_type_definitions<cr>
-nnoremap <F10> :LspRestart<cr>
-nnoremap <S-F10> :LspInfo<cr>
-" Taskwarrior
-nnoremap <silent> <F11> :Twui<CR>
-tnoremap <silent> <F11> <C-/><C-n><cmd>Twui<CR>
+" List LSP references for word under cursor
+nnoremap <F10> <cmd>Telescope lsp_references<cr>
+" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
+nnoremap <F11> <cmd>Telescope lsp_type_definitions<cr>
 " Reload config
 nnoremap <F12> :source $MYVIMRC<CR>
 " End line with semicolon, create new line
 inoremap <F12> <End>;<esc>o
-" Telescope
-nnoremap <silent> <F13> <cmd>Telescope<CR>
+" List LSP references for word under cursor
+nnoremap <F13> <cmd>Telescope lsp_references<cr>
 " List LSP Document Symbols
 nnoremap <F14> <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <F15> <cmd>Telescope find_files<cr>
@@ -162,10 +178,12 @@ nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
 
 " Neotree/Lazygit
-nnoremap <silent> = :Neotree float toggle<cr>
-nnoremap <silent> <M-=> :Lazygit<CR>
-tnoremap <silent> <M-=> <C-/><C-n><cmd>Lazygit<CR>
-nnoremap <silent> + :Neotree buffers float toggle<cr>
+nnoremap <silent> <BS> :Neotree float toggle<cr>
+nnoremap <silent> <Del> :Neotree buffers float toggle<cr>
+nnoremap <silent> <M-BS> :Lazygit<CR>
+tnoremap <silent> <M-BS> <C-/><C-n><cmd>Lazygit<CR>
+nnoremap <silent> <M-Del> :Twui<CR>
+tnoremap <silent> <M-Del> <C-/><C-n><cmd>Twui<CR>
 
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
@@ -176,6 +194,7 @@ xnoremap ' xi''<ESC>P
 xnoremap ( xi()<ESC>P
 xnoremap [ xi[]h+<ESC>P
 xnoremap { xi{}<ESC>P
+xnoremap < xi<><ESC>P
 
 " In next/last parentheses
 onoremap i( :<c-u>normal! f(vi(<cr>
@@ -217,9 +236,14 @@ nnoremap pl Vp
 " Quick paste
 nnoremap pp p
 
+" Rerun last command
+nnoremap <silent> + @:<cr>
+" Rerun last macro
+nnoremap <silent> = @@
 
 " Inline comment at EOL
-inoremap <C-c> <End><Space>//<Space>
+nnoremap <M-c> A //
+inoremap <M-c> <End><Space>//<Space>
 " Swap case of next character
 inoremap <C-s> <Esc>l~hi
 " Ctrl backspace/delete behavior
@@ -248,10 +272,10 @@ nnoremap <S-u> <C-r>
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
 " Change indentation
-nnoremap <S-Tab> <<
-vnoremap <S-Tab> <
-nnoremap <Tab> >>
-vnoremap <Tab> >
+nnoremap <leader>I <<
+vnoremap <leader>I <
+nnoremap <leader>i >>
+vnoremap <leader>i >
 " Break line at cursor
 nnoremap \| i<CR><esc>
 " Select all text
@@ -265,7 +289,7 @@ nnoremap <leader>o <cmd>call ToggleFoldMethod()<cr>
 " Toggle relative line number
 nnoremap <leader>n <cmd>setlocal rnu!<cr>
 " Toggle location list
-nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
+nnoremap <silent> <leader>w :call ToggleLocationList()<cr>
 " Toggle quickfix<S-F10>
 nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
 
