@@ -1,6 +1,6 @@
 require('nvim-treesitter').setup{}
 require'nvim-treesitter.configs'.setup{
-  ensure_installed = "all",
+  ensure_installed = { "c_sharp", "angular", "css", "html", "json", "javascript", "lua", "sql", "typescript", "vim", "vimdoc" },
   ignore_install = { "smali", "tlaplus" },
   sync_install = false,
   auto_install = true,
