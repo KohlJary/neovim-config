@@ -50,9 +50,19 @@ endfunction
 " Apply colorscheme tweaks
 function! ColorTweaks()
   " Status Line/TUI Colors
-  hi VertSplit ctermfg=Cyan guifg=Cyan
-  hi StatusLine guifg=Magenta
-  hi CursorLineNr ctermfg=Magenta guifg=Magenta
+  hi SrceryBrightMagentaOnCyan ctermfg=5 guifg=#ff5c8f ctermbg=6 guibg=#0aaeb3
+  hi SrceryBrightMagentaOnBlack ctermfg=5 guifg=#ff5c8f ctermbg=237 guibg=#3a3a3a
+  hi clear VertSplit
+  hi link VertSplit SrceryBrightCyan
+  hi clear StatusLine
+  hi link StatusLine SrceryBrightMagenta
+  hi clear StatusLineNC
+  hi link StatusLineNC SrceryCyan
+  hi Cursor ctermfg=6 guifg=#0aaeb3 ctermbg=5 guibg=#ff5c8f
+  hi clear CursorLineNr
+  hi link CursorLineNr SrceryBrightMagentaOnBlack
+  hi clear LineNr
+  hi link LineNr SrceryCyan
   " Text Colors
   hi MatchParen ctermfg=Cyan guifg=Cyan
 endfunction
@@ -78,7 +88,12 @@ function! ToggleFoldRecursive()
       normal zc
     endif
   else
-    normal za
+    let foldclosed = foldclosed(".")
+    if (foldclosed > -1)
+      normal zr
+    else
+      normal zm
+    endif
   endif
 endfunction
 

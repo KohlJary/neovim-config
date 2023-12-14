@@ -511,6 +511,11 @@ use {
   -- AI
   use 'Bryley/neoai.nvim'
 
+
+  -- Database
+  use 'tpope/vim-dadbod'
+  use 'kristijanhusak/vim-dadbod-ui'
+
   -- Git
   use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'

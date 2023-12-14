@@ -113,8 +113,9 @@ nnoremap <C-n> :tabn<CR>
 tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
 
 " Fold operations
-nnoremap <C-f> zA
 vnoremap <C-f> zf
+" Close all folds then open one fold level
+nnoremap <C-f> zMzo
 " Toggle folds
 nnoremap <Space> :ToggleFoldRecursive<CR>
 
