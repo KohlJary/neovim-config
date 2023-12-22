@@ -297,7 +297,7 @@ use {
               -- Status type
               untracked = "",
               ignored   = "",
-              unstaged  = "",
+              unstaged  = "☒",
               staged    = "",
               conflict  = "",
             }
@@ -458,8 +458,6 @@ use {
           }
         }
       })
-
-      vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
     end
 }
   -- use {

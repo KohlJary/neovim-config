@@ -1,5 +1,5 @@
 " Bind F24 (right outer thumb key on moonlander) as leader
-let mapleader = "\<Enter>"
+let mapleader = "\<F24>"
 
 " Map F-keys above 12 for Windows
 if (g:detected_os == 'WINDOWS')
@@ -119,12 +119,6 @@ nnoremap <C-f> zMzo
 " Toggle folds
 nnoremap <Space> :ToggleFoldRecursive<CR>
 
-" Toggle terminal for current tab
-nnoremap <silent> <leader>- <cmd>ToggleTermTab<CR>
-tnoremap <silent> <leader>- <cmd>ToggleTermTab<CR>
-" Toggle terminal for all tabs
-nnoremap <silent> <leader>_ <cmd>ToggleTermToggleAll<CR>
-tnoremap <silent> <leader>_ <cmd>ToggleTermToggleAll<CR>
 
 " Function keys
 " Insert new UUID
@@ -145,6 +139,12 @@ inoremap <F5> <esc>mmA;<esc>`mlmm
 " LSP actions
 nnoremap <F6> :LspRestart<cr>
 nnoremap <S-F6> :LspInfo<cr>
+" Toggle terminal for current tab
+nnoremap <silent> <F7> <cmd>ToggleTermTab<CR>
+tnoremap <silent> <F7> <cmd>ToggleTermTab<CR>
+" Toggle terminal for all tabs
+nnoremap <silent> <S-F7> <cmd>ToggleTermToggleAll<CR>
+tnoremap <silent> <S-F7> <cmd>ToggleTermToggleAll<CR>
 " Goto definition of word under cursor if only one, otherwise list in Telescope
 nnoremap <F8> <cmd>Telescope lsp_definitions<cr>
 " Goto implementation of word under cursor if only one, otherwise list in Telescope
@@ -161,6 +161,7 @@ inoremap <F12> <End>;<esc>o
 nnoremap <F13> <cmd>Telescope lsp_references<cr>
 " List LSP Document Symbols
 nnoremap <F14> <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <Tab> <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <F15> <cmd>Telescope find_files<cr>
 nnoremap <F16> <cmd>Telescope live_grep<cr>
 " nvim-dap Start/Continue Debugging
@@ -181,10 +182,10 @@ nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
 " Neotree/Lazygit
 nnoremap <silent> <BS> :Neotree float toggle<cr>
 nnoremap <silent> <Del> :Neotree buffers float toggle<cr>
-nnoremap <silent> <M-BS> :Lazygit<CR>
-tnoremap <silent> <M-BS> <C-/><C-n><cmd>Lazygit<CR>
-nnoremap <silent> <M-Del> :Twui<CR>
-tnoremap <silent> <M-Del> <C-/><C-n><cmd>Twui<CR>
+nnoremap <silent> <M-=> :Lazygit<CR>
+tnoremap <silent> <M-=> <C-/><C-n><cmd>Lazygit<CR>
+nnoremap <silent> <F23> :Twui<CR>
+tnoremap <silent> <F23> <C-/><C-n><cmd>Twui<CR>
 
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
@@ -193,7 +194,7 @@ nnoremap <leader>w <cmd>setlocal wrap!<cr>
 xnoremap " xi""<ESC>P
 xnoremap ' xi''<ESC>P
 xnoremap ( xi()<ESC>P
-xnoremap [ xi[]h+<ESC>P
+xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
 xnoremap < xi<><ESC>P
 
@@ -238,9 +239,10 @@ nnoremap pl Vp
 nnoremap pp p
 
 " Rerun last command
-nnoremap <silent> + @:<cr>
+" nnoremap <silent> + @:<cr>
 " Rerun last macro
-nnoremap <silent> = @@
+nunmap \
+nnoremap <silent> \ @@
 
 " Inline comment at EOL
 nnoremap <M-c> A //
@@ -267,8 +269,11 @@ nnoremap <Up> :lprev<CR>
 nnoremap <Down> :lnext<CR>
 
 " Text  manipulation
+" Undo
+nnoremap <C-z> u
 " Redo
 nnoremap <S-u> <C-r>
+nnoremap <C-y> <C-r>
 " Commenting line(s)
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
@@ -293,6 +298,9 @@ nnoremap <leader>n <cmd>setlocal rnu!<cr>
 nnoremap <silent> <leader>w :call ToggleLocationList()<cr>
 " Toggle quickfix<S-F10>
 nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
+" Increment/decrement
+nnoremap = <C-a>
+nnoremap + <C-x>
 
 " Remap <C-w>
 nnoremap <M-w> <C-w>
