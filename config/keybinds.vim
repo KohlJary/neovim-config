@@ -89,8 +89,8 @@ nnoremap - <cmd>SizeSplitToLines<CR>
 " Rotate splits
 nnoremap <leader>rr <C-w>r
 " Clone splits
-nnoremap <M-i> :vsp<CR>
-nnoremap <M-I> :sp<CR>
+nnoremap <M-o> :vsp<CR>
+nnoremap <M-u> :sp<CR>
 " New splits
 nnoremap <M-s> :vnew<CR>
 nnoremap <M-S> :new<CR>
@@ -161,7 +161,6 @@ inoremap <F12> <End>;<esc>o
 nnoremap <F13> <cmd>Telescope lsp_references<cr>
 " List LSP Document Symbols
 nnoremap <F14> <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <Tab> <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <F15> <cmd>Telescope find_files<cr>
 nnoremap <F16> <cmd>Telescope live_grep<cr>
 " nvim-dap Start/Continue Debugging
@@ -279,9 +278,9 @@ nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
 " Change indentation
 nnoremap <leader>I <<
-vnoremap <leader>I <
+xnoremap <leader>I <
 nnoremap <leader>i >>
-vnoremap <leader>i >
+xnoremap <leader>i >
 " Break line at cursor
 nnoremap \| i<CR><esc>
 " Select all text

@@ -16,11 +16,11 @@ local lazygit = Terminal:new({
   end,
 })
 local gitui = Terminal:new({ cmd = "gitui", count = 6, dir=git_dir, hidden = true, direction="float" })
-local twui = Terminal:new({ cmd = "taskwarrior-tui", count = 7, dir=git_dir, hidden = true, direction="float" })
+local twui = Terminal:new({ cmd = "taskwarrior-tui -d ./.task --taskdata ./.task", count = 7, dir=git_dir, hidden = true, direction="float" })
 local is_win = vim.loop.os_uname().sysname == "Windows_NT"
 if(is_win)
   then
-  twui = Terminal:new({ cmd = "wsl taskwarrior-tui", count = 7, dir=git_dir, hidden = true, direction="float" })
+  twui = Terminal:new({ cmd = "wsl taskwarrior-tui -d ./.task --taskdata ./.task", count = 7, dir=git_dir, hidden = true, direction="float" })
 end
 local serv = Terminal:new({ dir=git_dir, hidden = true, direction="vertical" })
 local float = Terminal:new({ dir=git_dir, hidden = true, direction="float" })
