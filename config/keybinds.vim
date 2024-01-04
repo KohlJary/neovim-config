@@ -121,30 +121,37 @@ nnoremap <Space> :ToggleFoldRecursive<CR>
 
 
 " Function keys
+" Toggle terminal for current tab
+nnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
+tnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
+" Toggle terminal for all tabs
+nnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
+tnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
 " Insert new UUID
 inoremap <F1> <Plug>Nuuid
 xnoremap <F1> <Plug>Nuuid
-" Nvim LSP Code Action
-nnoremap <F1> <cmd>CodeActionMenu<CR>
 " Search for unicode character
 inoremap <F2> <esc>:UnicodeSearch! 
 " Sort lines
 xnoremap <silent> <F2> <cmd>sort<CR>
+" Toggle background transparency
+nnoremap <silent> <F3> <cmd>SrceryBGToggle<CR>
+" Toggle relative line numbers locally
+nnoremap <silent> <S-F3> <cmd>setlocal rnu!<cr>
 " Buffer delete
 nnoremap <F4> <cmd>Bdelete! menu<cr>
-" Telescope
-nnoremap <F5> <cmd>Telescope<cr>
+" Reload config
+nnoremap <F5> :source $MYVIMRC<CR>
+" Reload .vimrc
+nnoremap <S-F5> :source $VIMDIR/.vimrc<cr>
+" Refresh buffer
+nnoremap <C-F5> <cmd>e<cr><C-o>
 " End line with semicolon and move back to current position
 inoremap <F5> <esc>mmA;<esc>`mlmm
-" LSP actions
-nnoremap <F6> :LspRestart<cr>
-nnoremap <S-F6> :LspInfo<cr>
-" Toggle terminal for current tab
-nnoremap <silent> <F7> <cmd>ToggleTermTab<CR>
-tnoremap <silent> <F7> <cmd>ToggleTermTab<CR>
-" Toggle terminal for all tabs
-nnoremap <silent> <S-F7> <cmd>ToggleTermToggleAll<CR>
-tnoremap <silent> <S-F7> <cmd>ToggleTermToggleAll<CR>
+" End line with semicolon, create new line
+inoremap <S-F5> <End>;<esc>o
+" List LSP Document Symbols
+nnoremap <F7> <cmd>Telescope lsp_document_symbols<cr>
 " Goto definition of word under cursor if only one, otherwise list in Telescope
 nnoremap <F8> <cmd>Telescope lsp_definitions<cr>
 " Goto implementation of word under cursor if only one, otherwise list in Telescope
@@ -153,14 +160,13 @@ nnoremap <F9> <cmd>Telescope lsp_implementations<cr>
 nnoremap <F10> <cmd>Telescope lsp_references<cr>
 " Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
 nnoremap <F11> <cmd>Telescope lsp_type_definitions<cr>
-" Reload config
-nnoremap <F12> :source $MYVIMRC<CR>
-" End line with semicolon, create new line
-inoremap <F12> <End>;<esc>o
-" List LSP references for word under cursor
-nnoremap <F13> <cmd>Telescope lsp_references<cr>
-" List LSP Document Symbols
-nnoremap <F14> <cmd>Telescope lsp_document_symbols<cr>
+" LSP actions
+nnoremap <F12> <cmd>CodeActionMenu<CR>
+nnoremap <S-F12> :LspRestart<cr>
+nnoremap <C-F12> :LspInfo<cr>
+" Telescope
+nnoremap <F13> <cmd>Telescope<cr>
+nnoremap <F14> <cmd>Telescope buffers<cr>
 nnoremap <F15> <cmd>Telescope find_files<cr>
 nnoremap <F16> <cmd>Telescope live_grep<cr>
 " nvim-dap Start/Continue Debugging
@@ -195,7 +201,7 @@ xnoremap ' xi''<ESC>P
 xnoremap ( xi()<ESC>P
 xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
-xnoremap < xi<><ESC>P
+xnoremap , xi<><ESC>P
 
 " In next/last parentheses
 onoremap i( :<c-u>normal! f(vi(<cr>

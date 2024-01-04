@@ -38,10 +38,10 @@ command ToggleUIPositioning :call ToggleUIPositioning()
 " --- Custom Functions ---
 " Toggle BG transparency
 function! SrceryBGToggleFunc()
-  if g:srcery_bg_passthrough
-    let g:srcery_bg_passthrough = 0
+  if g:srcery_bg == ['NONE', 'NONE']
+    let g:srcery_bg = [g:srcery_black, 0]
   else
-    let g:srcery_bg_passthrough = 1
+    let g:srcery_bg = ['NONE', 'NONE']
   endif
   colorscheme srcery
   call ColorTweaks()
