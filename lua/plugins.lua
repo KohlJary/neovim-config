@@ -134,6 +134,7 @@ return require('packer').startup(function(use)
   use 'sheerun/vim-wombat-scheme'
   use 'srcery-colors/srcery-vim'
   use 'ellisonleao/gruvbox.nvim'
+  use 'junegunn/rainbow_parentheses.vim'
 
   -- Session
   use 'xolox/vim-misc'

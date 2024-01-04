@@ -58,13 +58,13 @@ function! ColorTweaks()
   hi link StatusLine SrceryBrightMagenta
   hi clear StatusLineNC
   hi link StatusLineNC SrceryCyan
-  hi Cursor ctermfg=6 guifg=#0aaeb3 ctermbg=5 guibg=#ff5c8f
+  " hi Cursor ctermfg=6 guifg=#0aaeb3 ctermbg=5 guibg=#ff5c8f
   hi clear CursorLineNr
   hi link CursorLineNr SrceryBrightMagentaOnBlack
   hi clear LineNr
   hi link LineNr SrceryCyan
-  " Text Colors
-  hi MatchParen ctermfg=Cyan guifg=Cyan
+  let g:srcery_inverse_match_paren = 1
+  let g:rainbow#pairs = [['(',')'],['[',']'],['{','}']]
 endfunction
 
 " Toggle UI positioning
