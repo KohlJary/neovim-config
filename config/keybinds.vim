@@ -246,8 +246,7 @@ nnoremap pp p
 " Rerun last command
 " nnoremap <silent> + @:<cr>
 " Rerun last macro
-nunmap \
-nnoremap <silent> \ @@
+nnoremap <silent>  @@
 
 " Inline comment at EOL
 nnoremap <M-c> A //
