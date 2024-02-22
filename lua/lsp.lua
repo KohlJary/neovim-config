@@ -7,8 +7,12 @@ local root_dir = require'lspconfig'.util.root_pattern("angular.json")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lsp_status = require('lsp-status')
+local util = require 'lspconfig.util'
 lsp_status.register_progress()
 capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
+
+require("mason").setup()
+require("mason-lspconfig").setup()
 
 if(is_win)
   then
@@ -125,10 +129,10 @@ cmp.setup.cmdline(':', {
 })
 
 -- Set up lspconfig.
-require('lspconfig')['csharp_ls'].setup{
+require('lspconfig').csharp_ls.setup{
   on_attach = lsp_status.on_attach,
   capabilities = capabilities,
-  root_dir = require'lspconfig'.util.root_pattern(".sln", ".csproj", ".git")
+  single_file_support = false
 }
 local servers = {
   'cssls',

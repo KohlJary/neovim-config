@@ -187,7 +187,7 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope-file-browser.nvim'
 use {
   "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
+    branch = "v3.x",
     requires = { 
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -489,7 +489,6 @@ use {
 
   -- Language processing
   use 'vim-syntastic/syntastic'
-  use 'neovim/nvim-lspconfig'
   use {
     'kosayoda/nvim-lightbulb',
     requires = 'antoinemadec/FixCursorHold.nvim'
@@ -506,10 +505,12 @@ use {
   use 'hrsh7th/nvim-cmp'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+  use 'neovim/nvim-lspconfig'
 
   -- AI
   use 'Bryley/neoai.nvim'
-
 
   -- Database
   use 'tpope/vim-dadbod'
@@ -528,4 +529,14 @@ use {
 
   -- HTML/XML
   use 'alvan/vim-closetag'
+
+  use {
+    'Equilibris/nx.nvim',
+    requires = {
+      'nvim-telescope/telescope.nvim',
+    },
+    config = function()
+      require("nx").setup{}
+    end
+  }
 end)

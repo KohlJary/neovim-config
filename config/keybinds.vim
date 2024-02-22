@@ -268,9 +268,14 @@ inoremap <S-Home> <ESC>v^
 inoremap <S-End> <ESC>lv$
 
 " File Traversal
-" Location navigation
-nnoremap <Up> :lprev<CR>
-nnoremap <Down> :lnext<CR>
+" Swap lines
+nnoremap <Up> ddkP
+nnoremap <Down> ddp
+" Change indentation
+nnoremap <Left> <<
+xnoremap <Left> <
+nnoremap <Right> >>
+xnoremap <Right> >
 
 " Text  manipulation
 " Undo
@@ -281,11 +286,6 @@ nnoremap <C-y> <C-r>
 " Commenting line(s)
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
-" Change indentation
-nnoremap <leader>I <<
-xnoremap <leader>I <
-nnoremap <leader>i >>
-xnoremap <leader>i >
 " Break line at cursor
 nnoremap \| i<CR><esc>
 " Select all text
