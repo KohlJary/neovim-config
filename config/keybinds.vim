@@ -1,58 +1,6 @@
 " Bind F24 (right outer thumb key on moonlander) as leader
 let mapleader = "\<F24>"
 
-" Map F-keys above 12 for Windows
-if (g:detected_os == 'WINDOWS')
-  nmap <M-C-F1> <F13>
-  nmap <M-C-S-F1> <S-F13>
-  nmap <M-C-F2> <F14>
-  nmap <M-C-S-F2> <S-F14>
-  nmap <M-C-F3> <F15>
-  nmap <M-C-S-F2> <S-F15>
-  nmap <M-C-F4> <F16>
-  nmap <M-C-S-F3> <S-F16>
-  nmap <M-C-F5> <F17>
-  nmap <M-C-S-F5> <S-F17>
-  nmap <M-C-F6> <F18>
-  nmap <M-C-S-F6> <S-F18>
-  nmap <M-C-F7> <F19>
-  nmap <M-C-S-F7> <S-F19>
-  nmap <M-C-F8> <F20>
-  nmap <M-C-S-F8> <S-F20>
-  nmap <M-C-F9> <F21>
-  nmap <M-C-S-F9> <S-F21>
-  nmap <M-C-F10> <F22>
-  nmap <M-C-S-F10> <S-F22>
-  nmap <M-C-F11> <F23>
-  nmap <M-C-S-F11> <S-F23>
-  nmap <M-C-F12> <F24>
-  nmap <M-C-S-F12> <S-F23>
-  tmap <M-C-F1> <F13>
-  tmap <M-C-S-F1> <S-F13>
-  tmap <M-C-F2> <F14>
-  tmap <M-C-S-F2> <S-F14>
-  tmap <M-C-F3> <F15>
-  tmap <M-C-S-F2> <S-F15>
-  tmap <M-C-F4> <F16>
-  tmap <M-C-S-F3> <S-F16>
-  tmap <M-C-F5> <F17>
-  tmap <M-C-S-F5> <S-F17>
-  tmap <M-C-F6> <F18>
-  tmap <M-C-S-F6> <S-F18>
-  tmap <M-C-F7> <F19>
-  tmap <M-C-S-F7> <S-F19>
-  tmap <M-C-F8> <F20>
-  tmap <M-C-S-F8> <S-F20>
-  tmap <M-C-F9> <F21>
-  tmap <M-C-S-F9> <S-F21>
-  tmap <M-C-F10> <F22>
-  tmap <M-C-S-F10> <S-F22>
-  tmap <M-C-F11> <F23>
-  tmap <M-C-S-F11> <S-F23>
-  tmap <M-C-F12> <F24>
-  tmap <M-C-S-F12> <S-F24>
-endif
-
 " Lightspeed
 nnoremap s <plug>Lightspeed_s<cr>
 xnoremap s <plug>Lightspeed_s<cr>
@@ -74,6 +22,7 @@ nnoremap <silent> <C-k> <C-w>k
 tnoremap <silent> <C-k> <Cmd>wincmd k<CR>
 nnoremap <silent> <C-l> <C-w>l
 tnoremap <silent> <C-l> <Cmd>wincmd l<CR>
+
 " Resizing
 nnoremap <C-Left> <C-w><
 tnoremap <C-Left> <C-\><C-n><C-w><i
@@ -83,17 +32,22 @@ nnoremap <C-Up> <C-w>+
 tnoremap <C-Up> <C-\><C-n><C-w>+i
 nnoremap <C-Down> <C-w>-
 tnoremap <C-Down> <C-\><C-n><C-w>-i
+
 " Maximize/reset size
 nnoremap _ <C-w>=
 nnoremap - <cmd>SizeSplitToLines<CR>
+
 " Rotate splits
 nnoremap <leader>rr <C-w>r
-" Clone splits
-nnoremap <M-o> :vsp<CR>
-nnoremap <M-u> :sp<CR>
+
 " New splits
 nnoremap <M-s> :vnew<CR>
 nnoremap <M-S> :new<CR>
+
+" Clone splits
+nnoremap <M-o> :vsp<CR>
+nnoremap <M-u> :sp<CR>
+
 " Close buffer
 nnoremap <C-q> :bp\|bd! #<CR>
 
@@ -249,8 +203,8 @@ nnoremap pp p
 nnoremap <silent>  @@
 
 " Inline comment at EOL
-nnoremap <M-c> A //
-inoremap <M-c> <End><Space>//<Space>
+nnoremap <leader>c A //
+inoremap <leader>c <End><Space>//<Space>
 " Swap case of next character
 inoremap <C-s> <Esc>l~hi
 " Ctrl backspace/delete behavior
@@ -258,8 +212,8 @@ inoremap <C-BS>  <C-w>
 inoremap <M-BS>  <C-w>
 inoremap <M-Del> <C-o>de
 " inoremap <C-w> <ESC>wa
-inoremap <C-b> <ESC>bi
-inoremap <C-e> <ESC>ea
+inoremap <C-Left> <ESC>bi
+inoremap <C-Right> <ESC>ea
 inoremap <C-u> <ESC>O
 inoremap <C-o> <ESC>o
 inoremap <C-p> <ESC>pa
@@ -299,7 +253,7 @@ nnoremap <leader>o <cmd>call ToggleFoldMethod()<cr>
 " Toggle relative line number
 nnoremap <leader>n <cmd>setlocal rnu!<cr>
 " Toggle location list
-nnoremap <silent> <leader>w :call ToggleLocationList()<cr>
+nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
 " Toggle quickfix<S-F10>
 nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
 " Increment/decrement
