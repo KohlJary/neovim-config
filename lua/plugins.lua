@@ -179,6 +179,7 @@ return require('packer').startup(function(use)
   use 'kshenoy/vim-signature'
   -- Misc
   use 'MunifTanjim/nui.nvim'
+  use 'jceb/vim-orgmode'
   -- File management
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
@@ -350,7 +351,7 @@ use {
             ["d"] = "delete",
             ["r"] = "rename",
             ["y"] = "copy_to_clipboard",
-            ["X"] = "cut_to_clipboard",
+            ["Y"] = "cut_to_clipboard",
             ["P"] = "paste_from_clipboard",
             ["X"] = "copy", -- takes text input for destination, also accepts the optional config.show_path option like "add":
             -- ["c"] = {
@@ -488,7 +489,7 @@ use {
   use 'chrisbra/unicode.vim'
 
   -- Language processing
-  use 'vim-syntastic/syntastic'
+  -- use 'vim-syntastic/syntastic'
   use {
     'kosayoda/nvim-lightbulb',
     requires = 'antoinemadec/FixCursorHold.nvim'
@@ -510,7 +511,7 @@ use {
   use 'neovim/nvim-lspconfig'
 
   -- AI
-  use 'Bryley/neoai.nvim'
+  -- use 'Bryley/neoai.nvim'
 
   -- Database
   use 'tpope/vim-dadbod'

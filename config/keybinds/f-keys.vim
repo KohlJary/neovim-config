@@ -32,6 +32,8 @@ inoremap <F5> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
 inoremap <S-F5> <End>;<esc>o
 
+nnoremap <F6> <cmd>lua vim.diagnostic.setloclist()<cr>
+
 " List LSP Document Symbols
 nnoremap <F7> <cmd>Telescope lsp_document_symbols<cr>
 " Goto definition of word under cursor if only one, otherwise list in Telescope

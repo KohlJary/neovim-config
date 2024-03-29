@@ -170,6 +170,9 @@ xnoremap <Left> <
 nnoremap <Right> >>
 xnoremap <Right> >
 
+nnoremap <silent> < <cmd>lua vim.diagnostic.goto_prev()<cr>
+nnoremap <silent> > <cmd>lua vim.diagnostic.goto_next()<cr>
+
 " Text  manipulation
 " Undo
 nnoremap <C-z> u

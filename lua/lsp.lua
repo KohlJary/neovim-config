@@ -5,6 +5,7 @@ local ng_cmd_path = vim.env.NPMDIR .. "/node_modules/@angular/language-server/in
 local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
 local root_dir = require'lspconfig'.util.root_pattern("angular.json")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local opd = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics)
 
 local lsp_status = require('lsp-status')
 local util = require 'lspconfig.util'
@@ -137,7 +138,6 @@ require('lspconfig').csharp_ls.setup{
 local servers = {
   'cssls',
   'html',
-  'jsonls',
   'lua_ls',
   'tsserver',
   'vimls'
@@ -149,6 +149,32 @@ for _, serverName in ipairs(servers) do
   }
 end
 
+require("lspconfig").jsonls.setup({
+        capabilities = capabilities,
+        filetypes = { "json", "jsonc", "json5" },
+        init_options = {
+                provideFormatter = false,
+        },
+        handlers = {
+                ["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
+                        -- jsonls doesn't really support json5
+                        -- remove some annoying errors
+                        if result.diagnostics ~= nil then
+                                local idx = 1
+                                while idx <= #result.diagnostics do
+                                        -- "Comments are not permitted in JSON."
+                                        if result.diagnostics[idx].code == 521 and result.diagnostics ~= nil then
+                                                table.remove(result.diagnostics, idx)
+                                        else
+                                                idx = idx + 1
+                                        end
+                                end
+                        end
+                        opd(err, result, ctx, config)
+                end,
+        },
+})
+
 require('nvim-lightbulb').setup({autocmd = {enabled = true}})
 
 -- Global mappings.
@@ -156,7 +182,6 @@ require('nvim-lightbulb').setup({autocmd = {enabled = true}})
 vim.keymap.set('n', '<F24>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<F24>q', vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
