@@ -45,6 +45,7 @@ syntax on
 "set autochdir
 " Disable automatic window resizing?
 set noea
+set noshellslash
 
 " Indenting
 filetype plugin indent on

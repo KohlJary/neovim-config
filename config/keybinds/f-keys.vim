@@ -57,16 +57,16 @@ nnoremap <F15> <cmd>Telescope find_files<cr>
 nnoremap <F16> <cmd>Telescope live_grep<cr>
 
 " nvim-dap Start/Continue Debugging
-nnoremap <F17> <cmd>lua require'dap'.continue()<cr>
+nnoremap <silent> <F17> <cmd>lua if vim.fn.filereadable(".vscode/launch.json") then require("dap.ext.vscode").load_launchjs(".vscode/launch.json", { coreclr = {'cs'} }) end require'dap'.continue()<cr>
 " nvim-dap Stop Debugging
-nnoremap <F18> <cmd>lua require'dap'.terminate()<cr>
+nnoremap <S-F17> <cmd>lua require'dap'.terminate()<cr>
 " nvim-dap Step Out
-nnoremap <F19> <cmd>lua require'dap'.step_out()<cr>
+nnoremap <F18> <cmd>lua require'dap'.step_out()<cr>
 " nvim-dap Step Into
-nnoremap <F20> <cmd>lua require'dap'.step_into()<cr>
+nnoremap <F19> <cmd>lua require'dap'.step_into()<cr>
 " nvim-dap Step Over
-nnoremap <F21> <cmd>lua require'dap'.step_over()<cr>
+nnoremap <F20> <cmd>lua require'dap'.step_over()<cr>
 " nvim-dap Toggle Breakpoint
-nnoremap <F22> <cmd>lua require'dap'.toggle_breakpoint()<cr>
+nnoremap <F21> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
-nnoremap <F23> <cmd>lua require'dap'.clear_breakpoints()<cr>
+nnoremap <F22> <cmd>lua require'dap'.clear_breakpoints()<cr>

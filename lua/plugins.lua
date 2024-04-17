@@ -477,7 +477,24 @@ use {
 
   -- Debugging
   use { 'nvim-neotest/nvim-nio' }
-  use {'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap'}}
+  use {'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio'}}
+  use {
+    'folke/neodev.nvim',
+    config = function()
+      require('neodev').setup({
+        library = {
+          plugins = { "nvim-dap-ui" },
+          types = true
+        }
+      })
+    end
+  }
+  use {
+    'theHamsta/nvim-dap-virtual-text',
+    config = function()
+      require('nvim-dap-virtual-text').setup()
+    end
+  }
 
   -- Text Manipulation
   use 'jiangmiao/auto-pairs'
