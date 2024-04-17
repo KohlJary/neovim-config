@@ -476,6 +476,7 @@ use {
   }
 
   -- Debugging
+  use { 'nvim-neotest/nvim-nio' }
   use {'rcarriga/nvim-dap-ui', requires = {'mfussenegger/nvim-dap'}}
 
   -- Text Manipulation
