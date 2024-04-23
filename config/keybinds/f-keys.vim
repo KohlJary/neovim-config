@@ -12,13 +12,13 @@ xnoremap <F1> <Plug>Nuuid
 inoremap <F2> <esc>:UnicodeSearch! 
 " Sort lines
 xnoremap <silent> <F2> <cmd>sort<CR>
-" Toggle boolean/conditional/+-
-nnoremap <F2> <cmd>call Toggle()<CR>
+" Lazygit
+nnoremap <silent> <F2> <cmd>Lazygit<CR>
+tnoremap <silent> <F2> <cmd>Lazygit<CR>
 
-" Toggle background transparency
-nnoremap <silent> <F3> <cmd>SrceryBGToggle<CR>
-" Toggle relative line numbers locally
-nnoremap <silent> <S-F3> <cmd>setlocal rnu!<cr>
+" Taskwarrior
+nnoremap <silent> <F3> <cmd>Twui<cr>
+tnoremap <silent> <F3> <cmd>Twui<cr>
 
 " Buffer delete
 nnoremap <F4> <cmd>Bdelete! menu<cr>

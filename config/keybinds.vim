@@ -80,10 +80,10 @@ source $VIMDIR/config/keybinds/f-keys.vim
 " Neotree/Lazygit
 nnoremap <silent> <BS> :Neotree float toggle<cr>
 nnoremap <silent> <Del> :Neotree buffers float toggle<cr>
-nnoremap <silent> <M-=> :Lazygit<CR>
-tnoremap <silent> <M-=> <C-/><C-n><cmd>Lazygit<CR>
-nnoremap <silent> <F23> :Twui<CR>
-tnoremap <silent> <F23> <C-/><C-n><cmd>Twui<CR>
+" nnoremap <silent> <M-=> :Lazygit<CR>
+" tnoremap <silent> <M-=> <C-/><C-n><cmd>Lazygit<CR>
+" nnoremap <silent> <F23> :Twui<CR>
+" tnoremap <silent> <F23> <C-/><C-n><cmd>Twui<CR>
 
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
@@ -203,6 +203,11 @@ nnoremap + <C-x>
 " Delete/change until space
 nnoremap d<Space> dt<Space>
 nnoremap c<Space> ct<Space>
+
+" Toggle boolean/conditional/+-
+nnoremap <leader>t <cmd>call Toggle()<CR>
+" Toggle background transparency
+nnoremap <silent> <leader>bg <cmd>SrceryBGToggle<CR>
 
 " Remap <C-w>
 nnoremap <M-w> <C-w>
