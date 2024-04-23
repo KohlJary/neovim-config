@@ -12,6 +12,8 @@ xnoremap <F1> <Plug>Nuuid
 inoremap <F2> <esc>:UnicodeSearch! 
 " Sort lines
 xnoremap <silent> <F2> <cmd>sort<CR>
+" Toggle boolean/conditional/+-
+nnoremap <F2> <cmd>call Toggle()<CR>
 
 " Toggle background transparency
 nnoremap <silent> <F3> <cmd>SrceryBGToggle<CR>

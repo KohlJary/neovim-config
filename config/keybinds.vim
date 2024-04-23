@@ -160,7 +160,6 @@ inoremap <C-p> <ESC>pa
 inoremap <S-Home> <ESC>v^
 inoremap <S-End> <ESC>lv$
 
-" File Traversal
 " Swap lines
 nnoremap <Up> ddkP
 nnoremap <Down> ddp
@@ -201,6 +200,9 @@ nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
 " Increment/decrement
 nnoremap = <C-a>
 nnoremap + <C-x>
+" Delete/change until space
+nnoremap d<Space> dt<Space>
+nnoremap c<Space> ct<Space>
 
 " Remap <C-w>
 nnoremap <M-w> <C-w>
