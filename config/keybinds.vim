@@ -79,7 +79,9 @@ source $VIMDIR/config/keybinds/f-keys.vim
 
 " Neotree/Lazygit
 nnoremap <silent> <BS> :Neotree float toggle<cr>
-nnoremap <silent> <Del> :Neotree buffers float toggle<cr>
+nnoremap <silent> <M-BS> <cmd>Telescope live_grep<cr>
+nnoremap <silent> <Del> <cmd>Telescope buffers<cr>
+nnoremap <silent> <M-Del> <cmd>Telescope find_files<cr>
 " nnoremap <silent> <M-=> :Lazygit<CR>
 " tnoremap <silent> <M-=> <C-/><C-n><cmd>Lazygit<CR>
 " nnoremap <silent> <F23> :Twui<CR>

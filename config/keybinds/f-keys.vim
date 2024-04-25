@@ -36,16 +36,18 @@ inoremap <S-F5> <End>;<esc>o
 
 nnoremap <F6> <cmd>lua vim.diagnostic.setloclist()<cr>
 
-" List LSP Document Symbols
-nnoremap <F7> <cmd>Telescope lsp_document_symbols<cr>
-" Goto definition of word under cursor if only one, otherwise list in Telescope
-nnoremap <F8> <cmd>Telescope lsp_definitions<cr>
-" Goto implementation of word under cursor if only one, otherwise list in Telescope
-nnoremap <F9> <cmd>Telescope lsp_implementations<cr>
-" List LSP references for word under cursor
-nnoremap <F10> <cmd>Telescope lsp_references<cr>
-" Goto definition of the type of the word under cursor if only one, otherwise list in Telescope
-nnoremap <F11> <cmd>Telescope lsp_type_definitions<cr>
+" Load/Start Prosession
+nnoremap <F7> <cmd>Prosession<cr>
+" Delete Prosession
+nnoremap <F8> <cmd>ProsessionDelete<cr>
+" Clean Prosession
+nnoremap <F9> <cmd>ProsessionClean<cr>
+" Taskwarrior
+nnoremap <silent> <F10> <cmd>Twui<cr>
+tnoremap <silent> <F10> <cmd>Twui<cr>
+" Lazygit
+nnoremap <silent> <F11> <cmd>Lazygit<CR>
+tnoremap <silent> <F11> <cmd>Lazygit<CR>
 
 " LSP actions
 nnoremap <F12> <cmd>CodeActionMenu<CR>
@@ -53,10 +55,14 @@ nnoremap <S-F12> :LspRestart<cr>
 nnoremap <C-F12> :LspInfo<cr>
 
 " Telescope
-nnoremap <F13> <cmd>Telescope<cr>
-nnoremap <F14> <cmd>Telescope buffers<cr>
-nnoremap <F15> <cmd>Telescope find_files<cr>
-nnoremap <F16> <cmd>Telescope live_grep<cr>
+" List LSP Document Symbols
+nnoremap <F13> <cmd>Telescope lsp_document_symbols<cr>
+" Goto definition of word under cursor if only one, otherwise list in Telescope
+nnoremap <F14> <cmd>Telescope lsp_definitions<cr>
+" Goto implementation of word under cursor if only one, otherwise list in Telescope
+nnoremap <F15> <cmd>Telescope lsp_implementations<cr>
+" List LSP references for word under cursor
+nnoremap <F16> <cmd>Telescope lsp_references<cr>
 
 " nvim-dap Start/Continue Debugging
 nnoremap <silent> <F17> <cmd>lua if vim.fn.filereadable(".vscode/launch.json") then require("dap.ext.vscode").load_launchjs(".vscode/launch.json", { coreclr = {'cs'} }) end require'dap'.continue()<cr>
