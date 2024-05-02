@@ -35,6 +35,7 @@ lua <<EOF
 require'plugins'
 require'toggletermcmd'
 require'lsp'
+require'neotree'
 require'treesitter'
 require'telescope_conf'
 require'toggleterm_conf'

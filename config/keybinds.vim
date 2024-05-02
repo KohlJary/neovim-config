@@ -1,5 +1,5 @@
-" Bind F24 (right outer thumb key on moonlander) as leader
-let mapleader = "\<F24>"
+" Bind , as leader
+let mapleader = ","
 
 " Lightspeed
 nnoremap s <plug>Lightspeed_s<cr>
@@ -93,10 +93,11 @@ nnoremap <leader>w <cmd>setlocal wrap!<cr>
 " Wrap quotes
 xnoremap " xi""<ESC>P
 xnoremap ' xi''<ESC>P
+xnoremap ` xi``<ESC>P
 xnoremap ( xi()<ESC>P
 xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
-xnoremap , xi<><ESC>P
+xnoremap < xi<><ESC>P
 
 " In next/last parentheses
 onoremap i( :<c-u>normal! f(vi(<cr>

@@ -13,8 +13,8 @@ inoremap <F2> <esc>:UnicodeSearch!
 " Sort lines
 xnoremap <silent> <F2> <cmd>sort<CR>
 " Lazygit
-nnoremap <silent> <F2> <cmd>Lazygit<CR>
-tnoremap <silent> <F2> <cmd>Lazygit<CR>
+let g:windowswap_map_keys = 0
+nnoremap <silent> <F2> <cmd>call WindowSwap#EasyWindowSwap()<CR>
 
 " Taskwarrior
 nnoremap <silent> <F3> <cmd>Twui<cr>
