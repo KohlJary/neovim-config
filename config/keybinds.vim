@@ -200,9 +200,9 @@ nnoremap <leader>n <cmd>setlocal rnu!<cr>
 nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
 " Toggle quickfix<S-F10>
 nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
-" Increment/decrement
-nnoremap = <C-a>
-nnoremap + <C-x>
+" Quick macro
+nnoremap = @g
+nnoremap + qg
 " Delete/change until space
 nnoremap d<Space> dt<Space>
 nnoremap c<Space> ct<Space>
