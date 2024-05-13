@@ -85,12 +85,6 @@ nnoremap <F8> <cmd>ProsessionDelete<cr>
 " Clean Prosession
 nnoremap <F9> <cmd>ProsessionClean<cr>
 
-" Lightspeed
-nnoremap <F10> <plug>Lightspeed_S<cr>
-xnoremap <F10> <plug>Lightspeed_S<cr>
-nnoremap <F11> <plug>Lightspeed_s<cr>
-xnoremap <F11> <plug>Lightspeed_s<cr>
-
 " LSP actions
 nnoremap <F12> <cmd>CodeActionMenu<CR>
 nnoremap <S-F12> :LspRestart<cr>

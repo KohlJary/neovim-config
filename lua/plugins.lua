@@ -175,6 +175,7 @@ return require('packer').startup(function(use)
   -- Misc
   use 'MunifTanjim/nui.nvim'
   use 'jceb/vim-orgmode'
+  use { 'echasnovski/mini.nvim', version = '*' }
   -- File management
   use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
@@ -248,9 +249,7 @@ return require('packer').startup(function(use)
 
   -- Text Manipulation
   use 'jiangmiao/auto-pairs'
-  use 'tpope/vim-surround'
   use 'unblevable/quick-scope'
-  use 'ggandor/lightspeed.nvim'
   use 'tpope/vim-commentary'
   use 'kburdett/vim-nuuid'
   use 'chrisbra/unicode.vim'
