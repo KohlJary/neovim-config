@@ -7,3 +7,4 @@ require('mini.jump2d').setup({
     dim = true
   }
 })
+require('mini.pairs').setup()

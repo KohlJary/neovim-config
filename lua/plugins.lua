@@ -248,7 +248,6 @@ return require('packer').startup(function(use)
   }
 
   -- Text Manipulation
-  use 'jiangmiao/auto-pairs'
   use 'unblevable/quick-scope'
   use 'tpope/vim-commentary'
   use 'kburdett/vim-nuuid'
