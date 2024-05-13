@@ -1,4 +1,5 @@
 local Terminal  = require('toggleterm.terminal').Terminal
+local is_win = vim.loop.os_uname().sysname == "Windows_NT"
 local lazygit = Terminal:new({ 
   cmd = "lazygit", 
   count = 5,
@@ -17,10 +18,14 @@ local lazygit = Terminal:new({
 })
 local gitui = Terminal:new({ cmd = "gitui", count = 6, dir=git_dir, hidden = true, direction="float" })
 local twui = Terminal:new({ cmd = "taskwarrior-tui -d ./.task --taskdata ./.task", count = 7, dir=git_dir, hidden = true, direction="float" })
-local is_win = vim.loop.os_uname().sysname == "Windows_NT"
 if(is_win)
   then
   twui = Terminal:new({ cmd = "wsl taskwarrior-tui -d ./.task --taskdata ./.task", count = 7, dir=git_dir, hidden = true, direction="float" })
+end
+local htop = Terminal:new({ cmd = "htop", count = 8, hidden = true, direction="float" })
+if(is_win)
+  then
+  htop = Terminal:new({ cmd = "wsl htop", count = 8, hidden = true, direction="float" })
 end
 local serv = Terminal:new({ dir=git_dir, hidden = true, direction="vertical" })
 local float = Terminal:new({ dir=git_dir, hidden = true, direction="float" })
@@ -35,6 +40,10 @@ end
 
 function _twui_toggle()
   twui:toggle()
+end
+
+function _htop_toggle()
+  htop:toggle()
 end
 
 function _serv_toggle()

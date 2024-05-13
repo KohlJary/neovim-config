@@ -175,7 +175,10 @@ require("neo-tree").setup({
         --".null-ls_*",
       },
     },
-    follow_current_file = false, -- This will find and focus the file in the active buffer every
+    follow_current_file = { -- This will find and focus the file in the active buffer every
+      enabled = true,
+      leave_dirs_open = true
+    },
                                  -- time the current file is changed while the tree is open.
     group_empty_dirs = false, -- when true, empty folders will be grouped together
     hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
@@ -190,12 +193,11 @@ require("neo-tree").setup({
         ["u"] = "navigate_up",
         ["<bs>"] = "close_window",
         ["<Del>"] = "close_window",
-        ["<F15>"] = "close_window",
         ["H"] = "toggle_hidden",
         ["/"] = "fuzzy_finder",
         ["D"] = "fuzzy_finder_directory",
         ["#"] = "fuzzy_sorter",
-        ["c"] = "set_root",
+        ["."] = "set_root",
         ["f"] = "filter_on_submit",
         ["<c-x>"] = "clear_filter",
         ["[g"] = "prev_git_modified",
@@ -212,13 +214,15 @@ require("neo-tree").setup({
     commands = {} -- Add a custom command or override a global one using the same function name
   },
   buffers = {
-    follow_current_file = true, -- This will find and focus the file in the active buffer every
-                                 -- time the current file is changed while the tree is open.
+    follow_current_file = { -- This will find and focus the file in the active buffer every
+      enabled = true,       -- time the current file is changed while the tree is open.
+      leave_dirs_open = true
+    },
     group_empty_dirs = true, -- when true, empty folders will be grouped together
     show_unloaded = true,
     window = {
       mappings = {
-        ["bd"] = "buffer_delete",
+        ["d"] = "buffer_delete",
         ["<bs>"] = "close_window",
         ["<Del>"] = "close_window",
         ["<F16>"] = "close_window",

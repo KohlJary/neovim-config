@@ -80,12 +80,8 @@ source $VIMDIR/config/keybinds/f-keys.vim
 " Neotree/Lazygit
 nnoremap <silent> <BS> :Neotree float toggle<cr>
 nnoremap <silent> <M-BS> <cmd>Telescope live_grep<cr>
-nnoremap <silent> <Del> <cmd>Telescope buffers<cr>
+nnoremap <silent> <Del> <cmd>Neotree buffers float toggle<cr>
 nnoremap <silent> <M-Del> <cmd>Telescope find_files<cr>
-" nnoremap <silent> <M-=> :Lazygit<CR>
-" tnoremap <silent> <M-=> <C-/><C-n><cmd>Lazygit<CR>
-" nnoremap <silent> <F23> :Twui<CR>
-" tnoremap <silent> <F23> <C-/><C-n><cmd>Twui<CR>
 
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>

@@ -130,10 +130,7 @@ return require('packer').startup(function(use)
   }
 
   -- Theming/Colors
-  use 'lifepillar/vim-solarized8'
-  use 'sheerun/vim-wombat-scheme'
   use 'srcery-colors/srcery-vim'
-  use 'ellisonleao/gruvbox.nvim'
   use 'junegunn/rainbow_parentheses.vim'
 
   -- Session
@@ -160,7 +157,6 @@ return require('packer').startup(function(use)
 
   -- Buffers
   use 'Asheq/close-buffers.vim'
-  use 'jlanzarotta/bufexplorer'
   use 'wesQ3/vim-windowswap'
   -- Terminal
   use {'akinsho/toggleterm.nvim', tag = '*', config = function()
@@ -169,10 +165,8 @@ return require('packer').startup(function(use)
   }
   -- UI
   -- NERDTree
-  use 'scrooloose/nerdtree'
   use 'kyazdani42/nvim-web-devicons'
   use 'ryanoasis/vim-devicons'
-  use 'liuchengxu/nerdtree-dash'
   -- Status Line
   use 'preservim/tagbar'
   use 'vim-airline/vim-airline'
@@ -254,7 +248,6 @@ return require('packer').startup(function(use)
 
   -- Text Manipulation
   use 'jiangmiao/auto-pairs'
-  use 'tpope/vim-abolish'
   use 'tpope/vim-surround'
   use 'unblevable/quick-scope'
   use 'ggandor/lightspeed.nvim'
