@@ -54,12 +54,6 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-" Folding
-" augroup vimrc
-"   autocmd BufReadPre * setlocal foldmethod=syntax
-"   autocmd BufEnter * if &fdm == 'syntax' | setlocal foldmethod=manual | endif
-" augroup END
-
 " Sessions
 " Don't save hidden and unloaded buffers
 set sessionoptions-=buffers
@@ -97,11 +91,10 @@ source $VIMDIR/config/abbreviations.vim
 " Status Line
 set showtabline=2
 set statusline=
-set statusline+=%m%#PmenuSel#%{%SyntasticStatuslineFlag()%}%*
 set statusline+=\ w:%{winnr()}\ b:%n\ %l:%c
 set statusline+=\ %p%%
 set statusline+=%=
-set statusline+=%0*\ %{get(b:,'vista_nearest_method_or_function','')}\ 
+set statusline+=%0*
 set statusline+=\ %t
 set laststatus=2
 
@@ -129,23 +122,10 @@ augroup END
 augroup FileTypeDetection
   autocmd!
   " Ensure filetype detection on opening buffer
-  autocmd BufRead,BufEnter * filetype detect 
+  autocmd BufRead,BufEnter * filetype detect
   " Tabwidth by filetype
   autocmd FileType cs setlocal ts=4 sts=4 sw=4
 augroup END
-
-" Automatic relative line numbering
-" augroup numbertoggle
-"   autocmd!
-"   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-"   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-" augroup END
-
-" Resize buffer to fit contents
-" augroup SizeSplitToLines
-"   autocmd!
-"   autocmd BufEnter * call SizeSplitToLines()
-" augroup END
 
 " --- OS Specific Tweaks
 if (g:detected_os == 'WINDOWS')

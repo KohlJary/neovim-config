@@ -29,13 +29,6 @@ let g:prosession_dir = '~/vimfiles/sessions/'
 " auto-session
 let g:auto_session_pre_save_cmds = ["tabdo NERDTreeClose"]
 
-" Syntastic
-let g:syntastic_stl_format = "%#airline_error#%E{[!]}%#airline_warning#%W{[?]}"
-let g:syntastic_cs_checkers = ['code_checker','cs']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " CoC
 let g:coc_global_extensions = ['coc-tsserver', 'coc-angular', 'coc-json', 'coc-sql', 'coc-vimlsp']
 " source $VIMDIR/config/coc-user-config.vim
@@ -93,8 +86,8 @@ endfunction
 " Airline
 " Weird bug
 let g:airline_statusline_ontop=1
-let g:airline#extensions#coc#enabled=1
-let g:airline#extensions#coc#show_coc_status=1
+let g:airline#extensions#coc#enabled=0
+let g:airline#extensions#coc#show_coc_status=0
 let g:airline_powerline_fonts=1
 let g:airline_theme='srcery'
 let g:airline_solarized_bg='dark'
@@ -105,16 +98,11 @@ function! AirlineInit()
   let g:airline_symbols.colnr=' ㏇'
   let spc=g:airline_symbols.space
   let pipe=' | '
-  let g:airline#extensions#coc#show_coc_status=1
-  let g:airline#extensions#syntastic#stl_format_warn='%W{[?]%fw|%w}'
-  let g:airline#extensions#syntastic#stl_format_err='%E{[!]%fe|%e}'
   "Layout
   let g:airline_section_b = airline#section#create_left(['hunks', 'branch',])
   let g:airline_section_c = airline#section#create_left(["T: %{tabpagenr()}/%{tabpagenr('$')}", "%{ObsessionStatus()}"])
   let g:airline_section_gutter = airline#section#create(['%=','%{g:datetime}','%='])
   let g:airline_section_x = airline#section#create_right(['%{LspStatus()}'])
-  let g:airline_section_error = airline#section#create(['syntastic-err'])
-  let g:airline_section_warning = airline#section#create(['syntastic-warn'])
 endfunction
 " Datetime timer
 let datetime_timer = timer_start(60000, 'UpdateDatetime',{'repeat': -1})

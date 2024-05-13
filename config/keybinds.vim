@@ -115,9 +115,6 @@ nnoremap pp p
 " Rerun last macro
 nnoremap <silent>  @@
 
-" Inline comment at EOL
-nnoremap <leader>c A //
-inoremap <leader>c <End><Space>//<Space>
 " Swap case of next character
 inoremap <C-s> <Esc>l~hi
 " Ctrl backspace/delete behavior

@@ -19,5 +19,6 @@ require('mini.move').setup({
     line_right = "<Right>"
   }
 })
+require('mini.notify').setup()
 require('mini.pairs').setup()
 require('mini.surround').setup()
