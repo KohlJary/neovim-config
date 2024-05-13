@@ -22,10 +22,10 @@ if(is_win)
   then
   twui = Terminal:new({ cmd = "wsl taskwarrior-tui -d ./.task --taskdata ./.task", count = 7, dir=git_dir, hidden = true, direction="float" })
 end
-local htop = Terminal:new({ cmd = "htop", count = 8, hidden = true, direction="float" })
+local btop = Terminal:new({ cmd = "btop", count = 8, hidden = true, direction="float" })
 if(is_win)
   then
-  htop = Terminal:new({ cmd = "wsl htop", count = 8, hidden = true, direction="float" })
+  btop = Terminal:new({ cmd = "wsl btop", count = 8, hidden = true, direction="float" })
 end
 local serv = Terminal:new({ dir=git_dir, hidden = true, direction="vertical" })
 local float = Terminal:new({ dir=git_dir, hidden = true, direction="float" })
@@ -42,8 +42,8 @@ function _twui_toggle()
   twui:toggle()
 end
 
-function _htop_toggle()
-  htop:toggle()
+function _btop_toggle()
+  btop:toggle()
 end
 
 function _serv_toggle()

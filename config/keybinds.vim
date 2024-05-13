@@ -1,11 +1,7 @@
-" Bind , as leader
-let mapleader = ","
-
-" Lightspeed
-nnoremap s <plug>Lightspeed_s<cr>
-xnoremap s <plug>Lightspeed_s<cr>
-nnoremap S <plug>Lightspeed_S<cr>
-xnoremap S <plug>Lightspeed_S<cr>
+" Leader keys
+source $VIMDIR/config/keybinds/leader.vim
+" Function keys
+source $VIMDIR/config/keybinds/f-keys.vim
 
 " Terminal bindings
 " Escape terminal
@@ -32,17 +28,6 @@ nnoremap <C-Up> <C-w>+
 tnoremap <C-Up> <C-\><C-n><C-w>+i
 nnoremap <C-Down> <C-w>-
 tnoremap <C-Down> <C-\><C-n><C-w>-i
-
-" Maximize/reset size
-nnoremap _ <C-w>=
-nnoremap - <cmd>SizeSplitToLines<CR>
-
-" Rotate splits
-nnoremap <leader>rr <C-w>r
-
-" New splits
-nnoremap <M-s> :vnew<CR>
-nnoremap <M-S> :new<CR>
 
 " Clone splits
 nnoremap <M-o> :vsp<CR>
@@ -73,18 +58,11 @@ nnoremap <C-f> zMzo
 " Toggle folds
 nnoremap <Space> :ToggleFoldRecursive<CR>
 
-
-" Function keys
-source $VIMDIR/config/keybinds/f-keys.vim
-
 " Neotree/Lazygit
 nnoremap <silent> <BS> :Neotree float toggle<cr>
 nnoremap <silent> <M-BS> <cmd>Telescope live_grep<cr>
 nnoremap <silent> <Del> <cmd>Neotree buffers float toggle<cr>
 nnoremap <silent> <M-Del> <cmd>Telescope find_files<cr>
-
-" Word Wrap
-nnoremap <leader>w <cmd>setlocal wrap!<cr>
 
 " Wrap quotes
 xnoremap " xi""<ESC>P
@@ -184,18 +162,6 @@ xnoremap <C-c> :Commentary<CR>
 nnoremap \| i<CR><esc>
 " Select all text
 nnoremap va ggVG
-" Format file text
-nnoremap <leader>f mfgg=G`f
-" Clear search highlighting
-nnoremap <leader>/ :let @/=""<CR>
-" Toggle fold method
-nnoremap <leader>o <cmd>call ToggleFoldMethod()<cr>
-" Toggle relative line number
-nnoremap <leader>n <cmd>setlocal rnu!<cr>
-" Toggle location list
-nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
-" Toggle quickfix<S-F10>
-nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
 " Quick macro
 nnoremap = @g
 nnoremap + qg
@@ -203,19 +169,8 @@ nnoremap + qg
 nnoremap d<Space> dt<Space>
 nnoremap c<Space> ct<Space>
 
-" Toggle boolean/conditional/+-
-nnoremap <leader>t <cmd>call Toggle()<CR>
-" Toggle background transparency
-nnoremap <silent> <leader>bg <cmd>SrceryBGToggle<CR>
-
 " Remap <C-w>
 nnoremap <M-w> <C-w>
-" Remap =
-nnoremap <leader>= =
 
-" Swap character
-" nnoremap <S-Left> hdlph
-" nnoremap <S-Right> dlp
-" Swap lines
-" nnoremap <Up> <Up>ddp<Up>
-" nnoremap <Down> ddp
+" Remap =
+nnoremap <M-=> =

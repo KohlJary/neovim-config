@@ -56,37 +56,27 @@ tnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
 " Toggle terminal for all tabs
 nnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
 tnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
-" Insert new UUID
-inoremap <F1> <Plug>Nuuid
-xnoremap <F1> <Plug>Nuuid
 
-" Search for unicode character
-inoremap <F2> <esc>:UnicodeSearch! 
-" Sort lines
-xnoremap <silent> <F2> <cmd>sort<CR>
 " Lazygit
-let g:windowswap_map_keys = 0
-nnoremap <silent> <F2> <cmd>call WindowSwap#EasyWindowSwap()<CR>
+nnoremap <silent> <F2> <cmd>Lazygit<CR>
+tnoremap <silent> <F2> <cmd>Lazygit<CR>
 
 " Taskwarrior
 nnoremap <silent> <F3> <cmd>Twui<cr>
 tnoremap <silent> <F3> <cmd>Twui<cr>
 
-" Buffer delete
-nnoremap <F4> <cmd>Bdelete! menu<cr>
+" Btop
+nnoremap <silent> <F4> <cmd>Btop<cr>
+tnoremap <silent> <F4> <cmd>Btop<cr>
 
 " Reload config
 nnoremap <F5> :source $MYVIMRC<CR>
 " Reload .vimrc
 nnoremap <S-F5> :source $VIMDIR/.vimrc<cr>
-" Refresh buffer
-nnoremap <C-F5> <cmd>e<cr><C-o>
 " End line with semicolon and move back to current position
 inoremap <F5> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
 inoremap <S-F5> <End>;<esc>o
-
-nnoremap <F6> <cmd>lua vim.diagnostic.setloclist()<cr>
 
 " Load/Start Prosession
 nnoremap <F7> <cmd>Prosession<cr>
@@ -94,12 +84,12 @@ nnoremap <F7> <cmd>Prosession<cr>
 nnoremap <F8> <cmd>ProsessionDelete<cr>
 " Clean Prosession
 nnoremap <F9> <cmd>ProsessionClean<cr>
-" Taskwarrior
-nnoremap <silent> <F10> <cmd>Twui<cr>
-tnoremap <silent> <F10> <cmd>Twui<cr>
-" Lazygit
-nnoremap <silent> <F11> <cmd>Lazygit<CR>
-tnoremap <silent> <F11> <cmd>Lazygit<CR>
+
+" Lightspeed
+nnoremap <F10> <plug>Lightspeed_S<cr>
+xnoremap <F10> <plug>Lightspeed_S<cr>
+nnoremap <F11> <plug>Lightspeed_s<cr>
+xnoremap <F11> <plug>Lightspeed_s<cr>
 
 " LSP actions
 nnoremap <F12> <cmd>CodeActionMenu<CR>
