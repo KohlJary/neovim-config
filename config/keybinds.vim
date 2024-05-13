@@ -39,7 +39,6 @@ nnoremap <C-q> :bp\|bd! #<CR>
 " Tab operations
 " New tab
 nnoremap <C-t> :tabnew<CR>
-tnoremap <C-t> <C-/><C-n><cmd>tabnew<CR>
 " Open current buffer in new tab
 nnoremap <silent> <C-e> :tabnew\|e #<CR>
 " Close tab
@@ -51,8 +50,6 @@ tnoremap <C-p> <C-/><C-n><cmd>tabp<CR>
 nnoremap <C-n> :tabn<CR>
 tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
 
-" Fold operations
-vnoremap <C-f> zf
 " Close all folds then open one fold level
 nnoremap <C-f> zMzo
 " Toggle folds
@@ -136,18 +133,6 @@ inoremap <C-p> <ESC>pa
 " Select to beginning/end of line from insert mode
 inoremap <S-Home> <ESC>v^
 inoremap <S-End> <ESC>lv$
-
-" Swap lines
-nnoremap <Up> ddkP
-nnoremap <Down> ddp
-" Change indentation
-nnoremap <Left> <<
-xnoremap <Left> <
-nnoremap <Right> >>
-xnoremap <Right> >
-
-nnoremap <silent> < <cmd>lua vim.diagnostic.goto_prev()<cr>
-nnoremap <silent> > <cmd>lua vim.diagnostic.goto_next()<cr>
 
 " Text  manipulation
 " Undo

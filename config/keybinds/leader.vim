@@ -7,6 +7,10 @@ nnoremap <leader>b <cmd>Bdelete! menu<cr>
 " Toggle background transparency
 nnoremap <silent> <leader>bg <cmd>SrceryBGToggle<CR>
 
+" Inline comment at EOL
+nnoremap <leader>c A //
+inoremap <leader>c <End><Space>//<Space>
+
 " Diagnostic list
 nnoremap <leader>d <cmd>lua vim.diagnostic.setloclist()<cr>
 
