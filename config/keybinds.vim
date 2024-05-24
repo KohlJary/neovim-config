@@ -34,7 +34,7 @@ nnoremap <M-o> :vsp<CR>
 nnoremap <M-u> :sp<CR>
 
 " Close buffer
-nnoremap <C-q> :bp\|bd! #<CR>
+" nnoremap <C-q> :bp\|bd! #<CR>
 
 " Tab operations
 " New tab
@@ -42,7 +42,7 @@ nnoremap <C-t> :tabnew<CR>
 " Open current buffer in new tab
 nnoremap <silent> <C-e> :tabnew\|e #<CR>
 " Close tab
-nnoremap <C-w> :tabclose<CR>
+nnoremap <C-q> :tabclose<CR>
 " Previous tab
 nnoremap <C-p> :tabp<CR>
 tnoremap <C-p> <C-/><C-n><cmd>tabp<CR>

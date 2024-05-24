@@ -88,6 +88,14 @@ source $VIMDIR/config/keybinds.vim
 " Abbreviations
 source $VIMDIR/config/abbreviations.vim
 
+function! LspStatus() abort
+  if luaeval('#vim.lsp.buf_get_clients() > 0')
+    return luaeval("require('lsp-status').status()")
+  endif
+
+  return ''
+endfunction
+
 " Status Line
 set showtabline=2
 set statusline=
@@ -95,7 +103,7 @@ set statusline+=\ w:%{winnr()}\ b:%n\ %l:%c
 set statusline+=\ %p%%
 set statusline+=%=
 set statusline+=%0*
-set statusline+=\ %t
+set statusline+=%{LspStatus()}\ \ %t
 set laststatus=2
 
 " Colors
@@ -125,6 +133,8 @@ augroup FileTypeDetection
   autocmd BufRead,BufEnter * filetype detect
   " Tabwidth by filetype
   autocmd FileType cs setlocal ts=4 sts=4 sw=4
+  " Load .csproj/.sln files on launch
+  " autocmd FileType cs argadd **/*.csproj **/*.sln
 augroup END
 
 " --- OS Specific Tweaks

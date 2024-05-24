@@ -187,3 +187,7 @@ function! ToggleFoldMethod()
     echom 'Fold Method: Syntax'
   endif
 endfunction
+
+function! CSLoadProjects()
+  argadd **/*.csproj **/*.sln
+endfunction

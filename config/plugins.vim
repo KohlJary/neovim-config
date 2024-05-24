@@ -75,19 +75,9 @@ endfunction
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
-function! LspStatus() abort
-  if luaeval('#vim.lsp.buf_get_clients() > 0')
-    return luaeval("require('lsp-status').status()")
-  endif
-
-  return ''
-endfunction
-
 " Airline
 " Weird bug
 let g:airline_statusline_ontop=1
-let g:airline#extensions#coc#enabled=0
-let g:airline#extensions#coc#show_coc_status=0
 let g:airline_powerline_fonts=1
 let g:airline_theme='srcery'
 let g:airline_solarized_bg='dark'
@@ -99,10 +89,9 @@ function! AirlineInit()
   let spc=g:airline_symbols.space
   let pipe=' | '
   "Layout
-  let g:airline_section_b = airline#section#create_left(['hunks', 'branch',])
-  let g:airline_section_c = airline#section#create_left(["T: %{tabpagenr()}/%{tabpagenr('$')}", "%{ObsessionStatus()}"])
+  let g:airline_section_b = airline#section#create_left(['hunks', 'branch'])
   let g:airline_section_gutter = airline#section#create(['%=','%{g:datetime}','%='])
-  let g:airline_section_x = airline#section#create_right(['%{LspStatus()}'])
+  let g:airline_section_x = airline#section#create_right(["T: %{tabpagenr()}/%{tabpagenr('$')}", "%{ObsessionStatus()}"])
 endfunction
 " Datetime timer
 let datetime_timer = timer_start(60000, 'UpdateDatetime',{'repeat': -1})
