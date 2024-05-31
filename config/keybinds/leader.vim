@@ -11,14 +11,19 @@ nnoremap <silent> <leader>bg <cmd>SrceryBGToggle<CR>
 nnoremap <leader>c A //
 inoremap <leader>c <End><Space>//<Space>
 
+" Load CS Projects/Solutions
+nnoremap <leader>C <cmd>CSLoadProjects<CR>
+
 " Diagnostic list
 nnoremap <leader>d <cmd>lua vim.diagnostic.setloclist()<cr>
 
 " Refresh buffer
-nnoremap <leader>e <cmd>e<cr><C-o>
+nnoremap <leader>E <cmd>e<cr><C-o>
 
+" Toggle fold method
+nnoremap <leader>f <cmd>call ToggleFoldMethod()<cr>
 " Format file text
-nnoremap <leader>f mfgg=G`f
+nnoremap <leader>F mfgg=G`f
 
 " Insert new UUID
 inoremap <leader>g <Plug>Nuuid
@@ -33,8 +38,9 @@ nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
 " Toggle relative line number
 nnoremap <leader>n <cmd>setlocal rnu!<cr>
 
-" Toggle fold method
-nnoremap <leader>o <cmd>call ToggleFoldMethod()<cr>
+" Insert empty line below/above
+nnoremap <leader>o o<esc>k
+nnoremap <leader>O O<esc>j
 
 " Toggle quickfix<S-F10>
 nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>

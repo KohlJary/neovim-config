@@ -65,7 +65,7 @@ cmp.setup({
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
+    ['<Delete>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -179,7 +179,7 @@ require('nvim-lightbulb').setup({autocmd = {enabled = true}})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<F24>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
@@ -199,16 +199,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gf', vim.lsp.buf.format, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<M-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<F24>wa', vim.lsp.buf.add_workspace_folder, opts)
-    vim.keymap.set('n', '<F24>wr', vim.lsp.buf.remove_workspace_folder, opts)
-    vim.keymap.set('n', '<F24>wl', function()
+    vim.keymap.set('n', '<leader>k', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<leader>K', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<leader>wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, opts)
-    vim.keymap.set('n', '<F24>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<F24>r', vim.lsp.buf.rename, opts)
-    vim.keymap.set('n', '<F24>f', function()
+    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<leader>f', function()
       vim.lsp.buf.format { async = true }
     end, opts)
 

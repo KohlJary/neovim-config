@@ -36,6 +36,9 @@ command ToggleTermSendVisualSelectionToTab :execute 'ToggleTermSendVisualSelecti
 command SrceryBGToggle :call SrceryBGToggleFunc()
 command ToggleUIPositioning :call ToggleUIPositioning()
 
+" Misc
+command CSLoadProjects :call CSLoadProjects()
+
 " --- Custom Functions ---
 " Toggle BG transparency
 function! SrceryBGToggleFunc()
@@ -190,4 +193,5 @@ endfunction
 
 function! CSLoadProjects()
   argadd **/*.csproj **/*.sln
+  LspRestart
 endfunction

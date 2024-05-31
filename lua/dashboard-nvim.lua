@@ -13,10 +13,10 @@ require('dashboard').setup {
         key = 'f',
       },
       {
-        desc = ' Open Last Session',
+        desc = ' Load CS Projects',
         group = 'Label',
-        action = 'RestoreSession',
-        key = 'r',
+        action = 'CSLoadProjects',
+        key = 'c',
       },
       {
         desc = ' Prosession',

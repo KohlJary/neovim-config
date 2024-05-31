@@ -4,8 +4,6 @@
 call plug#begin($VIMDIR.'/plugged')
   Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'tpope/vim-obsession'
-  Plug 'KohlJary/vim-prosession'
 call plug#end()
 
 " --- Autoinstall Missing Plugins ---
@@ -16,64 +14,11 @@ autocmd VimEnter *
 
 " --- Plugin Configuration ---
 
-" vim-session
-let g:session_autoload='prompt'
-let g:session_default_to_last=0
-
 " vim-prosession
 let g:prosession_per_branch=1
 let g:prosession_branch_cmd='git rev-parse --abbrev-ref HEAD'
 let g:prosession_on_startup=0
 let g:prosession_dir = '~/vimfiles/sessions/'
-
-" auto-session
-let g:auto_session_pre_save_cmds = ["tabdo NERDTreeClose"]
-
-" CoC
-let g:coc_global_extensions = ['coc-tsserver', 'coc-angular', 'coc-json', 'coc-sql', 'coc-vimlsp']
-" source $VIMDIR/config/coc-user-config.vim
-let g:AutoClosePreserveDotReg = 0
-
-" NERDTree
-" au VimEnter * NERDTree | wincmd p
-let NERDTreeIgnore=['\Session.vim$','\.meta$','\.shadergraph','\.shadervariants','\.asmdef$']
-let g:NERDTreeWinPos='left'
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeMinimalMenu=1
-let g:NERDTreeHighlightCursorLine=1
-let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeShowHidden=1
-let g:NERDTreeCustomOpenArgs={'file': {'reuse': 'currenttab', 'where': 'p'}, 'dir': {}}
-
-augroup NERDTree
-  autocmd FileType nerdtree setlocal cursorline cursorlineopt=both signcolumn=no
-augroup END
-
-" Check if NERDTree is open or active
-function! IsNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-autocmd BufRead * call SyncTree()
-
-function! NERDTreeSyncFocus()
-  call SyncTree()
-  NERDTreeFocus
-endfunction
-
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Airline
 " Weird bug

@@ -99,10 +99,10 @@ return require('packer').startup(function(use)
               key = 'f',
             },
             {
-              desc = ' Open Last Session',
+              desc = ' Load CS Projects',
               group = 'Label',
-              action = 'RestoreSession',
-              key = 'r',
+              action = 'CSLoadProjects',
+              key = 'c',
             },
             {
               desc = ' Prosession',
@@ -135,18 +135,14 @@ return require('packer').startup(function(use)
 
   -- Session
   use 'xolox/vim-misc'
-
+  use 'tpope/vim-obsession'
   use {
-    'rmagatti/auto-session',
-    config = function()
-      require("auto-session").setup {
-        log_level = "info",
-        auto_save_enabled = true,
-        auto_session_create_enabled = true,
-        auto_session_use_git_branch = true
-      }
-    end
+    'KohlJary/vim-prosession',
+    dependencies = {
+      'tpope/vim-obsession'
+    }
   }
+
   use {
     'rmagatti/session-lens',
     requires = {'rmagatti/auto-session', 'nvim-telescope/telescope.nvim'},
@@ -246,6 +242,7 @@ return require('packer').startup(function(use)
       require('nvim-dap-virtual-text').setup()
     end
   }
+  use 'dhruvasagar/vim-testify'
 
   -- Text Manipulation
   use 'unblevable/quick-scope'
@@ -298,7 +295,10 @@ return require('packer').startup(function(use)
 
   -- Git
   use 'tpope/vim-fugitive'
-  use 'airblade/vim-gitgutter'
+  use {
+    'airblade/vim-gitgutter',
+    branch = 'main'
+  }
   use 'Xuyuanp/nerdtree-git-plugin'
 
   -- GraphQL

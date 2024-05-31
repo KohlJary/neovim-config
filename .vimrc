@@ -42,7 +42,7 @@ set hidden
 " Syntax highlighting
 syntax on
 " Ensure cwd matches terminal cwd
-"set autochdir
+" set autochdir
 " Disable automatic window resizing?
 set noea
 set noshellslash
@@ -146,3 +146,7 @@ endif
 " Reload the colorscheme
 color srcery
 call ColorTweaks()
+
+augroup ColorTweaks
+  autocmd VimEnter * call ColorTweaks()
+augroup END

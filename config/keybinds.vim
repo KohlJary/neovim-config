@@ -55,11 +55,19 @@ nnoremap <C-f> zMzo
 " Toggle folds
 nnoremap <Space> :ToggleFoldRecursive<CR>
 
-" Neotree/Lazygit
+" Neotree/Telescope
 nnoremap <silent> <BS> :Neotree float toggle<cr>
 nnoremap <silent> <M-BS> <cmd>Telescope live_grep<cr>
 nnoremap <silent> <Del> <cmd>Neotree buffers float toggle<cr>
 nnoremap <silent> <M-Del> <cmd>Telescope find_files<cr>
+
+" Lazygit
+nnoremap <silent> <Enter> <cmd>Lazygit<CR>
+tnoremap <silent> <leader><Enter> <cmd>Lazygit<CR>
+
+" Taskwarrior
+nnoremap <silent> <M-Enter> <cmd>Twui<cr>
+tnoremap <silent> <M-Enter> <cmd>Twui<cr>
 
 " Wrap quotes
 xnoremap " xi""<ESC>P

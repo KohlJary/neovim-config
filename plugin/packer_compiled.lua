@@ -84,21 +84,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-pairs",
-    url = "https://github.com/jiangmiao/auto-pairs"
-  },
   ["auto-session"] = {
-    config = { "\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4 auto_session_create_enabled\2\22auto_save_enabled\2 auto_session_use_git_branch\2\14log_level\tinfo\nsetup\17auto-session\frequire\0" },
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-session",
     url = "https://github.com/rmagatti/auto-session"
-  },
-  bufexplorer = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufexplorer",
-    url = "https://github.com/jlanzarotta/bufexplorer"
   },
   ["close-buffers.vim"] = {
     loaded = true,
@@ -131,7 +120,7 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dashboard-nvim"] = {
-    config = { "\27LJ\2\n�\4\0\0\6\0\15\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\a\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\0045\5\v\0>\5\5\0045\5\f\0>\5\6\4=\4\r\3=\3\14\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\tdesc\17 dotfiles\ngroup\vNumber\vaction\23Telescope dotfiles\bkey\6d\1\0\4\tdesc\r Apps\ngroup\19DiagnosticHint\vaction\18Telescope app\bkey\6a\1\0\4\tdesc\19 Prosession\ngroup\nLabel\vaction\15Prosession\bkey\6p\1\0\4\tdesc\26 Open Last Session\ngroup\nLabel\vaction\19RestoreSession\bkey\6r\1\0\4\tdesc\14 Files\ngroup\nLabel\vaction\25Telescope find_files\bkey\6f\1\0\4\tdesc\15 Update\ngroup\14@property\vaction\17PackerUpdate\bkey\6u\16week_header\1\0\0\1\0\1\venable\2\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
+    config = { "\27LJ\2\n�\4\0\0\6\0\15\0\0256\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\5\0005\4\4\0=\4\6\0034\4\a\0005\5\a\0>\5\1\0045\5\b\0>\5\2\0045\5\t\0>\5\3\0045\5\n\0>\5\4\0045\5\v\0>\5\5\0045\5\f\0>\5\6\4=\4\r\3=\3\14\2B\0\2\1K\0\1\0\vconfig\rshortcut\1\0\4\tdesc\17 dotfiles\ngroup\vNumber\vaction\23Telescope dotfiles\bkey\6d\1\0\4\tdesc\r Apps\ngroup\19DiagnosticHint\vaction\18Telescope app\bkey\6a\1\0\4\tdesc\19 Prosession\ngroup\nLabel\vaction\15Prosession\bkey\6p\1\0\4\tdesc\25 Load CS Projects\ngroup\nLabel\vaction\19CSLoadProjects\bkey\6c\1\0\4\tdesc\14 Files\ngroup\nLabel\vaction\25Telescope find_files\bkey\6f\1\0\4\tdesc\15 Update\ngroup\14@property\vaction\17PackerUpdate\bkey\6u\16week_header\1\0\0\1\0\1\venable\2\1\0\1\ntheme\nhyper\nsetup\14dashboard\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -148,16 +137,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fzf.vim",
     url = "https://github.com/junegunn/fzf.vim"
   },
-  ["gruvbox.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox.nvim",
-    url = "https://github.com/ellisonleao/gruvbox.nvim"
-  },
-  ["lightspeed.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lightspeed.nvim",
-    url = "https://github.com/ggandor/lightspeed.nvim"
-  },
   ["lsp-status.nvim"] = {
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-status.nvim",
@@ -173,26 +152,21 @@ _G.packer_plugins = {
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["mini.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mini.nvim",
+    url = "https://github.com/echasnovski/mini.nvim"
+  },
   ["neo-tree.nvim"] = {
-    config = { "\27LJ\2\n�\23\0\0\a\0J\0m6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0009\0\4\0'\2\5\0005\3\6\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\a\0005\3\b\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\t\0005\3\n\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\v\0005\3\f\0B\0\3\0016\0\r\0'\2\14\0B\0\2\0029\0\15\0005\2\17\0005\3\16\0=\3\18\0025\3\19\0=\3\20\0025\3\22\0005\4\21\0=\4\23\0035\4\24\0=\4\25\0035\4\26\0=\4\27\0035\4\28\0=\4\29\0035\4\30\0=\4\31\0035\4!\0005\5 \0=\5\"\4=\4#\3=\3$\0024\3\0\0=\3%\0025\3&\0005\4'\0=\4(\0035\4*\0005\5)\0=\5+\0045\5,\0005\6-\0=\6.\5=\5/\0045\0050\0005\0061\0=\6.\5=\0052\4=\0043\3=\0034\0024\3\0\0=\0035\0025\3<\0005\0046\0004\5\0\0=\0057\0044\5\0\0=\0058\0044\5\0\0=\0059\0044\5\0\0=\5:\0044\5\0\0=\5;\4=\4=\0035\4?\0005\5>\0=\0053\0045\5@\0=\5A\4=\0044\0034\4\0\0=\4%\3=\3B\0025\3C\0005\4E\0005\5D\0=\0053\4=\0044\3=\3F\0025\3I\0005\4G\0005\5H\0=\0053\4=\0044\3=\3#\2B\0\2\1K\0\1\0\1\0\0\1\0\a\aga\17git_add_file\agr\20git_revert_file\agp\rgit_push\6A\16git_add_all\agg\24git_commit_and_push\agu\21git_unstage_file\agc\15git_commit\1\0\1\rposition\nfloat\fbuffers\1\0\0\1\0\5\n<Del>\17close_window\t<bs>\17close_window\6u\16navigate_up\abd\18buffer_delete\n<F16>\17close_window\1\0\3\18show_unloaded\2\21group_empty_dirs\2\24follow_current_file\2\15filesystem\26fuzzy_finder_mappings\1\0\4\v<down>\21move_cursor_down\t<up>\19move_cursor_up\n<C-n>\21move_cursor_down\n<C-p>\19move_cursor_up\1\0\0\1\0\r\n<Del>\17close_window\t<bs>\17close_window\6#\17fuzzy_sorter\a]g\22next_git_modified\6/\17fuzzy_finder\a[g\22prev_git_modified\n<c-x>\17clear_filter\6c\rset_root\6f\21filter_on_submit\6u\16navigate_up\6D\27fuzzy_finder_directory\6H\18toggle_hidden\n<F15>\17close_window\19filtered_items\1\0\4\27use_libuv_file_watcher\1\26hijack_netrw_behavior\17open_default\21group_empty_dirs\1\24follow_current_file\1\26never_show_by_pattern\15never_show\16always_show\20hide_by_pattern\17hide_by_name\1\0\4\fvisible\1\16hide_hidden\2\20hide_gitignored\2\18hide_dotfiles\2\18nesting_rules\vwindow\rmappings\6a\1\0\1\14show_path\tnone\1\2\0\0\badd\6p\vconfig\1\0\1\14use_float\2\1\2\0\0\19toggle_preview\f<space>\1\0\24\6s\16open_vsplit\6w\28open_with_window_picker\6d\vdelete\6A\18add_directory\6t\16open_tabnew\6r\vrename\6m\tnone\6z\20close_all_nodes\6R\frefresh\6y\22copy_to_clipboard\6l\18focus_preview\6<\16prev_source\6>\16next_source\6S\15open_split\6x\15close_node\6?\14show_help\n<esc>\19revert_preview\t<cr>\topen\18<2-LeftMouse>\topen\6o\topen\6q\17close_window\n<M-m>\tmove\6P\25paste_from_clipboard\6X\tcopy\1\2\1\0\16toggle_node\vnowait\1\20mapping_options\1\0\2\vnowait\2\fnoremap\2\1\0\2\nwidth\3(\rposition\nfloat\rcommands\30default_component_configs\15git_status\fsymbols\1\0\0\1\0\t\vstaged\b\runstaged\b☒\fignored\b\14untracked\b\frenamed\b\fdeleted\b✖\nadded\5\rconflict\b\rmodified\5\tname\1\0\3\19trailing_slash\1\14highlight\20NeoTreeFileName\26use_git_status_colors\2\rmodified\1\0\2\vsymbol\b[+]\14highlight\20NeoTreeModified\ticon\1\0\5\18folder_closed\b\14highlight\20NeoTreeFileIcon\17folder_empty\bﰊ\16folder_open\b\fdefault\6*\vindent\1\0\t\23last_indent_marker\b└\14highlight\24NeoTreeIndentMarker\18indent_marker\b│\17with_markers\2\fpadding\3\1\16indent_size\3\2\23expander_highlight\20NeoTreeExpander\22expander_expanded\b\23expander_collapsed\b\14container\1\0\0\1\0\1\26enable_character_fade\2$open_files_do_not_replace_types\1\4\0\0\rterminal\ftrouble\aqf\fsources\1\0\5\23popup_border_style\frounded\25close_if_last_window\1\26sort_case_insensitive\1\23enable_diagnostics\2\22enable_git_status\2\1\5\0\0\15filesystem\fbuffers\15git_status\21document_symbols\nsetup\rneo-tree\frequire\1\0\2\ttext\b\vtexthl\23DiagnosticSignHint\23DiagnosticSignHint\1\0\2\ttext\t \vtexthl\23DiagnosticSignInfo\23DiagnosticSignInfo\1\0\2\ttext\t \vtexthl\23DiagnosticSignWarn\23DiagnosticSignWarn\1\0\2\ttext\t \vtexthl\24DiagnosticSignError\24DiagnosticSignError\16sign_define\afn0 let g:neo_tree_remove_legacy_commands = 1 \bcmd\bvim\0" },
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
-  ["neoai.nvim"] = {
+  ["neodev.nvim"] = {
+    config = { "\27LJ\2\nu\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\flibrary\1\0\0\fplugins\1\0\1\ntypes\2\1\2\0\0\16nvim-dap-ui\nsetup\vneodev\frequire\0" },
     loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neoai.nvim",
-    url = "https://github.com/Bryley/neoai.nvim"
-  },
-  nerdtree = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree",
-    url = "https://github.com/scrooloose/nerdtree"
-  },
-  ["nerdtree-dash"] = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree-dash",
-    url = "https://github.com/liuchengxu/nerdtree-dash"
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
   },
   ["nerdtree-git-plugin"] = {
     loaded = true,
@@ -227,6 +201,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap-ui",
     url = "https://github.com/rcarriga/nvim-dap-ui"
   },
+  ["nvim-dap-virtual-text"] = {
+    config = { "\27LJ\2\nC\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\26nvim-dap-virtual-text\frequire\0" },
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap-virtual-text",
+    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
+  },
   ["nvim-lightbulb"] = {
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lightbulb",
@@ -236,6 +216,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-nio"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-nio",
+    url = "https://github.com/nvim-neotest/nvim-nio"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -248,7 +233,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["nvim-window-picker"] = {
-    config = { "\27LJ\2\n�\1\0\0\6\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\t\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\4=\4\n\3=\3\v\2B\0\2\1K\0\1\0\17filter_rules\abo\1\0\0\fbuftype\1\3\0\0\rterminal\rquickfix\rfiletype\1\0\0\1\4\0\0\rneo-tree\19neo-tree-popup\vnotify\1\0\3\19autoselect_one\2\23other_win_hl_color\f#e35e4f\20include_current\1\nsetup\18window-picker\frequire\0" },
+    config = { "\27LJ\2\n�\1\0\0\6\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\t\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\4=\4\n\3=\3\v\2B\0\2\1K\0\1\0\17filter_rules\abo\1\0\0\fbuftype\1\3\0\0\rterminal\rquickfix\rfiletype\1\0\0\1\4\0\0\rneo-tree\19neo-tree-popup\vnotify\1\0\3\20include_current\1\19autoselect_one\2\23other_win_hl_color\f#e35e4f\nsetup\18window-picker\frequire\0" },
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-window-picker",
     url = "https://github.com/s1n7ax/nvim-window-picker"
@@ -290,11 +275,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\srcery-vim",
     url = "https://github.com/srcery-colors/srcery-vim"
   },
-  syntastic = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\syntastic",
-    url = "https://github.com/vim-syntastic/syntastic"
-  },
   tagbar = {
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tagbar",
@@ -326,11 +306,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\unicode.vim",
     url = "https://github.com/chrisbra/unicode.vim"
   },
-  ["vim-abolish"] = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-abolish",
-    url = "https://github.com/tpope/vim-abolish"
-  },
   ["vim-airline"] = {
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline",
@@ -351,14 +326,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
-  ["vim-dadbod"] = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-dadbod",
-    url = "https://github.com/tpope/vim-dadbod"
-  },
   ["vim-dadbod-ui"] = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-dadbod-ui",
+    commands = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\vim-dadbod-ui",
     url = "https://github.com/kristijanhusak/vim-dadbod-ui"
   },
   ["vim-devicons"] = {
@@ -391,56 +364,94 @@ _G.packer_plugins = {
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-nuuid",
     url = "https://github.com/kburdett/vim-nuuid"
   },
+  ["vim-obsession"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-obsession",
+    url = "https://github.com/tpope/vim-obsession"
+  },
+  ["vim-orgmode"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-orgmode",
+    url = "https://github.com/jceb/vim-orgmode"
+  },
+  ["vim-prosession"] = {
+    loaded = true,
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-prosession",
+    url = "https://github.com/KohlJary/vim-prosession"
+  },
   ["vim-signature"] = {
     loaded = true,
     path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-signature",
     url = "https://github.com/kshenoy/vim-signature"
   },
-  ["vim-solarized8"] = {
+  ["vim-testify"] = {
     loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-solarized8",
-    url = "https://github.com/lifepillar/vim-solarized8"
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-testify",
+    url = "https://github.com/dhruvasagar/vim-testify"
   },
-  ["vim-surround"] = {
+  ["vim-windowswap"] = {
     loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-surround",
-    url = "https://github.com/tpope/vim-surround"
-  },
-  ["vim-wombat-scheme"] = {
-    loaded = true,
-    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-wombat-scheme",
-    url = "https://github.com/sheerun/vim-wombat-scheme"
+    path = "C:\\Users\\kohlbern.jary\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-windowswap",
+    url = "https://github.com/wesQ3/vim-windowswap"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
 -- Config for: nvim-window-picker
 time([[Config for nvim-window-picker]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\6\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\t\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\4=\4\n\3=\3\v\2B\0\2\1K\0\1\0\17filter_rules\abo\1\0\0\fbuftype\1\3\0\0\rterminal\rquickfix\rfiletype\1\0\0\1\4\0\0\rneo-tree\19neo-tree-popup\vnotify\1\0\3\19autoselect_one\2\23other_win_hl_color\f#e35e4f\20include_current\1\nsetup\18window-picker\frequire\0", "config", "nvim-window-picker")
+try_loadstring("\27LJ\2\n�\1\0\0\6\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\t\0005\4\5\0005\5\4\0=\5\6\0045\5\a\0=\5\b\4=\4\n\3=\3\v\2B\0\2\1K\0\1\0\17filter_rules\abo\1\0\0\fbuftype\1\3\0\0\rterminal\rquickfix\rfiletype\1\0\0\1\4\0\0\rneo-tree\19neo-tree-popup\vnotify\1\0\3\20include_current\1\19autoselect_one\2\23other_win_hl_color\f#e35e4f\nsetup\18window-picker\frequire\0", "config", "nvim-window-picker")
 time([[Config for nvim-window-picker]], false)
--- Config for: session-lens
-time([[Config for session-lens]], true)
-try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17session-lens\frequire\0", "config", "session-lens")
-time([[Config for session-lens]], false)
--- Config for: neo-tree.nvim
-time([[Config for neo-tree.nvim]], true)
-try_loadstring("\27LJ\2\n�\23\0\0\a\0J\0m6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0009\0\4\0'\2\5\0005\3\6\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\a\0005\3\b\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\t\0005\3\n\0B\0\3\0016\0\0\0009\0\3\0009\0\4\0'\2\v\0005\3\f\0B\0\3\0016\0\r\0'\2\14\0B\0\2\0029\0\15\0005\2\17\0005\3\16\0=\3\18\0025\3\19\0=\3\20\0025\3\22\0005\4\21\0=\4\23\0035\4\24\0=\4\25\0035\4\26\0=\4\27\0035\4\28\0=\4\29\0035\4\30\0=\4\31\0035\4!\0005\5 \0=\5\"\4=\4#\3=\3$\0024\3\0\0=\3%\0025\3&\0005\4'\0=\4(\0035\4*\0005\5)\0=\5+\0045\5,\0005\6-\0=\6.\5=\5/\0045\0050\0005\0061\0=\6.\5=\0052\4=\0043\3=\0034\0024\3\0\0=\0035\0025\3<\0005\0046\0004\5\0\0=\0057\0044\5\0\0=\0058\0044\5\0\0=\0059\0044\5\0\0=\5:\0044\5\0\0=\5;\4=\4=\0035\4?\0005\5>\0=\0053\0045\5@\0=\5A\4=\0044\0034\4\0\0=\4%\3=\3B\0025\3C\0005\4E\0005\5D\0=\0053\4=\0044\3=\3F\0025\3I\0005\4G\0005\5H\0=\0053\4=\0044\3=\3#\2B\0\2\1K\0\1\0\1\0\0\1\0\a\aga\17git_add_file\agr\20git_revert_file\agp\rgit_push\6A\16git_add_all\agg\24git_commit_and_push\agu\21git_unstage_file\agc\15git_commit\1\0\1\rposition\nfloat\fbuffers\1\0\0\1\0\5\n<Del>\17close_window\t<bs>\17close_window\6u\16navigate_up\abd\18buffer_delete\n<F16>\17close_window\1\0\3\18show_unloaded\2\21group_empty_dirs\2\24follow_current_file\2\15filesystem\26fuzzy_finder_mappings\1\0\4\v<down>\21move_cursor_down\t<up>\19move_cursor_up\n<C-n>\21move_cursor_down\n<C-p>\19move_cursor_up\1\0\0\1\0\r\n<Del>\17close_window\t<bs>\17close_window\6#\17fuzzy_sorter\a]g\22next_git_modified\6/\17fuzzy_finder\a[g\22prev_git_modified\n<c-x>\17clear_filter\6c\rset_root\6f\21filter_on_submit\6u\16navigate_up\6D\27fuzzy_finder_directory\6H\18toggle_hidden\n<F15>\17close_window\19filtered_items\1\0\4\27use_libuv_file_watcher\1\26hijack_netrw_behavior\17open_default\21group_empty_dirs\1\24follow_current_file\1\26never_show_by_pattern\15never_show\16always_show\20hide_by_pattern\17hide_by_name\1\0\4\fvisible\1\16hide_hidden\2\20hide_gitignored\2\18hide_dotfiles\2\18nesting_rules\vwindow\rmappings\6a\1\0\1\14show_path\tnone\1\2\0\0\badd\6p\vconfig\1\0\1\14use_float\2\1\2\0\0\19toggle_preview\f<space>\1\0\24\6s\16open_vsplit\6w\28open_with_window_picker\6d\vdelete\6A\18add_directory\6t\16open_tabnew\6r\vrename\6m\tnone\6z\20close_all_nodes\6R\frefresh\6y\22copy_to_clipboard\6l\18focus_preview\6<\16prev_source\6>\16next_source\6S\15open_split\6x\15close_node\6?\14show_help\n<esc>\19revert_preview\t<cr>\topen\18<2-LeftMouse>\topen\6o\topen\6q\17close_window\n<M-m>\tmove\6P\25paste_from_clipboard\6X\tcopy\1\2\1\0\16toggle_node\vnowait\1\20mapping_options\1\0\2\vnowait\2\fnoremap\2\1\0\2\nwidth\3(\rposition\nfloat\rcommands\30default_component_configs\15git_status\fsymbols\1\0\0\1\0\t\vstaged\b\runstaged\b☒\fignored\b\14untracked\b\frenamed\b\fdeleted\b✖\nadded\5\rconflict\b\rmodified\5\tname\1\0\3\19trailing_slash\1\14highlight\20NeoTreeFileName\26use_git_status_colors\2\rmodified\1\0\2\vsymbol\b[+]\14highlight\20NeoTreeModified\ticon\1\0\5\18folder_closed\b\14highlight\20NeoTreeFileIcon\17folder_empty\bﰊ\16folder_open\b\fdefault\6*\vindent\1\0\t\23last_indent_marker\b└\14highlight\24NeoTreeIndentMarker\18indent_marker\b│\17with_markers\2\fpadding\3\1\16indent_size\3\2\23expander_highlight\20NeoTreeExpander\22expander_expanded\b\23expander_collapsed\b\14container\1\0\0\1\0\1\26enable_character_fade\2$open_files_do_not_replace_types\1\4\0\0\rterminal\ftrouble\aqf\fsources\1\0\5\23popup_border_style\frounded\25close_if_last_window\1\26sort_case_insensitive\1\23enable_diagnostics\2\22enable_git_status\2\1\5\0\0\15filesystem\fbuffers\15git_status\21document_symbols\nsetup\rneo-tree\frequire\1\0\2\ttext\b\vtexthl\23DiagnosticSignHint\23DiagnosticSignHint\1\0\2\ttext\t \vtexthl\23DiagnosticSignInfo\23DiagnosticSignInfo\1\0\2\ttext\t \vtexthl\23DiagnosticSignWarn\23DiagnosticSignWarn\1\0\2\ttext\t \vtexthl\24DiagnosticSignError\24DiagnosticSignError\16sign_define\afn0 let g:neo_tree_remove_legacy_commands = 1 \bcmd\bvim\0", "config", "neo-tree.nvim")
-time([[Config for neo-tree.nvim]], false)
+-- Config for: nvim-dap-virtual-text
+time([[Config for nvim-dap-virtual-text]], true)
+try_loadstring("\27LJ\2\nC\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\26nvim-dap-virtual-text\frequire\0", "config", "nvim-dap-virtual-text")
+time([[Config for nvim-dap-virtual-text]], false)
 -- Config for: nx.nvim
 time([[Config for nx.nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\anx\frequire\0", "config", "nx.nvim")
 time([[Config for nx.nvim]], false)
--- Config for: auto-session
-time([[Config for auto-session]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\4 auto_session_create_enabled\2\22auto_save_enabled\2 auto_session_use_git_branch\2\14log_level\tinfo\nsetup\17auto-session\frequire\0", "config", "auto-session")
-time([[Config for auto-session]], false)
+-- Config for: neodev.nvim
+time([[Config for neodev.nvim]], true)
+try_loadstring("\27LJ\2\nu\0\0\5\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\1K\0\1\0\flibrary\1\0\0\fplugins\1\0\1\ntypes\2\1\2\0\0\16nvim-dap-ui\nsetup\vneodev\frequire\0", "config", "neodev.nvim")
+time([[Config for neodev.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
+-- Config for: session-lens
+time([[Config for session-lens]], true)
+try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17session-lens\frequire\0", "config", "session-lens")
+time([[Config for session-lens]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'DBUI', function(cmdargs)
+          require('packer.load')({'vim-dadbod-ui'}, { cmd = 'DBUI', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod-ui'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUI ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'DBUIToggle', function(cmdargs)
+          require('packer.load')({'vim-dadbod-ui'}, { cmd = 'DBUIToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod-ui'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUIToggle ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'DBUIAddConnection', function(cmdargs)
+          require('packer.load')({'vim-dadbod-ui'}, { cmd = 'DBUIAddConnection', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod-ui'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUIAddConnection ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'DBUIFindBuffer', function(cmdargs)
+          require('packer.load')({'vim-dadbod-ui'}, { cmd = 'DBUIFindBuffer', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-dadbod-ui'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('DBUIFindBuffer ', 'cmdline')
+      end})
 pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
           require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
