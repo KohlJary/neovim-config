@@ -61,14 +61,6 @@ nnoremap <silent> <M-BS> <cmd>Telescope live_grep<cr>
 nnoremap <silent> <Del> <cmd>Neotree buffers float toggle<cr>
 nnoremap <silent> <M-Del> <cmd>Telescope find_files<cr>
 
-" Lazygit
-nnoremap <silent> <Enter> <cmd>Lazygit<CR>
-tnoremap <silent> <leader><Enter> <cmd>Lazygit<CR>
-
-" Taskwarrior
-nnoremap <silent> <M-Enter> <cmd>Twui<cr>
-tnoremap <silent> <M-Enter> <cmd>Twui<cr>
-
 " Wrap quotes
 xnoremap " xi""<ESC>P
 xnoremap ' xi''<ESC>P
@@ -126,7 +118,6 @@ nnoremap <silent>  @@
 " Swap case of next character
 inoremap <C-s> <Esc>l~hi
 " Ctrl backspace/delete behavior
-inoremap <C-BS>  <C-w>
 inoremap <M-BS>  <C-w>
 inoremap <M-Del> <C-o>de
 " inoremap <C-w> <ESC>wa
@@ -140,11 +131,8 @@ inoremap <S-Home> <ESC>v^
 inoremap <S-End> <ESC>lv$
 
 " Text  manipulation
-" Undo
-nnoremap <C-z> u
 " Redo
 nnoremap <S-u> <C-r>
-nnoremap <C-y> <C-r>
 " Commenting line(s)
 nnoremap <C-c> :Commentary<CR>
 xnoremap <C-c> :Commentary<CR>
@@ -155,9 +143,6 @@ nnoremap va ggVG
 " Quick macro
 nnoremap = @g
 nnoremap + qg
-" Delete/change until space
-nnoremap d<Space> dt<Space>
-nnoremap c<Space> ct<Space>
 
 " Remap <C-w>
 nnoremap <M-w> <C-w>

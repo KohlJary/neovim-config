@@ -133,6 +133,7 @@ augroup FileTypeDetection
   autocmd BufRead,BufEnter * filetype detect
   " Tabwidth by filetype
   autocmd FileType cs setlocal ts=4 sts=4 sw=4
+  autocmd FileType scss setlocal ts=4 sts=4 sw=4
   " Load .csproj/.sln files on launch
   " autocmd FileType cs argadd **/*.csproj **/*.sln
 augroup END

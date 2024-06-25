@@ -137,7 +137,7 @@ return require('packer').startup(function(use)
   use 'xolox/vim-misc'
   use 'tpope/vim-obsession'
   use {
-    'KohlJary/vim-prosession',
+    'dhruvasagar/vim-prosession',
     dependencies = {
       'tpope/vim-obsession'
     }

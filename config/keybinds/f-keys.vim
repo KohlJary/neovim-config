@@ -58,8 +58,7 @@ nnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
 tnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
 
 " Lazygit
-nnoremap <silent> <F2> <cmd>Lazygit<CR>
-tnoremap <silent> <F2> <cmd>Lazygit<CR>
+nnoremap <F2> <cmd>lua vim.lsp.buf.rename()<CR>
 
 " Taskwarrior
 nnoremap <silent> <F3> <cmd>Twui<cr>
@@ -69,21 +68,24 @@ tnoremap <silent> <F3> <cmd>Twui<cr>
 nnoremap <silent> <F4> <cmd>Btop<cr>
 tnoremap <silent> <F4> <cmd>Btop<cr>
 
+" LSP hover
+nnoremap <F5> <cmd>lua vim.lsp.buf.hover()<cr>
 " Reload config
-nnoremap <F5> :source $MYVIMRC<CR>
-" Reload .vimrc
-nnoremap <S-F5> :source $VIMDIR/.vimrc<cr>
+nnoremap <S-F5> :source $MYVIMRC<CR>
 " End line with semicolon and move back to current position
 inoremap <F5> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
 inoremap <S-F5> <End>;<esc>o
 
-" Load/Start Prosession
-nnoremap <F7> <cmd>Prosession<cr>
-" Delete Prosession
-nnoremap <F8> <cmd>ProsessionDelete<cr>
-" Clean Prosession
-nnoremap <F9> <cmd>ProsessionClean<cr>
+" Lazygit
+nnoremap <silent> <F7> <cmd>Lazygit<cr>
+tnoremap <silent> <F7> <cmd>Lazygit<cr>
+" Twui
+nnoremap <silent> <F8> <cmd>Twui<cr>
+tnoremap <silent> <F8> <cmd>Twui<cr>
+" Btop
+nnoremap <silent> <F9> <cmd>Btop<cr>
+tnoremap <silent> <F9> <cmd>Btop<cr>
 
 " LSP actions
 nnoremap <F12> <cmd>CodeActionMenu<CR>

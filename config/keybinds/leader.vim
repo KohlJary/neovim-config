@@ -1,8 +1,12 @@
 " Bind , as leader
 let mapleader = ","
 
+" Btop
+nnoremap <leader>b <cmd>Btop<cr>
+tnoremap <leader>b <cmd>Btop<cr>
+
 " Buffer delete
-nnoremap <leader>b <cmd>Bdelete! menu<cr>
+nnoremap <leader>B <cmd>Bdelete! menu<cr>
 
 " Toggle background transparency
 nnoremap <silent> <leader>bg <cmd>SrceryBGToggle<CR>
@@ -25,6 +29,9 @@ nnoremap <leader>f <cmd>call ToggleFoldMethod()<cr>
 " Format file text
 nnoremap <leader>F mfgg=G`f
 
+" Lazygit
+nnoremap <leader>g <cmd>Lazygit<cr>
+tnoremap <leader>g <cmd>Lazygit<cr>
 " Insert new UUID
 inoremap <leader>g <Plug>Nuuid
 xnoremap <leader>g <Plug>Nuuid
@@ -42,6 +49,11 @@ nnoremap <leader>n <cmd>setlocal rnu!<cr>
 nnoremap <leader>o o<esc>k
 nnoremap <leader>O O<esc>j
 
+" Prosession Load/Clean/Delete
+nnoremap <leader>p  <cmd>Prosession<cr>
+nnoremap <leader>pc <cmd>ProsessionClean<cr>
+nnoremap <leader>pd <cmd>ProsessionDelete<cr>
+
 " Toggle quickfix<S-F10>
 nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
 
@@ -55,8 +67,12 @@ nnoremap <leader>S :new<CR>
 " Sort lines
 xnoremap <silent> <leader>s <cmd>sort<CR>
 
+" Twui
+nnoremap <leader>t <cmd>Twui<cr>
+tnoremap <leader>t <cmd>Twui<cr>
+
 " Toggle boolean/conditional/+-
-nnoremap <silent> <leader>t <cmd>call Toggle()<CR>
+nnoremap <silent> <leader>T <cmd>call Toggle()<CR>
 
 " Search for unicode character
 inoremap <leader>u <esc>:UnicodeSearch! 
