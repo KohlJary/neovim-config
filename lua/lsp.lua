@@ -163,7 +163,7 @@ require("lspconfig").jsonls.setup({
                                 local idx = 1
                                 while idx <= #result.diagnostics do
                                         -- "Comments are not permitted in JSON."
-                                        if result.diagnostics[idx].code == 521 and result.diagnostics ~= nil then
+                                        if result.diagnostics ~= nil and result.diagnostics[idx].code == 521 then
                                                 table.remove(result.diagnostics, idx)
                                         else
                                                 idx = idx + 1

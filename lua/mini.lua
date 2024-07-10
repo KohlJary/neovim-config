@@ -5,6 +5,10 @@ require('mini.jump2d').setup({
   },
   view = {
     dim = true
+  },
+  allowed_windows = {
+    current = true,
+    not_current = false
   }
 })
 require('mini.move').setup({

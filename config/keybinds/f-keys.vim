@@ -23,7 +23,7 @@ if (g:detected_os == 'WINDOWS')
   nmap <M-C-F11> <F23>
   nmap <M-C-S-F11> <S-F23>
   nmap <M-C-F12> <F24>
-  nmap <M-C-S-F12> <S-F23>
+  nmap <M-C-S-F12> <S-F24>
   tmap <M-C-F1> <F13>
   tmap <M-C-S-F1> <S-F13>
   tmap <M-C-F2> <F14>
@@ -116,3 +116,6 @@ nnoremap <F20> <cmd>lua require'dap'.step_over()<cr>
 nnoremap <F21> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <F22> <cmd>lua require'dap'.clear_breakpoints()<cr>
+
+nnoremap <F24> <cmd>lua MiniJump2d.start({allowed_lines = { cursor_before = false}})<cr>
+nnoremap <S-F24> <cmd>lua MiniJump2d.start({allowed_lines = { cursor_after = false}})<cr>
