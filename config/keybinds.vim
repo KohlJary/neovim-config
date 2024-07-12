@@ -69,6 +69,9 @@ xnoremap ( xi()<ESC>P
 xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
 xnoremap < xi<><ESC>P
+" Rebind register actions
+xnoremap <leader>" "
+xnoremap <leader>' '
 
 " In next/last parentheses
 onoremap i( :<c-u>normal! f(vi(<cr>

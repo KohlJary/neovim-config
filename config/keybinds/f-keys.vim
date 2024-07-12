@@ -49,24 +49,37 @@ if (g:detected_os == 'WINDOWS')
   tmap <M-C-F12> <F24>
   tmap <M-C-S-F12> <S-F24>
 endif
+" Yank to register a
+nnoremap <F1> "ayy
+xnoremap <F1> "ay
+" Paste register a
+nnoremap <F1><F1> "ap
+xnoremap <F1><F1> "ap
+inoremap <F1> <esc>"ap
 
-" Toggle terminal for current tab
-nnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
-tnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
-" Toggle terminal for all tabs
-nnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
-tnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
+" Yank to register s
+nnoremap <F2> "syy
+xnoremap <F2> "sy
+" Paste register s
+nnoremap <F2><F2> "sp
+xnoremap <F2><F2> "sp
+inoremap <F2> <esc>"sp
 
-" Lazygit
-nnoremap <F2> <cmd>lua vim.lsp.buf.rename()<CR>
+" Yank to register d
+nnoremap <F3> "dyy
+xnoremap <F3> "dy
+" Paste register d
+xnoremap <F3><F3> "dp
+nnoremap <F3><F3> "dp
+inoremap <F3> <esc>"dp
 
-" Taskwarrior
-nnoremap <silent> <F3> <cmd>Twui<cr>
-tnoremap <silent> <F3> <cmd>Twui<cr>
-
-" Btop
-nnoremap <silent> <F4> <cmd>Btop<cr>
-tnoremap <silent> <F4> <cmd>Btop<cr>
+" Yank to register f
+nnoremap <F4> "fyy
+xnoremap <F4> "fy
+" Paste register f
+xnoremap <F4><F4> "fp
+nnoremap <F4><F4> "fp
+inoremap <F4> <esc>"fp
 
 " LSP hover
 nnoremap <F5> <cmd>lua vim.lsp.buf.hover()<cr>
@@ -76,6 +89,13 @@ nnoremap <S-F5> :source $MYVIMRC<CR>
 inoremap <F5> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
 inoremap <S-F5> <End>;<esc>o
+
+" Toggle terminal for current tab
+nnoremap <silent> <F6> <cmd>ToggleTermTab<CR>
+tnoremap <silent> <F6> <cmd>ToggleTermTab<CR>
+" Toggle terminal for all tabs
+nnoremap <silent> <S-F6> <cmd>ToggleTermToggleAll<CR>
+tnoremap <silent> <S-F6> <cmd>ToggleTermToggleAll<CR>
 
 " Lazygit
 nnoremap <silent> <F7> <cmd>Lazygit<cr>
@@ -95,12 +115,20 @@ nnoremap <C-F12> :LspInfo<cr>
 " Telescope
 " List LSP Document Symbols
 nnoremap <F13> <cmd>Telescope lsp_document_symbols<cr>
+" Paste register a
+xnoremap <F13> "ap
 " Goto definition of word under cursor if only one, otherwise list in Telescope
 nnoremap <F14> <cmd>Telescope lsp_definitions<cr>
+" Paste register s
+xnoremap <F14> "sp
 " Goto implementation of word under cursor if only one, otherwise list in Telescope
 nnoremap <F15> <cmd>Telescope lsp_implementations<cr>
+" Paste register d
+xnoremap <F15> "dp
 " List LSP references for word under cursor
 nnoremap <F16> <cmd>Telescope lsp_references<cr>
+" Paste register f
+xnoremap <F16> "fp
 
 " nvim-dap Start/Continue Debugging
 nnoremap <silent> <F17> <cmd>lua if vim.fn.filereadable(".vscode/launch.json") then require("dap.ext.vscode").load_launchjs(".vscode/launch.json", { coreclr = {'cs'} }) end require'dap'.continue()<cr>

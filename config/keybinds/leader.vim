@@ -60,6 +60,7 @@ nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
 " Equalize splits
 nnoremap <leader>r <C-w>=
 nnoremap <leader>R <cmd>SizeSplitToLines<CR>
+nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 
 " New splits
 nnoremap <leader>s :vnew<CR>
