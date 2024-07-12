@@ -49,37 +49,45 @@ if (g:detected_os == 'WINDOWS')
   tmap <M-C-F12> <F24>
   tmap <M-C-S-F12> <S-F24>
 endif
+
+" Toggle terminal for current tab
+nnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
+tnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
+" Toggle terminal for all tabs
+nnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
+tnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
+
 " Yank to register a
-nnoremap <F1> "ayy
-xnoremap <F1> "ay
+nnoremap <F2> "ayy
+xnoremap <F2> "ay
 " Paste register a
-nnoremap <F1><F1> "ap
-xnoremap <F1><F1> "ap
-inoremap <F1> <esc>"ap
+nnoremap <F2><F2> "ap
+xnoremap <F2><F2> "ap
+inoremap <F2> <esc>"ap
 
 " Yank to register s
-nnoremap <F2> "syy
-xnoremap <F2> "sy
+nnoremap <F3> "syy
+xnoremap <F3> "sy
 " Paste register s
-nnoremap <F2><F2> "sp
-xnoremap <F2><F2> "sp
-inoremap <F2> <esc>"sp
+nnoremap <F3><F3> "sp
+xnoremap <F3><F3> "sp
+inoremap <F3> <esc>"sp
 
 " Yank to register d
-nnoremap <F3> "dyy
-xnoremap <F3> "dy
+nnoremap <F4> "dyy
+xnoremap <F4> "dy
 " Paste register d
-xnoremap <F3><F3> "dp
-nnoremap <F3><F3> "dp
-inoremap <F3> <esc>"dp
+xnoremap <F4><F4> "dp
+nnoremap <F4><F4> "dp
+inoremap <F4> <esc>"dp
 
 " Yank to register f
-nnoremap <F4> "fyy
-xnoremap <F4> "fy
+nnoremap <F6> "fyy
+xnoremap <F6> "fy
 " Paste register f
-xnoremap <F4><F4> "fp
-nnoremap <F4><F4> "fp
-inoremap <F4> <esc>"fp
+xnoremap <F6><F6> "fp
+nnoremap <F6><F6> "fp
+inoremap <F6> <esc>"fp
 
 " LSP hover
 nnoremap <F5> <cmd>lua vim.lsp.buf.hover()<cr>
@@ -89,13 +97,6 @@ nnoremap <S-F5> :source $MYVIMRC<CR>
 inoremap <F5> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
 inoremap <S-F5> <End>;<esc>o
-
-" Toggle terminal for current tab
-nnoremap <silent> <F6> <cmd>ToggleTermTab<CR>
-tnoremap <silent> <F6> <cmd>ToggleTermTab<CR>
-" Toggle terminal for all tabs
-nnoremap <silent> <S-F6> <cmd>ToggleTermToggleAll<CR>
-tnoremap <silent> <S-F6> <cmd>ToggleTermToggleAll<CR>
 
 " Lazygit
 nnoremap <silent> <F7> <cmd>Lazygit<cr>
@@ -115,20 +116,12 @@ nnoremap <C-F12> :LspInfo<cr>
 " Telescope
 " List LSP Document Symbols
 nnoremap <F13> <cmd>Telescope lsp_document_symbols<cr>
-" Paste register a
-xnoremap <F13> "ap
 " Goto definition of word under cursor if only one, otherwise list in Telescope
 nnoremap <F14> <cmd>Telescope lsp_definitions<cr>
-" Paste register s
-xnoremap <F14> "sp
 " Goto implementation of word under cursor if only one, otherwise list in Telescope
 nnoremap <F15> <cmd>Telescope lsp_implementations<cr>
-" Paste register d
-xnoremap <F15> "dp
 " List LSP references for word under cursor
 nnoremap <F16> <cmd>Telescope lsp_references<cr>
-" Paste register f
-xnoremap <F16> "fp
 
 " nvim-dap Start/Continue Debugging
 nnoremap <silent> <F17> <cmd>lua if vim.fn.filereadable(".vscode/launch.json") then require("dap.ext.vscode").load_launchjs(".vscode/launch.json", { coreclr = {'cs'} }) end require'dap'.continue()<cr>
