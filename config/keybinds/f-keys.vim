@@ -61,7 +61,7 @@ tnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
 nnoremap <F2> "ayy
 xnoremap <F2> "ay
 " Paste register a
-nnoremap <F2><F2> "ap
+nnoremap <F2><F2> V"ap
 xnoremap <F2><F2> "ap
 inoremap <F2> <esc>"ap
 
@@ -69,7 +69,7 @@ inoremap <F2> <esc>"ap
 nnoremap <F3> "syy
 xnoremap <F3> "sy
 " Paste register s
-nnoremap <F3><F3> "sp
+nnoremap <F3><F3> V"sp
 xnoremap <F3><F3> "sp
 inoremap <F3> <esc>"sp
 
@@ -77,16 +77,16 @@ inoremap <F3> <esc>"sp
 nnoremap <F4> "dyy
 xnoremap <F4> "dy
 " Paste register d
+nnoremap <F4><F4> V"dp
 xnoremap <F4><F4> "dp
-nnoremap <F4><F4> "dp
 inoremap <F4> <esc>"dp
 
 " Yank to register f
 nnoremap <F6> "fyy
 xnoremap <F6> "fy
 " Paste register f
+nnoremap <F6><F6> V"fpl
 xnoremap <F6><F6> "fp
-nnoremap <F6><F6> "fp
 inoremap <F6> <esc>"fp
 
 " LSP hover
