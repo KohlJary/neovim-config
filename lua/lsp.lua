@@ -7,6 +7,7 @@ local root_dir = require'lspconfig'.util.root_pattern("angular.json")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local opd = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics)
 
+local lspconfig = require('lspconfig')
 local lsp_status = require('lsp-status')
 local util = require 'lspconfig.util'
 lsp_status.register_progress()
@@ -131,6 +132,12 @@ cmp.setup.cmdline(':', {
 
 -- Set up lspconfig.
 require('lspconfig').csharp_ls.setup{
+  root_dir = function(startpath)
+    return lspconfig.util.root_pattern("*.sln")(startpath)
+      or lspconfig.util.root_pattern("*.csproj")(startpath)
+      or lspconfig.util.root_pattern("*.fsproj")(startpath)
+      or lspconfig.util.root_pattern(".git")(startpath)
+  end,
   on_attach = lsp_status.on_attach,
   capabilities = capabilities,
   single_file_support = false
