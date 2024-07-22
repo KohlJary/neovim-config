@@ -50,44 +50,40 @@ if (g:detected_os == 'WINDOWS')
   tmap <M-C-S-F12> <S-F24>
 endif
 
-" Toggle terminal for current tab
-nnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
-tnoremap <silent> <F1> <cmd>ToggleTermTab<CR>
-" Toggle terminal for all tabs
-nnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
-tnoremap <silent> <S-F1> <cmd>ToggleTermToggleAll<CR>
+" Telescope
+nnoremap <F1> <cmd>Telescope<CR>
 
 " Yank to register a
-nnoremap <F2> "ayy
-xnoremap <F2> "ay
+nnoremap <F2> "ayy<cmd>echo "Yank Line to Buffer 'a' (F2)"<cr>
+xnoremap <F2> "ay<cmd>echo "Yank to Buffer 'a' (F2)"<cr>
 " Paste register a
-nnoremap <F2><F2> V"ap
-xnoremap <F2><F2> "ap
-inoremap <F2> <esc>"ap
+nnoremap <F2><F2> o<esc>V"ap<cmd>echo "Paste Buffer 'a' (F2)"<cr>
+xnoremap <F2><F2> "ap<cmd>echo "Paste Buffer 'a' (F2)"<cr>
+inoremap <F2> <esc>"ap<cmd>echo "Paste Buffer 'a' (F2)"<cr>
 
 " Yank to register s
-nnoremap <F3> "syy
-xnoremap <F3> "sy
+nnoremap <F3> "syy<cmd>echo "Yank Line to Buffer 's' (F3)"<cr>
+xnoremap <F3> "sy<cmd>echo "Yank to Buffer 's' (F3)"<cr>
 " Paste register s
-nnoremap <F3><F3> V"sp
-xnoremap <F3><F3> "sp
-inoremap <F3> <esc>"sp
+nnoremap <F3><F3> o<esc>V"sp<cmd>echo "Paste Buffer 's' (F3)"<cr>
+xnoremap <F3><F3> "sp<cmd>echo "Paste Buffer 's' (F3)"<cr>
+inoremap <F3> <esc>"sp<cmd>echo "Paste Buffer 's' (F3)"<cr>
 
 " Yank to register d
-nnoremap <F4> "dyy
-xnoremap <F4> "dy
+nnoremap <F4> "dyy<cmd>echo "Yank Line to Buffer 'd' (F4)"<cr>
+xnoremap <F4> "dy<cmd>echo "Yank to Buffer 'd' (F4)"<cr>
 " Paste register d
-nnoremap <F4><F4> V"dp
-xnoremap <F4><F4> "dp
-inoremap <F4> <esc>"dp
+nnoremap <F4><F4> o<esc>V"dp<cmd>echo "Paste Buffer 'd' (F4)"<cr>
+xnoremap <F4><F4> "dp<cmd>echo "Paste Buffer 'd' (F4)"<cr>
+inoremap <F4> <esc>"dp<cmd>echo "Paste Buffer 'd' (F4)"<cr>
 
 " Yank to register f
-nnoremap <F6> "fyy
-xnoremap <F6> "fy
+nnoremap <F6> "fyy<cmd>echo "Yank Line to Buffer 'f' (F6)"<cr>
+xnoremap <F6> "fy<cmd>echo "Yank to Buffer 'f' (F6)"<cr>
 " Paste register f
-nnoremap <F6><F6> V"fpl
-xnoremap <F6><F6> "fp
-inoremap <F6> <esc>"fp
+nnoremap <F6><F6> o<esc>V"fpl<cmd>echo "Paste Buffer 'f' (F6)"<cr>
+xnoremap <F6><F6> "fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
+inoremap <F6> <esc>"fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 
 " LSP hover
 nnoremap <F5> <cmd>lua vim.lsp.buf.hover()<cr>
@@ -98,15 +94,18 @@ inoremap <F5> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
 inoremap <S-F5> <End>;<esc>o
 
-" Lazygit
-nnoremap <silent> <F7> <cmd>Lazygit<cr>
-tnoremap <silent> <F7> <cmd>Lazygit<cr>
-" Twui
-nnoremap <silent> <F8> <cmd>Twui<cr>
-tnoremap <silent> <F8> <cmd>Twui<cr>
-" Btop
-nnoremap <silent> <F9> <cmd>Btop<cr>
-tnoremap <silent> <F9> <cmd>Btop<cr>
+" Record/play macro a
+nnoremap <F8> qa
+nnoremap <F8><F8> @a
+" Record/play macro s
+nnoremap <F9> qs
+nnoremap <F9><F9> @s
+" Record/play macro d
+nnoremap <F10> qd
+nnoremap <F10><F10> @d
+" Record/play macro f
+nnoremap <F11> qf
+nnoremap <F11><F11> @f
 
 " LSP actions
 nnoremap <F12> <cmd>CodeActionMenu<CR>

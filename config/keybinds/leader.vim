@@ -1,6 +1,10 @@
 " Bind , as leader
 let mapleader = ","
 
+" Twui
+nnoremap <leader>a <cmd>Twui<cr>
+tnoremap <leader>a <cmd>Twui<cr>
+
 " Btop
 nnoremap <leader>b <cmd>Btop<cr>
 tnoremap <leader>b <cmd>Btop<cr>
@@ -68,9 +72,11 @@ nnoremap <leader>S :new<CR>
 " Sort lines
 xnoremap <silent> <leader>s <cmd>sort<CR>
 
-" Twui
-nnoremap <leader>t <cmd>Twui<cr>
-tnoremap <leader>t <cmd>Twui<cr>
+" ToggleTerm
+nnoremap <leader>t <cmd>ToggleTermTab<cr>
+tnoremap <leader>t <cmd>ToggleTermTab<cr>
+nnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
+tnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
 
 " Toggle boolean/conditional/+-
 nnoremap <silent> <leader>T <cmd>call Toggle()<CR>
