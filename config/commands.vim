@@ -17,6 +17,7 @@ command EditCmds :tabnew|e $VIMDIR/config/commands.vim
 
 " vim-fugitive shortcuts
 command Gc :G commit
+command Gce :G commit --allow-empty -m "Empty Commit."
 command -nargs=1 Gcm :G commit -m <args>
 command Gp :G push
 
@@ -194,4 +195,8 @@ endfunction
 function! CSLoadProjects()
   argadd **/*.csproj **/*.sln
   LspRestart
+endfunction
+
+function! GitEmptyCommit()
+  execute "G commit --allow-empty -m \"Empty Commit.\""
 endfunction

@@ -16,9 +16,8 @@ nnoremap <leader>B <cmd>Bdelete! menu<cr>
 nnoremap <silent> <leader>bg <cmd>SrceryBGToggle<CR>
 
 " Inline comment at EOL
-nnoremap <leader>c A //
+nnoremap <leader>c A //<Space>
 inoremap <leader>c <End><Space>//<Space>
-
 " Load CS Projects/Solutions
 nnoremap <leader>C <cmd>CSLoadProjects<CR>
 
@@ -28,10 +27,10 @@ nnoremap <leader>d <cmd>lua vim.diagnostic.setloclist()<cr>
 " Refresh buffer
 nnoremap <leader>E <cmd>e<cr><C-o>
 
-" Toggle fold method
-nnoremap <leader>f <cmd>call ToggleFoldMethod()<cr>
-" Format file text
-nnoremap <leader>F mfgg=G`f
+" Telescope find file
+nnoremap <leader>f <cmd>Telescope find_files<cr>
+" Telescope live grep
+nnoremap <leader>F <cmd>Telescope live_grep<cr>
 
 " Lazygit
 nnoremap <leader>g <cmd>Lazygit<cr>
@@ -67,8 +66,8 @@ nnoremap <leader>R <cmd>SizeSplitToLines<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 
 " New splits
-nnoremap <leader>s :vnew<CR>
-nnoremap <leader>S :new<CR>
+nnoremap <leader>s <cmd>vnew<CR><cmd>Neotree float toggle<cr>
+nnoremap <leader>S <cmd>new<CR><cmd>Neotree float toggle<cr>
 " Sort lines
 xnoremap <silent> <leader>s <cmd>sort<CR>
 
@@ -87,9 +86,12 @@ inoremap <leader>u <esc>:UnicodeSearch!
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
 
+" Toggle fold method
+nnoremap <leader>x <cmd>call ToggleFoldMethod()<cr>
+
 " Window Swap
 let g:windowswap_map_keys = 0
 nnoremap <silent> <leader>y <cmd>call WindowSwap#EasyWindowSwap()<CR>
 
-" Remap =
-nnoremap <leader>= =
+" Format file text
+nnoremap <leader>= mfgg=G`f

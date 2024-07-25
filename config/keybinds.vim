@@ -29,18 +29,14 @@ tnoremap <C-Up> <C-\><C-n><C-w>+i
 nnoremap <C-Down> <C-w>-
 tnoremap <C-Down> <C-\><C-n><C-w>-i
 
-" Clone splits
-nnoremap <M-o> :vsp<CR>
-nnoremap <M-u> :sp<CR>
-
 " Close buffer
 " nnoremap <C-q> :bp\|bd! #<CR>
 
 " Tab operations
 " New tab
-nnoremap <C-t> :tabnew<CR>
+nnoremap <C-t> <cmd>tabnew<CR><cmd>Neotree float toggle<cr>
 " Open current buffer in new tab
-nnoremap <silent> <C-e> :tabnew\|e #<CR>
+nnoremap <silent> <C-r> :tabnew\|e #<CR>
 " Close tab
 nnoremap <C-q> :tabclose<CR>
 " Previous tab
@@ -53,7 +49,16 @@ tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
 " Close all folds then open one fold level
 nnoremap <C-f> zMzo
 " Toggle folds
-nnoremap <Space> :ToggleFoldRecursive<CR>
+nnoremap x :ToggleFoldRecursive<CR>
+
+"MiniJump
+nnoremap s  <cmd>lua MiniJump2d.start({allowed_lines = { cursor_before = false}})<cr>
+nnoremap ss <cmd>lua MiniJump2d.start({allowed_lines = { cursor_before = false}})<cr>
+nnoremap S  <cmd>lua MiniJump2d.start({allowed_lines = { cursor_after = false}})<cr>
+
+" Lazygit
+nnoremap <Space> <cmd>Lazygit<cr>
+tnoremap <leader><esc> <cmd>Lazygit<cr>
 
 " Neotree/Telescope
 nnoremap <silent> <BS> :Neotree float toggle<cr>
@@ -143,9 +148,6 @@ xnoremap <C-c> :Commentary<CR>
 nnoremap \| i<CR><esc>
 " Select all text
 nnoremap va ggVG
-" Quick macro
-nnoremap = @g
-nnoremap + qg
 
 " Remap <C-w>
 nnoremap <M-w> <C-w>
