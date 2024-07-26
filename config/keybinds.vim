@@ -50,6 +50,8 @@ tnoremap <C-n> <C-/><C-n><cmd>tabn<CR>
 nnoremap <C-f> zMzo
 " Toggle folds
 nnoremap x :ToggleFoldRecursive<CR>
+" Toggle fold method
+nnoremap X <cmd>call ToggleFoldMethod()<cr>
 
 "MiniJump
 nnoremap s  <cmd>lua MiniJump2d.start({allowed_lines = { cursor_before = false}})<cr>

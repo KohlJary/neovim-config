@@ -94,26 +94,26 @@ inoremap <F5> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
 inoremap <S-F5> <End>;<esc>o
 
-" Record/play macro a
-nnoremap <F8> qa
-nnoremap <F8><F8> @a
-xnoremap <F8> qa
-xnoremap <F8><F8> @a
-" Record/play macro s
-nnoremap <F9> qs
-nnoremap <F9><F9> @s
-xnoremap <F9> qs
-xnoremap <F9><F9> @s
-" Record/play macro d
-nnoremap <F10> qd
-nnoremap <F10><F10> @d
-xnoremap <F10> qd
-xnoremap <F10><F10> @d
-" Record/play macro f
-nnoremap <F11> qf
-nnoremap <F11><F11> @f
-xnoremap <F11> qf
-xnoremap <F11><F11> @f
+" Record/play macro h
+nnoremap <F8> qh
+nnoremap <F8><F8> @h
+xnoremap <F8> qh
+xnoremap <F8><F8> @h
+" Record/play macro j
+nnoremap <F9> qj
+nnoremap <F9><F9> @j
+xnoremap <F9> qj
+xnoremap <F9><F9> @j
+" Record/play macro k
+nnoremap <F10> qk
+nnoremap <F10><F10> @k
+xnoremap <F10> qk
+xnoremap <F10><F10> @k
+" Record/play macro l
+nnoremap <F11> ql
+nnoremap <F11><F11> @l
+xnoremap <F11> ql
+xnoremap <F11><F11> @l
 
 " LSP actions
 nnoremap <F12> <cmd>CodeActionMenu<CR>
