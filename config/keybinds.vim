@@ -53,18 +53,17 @@ nnoremap x :ToggleFoldRecursive<CR>
 " Toggle fold method
 nnoremap X <cmd>call ToggleFoldMethod()<cr>
 
-"MiniJump
-nnoremap s  <cmd>lua MiniJump2d.start({allowed_lines = { cursor_before = false}})<cr>
-nnoremap ss <cmd>lua MiniJump2d.start({allowed_lines = { cursor_before = false}})<cr>
-nnoremap S  <cmd>lua MiniJump2d.start({allowed_lines = { cursor_after = false}})<cr>
+" Quick save
+nnoremap  <cmd>w<cr>
 
-" Lazygit
-nnoremap <Space> <cmd>Lazygit<cr>
-tnoremap <leader><esc> <cmd>Lazygit<cr>
+" WindowSwap
+let g:windowswap_map_keys = 0
+nnoremap <Space> <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <leader><Space> <cmd>CodeActionMenu<CR>
 
 " Neotree/Telescope
 nnoremap <silent> <BS> :Neotree float toggle<cr>
-nnoremap <silent> <M-BS> <cmd>Telescope live_grep<cr>
+nnoremap <silent> <M-BS> <cmd>Telescope live-grep<cr>
 nnoremap <silent> <Del> <cmd>Neotree buffers float toggle<cr>
 nnoremap <silent> <M-Del> <cmd>Telescope find_files<cr>
 
@@ -121,9 +120,10 @@ nnoremap pl Vp
 nnoremap pp p
 
 " Rerun last command
-" nnoremap <silent> + @:<cr>
+nnoremap <silent> _ @:<cr>
+xnoremap <silent> _ @:<cr>
 " Rerun last macro
-nnoremap <silent>  @@
+nnoremap <silent> - @@
 
 " Swap case of next character
 inoremap <C-s> <Esc>l~hi
@@ -133,8 +133,12 @@ inoremap <M-Del> <C-o>de
 " inoremap <C-w> <ESC>wa
 inoremap <C-Left> <ESC>bi
 inoremap <C-Right> <ESC>ea
-inoremap <C-u> <ESC>O
-inoremap <C-o> <ESC>o
+" EOL comment
+inoremap <C-c> <End><Space>//<Space>
+" Insert new UUID
+inoremap <C-g> <Plug>Nuuid
+" Search for unicode character
+inoremap <C-u> <esc>:UnicodeSearch!<cr>
 inoremap <C-p> <ESC>pa
 " Select to beginning/end of line from insert mode
 inoremap <S-Home> <ESC>v^

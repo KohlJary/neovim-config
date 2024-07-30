@@ -17,7 +17,6 @@ nnoremap <silent> <leader>bg <cmd>SrceryBGToggle<CR>
 
 " Inline comment at EOL
 nnoremap <leader>c A //<Space>
-inoremap <leader>c <End><Space>//<Space>
 " Load CS Projects/Solutions
 nnoremap <leader>C <cmd>CSLoadProjects<CR>
 
@@ -27,16 +26,13 @@ nnoremap <leader>d <cmd>lua vim.diagnostic.setloclist()<cr>
 " Refresh buffer
 nnoremap <leader>E <cmd>e<cr><C-o>
 
-" Telescope find file
-nnoremap <leader>f <cmd>Telescope find_files<cr>
-" Telescope live grep
-nnoremap <leader>F <cmd>Telescope live_grep<cr>
+" Format file text
+nnoremap <leader>f <cmd>lua vim.lsp.buf.format({ async = true })<cr>
 
 " Lazygit
 nnoremap <leader>g <cmd>Lazygit<cr>
 tnoremap <leader>g <cmd>Lazygit<cr>
 " Insert new UUID
-inoremap <leader>g <Plug>Nuuid
 xnoremap <leader>g <Plug>Nuuid
 
 " Clear search highlighting
@@ -57,17 +53,15 @@ nnoremap <leader>p  <cmd>Prosession<cr>
 nnoremap <leader>pc <cmd>ProsessionClean<cr>
 nnoremap <leader>pd <cmd>ProsessionDelete<cr>
 
-" Toggle quickfix<S-F10>
+" Toggle quickfix
 nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
 
-" Equalize splits
-nnoremap <leader>r <C-w>=
-nnoremap <leader>R <cmd>SizeSplitToLines<CR>
-nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+" Rename symbol
+nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
 
-" New splits
-nnoremap <leader>s <cmd>vnew<CR><cmd>Neotree float toggle<cr>
-nnoremap <leader>S <cmd>new<CR><cmd>Neotree float toggle<cr>
+" WindowSwap
+let g:windowswap_map_keys = 0
+nnoremap <leader>s <cmd>call WindowSwap#EasyWindowSwap()<CR>
 " Sort lines
 xnoremap <silent> <leader>s <cmd>sort<CR>
 
@@ -77,21 +71,12 @@ tnoremap <leader>t <cmd>ToggleTermTab<cr>
 nnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
 tnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
 
-" Toggle boolean/conditional/+-
-nnoremap <silent> <leader>T <cmd>call Toggle()<CR>
-
-" Search for unicode character
-inoremap <leader>u <esc>:UnicodeSearch! 
-
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
 
-" Toggle fold method
-nnoremap <leader>x <cmd>call ToggleFoldMethod()<cr>
+" Toggle boolean/conditional/+-
+nnoremap <silent> <leader>x <cmd>call Toggle()<CR>
 
-" Window Swap
-let g:windowswap_map_keys = 0
-nnoremap <silent> <leader>y <cmd>call WindowSwap#EasyWindowSwap()<CR>
-
-" Format file text
-nnoremap <leader>= mfgg=G`f
+" Equalize splits
+nnoremap <leader>= <C-w>=
+nnoremap <leader>+ <cmd>SizeSplitToLines<CR>

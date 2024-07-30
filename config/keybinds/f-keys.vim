@@ -85,10 +85,8 @@ nnoremap <F6><F6> o<esc>V"fpl<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 xnoremap <F6><F6> "fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 inoremap <F6> <esc>"fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 
-" LSP hover
-nnoremap <F5> <cmd>lua vim.lsp.buf.hover()<cr>
 " Reload config
-nnoremap <S-F5> :source $MYVIMRC<CR>
+nnoremap <F5> :source $MYVIMRC<CR>
 " End line with semicolon and move back to current position
 inoremap <F5> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
@@ -116,9 +114,8 @@ xnoremap <F11> ql
 xnoremap <F11><F11> @l
 
 " LSP actions
-nnoremap <F12> <cmd>CodeActionMenu<CR>
+nnoremap <F12> :LspInfo<cr>
 nnoremap <S-F12> :LspRestart<cr>
-nnoremap <C-F12> :LspInfo<cr>
 
 " Telescope
 " List LSP Document Symbols
@@ -145,7 +142,7 @@ nnoremap <F21> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <F22> <cmd>lua require'dap'.clear_breakpoints()<cr>
 
-nnoremap <F24> <cmd>ToggleTermTab<cr>
-tnoremap <F24> <cmd>ToggleTermTab<cr>
-nnoremap <S-F24> <cmd>ToggleTermToggleAll<cr>
-tnoremap <S-F24> <cmd>ToggleTermToggleAll<cr>
+" Telescope loclist
+nnoremap <F24> <cmd>Telescope loclist<cr>
+" Telescope jumplist
+nnoremap <S-F24> <cmd>Telescope jumplist<cr>

@@ -156,32 +156,6 @@ for _, serverName in ipairs(servers) do
   }
 end
 
-require("lspconfig").jsonls.setup({
-        capabilities = capabilities,
-        filetypes = { "json", "jsonc", "json5" },
-        init_options = {
-                provideFormatter = false,
-        },
-        handlers = {
-                ["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
-                        -- jsonls doesn't really support json5
-                        -- remove some annoying errors
-                        if result.diagnostics ~= nil then
-                                local idx = 1
-                                while idx <= #result.diagnostics do
-                                        -- "Comments are not permitted in JSON."
-                                        if result.diagnostics ~= nil and result.diagnostics[idx].code == 521 then
-                                                table.remove(result.diagnostics, idx)
-                                        else
-                                                idx = idx + 1
-                                        end
-                                end
-                        end
-                        opd(err, result, ctx, config)
-                end,
-        },
-})
-
 require('nvim-lightbulb').setup({autocmd = {enabled = true}})
 
 -- Global mappings.
@@ -203,7 +177,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'gf', vim.lsp.buf.format, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<M-K>', vim.lsp.buf.signature_help, opts)
@@ -212,11 +185,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'wl', function()
       print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, opts)
-    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set('n', '<leader>f', function()
-      vim.lsp.buf.format { async = true }
-    end, opts)
+    -- vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
 
   end,
 })
