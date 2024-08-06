@@ -1,9 +1,8 @@
 " Bind , as leader
 let mapleader = ","
 
-" Twui
-nnoremap <leader>a <cmd>Twui<cr>
-tnoremap <leader>a <cmd>Twui<cr>
+" Append after word
+nnoremap <leader>a ea
 
 " Btop
 nnoremap <leader>b <cmd>Btop<cr>
@@ -70,6 +69,10 @@ nnoremap <leader>t <cmd>ToggleTermTab<cr>
 tnoremap <leader>t <cmd>ToggleTermTab<cr>
 nnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
 tnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
+
+" Twui
+nnoremap <leader>u <cmd>Twui<cr>
+tnoremap <leader>u <cmd>Twui<cr>
 
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>

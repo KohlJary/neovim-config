@@ -53,6 +53,9 @@ nnoremap x :ToggleFoldRecursive<CR>
 " Toggle fold method
 nnoremap X <cmd>call ToggleFoldMethod()<cr>
 
+nnoremap s <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = false, cursor_after = true } })<cr>
+nnoremap S <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = true, cursor_after = false } })<cr>
+
 " Quick save
 nnoremap  <cmd>w<cr>
 
@@ -63,7 +66,7 @@ nnoremap <leader><Space> <cmd>CodeActionMenu<CR>
 
 " Neotree/Telescope
 nnoremap <silent> <BS> :Neotree float toggle<cr>
-nnoremap <silent> <M-BS> <cmd>Telescope live-grep<cr>
+nnoremap <silent> <M-BS> <cmd>Telescope live_grep<cr>
 nnoremap <silent> <Del> <cmd>Neotree buffers float toggle<cr>
 nnoremap <silent> <M-Del> <cmd>Telescope find_files<cr>
 
