@@ -53,8 +53,10 @@ nnoremap x :ToggleFoldRecursive<CR>
 " Toggle fold method
 nnoremap X <cmd>call ToggleFoldMethod()<cr>
 
-nnoremap s <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = false, cursor_after = true } })<cr>
-nnoremap S <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = true, cursor_after = false } })<cr>
+nnoremap s      <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = false, cursor_after = true } })<cr>
+nnoremap ss     <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = false, cursor_after = true } })<cr>
+nnoremap S      <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = true, cursor_after = false } })<cr>
+nnoremap <C-s>  <cmd>lua MiniJump2d.start()<cr>
 
 " Quick save
 nnoremap  <cmd>w<cr>
@@ -157,9 +159,15 @@ xnoremap <C-c> :Commentary<CR>
 nnoremap \| i<CR><esc>
 " Select all text
 nnoremap va ggVG
+" Append after word
+nnoremap <C-a> ea
 
 " Remap <C-w>
 nnoremap <M-w> <C-w>
+
+" Remap increment/decrement
+nnoremap = <C-a>
+nnoremap + <C-x>
 
 " Remap =
 nnoremap <M-=> =

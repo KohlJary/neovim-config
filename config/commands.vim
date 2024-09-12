@@ -26,6 +26,7 @@ command Lazygit :lua _lazygit_toggle()
 command Gitui :lua _gitui_toggle()
 command Twui :lua _twui_toggle()
 command Btop :lua _btop_toggle()
+command Vifm :lua _vifm_toggle()
 command Serv :lua _serv_toggle()
 command FloatTerm :lua _float_toggle()
 command ToggleTermTab :execute tabpagenr().'ToggleTerm'

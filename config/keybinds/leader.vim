@@ -62,7 +62,7 @@ nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
 let g:windowswap_map_keys = 0
 nnoremap <leader>s <cmd>call WindowSwap#EasyWindowSwap()<CR>
 " Sort lines
-xnoremap <silent> <leader>s <cmd>sort<CR>
+xnoremap <silent> <leader>s :'<,'>sort<CR>
 
 " ToggleTerm
 nnoremap <leader>t <cmd>ToggleTermTab<cr>
@@ -74,6 +74,9 @@ tnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
 nnoremap <leader>u <cmd>Twui<cr>
 tnoremap <leader>u <cmd>Twui<cr>
 
+" Vifm
+nnoremap <leader>v <cmd>Vifm<cr>
+
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
 
@@ -83,3 +86,6 @@ nnoremap <silent> <leader>x <cmd>call Toggle()<CR>
 " Equalize splits
 nnoremap <leader>= <C-w>=
 nnoremap <leader>+ <cmd>SizeSplitToLines<CR>
+
+" Telescope
+nnoremap <leader><Space> <cmd>Telescope<CR>

@@ -27,6 +27,7 @@ if(is_win)
   then
   btop = Terminal:new({ cmd = "wsl btop", count = 8, hidden = true, direction="float" })
 end
+local vifm = Terminal:new({ cmd = "vifm " .. vim.fn.getcwd(), count = 8, hidden = true, direction="float"})
 local serv = Terminal:new({ dir=git_dir, hidden = true, direction="vertical" })
 local float = Terminal:new({ dir=git_dir, hidden = true, direction="float" })
 
@@ -44,6 +45,10 @@ end
 
 function _btop_toggle()
   btop:toggle()
+end
+
+function _vifm_toggle()
+  vifm:toggle()
 end
 
 function _serv_toggle()

@@ -249,6 +249,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'kburdett/vim-nuuid'
   use 'chrisbra/unicode.vim'
+  use 'vim-autoformat/vim-autoformat'
 
   -- Language processing
   -- use 'vim-syntastic/syntastic'

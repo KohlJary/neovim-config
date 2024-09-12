@@ -50,8 +50,8 @@ if (g:detected_os == 'WINDOWS')
   tmap <M-C-S-F12> <S-F24>
 endif
 
-" Telescope
-nnoremap <F1> <cmd>Telescope<CR>
+" LSP actions
+nnoremap <F1> <cmd>CodeActionMenu<CR>
 
 " Yank to register a
 nnoremap <F2> "ayy<cmd>echo "Yank Line to Buffer 'a' (F2)"<cr>
