@@ -48,6 +48,54 @@ if (g:detected_os == 'WINDOWS')
   tmap <M-C-S-F11> <S-F23>
   tmap <M-C-F12> <F24>
   tmap <M-C-S-F12> <S-F24>
+  xmap <M-C-F1> <F13>
+  xmap <M-C-S-F1> <S-F13>
+  xmap <M-C-F2> <F14>
+  xmap <M-C-S-F2> <S-F14>
+  xmap <M-C-F3> <F15>
+  xmap <M-C-S-F2> <S-F15>
+  xmap <M-C-F4> <F16>
+  xmap <M-C-S-F3> <S-F16>
+  xmap <M-C-F5> <F17>
+  xmap <M-C-S-F5> <S-F17>
+  xmap <M-C-F6> <F18>
+  xmap <M-C-S-F6> <S-F18>
+  xmap <M-C-F7> <F19>
+  xmap <M-C-S-F7> <S-F19>
+  xmap <M-C-F8> <F20>
+  xmap <M-C-S-F8> <S-F20>
+  xmap <M-C-F9> <F21>
+  xmap <M-C-S-F9> <S-F21>
+  xmap <M-C-F10> <F22>
+  xmap <M-C-S-F10> <S-F22>
+  xmap <M-C-F11> <F23>
+  xmap <M-C-S-F11> <S-F23>
+  xmap <M-C-F12> <F24>
+  xmap <M-C-S-F12> <S-F24>
+  imap <M-C-F1> <F13>
+  imap <M-C-S-F1> <S-F13>
+  imap <M-C-F2> <F14>
+  imap <M-C-S-F2> <S-F14>
+  imap <M-C-F3> <F15>
+  imap <M-C-S-F2> <S-F15>
+  imap <M-C-F4> <F16>
+  imap <M-C-S-F3> <S-F16>
+  imap <M-C-F5> <F17>
+  imap <M-C-S-F5> <S-F17>
+  imap <M-C-F6> <F18>
+  imap <M-C-S-F6> <S-F18>
+  imap <M-C-F7> <F19>
+  imap <M-C-S-F7> <S-F19>
+  imap <M-C-F8> <F20>
+  imap <M-C-S-F8> <S-F20>
+  imap <M-C-F9> <F21>
+  imap <M-C-S-F9> <S-F21>
+  imap <M-C-F10> <F22>
+  imap <M-C-S-F10> <S-F22>
+  imap <M-C-F11> <F23>
+  imap <M-C-S-F11> <S-F23>
+  imap <M-C-F12> <F24>
+  imap <M-C-S-F12> <S-F24>
 endif
 
 " LSP actions
@@ -120,6 +168,7 @@ nnoremap <S-F12> :LspRestart<cr>
 " Telescope
 " List LSP Document Symbols
 nnoremap <F13> <cmd>Telescope lsp_document_symbols<cr>
+inoremap <F13> <esc><Plug>Nuuid<cr>a
 " Goto definition of word under cursor if only one, otherwise list in Telescope
 nnoremap <F14> <cmd>Telescope lsp_definitions<cr>
 " Goto implementation of word under cursor if only one, otherwise list in Telescope

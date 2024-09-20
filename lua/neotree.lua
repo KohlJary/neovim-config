@@ -196,7 +196,14 @@ require("neo-tree").setup({
         ["H"] = "none",
         ["\\"] = "toggle_hidden",
         ["/"] = "fuzzy_finder",
-        ["D"] = "fuzzy_finder_directory",
+        ["//"] = "fuzzy_finder",
+        ["/d"] = "fuzzy_finder_directory",
+        ["D"] = function(state)
+          local diffNode = state.tree:get_node()
+          local diffPath = diffNode:get_id()
+          vim.cmd([[Neotree close]])
+          vim.cmd("vert diffs " .. diffPath)
+        end,
         ["#"] = "fuzzy_sorter",
         ["."] = "set_root",
         ["f"] = "filter_on_submit",

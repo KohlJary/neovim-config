@@ -21,6 +21,8 @@ nnoremap <leader>C <cmd>CSLoadProjects<CR>
 
 " Diagnostic list
 nnoremap <leader>d <cmd>lua vim.diagnostic.setloclist()<cr>
+" Highlight differences between window buffers
+nnoremap <leader>D <cmd>windo diffthis<cr>
 
 " Refresh buffer
 nnoremap <leader>E <cmd>e<cr><C-o>
@@ -33,6 +35,7 @@ nnoremap <leader>g <cmd>Lazygit<cr>
 tnoremap <leader>g <cmd>Lazygit<cr>
 " Insert new UUID
 xnoremap <leader>g <Plug>Nuuid
+nnoremap <leader>G <Plug>Nuuid
 
 " Clear search highlighting
 nnoremap <leader>/ :let @/=""<CR>
@@ -69,6 +72,8 @@ nnoremap <leader>t <cmd>ToggleTermTab<cr>
 tnoremap <leader>t <cmd>ToggleTermTab<cr>
 nnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
 tnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
+" Try/catch
+xnoremap <leader>t ditry<cr>{<cr><esc>O<esc>pl
 
 " Twui
 nnoremap <leader>u <cmd>Twui<cr>
