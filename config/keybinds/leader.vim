@@ -27,8 +27,10 @@ nnoremap <leader>D <cmd>windo diffthis<cr>
 " Refresh buffer
 nnoremap <leader>E <cmd>e<cr><C-o>
 
+" True/false flip
+nnoremap <silent> <leader>f <cmd>TFFlip<cr>
 " Format file text
-nnoremap <leader>f <cmd>lua vim.lsp.buf.format({ async = true })<cr>
+nnoremap <leader>F <cmd>lua vim.lsp.buf.format({ async = true })<cr>
 
 " Lazygit
 nnoremap <leader>g <cmd>Lazygit<cr>
@@ -36,9 +38,6 @@ tnoremap <leader>g <cmd>Lazygit<cr>
 " Insert new UUID
 xnoremap <leader>g <Plug>Nuuid
 nnoremap <leader>G <Plug>Nuuid
-
-" Clear search highlighting
-nnoremap <leader>/ :let @/=""<CR>
 
 " Toggle location list
 nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
@@ -81,6 +80,7 @@ tnoremap <leader>u <cmd>Twui<cr>
 
 " Vifm
 nnoremap <leader>v <cmd>Vifm<cr>
+tnoremap <leader>v <cmd>Vifm<cr>
 
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
@@ -90,7 +90,17 @@ nnoremap <silent> <leader>x <cmd>call Toggle()<CR>
 
 " Equalize splits
 nnoremap <leader>= <C-w>=
+" Fix toggle term offset
+tnoremap <leader>= <C-\><C-n>^i
+
+" Resize split to buffer length
 nnoremap <leader>+ <cmd>SizeSplitToLines<CR>
+
+" Clear search highlighting
+nnoremap <leader>/ :let @/=""<CR>
 
 " Telescope
 nnoremap <leader><Space> <cmd>Telescope<CR>
+
+" Telescope current buffer
+nnoremap <leader>- <cmd>Telescope current_buffer_fuzzy_find<CR>

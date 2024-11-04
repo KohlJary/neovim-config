@@ -40,6 +40,7 @@ command ToggleUIPositioning :call ToggleUIPositioning()
 
 " Misc
 command CSLoadProjects :call CSLoadProjects()
+command DNFormatEx :call DotnetFormatException()
 
 " --- Custom Functions ---
 " Toggle BG transparency
@@ -86,6 +87,7 @@ endfunction
 
 function! ToggleFoldRecursive()
   let foldlevel = foldlevel(".")
+  echom foldlevel
   if(foldlevel > 1)
     let foldclosed = foldclosed(".")
     if (foldclosed > -1)
@@ -127,6 +129,26 @@ function FlipSelectedBoolean()
 endfunction
 
 command! -range FlipSelectedBoolean :call FlipSelectedBoolean()
+
+function TrueFalseFlip()
+  let curWord = expand("<cword>")
+  echom curWord
+  if(curWord == "true")
+    normal ciwfalse
+  elseif(curWord == "false")
+    normal ciwtrue
+  elseif(curWord == "==")
+    normal ciw!=
+  elseif(curWord == "!=")
+    normal ciw==
+  elseif(curWord == "===")
+    normal ciw!==
+  elseif(curWord == "!==")
+    normal ciw===
+  endif
+endfunction
+
+command TFFlip :call TrueFalseFlip()
 
 function FlipBoolean()
   let curWord = expand("<cword>")
@@ -200,4 +222,10 @@ endfunction
 
 function! GitEmptyCommit()
   execute "G commit --allow-empty -m \"Empty Commit.\""
+endfunction
+
+function! DotnetFormatException()
+  %s/\\r\\n/\r/g
+  %s/\\n/\r/g
+  %s/\\t/\t/g
 endfunction

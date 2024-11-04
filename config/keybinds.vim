@@ -68,9 +68,11 @@ nnoremap <leader><Space> <cmd>CodeActionMenu<CR>
 
 " Neotree/Telescope
 nnoremap <silent> <BS> :Neotree float toggle<cr>
-nnoremap <silent> <M-BS> <cmd>Telescope live_grep<cr>
-nnoremap <silent> <Del> <cmd>Neotree buffers float toggle<cr>
-nnoremap <silent> <M-Del> <cmd>Telescope find_files<cr>
+nnoremap <silent> <Del> <cmd>Telescope buffers<cr>
+nnoremap <silent> - <cmd>Telescope live_grep<cr>
+nnoremap <silent> _ <cmd>Telescope find_files<cr>
+nnoremap <silent> = <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <silent> + <cmd>Telescope lsp_workspace_symbols<cr>
 
 " Wrap quotes
 xnoremap " xi""<ESC>P
@@ -125,10 +127,10 @@ nnoremap pl Vp
 nnoremap pp p
 
 " Rerun last command
-nnoremap <silent> _ @:<cr>
-xnoremap <silent> _ @:<cr>
+nnoremap <silent> <M-Del> @:<cr>
+xnoremap <silent> <M-Del> @:<cr>
 " Rerun last macro
-nnoremap <silent> - @@
+nnoremap <silent> <M-BS> @@
 
 " Swap case of next character
 inoremap <C-s> <Esc>l~hi
@@ -159,15 +161,9 @@ xnoremap <C-c> :Commentary<CR>
 nnoremap \| i<CR><esc>
 " Select all text
 nnoremap va ggVG
-" Append after word
-nnoremap <C-a> ea
 
 " Remap <C-w>
 nnoremap <M-w> <C-w>
-
-" Remap increment/decrement
-nnoremap = <C-a>
-nnoremap + <C-x>
 
 " Remap =
 nnoremap <M-=> =

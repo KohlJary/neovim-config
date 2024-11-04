@@ -18,16 +18,16 @@ require("mason-lspconfig").setup()
 
 if(is_win)
   then
-  require'lspconfig'.angularls.setup{
-    on_attach = lsp_status.on_attach,
-    capabilities = capabilities,
-    cmd = cmd,
-    -- root_dir = root_dir,
-    on_new_config = function(new_config,new_root_dir)
-      new_config.cmd = cmd
-      -- new_root_dir = root_dir
-    end
-  }
+  -- require'lspconfig'.angularls.setup{
+  --   on_attach = lsp_status.on_attach,
+  --   capabilities = capabilities,
+  --   cmd = cmd,
+  --   -- root_dir = root_dir,
+  --   on_new_config = function(new_config,new_root_dir)
+  --     new_config.cmd = cmd
+  --     -- new_root_dir = root_dir
+  --   end
+  -- }
   vim.cmd("let &shell = has('win32') ? 'powershell' : 'pwsh'")
   vim.cmd("let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'")
   vim.cmd("let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'")
@@ -143,10 +143,11 @@ require('lspconfig').csharp_ls.setup{
   single_file_support = false
 }
 local servers = {
+  'angularls',
   'cssls',
   'html',
   'lua_ls',
-  'tsserver',
+  'ts_ls',
   'vimls'
 }
 for _, serverName in ipairs(servers) do
