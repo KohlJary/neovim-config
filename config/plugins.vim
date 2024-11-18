@@ -26,7 +26,7 @@ let g:airline_statusline_ontop=1
 let g:airline_powerline_fonts=1
 let g:airline_theme='srcery'
 let g:airline_solarized_bg='dark'
-let g:datetime = strftime("%I:%M %p, %a %b %d, %Y")
+let g:datetime = strftime("%H:%M %m/%d")
 function! AirlineInit()
   let g:airline_symbols.linenr=' ☰ '
   let g:airline_symbols.maxlinenr=''
@@ -34,14 +34,14 @@ function! AirlineInit()
   let spc=g:airline_symbols.space
   let pipe=' | '
   "Layout
-  let g:airline_section_b = airline#section#create_left(['hunks', 'branch'])
+  let g:airline_section_b = airline#section#create_left(["T: %{tabpagenr()}/%{tabpagenr('$')}", 'branch'])
   let g:airline_section_gutter = airline#section#create(['%=','%{g:datetime}','%='])
-  let g:airline_section_x = airline#section#create_right(["T: %{tabpagenr()}/%{tabpagenr('$')}", "%{ObsessionStatus()}"])
+  let g:airline_section_x = airline#section#create_right(["%{ObsessionStatus()}"])
 endfunction
 " Datetime timer
 let datetime_timer = timer_start(60000, 'UpdateDatetime',{'repeat': -1})
 function! UpdateDatetime(timer)
-  let g:datetime = strftime("%I:%M %p, %a %b %d, %Y")
+  let g:datetime = strftime("%H:%M %m/%d")
 endfunction
 augroup AirlineCustom
   autocmd!

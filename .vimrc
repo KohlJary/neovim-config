@@ -79,10 +79,10 @@ augroup END
 " --- Source Files ---
 " Plugins
 source $VIMDIR/config/plugins.vim
-" Commands
-source $VIMDIR/config/commands.vim
 " Toggle script
 source $VIMDIR/config/toggle.vim
+" Commands
+source $VIMDIR/config/commands.vim
 " Keybinds
 source $VIMDIR/config/keybinds.vim
 " Abbreviations

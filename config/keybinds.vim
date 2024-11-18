@@ -142,6 +142,8 @@ inoremap <C-Left> <ESC>bi
 inoremap <C-Right> <ESC>ea
 " EOL comment
 inoremap <C-c> <End><Space>//<Space>
+" Toggle script
+inoremap <C-f> <C-o>:call Toggle()<cr>
 " Insert new UUID
 inoremap <C-g> <Plug>Nuuid
 " Search for unicode character

@@ -152,7 +152,7 @@ return require('packer').startup(function(use)
   }
 
   -- Buffers
-  use 'Asheq/close-buffers.vim'
+  use 'moll/vim-bbye'
   use 'wesQ3/vim-windowswap'
   -- Terminal
   use {'akinsho/toggleterm.nvim', tag = '*', config = function()

@@ -20,7 +20,7 @@ nnoremap <leader>c A //<Space>
 nnoremap <leader>C <cmd>CSLoadProjects<CR>
 
 " Diagnostic list
-nnoremap <leader>d <cmd>lua vim.diagnostic.setloclist()<cr>
+nnoremap <leader>d <cmd>lua vim.diagnostic.open_float()<cr>
 " Highlight differences between window buffers
 nnoremap <leader>D <cmd>windo diffthis<cr>
 
@@ -28,7 +28,7 @@ nnoremap <leader>D <cmd>windo diffthis<cr>
 nnoremap <leader>E <cmd>e<cr><C-o>
 
 " True/false flip
-nnoremap <silent> <leader>f <cmd>TFFlip<cr>
+nnoremap <silent> <leader>f <cmd>call Toggle()<cr>
 " Format file text
 nnoremap <leader>F <cmd>lua vim.lsp.buf.format({ async = true })<cr>
 
@@ -38,6 +38,10 @@ tnoremap <leader>g <cmd>Lazygit<cr>
 " Insert new UUID
 xnoremap <leader>g <Plug>Nuuid
 nnoremap <leader>G <Plug>Nuuid
+
+" Twui
+nnoremap <leader>i <cmd>Twui<cr>
+tnoremap <leader>i <cmd>Twui<cr>
 
 " Toggle location list
 nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
@@ -54,8 +58,10 @@ nnoremap <leader>p  <cmd>Prosession<cr>
 nnoremap <leader>pc <cmd>ProsessionClean<cr>
 nnoremap <leader>pd <cmd>ProsessionDelete<cr>
 
-" Toggle quickfix
-nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
+" Delete current buffer
+nnoremap <leader>q <cmd>Bdelete<cr>
+" Delete all buffers, keep window layout
+nnoremap <leader>Q <cmd>bufdo :Bdelete<cr>
 
 " Rename symbol
 nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
@@ -74,9 +80,8 @@ tnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
 " Try/catch
 xnoremap <leader>t ditry<cr>{<cr><esc>O<esc>pl
 
-" Twui
-nnoremap <leader>u <cmd>Twui<cr>
-tnoremap <leader>u <cmd>Twui<cr>
+" Toggle quickfix
+nnoremap <silent> <leader>u :call ToggleQuickFix()<CR>
 
 " Vifm
 nnoremap <leader>v <cmd>Vifm<cr>
@@ -104,3 +109,7 @@ nnoremap <leader><Space> <cmd>Telescope<CR>
 
 " Telescope current buffer
 nnoremap <leader>- <cmd>Telescope current_buffer_fuzzy_find<CR>
+
+" Goto prev/next diagnostic
+nnoremap <leader>[ <cmd>lua vim.diagnostic.goto_prev()<cr>
+nnoremap <leader>] <cmd>lua vim.diagnostic.goto_next()<cr>

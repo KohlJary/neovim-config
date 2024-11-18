@@ -130,26 +130,6 @@ endfunction
 
 command! -range FlipSelectedBoolean :call FlipSelectedBoolean()
 
-function TrueFalseFlip()
-  let curWord = expand("<cword>")
-  echom curWord
-  if(curWord == "true")
-    normal ciwfalse
-  elseif(curWord == "false")
-    normal ciwtrue
-  elseif(curWord == "==")
-    normal ciw!=
-  elseif(curWord == "!=")
-    normal ciw==
-  elseif(curWord == "===")
-    normal ciw!==
-  elseif(curWord == "!==")
-    normal ciw===
-  endif
-endfunction
-
-command TFFlip :call TrueFalseFlip()
-
 function FlipBoolean()
   let curWord = expand("<cword>")
   call append('.', curWord . ' = !' . curWord . ';')
