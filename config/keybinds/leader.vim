@@ -1,12 +1,14 @@
 " Bind , as leader
-let mapleader = ","
+let mapleader = ";"
+" Bind . as local leader
+let maplocalleader="'"
 
 " Append after word
 nnoremap <leader>a ea
 
 " Btop
-nnoremap <leader>b <cmd>Btop<cr>
-tnoremap <leader>b <cmd>Btop<cr>
+nnoremap <localleader>b <cmd>Btop<cr>
+tnoremap <localleader>b <cmd>Btop<cr>
 
 " Buffer delete
 nnoremap <leader>B <cmd>Bdelete! menu<cr>
@@ -33,11 +35,11 @@ nnoremap <silent> <leader>f <cmd>call Toggle()<cr>
 nnoremap <leader>F <cmd>lua vim.lsp.buf.format({ async = true })<cr>
 
 " Lazygit
-nnoremap <leader>g <cmd>Lazygit<cr>
-tnoremap <leader>g <cmd>Lazygit<cr>
+nnoremap <localleader>g <cmd>Lazygit<cr>
+tnoremap <localleader>g <cmd>Lazygit<cr>
 " Insert new UUID
 xnoremap <leader>g <Plug>Nuuid
-nnoremap <leader>G <Plug>Nuuid
+nnoremap <leader>g <Plug>Nuuid
 
 " Twui
 nnoremap <leader>i <cmd>Twui<cr>
@@ -58,10 +60,14 @@ nnoremap <leader>p  <cmd>Prosession<cr>
 nnoremap <leader>pc <cmd>ProsessionClean<cr>
 nnoremap <leader>pd <cmd>ProsessionDelete<cr>
 
+" Toggle quickfix
+nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
+" Quick close neovim
+nnoremap <silent> <leader><C-q> :qa<CR>
 " Delete current buffer
-nnoremap <leader>q <cmd>Bdelete<cr>
+nnoremap <localleader>q <cmd>Bdelete<cr>
 " Delete all buffers, keep window layout
-nnoremap <leader>Q <cmd>bufdo :Bdelete<cr>
+nnoremap <localleader>Q <cmd>bufdo :Bdelete<cr>
 
 " Rename symbol
 nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
@@ -74,18 +80,15 @@ xnoremap <silent> <leader>s :'<,'>sort<CR>
 
 " ToggleTerm
 nnoremap <leader>t <cmd>ToggleTermTab<cr>
-tnoremap <leader>t <cmd>ToggleTermTab<cr>
+tnoremap <localleader>t <cmd>ToggleTermTab<cr>
 nnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
-tnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
+tnoremap <localleader>T <cmd>ToggleTermToggleAll<cr>
 " Try/catch
 xnoremap <leader>t ditry<cr>{<cr><esc>O<esc>pl
 
-" Toggle quickfix
-nnoremap <silent> <leader>u :call ToggleQuickFix()<CR>
-
 " Vifm
-nnoremap <leader>v <cmd>Vifm<cr>
-tnoremap <leader>v <cmd>Vifm<cr>
+nnoremap <localleader>v <cmd>Vifm<cr>
+tnoremap <localleader>v <cmd>Vifm<cr>
 
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>
@@ -93,19 +96,20 @@ nnoremap <leader>w <cmd>setlocal wrap!<cr>
 " Toggle boolean/conditional/+-
 nnoremap <silent> <leader>x <cmd>call Toggle()<CR>
 
+" Quick save buffer
+nnoremap <leader>; :w<cr>
+
 " Equalize splits
 nnoremap <leader>= <C-w>=
+" Resize split to buffer length
+nnoremap <localleader>= <cmd>SizeSplitToLines<CR>
 " Fix toggle term offset
 tnoremap <leader>= <C-\><C-n>^i
 
-" Resize split to buffer length
-nnoremap <leader>+ <cmd>SizeSplitToLines<CR>
-
 " Clear search highlighting
 nnoremap <leader>/ :let @/=""<CR>
-
 " Telescope
-nnoremap <leader><Space> <cmd>Telescope<CR>
+nnoremap <localleader>/ <cmd>Telescope<CR>
 
 " Telescope current buffer
 nnoremap <leader>- <cmd>Telescope current_buffer_fuzzy_find<CR>
@@ -113,3 +117,7 @@ nnoremap <leader>- <cmd>Telescope current_buffer_fuzzy_find<CR>
 " Goto prev/next diagnostic
 nnoremap <leader>[ <cmd>lua vim.diagnostic.goto_prev()<cr>
 nnoremap <leader>] <cmd>lua vim.diagnostic.goto_next()<cr>
+
+" Rebind register actions
+xnoremap <leader>" "
+xnoremap <leader>' '

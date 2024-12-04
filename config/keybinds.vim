@@ -169,3 +169,9 @@ nnoremap <M-w> <C-w>
 
 " Remap =
 nnoremap <M-=> =
+
+" Remap ; and '
+nnoremap . ;
+xnoremap . ;
+nnoremap , '
+xnoremap , '
