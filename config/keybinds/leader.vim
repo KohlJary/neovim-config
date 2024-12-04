@@ -42,8 +42,8 @@ xnoremap <leader>g <Plug>Nuuid
 nnoremap <leader>g <Plug>Nuuid
 
 " Twui
-nnoremap <leader>i <cmd>Twui<cr>
-tnoremap <leader>i <cmd>Twui<cr>
+nnoremap <localleader>i <cmd>Twui<cr>
+tnoremap <localleader>i <cmd>Twui<cr>
 
 " Toggle location list
 nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
@@ -79,9 +79,9 @@ nnoremap <leader>s <cmd>call WindowSwap#EasyWindowSwap()<CR>
 xnoremap <silent> <leader>s :'<,'>sort<CR>
 
 " ToggleTerm
-nnoremap <leader>t <cmd>ToggleTermTab<cr>
+nnoremap <localleader>t <cmd>ToggleTermTab<cr>
 tnoremap <localleader>t <cmd>ToggleTermTab<cr>
-nnoremap <leader>T <cmd>ToggleTermToggleAll<cr>
+nnoremap <localleader>T <cmd>ToggleTermToggleAll<cr>
 tnoremap <localleader>T <cmd>ToggleTermToggleAll<cr>
 " Try/catch
 xnoremap <leader>t ditry<cr>{<cr><esc>O<esc>pl
@@ -104,7 +104,7 @@ nnoremap <leader>= <C-w>=
 " Resize split to buffer length
 nnoremap <localleader>= <cmd>SizeSplitToLines<CR>
 " Fix toggle term offset
-tnoremap <leader>= <C-\><C-n>^i
+tnoremap <localleader>= <C-\><C-n>^i
 
 " Clear search highlighting
 nnoremap <leader>/ :let @/=""<CR>

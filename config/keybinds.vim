@@ -6,7 +6,7 @@ source $VIMDIR/config/keybinds/f-keys.vim
 " Terminal bindings
 " Escape terminal
 tnoremap <Esc><Esc> <C-\><C-n>
-tnoremap <leader><Esc> <C-\><C-n>
+tnoremap <localleader><Esc> <C-\><C-n>
 
 " Split operations
 " Movement
@@ -82,9 +82,6 @@ xnoremap ( xi()<ESC>P
 xnoremap [ xi[]<ESC>P
 xnoremap { xi{}<ESC>P
 xnoremap < xi<><ESC>P
-" Rebind register actions
-xnoremap <leader>" "
-xnoremap <leader>' '
 
 " In next/last parentheses
 onoremap i( :<c-u>normal! f(vi(<cr>
