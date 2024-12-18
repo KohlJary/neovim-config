@@ -37,8 +37,8 @@ else
   require'lspconfig'.angularls.setup{on_attach = lsp_status.on_attach,capabilities = capabilities}
 end
 -- Set up nvim-cmp.
-local luasnip = require'luasnip'
-local cmp = require'cmp'
+local luasnip = require('luasnip')
+local cmp = require('cmp')
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -162,7 +162,9 @@ require('nvim-lightbulb').setup({autocmd = {enabled = true}})
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<leader>[', vim.diagnostic.goto_prev)
+vim.keymap.set('n', '<PageUp>', vim.diagnostic.goto_prev)
 vim.keymap.set('n', '<leader>]', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<PageDown>', vim.diagnostic.goto_next)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -179,6 +181,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', 'gO', vim.lsp.buf.document_symbol, opts)
     vim.keymap.set('n', '<M-K>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', 'wa', vim.lsp.buf.add_workspace_folder, opts)
     vim.keymap.set('n', 'wr', vim.lsp.buf.remove_workspace_folder, opts)
@@ -190,8 +193,32 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufEnter', {
+  group = vim.api.nvim_create_augroup('UserLspBufEnter', {}),
+  callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+    -- vim.lsp.buf.document_symbol(opts)
+  end,
+})
+
 vim.api.nvim_create_autocmd('DiagnosticChanged', {
   callback = function(args)
     vim.diagnostic.setloclist({open = false})
   end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+        local mode = vim.api.nvim_get_mode().mode
+        local filetype = vim.bo.filetype
+        if vim.bo.modified == true and mode == 'n' and filetype ~= "oil" then
+            vim.cmd('lua vim.lsp.buf.format()')
+        else
+        end
+    end
 })

@@ -32,7 +32,7 @@ nnoremap <leader>E <cmd>e<cr><C-o>
 " True/false flip
 nnoremap <silent> <leader>f <cmd>call Toggle()<cr>
 " Format file text
-nnoremap <leader>F <cmd>lua vim.lsp.buf.format({ async = true })<cr>
+nnoremap <localleader>f <cmd>lua vim.lsp.buf.format({ async = true })<cr>
 
 " Lazygit
 nnoremap <localleader>g <cmd>Lazygit<cr>
