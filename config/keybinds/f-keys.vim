@@ -64,10 +64,11 @@ inoremap <F6> <esc>"fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 " Reload config
 nnoremap <F5> :source $MYVIMRC<CR>
 nnoremap <F5><F5> :LspRestart<CR>
-" End line with semicolon and move back to current position
-inoremap <F5> <esc>mmA;<esc>`mlmm
-" End line with semicolon, create new line
-inoremap <S-F5> <End>;<esc>o
+" Insert vim command output
+inoremap <F5> <C-r>=
+" Insert shell command output
+inoremap <S-F5> <C-r>=system('')[0:-2]<Left><Left><Left><Left><Left><Left><Left><Left>
+
 
 " Record/play macro h
 nnoremap <F8> qh
@@ -93,6 +94,10 @@ xnoremap <F11><F11> @l
 " LSP actions
 nnoremap <F12> :LspInfo<cr>
 nnoremap <S-F12> :LspRestart<cr>
+" End line with semicolon and move back to current position
+inoremap <F12> <esc>mmA;<esc>`mlmm
+" End line with semicolon, create new line
+inoremap <S-F12> <End>;<esc>o
 
 " Telescope
 " List LSP Document Symbols
