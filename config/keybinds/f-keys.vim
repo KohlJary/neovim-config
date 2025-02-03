@@ -69,7 +69,6 @@ inoremap <F5> <C-r>=
 " Insert shell command output
 inoremap <S-F5> <C-r>=system('')[0:-2]<Left><Left><Left><Left><Left><Left><Left><Left>
 
-
 " Record/play macro h
 nnoremap <F8> qh
 nnoremap <F8><F8> @h
