@@ -28,6 +28,11 @@ endif
 
 " LSP actions
 nnoremap <F1> <cmd>CodeActionMenu<CR>
+" Insert vim command output
+inoremap <F1> <C-r>=
+" Insert shell command output
+inoremap <S-F1> <C-r>=system(input('Shell Command: '))[0:-2]<cr>
+
 
 " Yank to register a
 nnoremap <F2> "ayy<cmd>echo "Yank Line to Buffer 'a' (F2)"<cr>
@@ -61,34 +66,24 @@ nnoremap <F6><F6> o<esc>V"fpl<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 xnoremap <F6><F6> "fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 inoremap <F6> <esc>"fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 
+" Filetype specific snippet insertion
+" C#
+augroup CSFKeyBinds
+    autocmd!
+    autocmd FileType cs nnoremap <F7> :call InsertBoilerplate("cs", "doc_comment_sum", 0)<cr>a
+    autocmd FileType cs nnoremap <F8> :call InsertBoilerplate("cs", "doc_comment_param", 1)<cr>i
+    autocmd FileType cs nnoremap <F9> :call InsertBoilerplate("cs", "doc_comment_return", 0)<cr>i
+augroup END
+
 " Reload config
 nnoremap <F5> :source $MYVIMRC<CR>
 nnoremap <F5><F5> :LspRestart<CR>
-" Insert vim command output
-inoremap <F5> <C-r>=
-" Insert shell command output
-inoremap <S-F5> <C-r>=system('')[0:-2]<Left><Left><Left><Left><Left><Left><Left><Left>
 
 " Record/play macro h
-nnoremap <F8> qh
-nnoremap <F8><F8> @h
-xnoremap <F8> qh
-xnoremap <F8><F8> @h
-" Record/play macro j
-nnoremap <F9> qj
-nnoremap <F9><F9> @j
-xnoremap <F9> qj
-xnoremap <F9><F9> @j
-" Record/play macro k
-nnoremap <F10> qk
-nnoremap <F10><F10> @k
-xnoremap <F10> qk
-xnoremap <F10><F10> @k
-" Record/play macro l
-nnoremap <F11> ql
-nnoremap <F11><F11> @l
-xnoremap <F11> ql
-xnoremap <F11><F11> @l
+nnoremap <F11> qh
+nnoremap <F11><F11> @h
+xnoremap <F11> qh
+xnoremap <F11><F11> @h
 
 " LSP actions
 nnoremap <F12> :LspInfo<cr>

@@ -209,3 +209,23 @@ function! DotnetFormatException()
   %s/\\n/\r/g
   %s/\\t/\t/g
 endfunction
+
+function! InsertBoilerplate(lang, snipName, replace)
+    normal! viw"wy
+    let path = "$VIMDIR/boilerplate/" . a:lang . "/" . a:snipName . ".txt"
+    normal k
+    execute "r" . path
+    normal! k
+    execute "lua vim.lsp.buf.format()"
+    normal! /\$
+    if a:replace == 1
+        normal! v"wpn
+    endif
+    for i in a:000
+
+    endfor
+    normal! dl
+endfunction
+
+function! CSGenerateDocComments()
+endfunction
