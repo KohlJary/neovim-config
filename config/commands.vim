@@ -217,7 +217,7 @@ function! InsertBoilerplate(lang, snipName, replace)
     execute "r" . path
     normal! k
     execute "lua vim.lsp.buf.format()"
-    normal! /\$ 
+    normal! /\$
     if a:replace == 1
         normal! v"wpn
     endif

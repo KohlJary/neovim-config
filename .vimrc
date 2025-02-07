@@ -54,6 +54,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+set fileformat=unix
+
 " Sessions
 " Don't save hidden and unloaded buffers
 set sessionoptions-=buffers
