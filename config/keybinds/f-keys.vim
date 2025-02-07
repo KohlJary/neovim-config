@@ -70,9 +70,7 @@ inoremap <F6> <esc>"fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 " C#
 augroup CSFKeyBinds
     autocmd!
-    autocmd FileType cs nnoremap <F7> :call InsertBoilerplate("cs", "doc_comment_sum", 0)<cr>a
-    autocmd FileType cs nnoremap <F8> :call InsertBoilerplate("cs", "doc_comment_param", 1)<cr>i
-    autocmd FileType cs nnoremap <F9> :call InsertBoilerplate("cs", "doc_comment_return", 0)<cr>i
+    autocmd FileType cs nnoremap <F7> :call CSGenerateDocComments()<cr>
 augroup END
 
 " Reload config

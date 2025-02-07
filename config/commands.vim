@@ -210,22 +210,43 @@ function! DotnetFormatException()
   %s/\\t/\t/g
 endfunction
 
-function! InsertBoilerplate(lang, snipName, replace)
+function! InsertBoilerplate(lang, snipName, ...)
+    normal! mb
     normal! viw"wy
     let path = "$VIMDIR/boilerplate/" . a:lang . "/" . a:snipName . ".txt"
     normal k
-    execute "r" . path
-    normal! k
-    execute "lua vim.lsp.buf.format()"
-    normal! /\$
-    if a:replace == 1
-        normal! v"wpn
-    endif
-    for i in a:000
-
+    let snipfile = readfile(expand(path))
+    for line in snipfile
+        if a:0 == 0
+        elseif a:0 == 1
+            let arg = "" . a:1
+            let line = substitute(line, '\$', '\=arg', 'g')
+            echom line
+        else
+            let arg = "" . a:1
+            let line = substitute(line, '{0}', '\=arg', 'g')
+            let arg = "" . a:2
+            let line = substitute(line, '{1}', '\=arg', 'g')
+        endif
+        put =line
     endfor
-    normal! dl
+    execute "lua vim.lsp.buf.format()"
+    normal! `bmb
 endfunction
 
 function! CSGenerateDocComments()
+    let summary = input("Function Summary: ")
+    call InsertBoilerplate("cs", "doc_comment_sum", summary)
+    let param = "$"
+    while param != ""
+        let param = input("Add Parameter: ")
+        if param != ""
+            let paramSum = input("Parameter Summary: ")
+            call InsertBoilerplate("cs", "doc_comment_param", param, paramSum)
+        endif
+    endwhile
+    let return = input("Return Summary: ")
+    if return != ""
+        call InsertBoilerplate("cs", "doc_comment_return", return)
+    endif
 endfunction
