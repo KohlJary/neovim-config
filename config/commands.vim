@@ -221,7 +221,6 @@ function! InsertBoilerplate(lang, snipName, ...)
         elseif a:0 == 1
             let arg = "" . a:1
             let line = substitute(line, '\$', '\=arg', 'g')
-            echom line
         else
             let arg = "" . a:1
             let line = substitute(line, '{0}', '\=arg', 'g')
@@ -236,16 +235,20 @@ endfunction
 
 function! CSGenerateDocComments()
     let summary = input("Function Summary: ")
+    let summary = substitute(summary, '\(\*\)\(.\w*\)\(\*\)', '<see cref="\2" \/>', 'g')
     call InsertBoilerplate("cs", "doc_comment_sum", summary)
     let param = "$"
     while param != ""
         let param = input("Add Parameter: ")
+        let param = substitute(param, '\(\*\)\(.\w*\)\(\*\)', '<see cref="\2" \/>', 'g')
         if param != ""
             let paramSum = input("Parameter Summary: ")
+            let paramSum = substitute(paramSum, '\(\*\)\(.\w*\)\(\*\)', '<see cref="\2" \/>', 'g')
             call InsertBoilerplate("cs", "doc_comment_param", param, paramSum)
         endif
     endwhile
     let return = input("Return Summary: ")
+    let return = substitute(return, '\(\*\)\(.\w*\)\(\*\)', '<see cref="\2" \/>', 'g')
     if return != ""
         call InsertBoilerplate("cs", "doc_comment_return", return)
     endif
