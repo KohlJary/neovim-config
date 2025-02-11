@@ -235,15 +235,15 @@ endfunction
 
 function! CSGenerateDocComments()
     let summary = input("Function Summary: ")
-    let summary = substitute(summary, '\(\*\)\(.\w*\)\(\*\)', '<see cref="\2" \/>', 'g')
+    let summary = substitute(summary, '\(\*\)\(.*\)\(\*\)', '<see cref="\2" \/>', 'g')
     call InsertBoilerplate("cs", "doc_comment_sum", summary)
     let param = "$"
     while param != ""
         let param = input("Add Parameter: ")
-        let param = substitute(param, '\(\*\)\(.\w*\)\(\*\)', '<see cref="\2" \/>', 'g')
+        let param = substitute(param, '\(\*\)\(.*\)\(\*\)', '<see cref="\2" \/>', 'g')
         if param != ""
             let paramSum = input("Parameter Summary: ")
-            let paramSum = substitute(paramSum, '\(\*\)\(.\w*\)\(\*\)', '<see cref="\2" \/>', 'g')
+            let paramSum = substitute(paramSum, '\(\*\)\(.*\)\(\*\)', '<see cref="\2" \/>', 'g')
             call InsertBoilerplate("cs", "doc_comment_param", param, paramSum)
         endif
     endwhile
