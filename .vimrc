@@ -46,6 +46,9 @@ syntax on
 " Disable automatic window resizing?
 set noea
 set noshellslash
+" Permanent Undo
+set undodir=~/.nvim/undodir
+set undofile
 
 " Indenting
 filetype plugin indent on
