@@ -136,6 +136,9 @@ augroup FileTypeDetection
   " Tabwidth by filetype
   autocmd FileType cs setlocal ts=4 sts=4 sw=4
   autocmd FileType scss setlocal ts=4 sts=4 sw=4
+  autocmd FileType ts setlocal ts=4 sts=4 sw=4
+  autocmd FileType tsx setlocal ts=4 sts=4 sw=4
+  autocmd FileType json setlocal ts=2 sts=2 sw=2
   " Load .csproj/.sln files on launch
   " autocmd FileType cs argadd **/*.csproj **/*.sln
 augroup END
