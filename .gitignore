@@ -2,4 +2,6 @@
 views
 plugged
 after/site/pack/packer/start/packer.nvim/
+undo/*
+sessions
 .task

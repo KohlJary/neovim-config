@@ -47,7 +47,7 @@ syntax on
 set noea
 set noshellslash
 " Permanent Undo
-set undodir=~/.nvim/undodir
+set undodir=$VIMDIR/undo
 set undofile
 
 " Indenting
@@ -137,11 +137,11 @@ augroup FileTypeDetection
   " Ensure filetype detection on opening buffer
   autocmd BufRead,BufEnter * filetype detect
   " Tabwidth by filetype
-  autocmd FileType cs setlocal ts=4 sts=4 sw=4
-  autocmd FileType scss setlocal ts=4 sts=4 sw=4
-  autocmd FileType ts setlocal ts=4 sts=4 sw=4
-  autocmd FileType tsx setlocal ts=4 sts=4 sw=4
-  autocmd FileType json setlocal ts=2 sts=2 sw=2
+  autocmd FileType cs autocmd BufEnter setlocal ts=4 sts=4 sw=4
+  autocmd FileType scss autocmd BufEnter setlocal ts=4 sts=4 sw=4
+  autocmd FileType ts autocmd BufEnter setlocal ts=4 sts=4 sw=4
+  autocmd FileType tsx autocmd BufEnter setlocal ts=4 sts=4 sw=4
+  autocmd FileType json autocmd BufEnter setlocal ts=2 sts=2 sw=2
   " Load .csproj/.sln files on launch
   " autocmd FileType cs argadd **/*.csproj **/*.sln
 augroup END
