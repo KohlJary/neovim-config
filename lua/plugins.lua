@@ -132,6 +132,7 @@ return require('packer').startup(function(use)
     -- Theming/Colors
     use 'srcery-colors/srcery-vim'
     use 'junegunn/rainbow_parentheses.vim'
+    use 'jlcrochet/vim-cs'
 
     -- Session
     use 'xolox/vim-misc'
@@ -259,8 +260,10 @@ return require('packer').startup(function(use)
         requires = 'antoinemadec/FixCursorHold.nvim'
     }
     use {
-        'weilbith/nvim-code-action-menu',
-        cmd = 'CodeActionMenu'
+        "aznhe21/actions-preview.nvim",
+        config = function()
+            vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+        end,
     }
     use 'nvim-lua/lsp-status.nvim'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -314,6 +317,7 @@ return require('packer').startup(function(use)
 
     -- Typescript
     use 'leafgarland/typescript-vim'
+    use 'peitalin/vim-jsx-typescript'
 
     -- HTML/XML
     use 'alvan/vim-closetag'

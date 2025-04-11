@@ -64,7 +64,6 @@ nnoremap  <cmd>w<cr>
 " WindowSwap
 let g:windowswap_map_keys = 0
 nnoremap <Space> <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <leader><Space> <cmd>CodeActionMenu<CR>
 
 " Neotree/Telescope
 nnoremap <silent> <BS> :Neotree float toggle<cr>
