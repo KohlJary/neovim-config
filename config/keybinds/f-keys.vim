@@ -71,6 +71,7 @@ inoremap <F6> <esc>"fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
 augroup CSFKeyBinds
     autocmd!
     autocmd FileType cs nnoremap <F7> :call CSGenerateDocComments()<cr>
+    autocmd FileType json nnoremap <F7> <cmd>%!jq .<cr>
 augroup END
 
 " Reload config

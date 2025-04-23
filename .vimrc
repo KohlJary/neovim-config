@@ -105,7 +105,7 @@ endfunction
 set showtabline=2
 set statusline=
 set statusline+=\ w:%{winnr()}\ b:%n\ %l:%c
-set statusline+=\ %p%%
+set statusline+=\ %p%%\ %m
 set statusline+=%=
 set statusline+=%0*
 set statusline+=%{LspStatus()}\ \ %t
