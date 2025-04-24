@@ -5,3 +5,5 @@ after/site/pack/packer/start/packer.nvim/
 undo/*
 sessions
 .task
+
+plugin/packer_compiled.lua

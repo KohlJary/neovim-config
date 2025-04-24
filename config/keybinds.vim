@@ -34,7 +34,7 @@ tnoremap <C-Down> <C-\><C-n><C-w>-i
 
 " Tab operations
 " New tab
-nnoremap <C-t> <cmd>tabnew<CR><cmd>Neotree float toggle<cr>
+nnoremap <C-t> <cmd>tabnew<CR><cmd>Neotree filesystem left focus<cr>
 " Open current buffer in new tab
 nnoremap <silent> <C-r> :tabnew\|e #<CR>
 " Close tab
@@ -66,12 +66,12 @@ let g:windowswap_map_keys = 0
 nnoremap <Space> <cmd>lua vim.lsp.buf.hover()<CR>
 
 " Neotree/Telescope
-nnoremap <silent> <BS> :Neotree float toggle<cr>
-nnoremap <silent> <Del> <cmd>Telescope buffers<cr>
+nnoremap <silent> <BS> :Neotree left filesystem reveal toggle<cr>
+nnoremap <silent> <Del> <cmd>Neotree top buffers reveal toggle<cr>
 nnoremap <silent> - <cmd>Telescope live_grep<cr>
 nnoremap <silent> _ <cmd>Telescope find_files<cr>
-nnoremap <silent> = <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <silent> + <cmd>Telescope lsp_workspace_symbols<cr>
+nnoremap <silent> = <cmd>Neotree top document_symbols focus<cr>
+nnoremap <silent> + <cmd>Neotree top document_symbols toggle<cr>
 
 " Wrap quotes
 xnoremap " xi""<ESC>P
