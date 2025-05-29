@@ -2,7 +2,7 @@ local is_linux = vim.loop.os_uname().sysname == "Linux"
 local is_win = vim.loop.os_uname().sysname == "Windows_NT"
 
 local ng_cmd_path = vim.env.NPMDIR .. "/node_modules/@angular/language-server/index.js"
-local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
+-- local cmd = { "node", ng_cmd_path, "--stdio", "--tsProbeLocations", vim.env.NPMDIR, "--ngProbeLocations", vim.env.NPMDIR }
 local root_dir = require 'lspconfig'.util.root_pattern("angular.json")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local opd = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics)
@@ -13,7 +13,12 @@ local util = require 'lspconfig.util'
 lsp_status.register_progress()
 capabilities = vim.tbl_extend('keep', capabilities or {}, lsp_status.capabilities)
 
-require("mason").setup()
+require("mason").setup({
+    registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry"
+    }
+})
 require("mason-lspconfig").setup()
 
 if (is_win)
@@ -136,12 +141,23 @@ cmp.setup.cmdline(':', {
 
 -- Set up lspconfig.
 require('lspconfig').csharp_ls.setup {
+    -- root_dir = function(bufnr, on_dir)
+    --     local fname = vim.api.nvim_buf_get_name(bufnr)
+    --     on_dir(util.root_pattern '*.sln' (fname) or util.root_pattern '*.csproj' (fname))
+    -- end,
     root_dir = function(startpath)
-        return lspconfig.util.root_pattern("*.sln")(startpath)
+        print(startpath)
+        local dotnetsln = lspconfig.util.root_pattern("*.Dotnet.sln")
+        return lspconfig.util.root_pattern("*.Dotnet.sln")(startpath)
+            or lspconfig.util.root_pattern("*.sln")(startpath)
             or lspconfig.util.root_pattern("*.csproj")(startpath)
             or lspconfig.util.root_pattern("*.fsproj")(startpath)
             or lspconfig.util.root_pattern(".git")(startpath)
     end,
+    filetypes = { 'cs' },
+    init_options = {
+        AutomaticWorkspaceInit = true,
+    },
     on_attach = lsp_status.on_attach,
     capabilities = capabilities,
     single_file_support = false
@@ -162,6 +178,8 @@ for _, serverName in ipairs(servers) do
         capabilities = capabilities
     }
 end
+-- vim.lsp.config("roslyn", {})
+-- vim.lsp.enable("roslyn")
 
 require('nvim-lightbulb').setup({ autocmd = { enabled = true } })
 

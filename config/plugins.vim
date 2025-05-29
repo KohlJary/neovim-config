@@ -3,7 +3,7 @@
 " Load vim-plug plugins
 call plug#begin($VIMDIR.'/plugged')
   Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " --- Autoinstall Missing Plugins ---

@@ -48,6 +48,9 @@ tnoremap <localleader>i <cmd>Twui<cr>
 " Toggle location list
 nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
 
+" Mason quickload
+nnoremap <silent> <localleader>m <cmd>Mason<cr>
+
 " Toggle relative line number
 nnoremap <leader>n <cmd>setlocal rnu!<cr>
 
@@ -71,6 +74,8 @@ nnoremap <localleader>Q <cmd>bufdo :Bdelete<cr>
 
 " Rename symbol
 nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
+" Fast find/replace
+xnoremap <leader>r y<cmd>let @/=escape(@", '/')<cr>"_cgn
 
 " WindowSwap
 let g:windowswap_map_keys = 0

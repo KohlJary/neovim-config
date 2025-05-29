@@ -212,17 +212,21 @@ return require('packer').startup(function(use)
         }
     }
     -- use {
-    --   'nvim-treesitter/nvim-treesitter',
-    --   run = ':TSUpdate'
+    --     "dunstontc/projectile.nvim",
+    --     requires = { "Shougo/denite.nvim" }
     -- }
-    -- Windows intial installation of Treesitter
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
+        run = ':TSUpdate'
     }
+    -- Windows intial installation of Treesitter
+    -- use {
+    --     'nvim-treesitter/nvim-treesitter',
+    --     run = function()
+    --         local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+    --         ts_update()
+    --     end,
+    -- }
 
     -- Debugging
     use { 'nvim-neotest/nvim-nio' }
@@ -311,6 +315,82 @@ return require('packer').startup(function(use)
         branch = 'main'
     }
     use 'Xuyuanp/nerdtree-git-plugin'
+
+    -- CSharp
+    use 'Tastyep/structlog.nvim'
+    use 'tris203/rzls.nvim'
+    --use {
+    --    "seblyng/roslyn.nvim",
+    --    ft = { "cs", "razor" },
+    --    dependencies = {
+    --        {
+    --            -- By loading as a dependencies, we ensure that we are available to set
+    --            -- the handlers for Roslyn.
+    --            "tris203/rzls.nvim",
+    --            config = true,
+    --        },
+    --    },
+    --    config = function()
+    --        -- Use one of the methods in the Integration section to compose the command.
+    --        local mason_registry = require("mason-registry")
+
+    --        ---@type string[]
+    --        local cmd = {}
+
+    --        local roslyn_package = mason_registry.get_package("roslynv4")
+    --        if roslyn_package:is_installed() then
+    --            vim.list_extend(cmd, {
+    --                "roslyn",
+    --                "--stdio",
+    --                "--logLevel=Information",
+    --                "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path()),
+    --            })
+    --        end
+
+    --        require("roslyn").setup {
+    --            cmd = cmd,
+    --            broad_search = true,
+    --            filewatching = "roslyn",
+    --            settings = {
+    --                ["csharp|inlay_hints"] = {
+    --                    csharp_enable_inlay_hints_for_implicit_object_creation = true,
+    --                    csharp_enable_inlay_hints_for_implicit_variable_types = true,
+
+    --                    csharp_enable_inlay_hints_for_lambda_parameter_types = true,
+    --                    csharp_enable_inlay_hints_for_types = true,
+    --                    dotnet_enable_inlay_hints_for_indexer_parameters = true,
+    --                    dotnet_enable_inlay_hints_for_literal_parameters = true,
+    --                    dotnet_enable_inlay_hints_for_object_creation_parameters = true,
+    --                    dotnet_enable_inlay_hints_for_other_parameters = true,
+    --                    dotnet_enable_inlay_hints_for_parameters = true,
+    --                    dotnet_suppress_inlay_hints_for_parameters_that_differ_only_by_suffix = true,
+    --                    dotnet_suppress_inlay_hints_for_parameters_that_match_argument_name = true,
+    --                    dotnet_suppress_inlay_hints_for_parameters_that_match_method_intent = true,
+    --                },
+    --                ["csharp|code_lens"] = {
+    --                    dotnet_enable_references_code_lens = true,
+    --                },
+    --            },
+    --            -- config = {
+    --            --     handlers = {
+    --            --         ["workspace/_roslyn_projectNeedsRestore"] = function(_, result, ctx) end,
+    --            --     },
+    --            -- },
+    --        }
+    --    end,
+    --}
+    -- use {
+    --     "iabdelkareem/csharp.nvim",
+    --     dependencies = {
+    --         "williamboman/mason.nvim", -- Required, automatically installs omnisharp
+    --         "mfussenegger/nvim-dap",
+    --         "Tastyep/structlog.nvim",  -- Optional, but highly recommended for debugging
+    --     },
+    --     config = function()
+    --         require("mason").setup() -- Mason setup must run before csharp, only if you want to use omnisharp
+    --         require("csharp").setup()
+    --     end
+    -- }
 
     -- GraphQL
     use 'jparise/vim-graphql'

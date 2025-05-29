@@ -106,6 +106,8 @@ onoremap I` :<c-u>normal! F`vi`<cr>
 
 " Yank all file text
 nnoremap ya mQggyG`Q:delm Q<CR><cmd>echo "Yank All"<cr>
+" Delete all file text
+nnoremap da ggVGd
 
 " Paste in region
 nnoremap pw viwp
@@ -159,6 +161,10 @@ xnoremap <C-c> :Commentary<CR>
 nnoremap \| i<CR><esc>
 " Select all text
 nnoremap va ggVG
+" Quick inc/dec
+xnoremap a <C-a>
+xnoremap aa <C-a>
+xnoremap x <C-x>
 
 " Remap <C-w>
 nnoremap <M-w> <C-w>
@@ -167,7 +173,7 @@ nnoremap <M-w> <C-w>
 nnoremap <M-=> =
 
 " Remap ; and '
-nnoremap . ;
-xnoremap . ;
-nnoremap , '
-xnoremap , '
+nnoremap <F8> ;
+xnoremap <F8> ;
+nnoremap <F9> '
+xnoremap <F9> '
