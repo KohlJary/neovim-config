@@ -1,7 +1,11 @@
 " Bind , as leader
-let mapleader = ";"
+let mapleader = "<F24>"
+map <M-C-F12> <leader>
+tmap <M-C-F12> <leader>
 " Bind . as local leader
-let maplocalleader="'"
+let maplocalleader="<F23>"
+map <M-C-F11> <localleader>
+tmap <M-C-F11> <localleader>
 
 " Append after word
 nnoremap <leader>a ea
@@ -9,6 +13,8 @@ nnoremap <leader>a ea
 " Btop
 nnoremap <localleader>b <cmd>Btop<cr>
 tnoremap <localleader>b <cmd>Btop<cr>
+" True/false flip
+nnoremap <silent> <leader>b <cmd>call Toggle()<cr>
 
 " Buffer delete
 nnoremap <leader>B <cmd>Bdelete! menu<cr>
@@ -29,17 +35,16 @@ nnoremap <leader>D <cmd>windo diffthis<cr>
 " Refresh buffer
 nnoremap <leader>E <cmd>e<cr><C-o>
 
-" True/false flip
-nnoremap <silent> <leader>f <cmd>call Toggle()<cr>
+" Telescope file search
+nnoremap <silent> <leader>f <cmd>Telescope find_files<cr>
 " Format file text
 nnoremap <localleader>f <cmd>lua vim.lsp.buf.format({ async = true })<cr>
 
+" Telescope grep cwd
+nnoremap <silent> <leader>g <cmd>Telescope live_grep<cr>
 " Lazygit
 nnoremap <localleader>g <cmd>Lazygit<cr>
 tnoremap <localleader>g <cmd>Lazygit<cr>
-" Insert new UUID
-xnoremap <leader>g <Plug>Nuuid
-nnoremap <leader>g <Plug>Nuuid
 
 " Twui
 nnoremap <localleader>i <cmd>Twui<cr>
@@ -90,6 +95,10 @@ nnoremap <localleader>T <cmd>ToggleTermToggleAll<cr>
 tnoremap <localleader>T <cmd>ToggleTermToggleAll<cr>
 " Try/catch
 xnoremap <leader>t ditry<cr>{<cr><esc>O<esc>pl
+
+" Insert new UUID
+xnoremap <leader>u <Plug>Nuuid
+nnoremap <leader>u <Plug>Nuuid
 
 " Vifm
 nnoremap <localleader>v <cmd>Vifm<cr>

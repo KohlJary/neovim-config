@@ -185,12 +185,12 @@ require('nvim-lightbulb').setup({ autocmd = { enabled = true } })
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.keymap.set('n', '<leader>[', vim.diagnostic.goto_prev)
-vim.keymap.set('n', '<PageUp>', vim.diagnostic.goto_prev)
-vim.keymap.set('n', 'gp', vim.diagnostic.goto_prev)
-vim.keymap.set('n', '<leader>]', vim.diagnostic.goto_next)
-vim.keymap.set('n', 'gn', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<PageDown>', vim.diagnostic.goto_next)
+-- vim.keymap.set('n', '<leader>[', vim.diagnostic.goto_prev)
+-- vim.keymap.set('n', '<PageUp>', vim.diagnostic.goto_prev)
+-- vim.keymap.set('n', 'gp', vim.diagnostic.goto_prev)
+-- vim.keymap.set('n', '<leader>]', vim.diagnostic.goto_next)
+-- vim.keymap.set('n', 'gn', vim.diagnostic.goto_next)
+-- vim.keymap.set('n', '<PageDown>', vim.diagnostic.goto_next)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

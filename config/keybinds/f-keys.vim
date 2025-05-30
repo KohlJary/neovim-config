@@ -20,9 +20,9 @@ if (g:detected_os == 'WINDOWS')
   map <M-C-S-F9> <S-F21>
   map <M-C-F10> <F22>
   map <M-C-S-F10> <S-F22>
-  map <M-C-F11> <F23>
+  " map <M-C-F11> <F23>
   map <M-C-S-F11> <S-F23>
-  map <M-C-F12> <F24>
+  " map <M-C-F12> <F24>
   map <M-C-S-F12> <S-F24>
 endif
 
@@ -85,8 +85,9 @@ xnoremap <F11> qh
 xnoremap <F11><F11> @h
 
 " LSP actions
-nnoremap <F12> :LspInfo<cr>
-nnoremap <S-F12> :LspRestart<cr>
+nnoremap <F12> <cmd>lua vim.lsp.buf.hover()<cr>
+nnoremap <S-F12> :LspInfo<cr>
+nnoremap <C-F12> :LspRestart<cr>
 " End line with semicolon and move back to current position
 inoremap <F12> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
@@ -95,7 +96,6 @@ inoremap <S-F12> <End>;<esc>o
 " Telescope
 " List LSP Document Symbols
 nnoremap <F13> <cmd>Telescope lsp_document_symbols<cr>
-inoremap <F13> <esc><Plug>Nuuid<cr>a
 " Goto definition of word under cursor if only one, otherwise list in Telescope
 nnoremap <F14> <cmd>Telescope lsp_definitions<cr>
 " Goto implementation of word under cursor if only one, otherwise list in Telescope
@@ -117,8 +117,3 @@ nnoremap <F20> <cmd>lua require'dap'.step_over()<cr>
 nnoremap <F21> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <F22> <cmd>lua require'dap'.clear_breakpoints()<cr>
-
-" Telescope loclist
-nnoremap <F24> <cmd>Telescope loclist<cr>
-" Telescope jumplist
-nnoremap <S-F24> <cmd>Telescope jumplist<cr>

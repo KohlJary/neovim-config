@@ -15,4 +15,4 @@ require 'nvim-treesitter.configs'.setup {
         enable = true
     }
 }
-vim.treesitter.language.register('c_sharp', 'cs', 'typescript')
+vim.treesitter.language.register('c_sharp', 'cs', 'typescript', 'sql', 'vim', 'lua')

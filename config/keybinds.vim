@@ -8,6 +8,10 @@ source $VIMDIR/config/keybinds/f-keys.vim
 tnoremap <Esc><Esc> <C-\><C-n>
 tnoremap <localleader><Esc> <C-\><C-n>
 
+noremap < <C-o>
+noremap << <C-o>
+noremap > <C-i>
+
 " Split operations
 " Movement
 nnoremap <silent> <C-h> <C-w>h
@@ -63,15 +67,25 @@ nnoremap  <cmd>w<cr>
 
 " WindowSwap
 let g:windowswap_map_keys = 0
-nnoremap <Space> <cmd>lua vim.lsp.buf.hover()<CR>
 
-" Neotree/Telescope
+" Neotree
 nnoremap <silent> <BS> :Neotree left filesystem reveal toggle<cr>
 nnoremap <silent> <Del> <cmd>Neotree top buffers reveal toggle<cr>
-nnoremap <silent> - <cmd>Telescope live_grep<cr>
-nnoremap <silent> _ <cmd>Telescope find_files<cr>
 nnoremap <silent> = <cmd>Neotree top document_symbols focus<cr>
 nnoremap <silent> + <cmd>Neotree top document_symbols toggle<cr>
+
+" LSP hover
+nnoremap <Space> <cmd>lua vim.lsp.buf.hover()<cr>
+
+" LSP Diagnostic goto/list
+nnoremap <silent> <CR> <cmd>lua vim.diagnostic.goto_next()<cr>
+nnoremap <silent> <S-CR> <cmd>lua vim.diagnostic.goto_prev()<cr>
+nnoremap <silent> <C-CR> <cmd>lua vim.diagnostic.open_float()<cr>
+nnoremap <silent> <C-CR> <cmd>Telescope current_buffer_fuzzy_find<cr>
+
+" Next/prev document symbol
+nnoremap <Tab> ]m
+nnoremap <S-Tab> [m
 
 " Wrap quotes
 xnoremap " xi""<ESC>P
