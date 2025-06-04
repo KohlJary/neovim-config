@@ -39,8 +39,6 @@ tnoremap <C-Down> <C-\><C-n><C-w>-i
 " Tab operations
 " New tab
 nnoremap <C-t> <cmd>tabnew<CR><cmd>Neotree filesystem left focus<cr>
-" Open current buffer in new tab
-nnoremap <silent> <C-r> :tabnew\|e #<CR>
 " Close tab
 nnoremap <C-q> :tabclose<CR>
 " Previous tab
@@ -76,6 +74,9 @@ nnoremap <silent> + <cmd>Neotree top document_symbols toggle<cr>
 
 " LSP hover
 nnoremap <Space> <cmd>lua vim.lsp.buf.hover()<cr>
+
+" LSP rename
+nnoremap <silent> <C-r> <cmd>lua vim.lsp.buf.rename()<CR>
 
 " LSP Diagnostic goto/list
 nnoremap <silent> <CR> <cmd>lua vim.diagnostic.goto_next()<cr>

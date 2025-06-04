@@ -141,19 +141,13 @@ cmp.setup.cmdline(':', {
 
 -- Set up lspconfig.
 require('lspconfig').csharp_ls.setup {
-    -- root_dir = function(bufnr, on_dir)
-    --     local fname = vim.api.nvim_buf_get_name(bufnr)
-    --     on_dir(util.root_pattern '*.sln' (fname) or util.root_pattern '*.csproj' (fname))
-    -- end,
     root_dir = function(startpath)
-        print(startpath)
-        local dotnetsln = lspconfig.util.root_pattern("*.Dotnet.sln")
-        return lspconfig.util.root_pattern("*.Dotnet.sln")(startpath)
-            or lspconfig.util.root_pattern("*.sln")(startpath)
-            or lspconfig.util.root_pattern("*.csproj")(startpath)
-            or lspconfig.util.root_pattern("*.fsproj")(startpath)
-            or lspconfig.util.root_pattern(".git")(startpath)
+        return util.root_pattern '*.sln' (startpath) or
+            util.root_pattern '*.csproj' (startpath)
     end,
+    -- root_dir = function()
+    --     return require('lspconfig').util.root_pattern("*.sln", "*.csproj", "*.fsproj", ".git")
+    -- end,
     filetypes = { 'cs' },
     init_options = {
         AutomaticWorkspaceInit = true,
