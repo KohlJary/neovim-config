@@ -52,5 +52,8 @@ augroup END
 " Vimspector
 let g:vimspector_base_dir='C:\Users\kohlbern.jary\AppData\Local\nvim-data\site\pack\packer\start\vimspector'
 
+" vim-doge
+let g:doge_enable_mappings = 0
+
 " Commentary
 autocmd FileType cs setlocal commentstring=//\ %s

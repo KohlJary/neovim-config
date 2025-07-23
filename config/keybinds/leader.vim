@@ -31,6 +31,8 @@ nnoremap <leader>C <cmd>CSLoadProjects<CR>
 nnoremap <leader>d <cmd>lua vim.diagnostic.open_float()<cr>
 " Highlight differences between window buffers
 nnoremap <leader>D <cmd>windo diffthis<cr>
+" vim-doge Generate Documentation Comment
+nnoremap <localleader>d <plug>(doge-generate)
 
 " Refresh buffer
 nnoremap <leader>E <cmd>e<cr><C-o>

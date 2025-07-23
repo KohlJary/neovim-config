@@ -78,6 +78,9 @@ augroup END
 nnoremap <F5> :source $MYVIMRC<CR>
 nnoremap <F5><F5> :LspRestart<CR>
 
+" Scrachpad
+nnoremap <F9> <cmd>ScratchToggle<CR>
+
 " Record/play macro h
 nnoremap <F11> qh
 nnoremap <F11><F11> @h

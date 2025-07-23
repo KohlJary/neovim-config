@@ -13,6 +13,9 @@ require 'nvim-treesitter.configs'.setup {
     },
     indent = {
         enable = true
+    },
+    tree_docs = {
+        enable = true
     }
 }
 vim.treesitter.language.register('c_sharp', 'cs', 'typescript', 'sql', 'vim', 'lua')
