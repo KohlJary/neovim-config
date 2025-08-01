@@ -81,12 +81,6 @@ nnoremap <F5><F5> :LspRestart<CR>
 " Scrachpad
 nnoremap <F9> <cmd>ScratchToggle<CR>
 
-" Record/play macro h
-nnoremap <F11> qh
-nnoremap <F11><F11> @h
-xnoremap <F11> qh
-xnoremap <F11><F11> @h
-
 " LSP actions
 nnoremap <F12> <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <S-F12> :LspInfo<cr>

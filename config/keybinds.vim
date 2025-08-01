@@ -67,10 +67,10 @@ nnoremap  <cmd>w<cr>
 let g:windowswap_map_keys = 0
 
 " Neotree
-nnoremap <silent> <BS> :Neotree left filesystem reveal toggle<cr>
+nnoremap <silent> <BS> <cmd>Neotree left filesystem reveal toggle<cr>
 nnoremap <silent> <Del> <cmd>Neotree top buffers reveal toggle<cr>
-nnoremap <silent> = <cmd>Neotree top document_symbols focus<cr>
-nnoremap <silent> + <cmd>Neotree top document_symbols toggle<cr>
+nnoremap <silent> = <cmd>Neotree float document_symbols toggle<cr>
+nnoremap <silent> + <cmd>Neotree right document_symbols toggle<cr>
 
 " LSP hover
 nnoremap <Space> <cmd>lua vim.lsp.buf.hover()<cr>
@@ -187,8 +187,5 @@ nnoremap <M-w> <C-w>
 " Remap =
 nnoremap <M-=> =
 
-" Remap ; and '
-nnoremap <F8> ;
-xnoremap <F8> ;
-nnoremap <F9> '
-xnoremap <F9> '
+" Remap q
+nnoremap <C-q> q
