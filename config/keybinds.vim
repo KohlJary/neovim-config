@@ -75,6 +75,9 @@ nnoremap <silent> + <cmd>Neotree right document_symbols toggle<cr>
 " LSP hover
 nnoremap <Space> <cmd>lua vim.lsp.buf.hover()<cr>
 
+" LSP format
+nnoremap <silent> <C-f> <cmd>lua vim.lsp.buf.format()<CR>
+
 " LSP rename
 nnoremap <silent> <C-r> <cmd>lua vim.lsp.buf.rename()<CR>
 
@@ -156,7 +159,7 @@ inoremap <C-Right> <ESC>ea
 " EOL comment
 inoremap <C-c> <End><Space>//<Space>
 " Toggle script
-inoremap <C-f> <C-o>:call Toggle()<cr>
+" inoremap <C-f> <C-o>:call Toggle()<cr>
 " Insert new UUID
 inoremap <C-g> <Plug>Nuuid
 " Search for unicode character
