@@ -268,7 +268,6 @@ return require('packer').startup(function(use)
         "aznhe21/actions-preview.nvim",
         config = function()
             vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
-            vim.keymap.set({ "v", "n" }, "<S-Space>", require("actions-preview").code_actions)
         end,
     }
     use 'nvim-lua/lsp-status.nvim'

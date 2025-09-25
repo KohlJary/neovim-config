@@ -69,7 +69,7 @@ let g:windowswap_map_keys = 0
 " Neotree
 nnoremap <silent> <BS> <cmd>Neotree left filesystem reveal toggle<cr>
 nnoremap <silent> <Del> <cmd>Neotree top buffers reveal toggle<cr>
-nnoremap <silent> = <cmd>Neotree float document_symbols toggle<cr>
+nnoremap <silent> = <cmd>Neotree right document_symbols focus<cr>
 nnoremap <silent> + <cmd>Neotree right document_symbols toggle<cr>
 
 " LSP hover
@@ -141,6 +141,14 @@ nnoremap pa ggVGp<C-o>
 nnoremap pl Vp
 " Quick paste
 nnoremap pp p
+
+" Location List
+nnoremap <silent> glo :copen<cr>
+nnoremap <silent> glc :cclose<cr>
+nnoremap <silent> glf :cfirst<cr>
+nnoremap <silent> gll :clast<cr>
+nnoremap <silent> gln :cn<cr>
+nnoremap <silent> glp :cp<cr>
 
 " Rerun last command
 nnoremap <silent> <M-Del> @:<cr>

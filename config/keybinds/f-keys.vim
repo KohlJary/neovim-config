@@ -26,60 +26,64 @@ if (g:detected_os == 'WINDOWS')
   map <M-C-S-F12> <S-F24>
 endif
 
-" LSP actions
-nnoremap <F1> <cmd>CodeActionMenu<CR>
+" Telescope files
+nnoremap <silent> <F1> <cmd>Telescope find_files<cr>
 " Insert vim command output
 inoremap <F1> <C-r>=
 " Insert shell command output
 inoremap <S-F1> <C-r>=system(input('Shell Command: '))[0:-2]<cr>
 
+" Telescope grep
+nnoremap <silent> <F2> <cmd>Telescope live_grep<cr>
 
-" Yank to register a
-nnoremap <F2> "ayy<cmd>echo "Yank Line to Buffer 'a' (F2)"<cr>
-xnoremap <F2> "ay<cmd>echo "Yank to Buffer 'a' (F2)"<cr>
-" Paste register a
-nnoremap <F2><F2> o<esc>V"ap<cmd>echo "Paste Buffer 'a' (F2)"<cr>
-xnoremap <F2><F2> "ap<cmd>echo "Paste Buffer 'a' (F2)"<cr>
-inoremap <F2> <esc>"ap<cmd>echo "Paste Buffer 'a' (F2)"<cr>
+" Telescope buffers
+nnoremap <silent> <F3> <cmd>Telescope buffers<cr>
 
-" Yank to register s
-nnoremap <F3> "syy<cmd>echo "Yank Line to Buffer 's' (F3)"<cr>
-xnoremap <F3> "sy<cmd>echo "Yank to Buffer 's' (F3)"<cr>
-" Paste register s
-nnoremap <F3><F3> o<esc>V"sp<cmd>echo "Paste Buffer 's' (F3)"<cr>
-xnoremap <F3><F3> "sp<cmd>echo "Paste Buffer 's' (F3)"<cr>
-inoremap <F3> <esc>"sp<cmd>echo "Paste Buffer 's' (F3)"<cr>
-
-" Yank to register d
-nnoremap <F4> "dyy<cmd>echo "Yank Line to Buffer 'd' (F4)"<cr>
-xnoremap <F4> "dy<cmd>echo "Yank to Buffer 'd' (F4)"<cr>
-" Paste register d
-nnoremap <F4><F4> o<esc>V"dp<cmd>echo "Paste Buffer 'd' (F4)"<cr>
-xnoremap <F4><F4> "dp<cmd>echo "Paste Buffer 'd' (F4)"<cr>
-inoremap <F4> <esc>"dp<cmd>echo "Paste Buffer 'd' (F4)"<cr>
-
-" Yank to register f
-nnoremap <F6> "fyy<cmd>echo "Yank Line to Buffer 'f' (F6)"<cr>
-xnoremap <F6> "fy<cmd>echo "Yank to Buffer 'f' (F6)"<cr>
-" Paste register f
-nnoremap <F6><F6> o<esc>V"fpl<cmd>echo "Paste Buffer 'f' (F6)"<cr>
-xnoremap <F6><F6> "fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
-inoremap <F6> <esc>"fp<cmd>echo "Paste Buffer 'f' (F6)"<cr>
-
-" Filetype specific snippet insertion
-" C#
-augroup CSFKeyBinds
-    autocmd!
-    autocmd FileType cs nnoremap <F7> :call CSGenerateDocComments()<cr>
-    autocmd FileType json nnoremap <F7> <cmd>%!jq .<cr>
-augroup END
+" Telescope document symbools
+nnoremap <silent> <F4> <cmd>Telescope lsp_document_symbols<cr>
 
 " Reload config
 nnoremap <F5> :source $MYVIMRC<CR>
 nnoremap <F5><F5> :LspRestart<CR>
 
+" Filetype specific snippet insertion
+" C#
+augroup CSFKeyBinds
+    autocmd!
+    autocmd FileType cs nnoremap <F6> :call CSGenerateDocComments()<cr>
+    autocmd FileType json nnoremap <F6> <cmd>%!jq .<cr>
+augroup END
+
 " Scrachpad
-nnoremap <F9> <cmd>ScratchToggle<CR>
+nnoremap <F7> <cmd>ScratchToggle<CR>
+
+" Yank to register a
+nnoremap <F8> "ayy<cmd>echo "Yank Line to Buffer 'a'"<cr>
+xnoremap <F8> "ay<cmd>echo "Yank to Buffer 'a'"<cr>
+" Paste register a
+nnoremap <F8><F8> o<esc>V"ap<cmd>echo "Paste Buffer 'a' (F2)"<cr>
+xnoremap <F8><F8> "ap<cmd>echo "Paste Buffer 'a'"<cr>
+inoremap <F8> <esc>"ap<cmd>echo "Paste Buffer 'a'"<cr>
+
+" Yank to register s
+nnoremap <F9> "syy<cmd>echo "Yank Line to Buffer 's'"<cr>
+xnoremap <F9> "sy<cmd>echo "Yank to Buffer 's'"<cr>
+" Paste register s
+nnoremap <F9><F9> o<esc>V"sp<cmd>echo "Paste Buffer 's'"<cr>
+xnoremap <F9><F9> "sp<cmd>echo "Paste Buffer 's'"<cr>
+inoremap <F9> <esc>"sp<cmd>echo "Paste Buffer 's'"<cr>
+
+" Yank to register d
+nnoremap <F10> "dyy<cmd>echo "Yank Line to Buffer 'd'"<cr>
+xnoremap <F10> "dy<cmd>echo "Yank to Buffer 'd'"<cr>
+" Paste register d
+nnoremap <F10><F10> o<esc>V"dp<cmd>echo "Paste Buffer 'd'"<cr>
+xnoremap <F10><F10> "dp<cmd>echo "Paste Buffer 'd'"<cr>
+inoremap <F10> <esc>"dp<cmd>echo "Paste Buffer 'd'"<cr>
+
+" Lazygit
+nnoremap <F11> <cmd>Lazygit<cr>
+tnoremap <F11> <cmd>Lazygit<cr>
 
 " LSP actions
 nnoremap <F12> <cmd>lua vim.lsp.buf.hover()<cr>
@@ -90,9 +94,10 @@ inoremap <F12> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
 inoremap <S-F12> <End>;<esc>o
 
+" Code Actions
+nnoremap <F13> <cmd>lua require'actions-preview'.code_actions()<cr>
+
 " Telescope
-" List LSP Document Symbols
-nnoremap <F13> <cmd>Telescope lsp_document_symbols<cr>
 " Goto definition of word under cursor if only one, otherwise list in Telescope
 nnoremap <F14> <cmd>Telescope lsp_definitions<cr>
 " Goto implementation of word under cursor if only one, otherwise list in Telescope
