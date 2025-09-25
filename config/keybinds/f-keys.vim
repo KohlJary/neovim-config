@@ -82,11 +82,9 @@ xnoremap <F10><F10> "dp<cmd>echo "Paste Buffer 'd'"<cr>
 inoremap <F10> <esc>"dp<cmd>echo "Paste Buffer 'd'"<cr>
 
 " Lazygit
-nnoremap <F11> <cmd>Lazygit<cr>
-tnoremap <F11> <cmd>Lazygit<cr>
-
+nnoremap <F12> <cmd>Lazygit<cr>
+tnoremap <F12> <cmd>Lazygit<cr>
 " LSP actions
-nnoremap <F12> <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <S-F12> :LspInfo<cr>
 nnoremap <C-F12> :LspRestart<cr>
 " End line with semicolon and move back to current position
@@ -105,17 +103,20 @@ nnoremap <F15> <cmd>Telescope lsp_implementations<cr>
 " List LSP references for word under cursor
 nnoremap <F16> <cmd>Telescope lsp_references<cr>
 
+" Toggle dadbod-ui
+nnoremap <F17> <cmd>DBUIToggle<cr>
+
 " nvim-dap Start/Continue Debugging
-nnoremap <silent> <F17> <cmd>lua if vim.fn.filereadable(".vscode/launch.json") then require("dap.ext.vscode").load_launchjs(".vscode/launch.json", { coreclr = {'cs'} }) end require'dap'.continue()<cr>
+nnoremap <silent> <F18> <cmd>lua if vim.fn.filereadable(".vscode/launch.json") then require("dap.ext.vscode").load_launchjs(".vscode/launch.json", { coreclr = {'cs'} }) end require'dap'.continue()<cr>
 " nvim-dap Stop Debugging
-nnoremap <S-F17> <cmd>lua require'dap'.terminate()<cr>
-" nvim-dap Step Out
-nnoremap <F18> <cmd>lua require'dap'.step_out()<cr>
-" nvim-dap Step Into
-nnoremap <F19> <cmd>lua require'dap'.step_into()<cr>
+nnoremap <S-F18> <cmd>lua require'dap'.terminate()<cr>
 " nvim-dap Step Over
-nnoremap <F20> <cmd>lua require'dap'.step_over()<cr>
+nnoremap <F19> <cmd>lua require'dap'.step_over()<cr>
+" nvim-dap Step Into
+nnoremap <F20> <cmd>lua require'dap'.step_into()<cr>
+" nvim-dap Step Out
+nnoremap <S-F20> <cmd>lua require'dap'.step_out()<cr>
 " nvim-dap Toggle Breakpoint
 nnoremap <F21> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
-nnoremap <F22> <cmd>lua require'dap'.clear_breakpoints()<cr>
+nnoremap <S-F21> <cmd>lua require'dap'.clear_breakpoints()<cr>

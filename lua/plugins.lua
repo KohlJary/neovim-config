@@ -231,6 +231,15 @@ return require('packer').startup(function(use)
 
     -- Debugging
     use { 'nvim-neotest/nvim-nio' }
+    use {
+      "mfussenegger/nvim-dap",
+      config = function()
+        local dap = require "dap"
+
+        -- .NET specific setup using `easy-dotnet`
+        require("easy-dotnet.netcoredbg").register_dap_variables_viewer() -- special variables viewer specific for .NET
+        end
+    }
     use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' } }
     use {
         'folke/neodev.nvim',
@@ -297,12 +306,17 @@ return require('packer').startup(function(use)
     -- AI
     -- use 'Bryley/neoai.nvim'
 
+    -- Environment
+    use 'tpope/vim-dotenv'
+
     -- Database
+    use 'tpope/vim-dadbod'
+    use 'kristijanhusak/vim-dadbod-completion'
     use {
         'kristijanhusak/vim-dadbod-ui',
         dependencies = {
-            { 'tpope/vim-dadbod',                     lazy = true },
-            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+            { 'tpope/vim-dadbod',                      },
+            { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }  },
         },
         cmd = {
             'DBUI',
@@ -326,6 +340,19 @@ return require('packer').startup(function(use)
     -- CSharp
     use 'Tastyep/structlog.nvim'
     use 'tris203/rzls.nvim'
+    -- lazy.nvim
+    use {
+      "GustavEikaas/easy-dotnet.nvim",
+      dependencies = { "nvim-lua/plenary.nvim", 'nvim-telescope/telescope.nvim', },
+      config = function()
+        local dotnet = require "easy-dotnet"
+        dotnet.setup {
+            debugger = {
+                bin_path = "netcoredbg"
+            }
+        }
+      end
+    }
 
     -- GraphQL
     use 'jparise/vim-graphql'

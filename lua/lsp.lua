@@ -105,6 +105,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
         -- { name = 'vsnip' }, -- For vsnip users.
         { name = 'luasnip' }, -- For luasnip users.
+        { name = 'easy-dotnet' }, -- easy-dotnet.nvim
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
     }, {

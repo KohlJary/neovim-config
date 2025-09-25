@@ -67,6 +67,8 @@ set sessionoptions-=help
 " Don't save terminal buffers
 set sessionoptions-=buffers
 
+set previewheight=150
+
 " Terminal
 augroup neovim_terminal
   " Set filetype for terminal buffers for detection
