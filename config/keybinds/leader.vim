@@ -54,23 +54,47 @@ nnoremap <leader>i <cmd>Telescope lsp_implementations<cr>
 nnoremap <localleader>i <cmd>Twui<cr>
 tnoremap <localleader>i <cmd>Twui<cr>
 
+" Yank to register a
+nnoremap <leader>j "ayy<cmd>echo "Yank Line to Buffer 'a'"<cr>
+xnoremap <leader>j "ay<cmd>echo "Yank to Buffer 'a'"<cr>
+" Paste register a
+nnoremap <leader>jj o<esc>V"ap<cmd>echo "Paste Buffer 'a' (F2)"<cr>
+xnoremap <leader>jj "ap<cmd>echo "Paste Buffer 'a'"<cr>
+inoremap <leader>j <esc>"ap<cmd>echo "Paste Buffer 'a'"<cr>
+
+" Yank to register s
+nnoremap <leader>k "syy<cmd>echo "Yank Line to Buffer 's'"<cr>
+xnoremap <leader>k "sy<cmd>echo "Yank to Buffer 's'"<cr>
+" Paste register s
+nnoremap <leader>kk o<esc>V"sp<cmd>echo "Paste Buffer 's'"<cr>
+xnoremap <leader>kk "sp<cmd>echo "Paste Buffer 's'"<cr>
+inoremap <leader>k <esc>"sp<cmd>echo "Paste Buffer 's'"<cr>
+
+" Yank to register d
+nnoremap <leader>l "dyy<cmd>echo "Yank Line to Buffer 'd'"<cr>
+xnoremap <leader>l "dy<cmd>echo "Yank to Buffer 'd'"<cr>
+" Paste register d
+nnoremap <leader>ll o<esc>V"dp<cmd>echo "Paste Buffer 'd'"<cr>
+xnoremap <leader>ll "dp<cmd>echo "Paste Buffer 'd'"<cr>
+inoremap <leader>l <esc>"dp<cmd>echo "Paste Buffer 'd'"<cr>
+
 " Toggle location list
-nnoremap <silent> <leader>l :call ToggleLocationList()<cr>
+nnoremap <silent> <localleader>l :call ToggleLocationList()<cr>
 
 " Mason quickload
 nnoremap <silent> <localleader>m <cmd>Mason<cr>
 
 " Toggle relative line number
-nnoremap <leader>n <cmd>setlocal rnu!<cr>
+nnoremap <localleader>n <cmd>setlocal rnu!<cr>
 
 " Insert empty line below/above
 nnoremap <leader>o o<esc>k
 nnoremap <leader>O O<esc>j
 
 " Prosession Load/Clean/Delete
-nnoremap <leader>p  <cmd>Prosession<cr>
-nnoremap <leader>pc <cmd>ProsessionClean<cr>
-nnoremap <leader>pd <cmd>ProsessionDelete<cr>
+nnoremap <localleader>p  <cmd>Prosession<cr>
+nnoremap <localleader>pc <cmd>ProsessionClean<cr>
+nnoremap <localleader>pd <cmd>ProsessionDelete<cr>
 
 " Toggle quickfix
 nnoremap <silent> <leader>q :call ToggleQuickFix()<CR>
@@ -88,7 +112,7 @@ xnoremap <localleader>r y<cmd>let @/=escape(@", '/')<cr>"_cgn
 
 " WindowSwap
 let g:windowswap_map_keys = 0
-nnoremap <leader>s <cmd>call WindowSwap#EasyWindowSwap()<CR>
+nnoremap <localleader>s <cmd>call WindowSwap#EasyWindowSwap()<CR>
 " Sort lines
 xnoremap <silent> <leader>s :'<,'>sort<CR>
 
@@ -111,13 +135,7 @@ nnoremap <localleader>v <cmd>lua _vifm_toggle()<cr>
 tnoremap <localleader>v <cmd>lua _vifm_toggle()<cr>
 
 " Word Wrap
-nnoremap <leader>w <cmd>setlocal wrap!<cr>
-
-" Toggle boolean/conditional/+-
-nnoremap <silent> <leader>x <cmd>call Toggle()<CR>
-
-" Quick save buffer
-nnoremap <leader>; :w<cr>
+nnoremap <localleader>w <cmd>setlocal wrap!<cr>
 
 " Equalize splits
 nnoremap <leader>= <C-w>=
@@ -131,12 +149,9 @@ nnoremap <leader>/ :let @/=""<CR>
 " Telescope
 nnoremap <localleader>/ <cmd>Telescope<CR>
 
-" Telescope current buffer
-nnoremap <leader>- <cmd>Telescope current_buffer_fuzzy_find<CR>
-
 " Goto prev/next diagnostic
-nnoremap <leader>[ <cmd>lua vim.diagnostic.goto_prev()<cr>
-nnoremap <leader>] <cmd>lua vim.diagnostic.goto_next()<cr>
+nnoremap <leader>n <cmd>lua vim.diagnostic.goto_prev()<cr>
+nnoremap <leader>p <cmd>lua vim.diagnostic.goto_next()<cr>
 
 " Rebind register actions
 xnoremap <leader>" "
