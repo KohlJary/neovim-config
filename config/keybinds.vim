@@ -85,7 +85,6 @@ nnoremap <silent> <C-r> <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <CR> <cmd>lua vim.diagnostic.goto_next()<cr>
 nnoremap <silent> <S-CR> <cmd>lua vim.diagnostic.goto_prev()<cr>
 nnoremap <silent> <C-CR> <cmd>lua vim.diagnostic.open_float()<cr>
-nnoremap <silent> <C-CR> <cmd>Telescope current_buffer_fuzzy_find<cr>
 
 " Next/prev document symbol
 nnoremap <Tab> ]m

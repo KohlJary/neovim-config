@@ -22,13 +22,13 @@ nnoremap <leader>B <cmd>Bdelete! menu<cr>
 " Toggle background transparency
 nnoremap <silent> <leader>bg <cmd>SrceryBGToggle<CR>
 
-" Inline comment at EOL
-nnoremap <leader>c A //<Space>
-" Load CS Projects/Solutions
-nnoremap <leader>C <cmd>CSLoadProjects<CR>
+" Reload config
+nnoremap <leader>c :source $MYVIMRC<CR>
+nnoremap <leader>C :LspRestart<CR>
 
 " Diagnostic list
-nnoremap <leader>d <cmd>lua vim.diagnostic.open_float()<cr>
+" Goto definition of word under cursor if only one, otherwise list in Telescope
+nnoremap <leader>d <cmd>Telescope lsp_definitions<cr>
 " Highlight differences between window buffers
 nnoremap <leader>D <cmd>windo diffthis<cr>
 " vim-doge Generate Documentation Comment
@@ -48,6 +48,8 @@ nnoremap <silent> <leader>g <cmd>Telescope live_grep<cr>
 nnoremap <localleader>g <cmd>Lazygit<cr>
 tnoremap <localleader>g <cmd>Lazygit<cr>
 
+" Goto implementation of word under cursor if only one, otherwise list in Telescope
+nnoremap <leader>i <cmd>Telescope lsp_implementations<cr>
 " Twui
 nnoremap <localleader>i <cmd>Twui<cr>
 tnoremap <localleader>i <cmd>Twui<cr>
@@ -79,10 +81,10 @@ nnoremap <localleader>q <cmd>Bdelete<cr>
 " Delete all buffers, keep window layout
 nnoremap <localleader>Q <cmd>bufdo :Bdelete<cr>
 
-" Rename symbol
-nnoremap <leader>r <cmd>lua vim.lsp.buf.rename()<CR>
+" List LSP references for word under cursor
+nnoremap <leader>r <cmd>Telescope lsp_references<cr>
 " Fast find/replace
-xnoremap <leader>r y<cmd>let @/=escape(@", '/')<cr>"_cgn
+xnoremap <localleader>r y<cmd>let @/=escape(@", '/')<cr>"_cgn
 
 " WindowSwap
 let g:windowswap_map_keys = 0
@@ -103,8 +105,10 @@ xnoremap <leader>u <Plug>Nuuid
 nnoremap <leader>u <Plug>Nuuid
 
 " Vifm
-nnoremap <localleader>v <cmd>Vifm<cr>
-tnoremap <localleader>v <cmd>Vifm<cr>
+" Idk why I have to specifically call lua _vifm_toggle
+" for just this program but whatevs
+nnoremap <localleader>v <cmd>lua _vifm_toggle()<cr>
+tnoremap <localleader>v <cmd>lua _vifm_toggle()<cr>
 
 " Word Wrap
 nnoremap <leader>w <cmd>setlocal wrap!<cr>

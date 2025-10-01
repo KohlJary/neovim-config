@@ -42,17 +42,12 @@ nnoremap <silent> <F3> <cmd>Telescope buffers<cr>
 " Telescope document symbools
 nnoremap <silent> <F4> <cmd>Telescope lsp_document_symbols<cr>
 
-" Reload config
-nnoremap <F5> :source $MYVIMRC<CR>
-nnoremap <F5><F5> :LspRestart<CR>
+" Vifm
+nnoremap <silent> <F5> <cmd>lua _vifm_toggle()<CR>
+tnoremap <silent> <F5> <cmd>lua _vifm_toggle()<CR>
 
-" Filetype specific snippet insertion
-" C#
-augroup CSFKeyBinds
-    autocmd!
-    autocmd FileType cs nnoremap <F6> :call CSGenerateDocComments()<cr>
-    autocmd FileType json nnoremap <F6> <cmd>%!jq .<cr>
-augroup END
+" Telescope document symbools
+nnoremap <silent> <F6> <cmd>Telescope current_buffer_fuzzy_find<cr>
 
 " Scrachpad
 nnoremap <F7> <cmd>ScratchToggle<CR>
@@ -81,12 +76,15 @@ nnoremap <F10><F10> o<esc>V"dp<cmd>echo "Paste Buffer 'd'"<cr>
 xnoremap <F10><F10> "dp<cmd>echo "Paste Buffer 'd'"<cr>
 inoremap <F10> <esc>"dp<cmd>echo "Paste Buffer 'd'"<cr>
 
+" ToggleTerm
+nnoremap <F11> <cmd>ToggleTermTab<cr>
+tnoremap <F11> <cmd>ToggleTermTab<cr>
+nnoremap <S-F11> <cmd>ToggleTermToggleAll<cr>
+tnoremap <S-F11> <cmd>ToggleTermToggleAll<cr>
+
 " Lazygit
 nnoremap <F12> <cmd>Lazygit<cr>
 tnoremap <F12> <cmd>Lazygit<cr>
-" LSP actions
-nnoremap <S-F12> :LspInfo<cr>
-nnoremap <C-F12> :LspRestart<cr>
 " End line with semicolon and move back to current position
 inoremap <F12> <esc>mmA;<esc>`mlmm
 " End line with semicolon, create new line
@@ -120,3 +118,11 @@ nnoremap <S-F20> <cmd>lua require'dap'.step_out()<cr>
 nnoremap <F21> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 " nvim-dap Clear Breakpoints
 nnoremap <S-F21> <cmd>lua require'dap'.clear_breakpoints()<cr>
+
+" Filetype specific snippet insertion
+" C#
+augroup CSFKeyBinds
+    autocmd!
+    autocmd FileType cs nnoremap <F22> :call CSGenerateDocComments()<cr>
+    autocmd FileType json nnoremap <F22> <cmd>%!jq .<cr>
+augroup END
