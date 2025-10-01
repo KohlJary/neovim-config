@@ -56,7 +56,6 @@ nnoremap x :ToggleFoldRecursive<CR>
 nnoremap X <cmd>call ToggleFoldMethod()<cr>
 
 nnoremap s      <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = false, cursor_after = true } })<cr>
-nnoremap ss     <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = false, cursor_after = true } })<cr>
 nnoremap S      <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = true, cursor_after = false } })<cr>
 nnoremap <C-s>  <cmd>lua MiniJump2d.start()<cr>
 

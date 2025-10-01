@@ -35,12 +35,18 @@ inoremap <S-F1> <C-r>=system(input('Shell Command: '))[0:-2]<cr>
 
 " Telescope grep
 nnoremap <silent> <F2> <cmd>Telescope live_grep<cr>
+" Goto definition of word under cursor if only one, otherwise list in Telescope
+nnoremap <silent> <S-F2> <cmd>Telescope lsp_definitions<cr>
 
 " Telescope buffers
 nnoremap <silent> <F3> <cmd>Telescope buffers<cr>
+" Goto implementation of word under cursor if only one, otherwise list in Telescope
+nnoremap <silent> <S-F3> <cmd>Telescope lsp_implementations<cr>
 
 " Telescope document symbools
 nnoremap <silent> <F4> <cmd>Telescope lsp_document_symbols<cr>
+" List LSP references for word under cursor
+nnoremap <silent> <S-F4> <cmd>Telescope lsp_references<cr>
 
 " Vifm
 nnoremap <silent> <F5> <cmd>lua _vifm_toggle()<CR>
@@ -93,13 +99,10 @@ inoremap <S-F12> <End>;<esc>o
 " Code Actions
 nnoremap <F13> <cmd>lua require'actions-preview'.code_actions()<cr>
 
-" Telescope
-" Goto definition of word under cursor if only one, otherwise list in Telescope
-nnoremap <F14> <cmd>Telescope lsp_definitions<cr>
-" Goto implementation of word under cursor if only one, otherwise list in Telescope
-nnoremap <F15> <cmd>Telescope lsp_implementations<cr>
-" List LSP references for word under cursor
-nnoremap <F16> <cmd>Telescope lsp_references<cr>
+" MiniJump
+nnoremap <F14> <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = false, cursor_after = true } })<cr>
+nnoremap <F15> <cmd>lua MiniJump2d.start({ allowed_lines = { cursor_before = true, cursor_after = false } })<cr>
+nnoremap <F16> <cmd>lua MiniJump2d.start()<cr>
 
 " Toggle dadbod-ui
 nnoremap <F17> <cmd>DBUIToggle<cr>
